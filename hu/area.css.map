@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": ["src/app/components/area/area.scss"],
+  "sourcesContent": [".mat-expansion-panel-header {\n  padding: 5px 24px;\n}\n\n.empty {\n  text-align: center;\n  margin: 20px;\n  font-weight: bold;\n  font-size: large;\n}\n\n.alert {\n  mat-panel-title {\n    color: #ffffff !important;\n  }\n\n  background-color: #ed1010 !important;\n}\n\ncomponent-sensor {\n  display: block;\n  margin: 5px 0px;\n  width: 100%;\n}\n"],
+  "mappings": ";AAAA,CAAA;AACE,WAAA,IAAA;;AAGF,CAAA;AACE,cAAA;AACA,UAAA;AACA,eAAA;AACA,aAAA;;AAGF,CAAA;AAKE,oBAAA;;AAJA,CADF,MACE;AACE,SAAA;;AAMJ;AACE,WAAA;AACA,UAAA,IAAA;AACA,SAAA;;",
+  "names": []
+}
