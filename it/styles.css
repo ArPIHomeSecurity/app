@@ -5339,7 +5339,7 @@ material-app,
   height: 100%;
 }
 .drag-handle {
-  cursor: move !important;
+  cursor: grab !important;
 }
 .container {
   margin: auto;
