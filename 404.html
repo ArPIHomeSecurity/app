@@ -24,6 +24,9 @@
         console.log('No need to redirect');
       }
     }
+    else if (location.pathname == "/"){
+      location.pathname = "/en/";
+    }
     else {
       console.error('Path does not match', location.pathname);
     }

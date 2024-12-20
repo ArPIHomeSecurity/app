@@ -1,7 +1,0 @@
-{
-  "version": 3,
-  "sources": ["src/app/pages/config/notifications/sms-messages.component.scss"],
-  "sourcesContent": [".message-content {\n  width: 100%;\n\n  textarea {\n    width: 100%;\n  }\n}\n\n.message-header {\n  font-weight: bold;\n  padding: 0px 5px;\n\n  .title {\n    float: left;\n  }\n\n  .delete {\n    float: right;\n    width: 20px;\n    height: 20px;\n    padding: 0px;\n  }\n}\n\n.mat-mdc-dialog-actions {\n  .mat-mdc-progress-spinner {\n    margin: 0px;\n  }\n}\n"],
-  "mappings": ";AAAA,CAAA;AACE,SAAA;;AAEA,CAHF,gBAGE;AACE,SAAA;;AAIJ,CAAA;AACE,eAAA;AACA,WAAA,IAAA;;AAEA,CAJF,eAIE,CAAA;AACE,SAAA;;AAGF,CARF,eAQE,CAAA;AACE,SAAA;AACA,SAAA;AACA,UAAA;AACA,WAAA;;AAKF,CAAA,uBAAA,CAAA;AACE,UAAA;;",
-  "names": []
-}

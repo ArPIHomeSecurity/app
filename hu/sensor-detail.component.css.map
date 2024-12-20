@@ -1,7 +1,0 @@
-{
-  "version": 3,
-  "sources": ["src/app/pages/sensor/sensor-detail.component.scss"],
-  "sourcesContent": [".sensor-form {\n  margin: 15px auto;\n  max-width: 600px;\n}\n\n#zoneId {\n  margin-top: 15px;\n}\n\n#areaId {\n  margin-top: 15px;\n}\n\n.mat-mdc-form-field {\n  width: 100%;\n}\n\nmat-checkbox {\n  margin: 15px 0px 10px 0px;\n}\n\n.hide {\n  display: none;\n}\n\n.actions button {\n  margin-right: 10px;\n}\n\nmat-expansion-panel-header .title {\n  margin: auto 0px;\n}\n\n.warning {\n  vertical-align: middle;\n  margin: auto 10px;\n}\n\n.area-name-field {\n  margin-top: 15px;\n}\n\n.silent {\n  margin: 0px;\n}\n\n.sensitivity {\n  margin: 0px;\n}\n"],
-  "mappings": ";AAAA,CAAA;AACE,UAAA,KAAA;AACA,aAAA;;AAGF,CAAA;AACE,cAAA;;AAGF,CAAA;AACE,cAAA;;AAGF,CAAA;AACE,SAAA;;AAGF;AACE,UAAA,KAAA,IAAA,KAAA;;AAGF,CAAA;AACE,WAAA;;AAGF,CAAA,QAAA;AACE,gBAAA;;AAGF,2BAAA,CAAA;AACE,UAAA,KAAA;;AAGF,CAAA;AACE,kBAAA;AACA,UAAA,KAAA;;AAGF,CAAA;AACE,cAAA;;AAGF,CAAA;AACE,UAAA;;AAGF,CAAA;AACE,UAAA;;",
-  "names": []
-}

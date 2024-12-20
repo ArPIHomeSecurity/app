@@ -1,7 +1,0 @@
-{
-  "version": 3,
-  "sources": ["src/app/demo/demo.component.scss"],
-  "sourcesContent": ["button {\n  margin: 1px 1px;\n}\n\nbutton.help {\n  margin: 0px 10px;\n}"],
-  "mappings": ";AAAA;AACE,UAAA,IAAA;;AAGF,MAAA,CAAA;AACE,UAAA,IAAA;;",
-  "names": []
-}

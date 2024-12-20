@@ -1,7 +1,0 @@
-{
-  "version": 3,
-  "sources": ["src/app/pages/user/user-list.component.scss"],
-  "sourcesContent": ["@charset \"UTF-8\";\n\n\n.mat-card-header {\n  margin-bottom: 15px;\n}\n\n.user-card {\n  .mat-card-title, .mat-card-subtitle{\n    margin-left: 16px;\n  }\n  \n  .mat-mdc-card-content {\n    margin-bottom: 0px;\n\n    .mat-mdc-progress-spinner {\n      float: left;\n    }\n\n    .mat-mdc-list {\n      clear: both;\n    }\n  }\n\n  mat-icon.entry {\n    vertical-align: middle;\n  }\n}\n\nbutton.delete {\n  vertical-align: middle;\n}\n\n.avatar {\n  font-size: 40px;\n}\n\n.card-enabled {\n  vertical-align: bottom;\n  color: green;\n}\n\n.card-disabled {\n  vertical-align: bottom;\n  color: grey;\n}\n\n.card-description-disabled {\n  text-decoration: line-through;\n}\n\n.header{\n  padding-top: 10px;\n  font-weight: bold;\n}"],
-  "mappings": ";AAGA,CAAA;AACE,iBAAA;;AAIA,CAAA,UAAA,CAAA;AAAA,CAAA,UAAA,CAAA;AACE,eAAA;;AAGF,CAJA,UAIA,CAAA;AACE,iBAAA;;AAEA,CAPF,UAOE,CAHF,qBAGE,CAAA;AACE,SAAA;;AAGF,CAXF,UAWE,CAPF,qBAOE,CAAA;AACE,SAAA;;AAIJ,CAhBA,UAgBA,QAAA,CAAA;AACE,kBAAA;;AAIJ,MAAA,CAAA;AACE,kBAAA;;AAGF,CAAA;AACE,aAAA;;AAGF,CAAA;AACE,kBAAA;AACA,SAAA;;AAGF,CAAA;AACE,kBAAA;AACA,SAAA;;AAGF,CAAA;AACE,mBAAA;;AAGF,CAAA;AACE,eAAA;AACA,eAAA;;",
-  "names": []
-}

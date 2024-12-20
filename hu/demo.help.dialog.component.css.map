@@ -1,7 +1,0 @@
-{
-  "version": 3,
-  "sources": ["src/app/demo/demo.help.dialog.component.scss"],
-  "sourcesContent": [".mat-table {\n  display: block;\n  text-align: left;\n}\n\n.mat-row,\n.mat-header-row {\n  display: flex;\n  border-bottom-width: 1px;\n  border-bottom-style: solid;\n  align-items: center;\n  min-height: 48px;\n  padding: 0 24px;\n}\n\n.mat-cell,\n.mat-header-cell {\n  flex: 1;\n  overflow: hidden;\n  word-wrap: break-word;\n}\n"],
-  "mappings": ";AAAA,CAAA;AACE,WAAA;AACA,cAAA;;AAGF,CAAA;AAAA,CAAA;AAEE,WAAA;AACA,uBAAA;AACA,uBAAA;AACA,eAAA;AACA,cAAA;AACA,WAAA,EAAA;;AAGF,CAAA;AAAA,CAAA;AAEE,QAAA;AACA,YAAA;AACA,aAAA;;",
-  "names": []
-}
