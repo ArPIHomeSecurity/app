@@ -8,28 +8,27 @@
   <base href="/">
 
   <script>
-    // get base href
-    var baseHref = URL.parse(document.getElementsByTagName('base')[0].href).pathname;
-    var current_location = window.location.pathname;
-
-    // base href has two parts /version/language/
-    // we need to remove the version part
-    baseHref = baseHref.split('/');
-    var version = baseHref.pop();
-    // remove the version from the current URL path
-    current_location = current_location.replace(`/${version}`, '');
-
     // Store the URL the user was trying to access when receiving the 404.
     sessionStorage.redirect = location.href;
 
-    // Immediately redirect to the base URL so we can use the SPA routing.
-    if (current_location.pathname.startsWith('/hu')) {
-      window.location.href = '/hu';
+    const pathParser = new RegExp('^(?<version>/v\\d*-?[a-zA-Z]*)?/(?<language>[a-z]{2})/(?<path>.*)$');
+    const matches = pathParser.exec(window.location.pathname);
+    if (matches) {
+      const newPath = [matches.groups.version, matches.groups.language].join('/');
+      if (newPath !== location.pathname) {
+        // Immediately redirect to the base URL so we can use the SPA routing.
+        console.log('Redirect to ' + newPath);
+        location.pathname = newPath;
+      }
+      else {
+        console.log('No need to redirect');
+      }
     }
-    else if (current_location.pathname.startsWith('/it')) {
-      window.location.href = '/it';
-    } else {
-      window.location.href = '/en';
+    else if (location.pathname == "/"){
+      location.pathname = "/en/";
+    }
+    else {
+      console.error('Path does not match', location.pathname);
     }
   </script>
 </head>
