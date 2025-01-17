@@ -1,7 +1,7 @@
 import {
   WebPlugin,
   __async
-} from "./chunk-4MHAWVO3.js";
+} from "./chunk-V6RV3DVJ.js";
 
 // node_modules/@capacitor/dialog/dist/esm/web.js
 var DialogWeb = class extends WebPlugin {
@@ -31,5 +31,5 @@ var DialogWeb = class extends WebPlugin {
 export {
   DialogWeb
 };
-/**i18n:0c55d6dd7ccd1cb9f07652b9b6bac1d8ca7a4fc13b350c57d019930d0619e49b*/
-//# sourceMappingURL=web-7DKKVVTK.js.map
+/**i18n:0a0d52da4547ed5e627dafd1cee6f3a90eb892d0a65f1beab4f7eba72c0842b8*/
+//# sourceMappingURL=web-ALE3JFDC.js.map
