@@ -1,7 +1,0 @@
-{
-  "version": 3,
-  "sources": ["src/app/pages/setup/setup.component.scss"],
-  "sourcesContent": ["::ng-deep .mat-mdc-card-header-text {\n  width: 100%;\n  \n  .mat-mdc-card-subtitle {\n    white-space: nowrap;\n    overflow: hidden;\n    text-overflow: ellipsis;\n    width: 100%;\n  }\n}\n\n.mat-mdc-card-content {\n  padding-top: 10px;\n}\n\n.mat-mdc-form-field {\n  width: 100%;\n}\n\n.active {\n  color: #4caf50;\n}\n\n.scheme {\n  width: 170px;\n}\n\n.port {\n  width: 160px;\n}\n\n.status {\n  .icon-accessible {\n    vertical-align: middle;\n    margin: 3px;\n    color: #4caf50;\n  }\n  \n  .icon-inaccessible {\n    vertical-align: middle;\n    margin: 3px;\n    color: #f44336;\n  }\n}\n\n.no-wrap {\n  white-space: nowrap;\n  overflow: hidden;\n  text-overflow: ellipsis;\n}\n"],
-  "mappings": ";AAAA,UAAA,CAAA;AACE,SAAA;;AAEA,UAAA,CAHF,yBAGE,CAAA;AACE,eAAA;AACA,YAAA;AACA,iBAAA;AACA,SAAA;;AAIJ,CAAA;AACE,eAAA;;AAGF,CAAA;AACE,SAAA;;AAGF,CAAA;AACE,SAAA;;AAGF,CAAA;AACE,SAAA;;AAGF,CAAA;AACE,SAAA;;AAIA,CAAA,OAAA,CAAA;AACE,kBAAA;AACA,UAAA;AACA,SAAA;;AAGF,CANA,OAMA,CAAA;AACE,kBAAA;AACA,UAAA;AACA,SAAA;;AAIJ,CAAA;AACE,eAAA;AACA,YAAA;AACA,iBAAA;;",
-  "names": []
-}

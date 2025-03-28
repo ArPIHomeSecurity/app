@@ -892,6 +892,10 @@ textarea.cdk-textarea-autosize-measuring-firefox {
 ::ng-deep .small-screen .footer .versions {
   margin: auto;
 }
+::ng-deep .small-screen .footer .links a,
+::ng-deep .small-screen .footer .versions a {
+  color: white;
+}
 ::ng-deep .small-screen .footer .versions {
   line-height: 2;
 }
@@ -905,6 +909,9 @@ textarea.cdk-textarea-autosize-measuring-firefox {
 }
 ::ng-deep .large-screen .footer .links {
   margin: auto;
+}
+::ng-deep .large-screen .footer .links a {
+  color: white;
 }
 ::ng-deep .large-screen .footer .versions {
   line-height: 2;
@@ -2743,12 +2750,13 @@ textarea.cdk-textarea-autosize-measuring-firefox {
   float: none;
 }
 .argus-light-theme .all-wrap {
-  min-height: calc(100dvh - 56px);
+  min-height: calc(100dvh - 45px);
 }
 .argus-light-theme .page-wrapper {
   display: flex;
   flex-direction: column;
-  min-height: calc(100dvh - 56px);
+  min-height: calc(100dvh - 45px);
+  overflow: hidden;
 }
 .argus-light-theme app-root.demo .all-wrap {
   min-height: calc(100dvh - 128px);
@@ -2759,7 +2767,11 @@ textarea.cdk-textarea-autosize-measuring-firefox {
   min-height: calc(100dvh - 128px);
 }
 .argus-light-theme .page {
-  flex: 1;
+  height: 100%;
+  overflow: auto;
+  flex-direction: column;
+  display: flex;
+  flex: auto;
 }
 .argus-light-theme div.page {
   display: flex;
@@ -4941,12 +4953,13 @@ textarea.cdk-textarea-autosize-measuring-firefox {
   float: none;
 }
 .argus-dark-theme .all-wrap {
-  min-height: calc(100dvh - 56px);
+  min-height: calc(100dvh - 45px);
 }
 .argus-dark-theme .page-wrapper {
   display: flex;
   flex-direction: column;
-  min-height: calc(100dvh - 56px);
+  min-height: calc(100dvh - 45px);
+  overflow: hidden;
 }
 .argus-dark-theme app-root.demo .all-wrap {
   min-height: calc(100dvh - 128px);
@@ -4957,7 +4970,11 @@ textarea.cdk-textarea-autosize-measuring-firefox {
   min-height: calc(100dvh - 128px);
 }
 .argus-dark-theme .page {
-  flex: 1;
+  height: 100%;
+  overflow: auto;
+  flex-direction: column;
+  display: flex;
+  flex: auto;
 }
 .argus-dark-theme div.page {
   display: flex;

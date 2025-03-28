@@ -2558,14 +2558,14 @@ patchBrowser(Zone$1);
 
 @angular/localize/fesm2022/localize.mjs:
   (**
-   * @license Angular v18.2.12
+   * @license Angular v18.2.13
    * (c) 2010-2024 Google LLC. https://angular.io/
    * License: MIT
    *)
 
 @angular/localize/fesm2022/init.mjs:
   (**
-   * @license Angular v18.2.12
+   * @license Angular v18.2.13
    * (c) 2010-2024 Google LLC. https://angular.io/
    * License: MIT
    *)
@@ -2577,5 +2577,5 @@ zone.js/fesm2015/zone.js:
    * License: MIT
    *)
 */
-/**i18n:0a0d52da4547ed5e627dafd1cee6f3a90eb892d0a65f1beab4f7eba72c0842b8*/
+/**i18n:0cac6d1b2cf6dd82771351b7bb6f64697d6ca9a4ab4277b070500ea78b3bcfa1*/
 //# sourceMappingURL=polyfills.js.map
