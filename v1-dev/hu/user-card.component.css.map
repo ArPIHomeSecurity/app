@@ -1,7 +1,7 @@
 {
   "version": 3,
   "sources": ["src/app/components/user/user-card/user-card.component.scss"],
-  "sourcesContent": [".user-card {\n  mat-card-content .mat-mdc-card-title {\n    font-size: medium;\n    font-weight: bold;\n  }\n\n  .avatar {\n    font-size: 40px;\n  }\n\n  .mat-mdc-progress-spinner {\n    margin: 10px;\n  }\n\n  .mdc-icon-button{\n    vertical-align: baseline;\n  }\n  \n  mat-icon {\n    vertical-align: middle;\n  }\n\n  .registration mat-icon:not(button mat-icon), .ssh mat-icon:not(button mat-icon) {\n    margin: 10px;\n  }\n}\n"],
-  "mappings": ";AACE,CAAA,UAAA,iBAAA,CAAA;AACE,aAAA;AACA,eAAA;;AAGF,CALA,UAKA,CAAA;AACE,aAAA;;AAGF,CATA,UASA,CAAA;AACE,UAAA;;AAGF,CAbA,UAaA,CAAA;AACE,kBAAA;;AAGF,CAjBA,UAiBA;AACE,kBAAA;;AAGF,CArBA,UAqBA,CAAA,aAAA,QAAA,KAAA,OAAA;AAAA,CArBA,UAqBA,CAAA,IAAA,QAAA,KAAA,OAAA;AACE,UAAA;;",
+  "sourcesContent": [".user-card {\n  mat-card-content .mat-mdc-card-title {\n    font-size: medium;\n    font-weight: bold;\n  }\n\n  .avatar {\n    font-size: 40px;\n  }\n\n  .mat-mdc-progress-spinner {\n    margin: 10px;\n  }\n\n  .mdc-icon-button {\n    vertical-align: baseline;\n  }\n\n  mat-icon {\n    vertical-align: middle;\n  }\n\n  .registration mat-icon:not(button mat-icon),\n  .ssh mat-icon:not(button mat-icon) {\n    margin: 10px;\n  }\n}\n"],
+  "mappings": ";AACE,CAAA,UAAA,iBAAA,CAAA;AACE,aAAA;AACA,eAAA;;AAGF,CALA,UAKA,CAAA;AACE,aAAA;;AAGF,CATA,UASA,CAAA;AACE,UAAA;;AAGF,CAbA,UAaA,CAAA;AACE,kBAAA;;AAGF,CAjBA,UAiBA;AACE,kBAAA;;AAGF,CArBA,UAqBA,CAAA,aAAA,QAAA,KAAA,OAAA;AAAA,CArBA,UAqBA,CAAA,IAAA,QAAA,KAAA,OAAA;AAEE,UAAA;;",
   "names": []
 }

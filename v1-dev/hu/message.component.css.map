@@ -1,7 +1,7 @@
 {
   "version": 3,
   "sources": ["src/app/components/message/message.component.scss"],
-  "sourcesContent": [".message-card {\n  margin: 20px 0px;\n\n  .mat-mdc-card-avatar {\n    height: unset;\n    width: unset;\n  }\n\n  .mat-icon {\n    font-size: 24px;\n  }\n}"],
+  "sourcesContent": [".message-card {\n  margin: 20px 0px;\n\n  .mat-mdc-card-avatar {\n    height: unset;\n    width: unset;\n  }\n\n  .mat-icon {\n    font-size: 24px;\n  }\n}\n"],
   "mappings": ";AAAA,CAAA;AACE,UAAA,KAAA;;AAEA,CAHF,aAGE,CAAA;AACE,UAAA;AACA,SAAA;;AAGF,CARF,aAQE,CAAA;AACE,aAAA;;",
   "names": []
 }

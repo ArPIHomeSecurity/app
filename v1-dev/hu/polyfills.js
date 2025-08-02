@@ -64,33 +64,8 @@
   }, "ltr", plural, [[["\xE9jf\xE9l", "d\xE9l", "reggel", "de.", "du.", "este", "\xE9jjel", "hajnal"], u, ["\xE9jf\xE9l", "d\xE9l", "reggel", "d\xE9lel\u0151tt", "d\xE9lut\xE1n", "este", "\xE9jjel", "hajnal"]], u, ["00:00", "12:00", ["06:00", "09:00"], ["09:00", "12:00"], ["12:00", "18:00"], ["18:00", "21:00"], ["21:00", "04:00"], ["04:00", "06:00"]]]];
 })(globalThis);
 
-// node_modules/@angular/localize/fesm2022/localize.mjs
+// node_modules/@angular/localize/fesm2022/localize-CajB9YLv.mjs
 var BLOCK_MARKER$1 = ":";
-var _SerializerVisitor = class {
-  visitText(text, context) {
-    return text.value;
-  }
-  visitContainer(container, context) {
-    return `[${container.children.map(child => child.visit(this)).join(", ")}]`;
-  }
-  visitIcu(icu, context) {
-    const strCases = Object.keys(icu.cases).map(k => `${k} {${icu.cases[k].visit(this)}}`);
-    return `{${icu.expression}, ${icu.type}, ${strCases.join(", ")}}`;
-  }
-  visitTagPlaceholder(ph, context) {
-    return ph.isVoid ? `<ph tag name="${ph.startName}"/>` : `<ph tag name="${ph.startName}">${ph.children.map(child => child.visit(this)).join(", ")}</ph name="${ph.closeName}">`;
-  }
-  visitPlaceholder(ph, context) {
-    return ph.value ? `<ph name="${ph.name}">${ph.value}</ph>` : `<ph name="${ph.name}"/>`;
-  }
-  visitIcuPlaceholder(ph, context) {
-    return `<ph icu name="${ph.name}">${ph.value.visit(this)}</ph>`;
-  }
-  visitBlockPlaceholder(ph, context) {
-    return `<ph block name="${ph.startName}">${ph.children.map(child => child.visit(this)).join(", ")}</ph name="${ph.closeName}">`;
-  }
-};
-var serializerVisitor = new _SerializerVisitor();
 var Endian;
 (function (Endian2) {
   Endian2[Endian2["Little"] = 0] = "Little";
@@ -106,9 +81,9 @@ function findEndOfBlock(cooked, raw) {
   }
   throw new Error(`Unterminated $localize metadata block in "${raw}".`);
 }
-var $localize$1 = function (messageParts, ...expressions) {
-  if ($localize$1.translate) {
-    const translation = $localize$1.translate(messageParts, expressions);
+var $localize = function (messageParts, ...expressions) {
+  if ($localize.translate) {
+    const translation = $localize.translate(messageParts, expressions);
     messageParts = translation[0];
     expressions = translation[1];
   }
@@ -124,7 +99,7 @@ function stripBlock(messagePart, rawMessagePart) {
 }
 
 // node_modules/@angular/localize/fesm2022/init.mjs
-globalThis.$localize = $localize$1;
+globalThis.$localize = $localize;
 
 // node_modules/zone.js/fesm2015/zone.js
 var global = globalThis;
@@ -142,9 +117,7 @@ function initZone() {
   }
   mark("Zone");
   class ZoneImpl {
-    static {
-      this.__symbol__ = __symbol__;
-    }
+    static __symbol__ = __symbol__;
     static assertZonePatched() {
       if (global["Promise"] !== patches["ZoneAwarePromise"]) {
         throw new Error("Zone.js has detected that ZoneAwarePromise `(window|global).Promise` has been overwritten.\nMost likely cause is that a Promise polyfill has been loaded after Zone.js (Polyfilling Promise api is not necessary when zone.js is loaded. If you must load one, do so before loading zone.js.)");
@@ -163,7 +136,6 @@ function initZone() {
     static get currentTask() {
       return _currentTask;
     }
-    // tslint:disable-next-line:require-internal-with-underscore
     static __load_patch(name, fn, ignoreDuplicate = false) {
       if (patches.hasOwnProperty(name)) {
         const checkDuplicate = global[__symbol__("forceDuplicateZoneCheck")] === true;
@@ -183,6 +155,10 @@ function initZone() {
     get name() {
       return this._name;
     }
+    _parent;
+    _name;
+    _properties;
+    _zoneDelegate;
     constructor(parent, zoneSpec) {
       this._parent = parent;
       this._name = zoneSpec ? zoneSpec.name || "unnamed" : "<root>";
@@ -374,12 +350,39 @@ function initZone() {
     get zone() {
       return this._zone;
     }
+    _zone;
+    _taskCounts = {
+      "microTask": 0,
+      "macroTask": 0,
+      "eventTask": 0
+    };
+    _parentDelegate;
+    _forkDlgt;
+    _forkZS;
+    _forkCurrZone;
+    _interceptDlgt;
+    _interceptZS;
+    _interceptCurrZone;
+    _invokeDlgt;
+    _invokeZS;
+    _invokeCurrZone;
+    _handleErrorDlgt;
+    _handleErrorZS;
+    _handleErrorCurrZone;
+    _scheduleTaskDlgt;
+    _scheduleTaskZS;
+    _scheduleTaskCurrZone;
+    _invokeTaskDlgt;
+    _invokeTaskZS;
+    _invokeTaskCurrZone;
+    _cancelTaskDlgt;
+    _cancelTaskZS;
+    _cancelTaskCurrZone;
+    _hasTaskDlgt;
+    _hasTaskDlgtOwner;
+    _hasTaskZS;
+    _hasTaskCurrZone;
     constructor(zone, parentDelegate, zoneSpec) {
-      this._taskCounts = {
-        "microTask": 0,
-        "macroTask": 0,
-        "eventTask": 0
-      };
       this._zone = zone;
       this._parentDelegate = parentDelegate;
       this._forkZS = zoneSpec && (zoneSpec && zoneSpec.onFork ? zoneSpec : parentDelegate._forkZS);
@@ -484,7 +487,6 @@ function initZone() {
         this.handleError(targetZone, err);
       }
     }
-    // tslint:disable-next-line:require-internal-with-underscore
     _updateTaskCount(type, count) {
       const counts = this._taskCounts;
       const prev = counts[type];
@@ -504,11 +506,18 @@ function initZone() {
     }
   }
   class ZoneTask {
+    type;
+    source;
+    invoke;
+    callback;
+    data;
+    scheduleFn;
+    cancelFn;
+    _zone = null;
+    runCount = 0;
+    _zoneDelegates = null;
+    _state = "notScheduled";
     constructor(type, source, callback, options, scheduleFn, cancelFn) {
-      this._zone = null;
-      this.runCount = 0;
-      this._zoneDelegates = null;
-      this._state = "notScheduled";
       this.type = type;
       this.source = source;
       this.data = options;
@@ -551,7 +560,6 @@ function initZone() {
     cancelScheduleRequest() {
       this._transitionTo(notScheduled, scheduling);
     }
-    // tslint:disable-next-line:require-internal-with-underscore
     _transitionTo(toState, fromState1, fromState2) {
       if (this._state === fromState1 || this._state === fromState2) {
         this._state = toState;
@@ -836,7 +844,7 @@ function patchProperty(obj, prop, prototype) {
     if (typeof previousValue === "function") {
       target.removeEventListener(eventName, wrapFn);
     }
-    originalDescSet && originalDescSet.call(target, null);
+    originalDescSet?.call(target, null);
     target[eventNameSymbol] = newValue;
     if (typeof newValue === "function") {
       target.addEventListener(eventName, wrapFn, false);
@@ -992,15 +1000,6 @@ function attachOriginToPatched(patched, original) {
 }
 var isDetectedIEOrEdge = false;
 var ieOrEdge = false;
-function isIE() {
-  try {
-    const ua = internalWindow.navigator.userAgent;
-    if (ua.indexOf("MSIE ") !== -1 || ua.indexOf("Trident/") !== -1) {
-      return true;
-    }
-  } catch (error) {}
-  return false;
-}
 function isIEOrEdge() {
   if (isDetectedIEOrEdge) {
     return ieOrEdge;
@@ -1019,20 +1018,6 @@ function isFunction(value) {
 }
 function isNumber(value) {
   return typeof value === "number";
-}
-var passiveSupported = false;
-if (typeof window !== "undefined") {
-  try {
-    const options = Object.defineProperty({}, "passive", {
-      get: function () {
-        passiveSupported = true;
-      }
-    });
-    window.addEventListener("test", options, options);
-    window.removeEventListener("test", options, options);
-  } catch (err) {
-    passiveSupported = false;
-  }
 }
 var OPTIMIZED_ZONE_EVENT_TASK_DATA = {
   useG: true
@@ -1162,10 +1147,7 @@ function patchEventTarget(_global2, api, apis, patchOptions) {
       nativePrependEventListener = proto[zoneSymbol(patchOptions2.prepend)] = proto[patchOptions2.prepend];
     }
     function buildEventListenerOptions(options, passive) {
-      if (!passiveSupported && typeof options === "object" && options) {
-        return !!options.capture;
-      }
-      if (!passiveSupported || !passive) {
+      if (!passive) {
         return options;
       }
       if (typeof options === "boolean") {
@@ -1240,7 +1222,7 @@ function patchEventTarget(_global2, api, apis, patchOptions) {
       const typeOfDelegate = typeof delegate;
       return typeOfDelegate === "function" && task.callback === delegate || typeOfDelegate === "object" && task.originalDelegate === delegate;
     };
-    const compare = patchOptions2 && patchOptions2.diff ? patchOptions2.diff : compareTaskCallbackVsDelegate;
+    const compare = patchOptions2?.diff || compareTaskCallbackVsDelegate;
     const unpatchedEvents = Zone[zoneSymbol("UNPATCHED_EVENTS")];
     const passiveEvents = _global2[zoneSymbol("PASSIVE_EVENTS")];
     function copyEventListenerOptions(options) {
@@ -1269,17 +1251,17 @@ function patchEventTarget(_global2, api, apis, patchOptions) {
         if (isNode && eventName === "uncaughtException") {
           return nativeListener.apply(this, arguments);
         }
-        let isHandleEvent = false;
+        let isEventListenerObject = false;
         if (typeof delegate !== "function") {
           if (!delegate.handleEvent) {
             return nativeListener.apply(this, arguments);
           }
-          isHandleEvent = true;
+          isEventListenerObject = true;
         }
         if (validateHandler && !validateHandler(nativeListener, delegate, target, arguments)) {
           return;
         }
-        const passive = passiveSupported && !!passiveEvents && passiveEvents.indexOf(eventName) !== -1;
+        const passive = !!passiveEvents && passiveEvents.indexOf(eventName) !== -1;
         const options = copyEventListenerOptions(buildEventListenerOptions(arguments[2], passive));
         const signal = options?.signal;
         if (signal?.aborted) {
@@ -1359,13 +1341,13 @@ function patchEventTarget(_global2, api, apis, patchOptions) {
         if (once) {
           taskData.options.once = true;
         }
-        if (!(!passiveSupported && typeof task.options === "boolean")) {
+        if (typeof task.options !== "boolean") {
           task.options = options;
         }
         task.target = target;
         task.capture = capture;
         task.eventName = eventName;
-        if (isHandleEvent) {
+        if (isEventListenerObject) {
           task.originalDelegate = delegate;
         }
         if (!prepend) {
@@ -1712,7 +1694,7 @@ function filterProperties(target, onProperties, ignoreProperties) {
     return onProperties;
   }
   const tip = ignoreProperties.filter(ip => ip.target === target);
-  if (!tip || tip.length === 0) {
+  if (tip.length === 0) {
     return onProperties;
   }
   const targetIgnoreProperties = tip[0].ignoreProperties;
@@ -1740,16 +1722,13 @@ function propertyDescriptorPatch(api, _global2) {
   if (isBrowser) {
     const internalWindow2 = window;
     patchTargets = patchTargets.concat(["Document", "SVGElement", "Element", "HTMLElement", "HTMLBodyElement", "HTMLMediaElement", "HTMLFrameSetElement", "HTMLFrameElement", "HTMLIFrameElement", "HTMLMarqueeElement", "Worker"]);
-    const ignoreErrorProperties = isIE() ? [{
-      target: internalWindow2,
-      ignoreProperties: ["error"]
-    }] : [];
+    const ignoreErrorProperties = [];
     patchFilteredProperties(internalWindow2, getOnEventNames(internalWindow2), ignoreProperties ? ignoreProperties.concat(ignoreErrorProperties) : ignoreProperties, ObjectGetPrototypeOf(internalWindow2));
   }
   patchTargets = patchTargets.concat(["XMLHttpRequest", "XMLHttpRequestEventTarget", "IDBIndex", "IDBRequest", "IDBOpenDBRequest", "IDBDatabase", "IDBTransaction", "IDBCursor", "WebSocket"]);
   for (let i = 0; i < patchTargets.length; i++) {
     const target = _global2[patchTargets[i]];
-    target && target.prototype && patchFilteredProperties(target.prototype, getOnEventNames(target.prototype), ignoreProperties);
+    target?.prototype && patchFilteredProperties(target.prototype, getOnEventNames(target.prototype), ignoreProperties);
   }
 }
 function patchBrowser(Zone2) {
@@ -2013,7 +1992,7 @@ function patchPromise(Zone2) {
       } catch (err) {}
     }
     function isThenable(value) {
-      return value && value.then;
+      return value && typeof value.then === "function";
     }
     function forwardResolution(value) {
       return value;
@@ -2539,14 +2518,6 @@ patchBrowser(Zone$1);
 /*! Bundled license information:
 
 @angular/common/locales/global/it.js:
-  (**
-   * @license
-   * Copyright Google LLC All Rights Reserved.
-   *
-   * Use of this source code is governed by an MIT-style license that can be
-   * found in the LICENSE file at https://angular.dev/license
-   *)
-
 @angular/common/locales/global/hu.js:
   (**
    * @license
@@ -2556,26 +2527,20 @@ patchBrowser(Zone$1);
    * found in the LICENSE file at https://angular.dev/license
    *)
 
-@angular/localize/fesm2022/localize.mjs:
-  (**
-   * @license Angular v18.2.13
-   * (c) 2010-2024 Google LLC. https://angular.io/
-   * License: MIT
-   *)
-
+@angular/localize/fesm2022/localize-CajB9YLv.mjs:
 @angular/localize/fesm2022/init.mjs:
   (**
-   * @license Angular v18.2.13
-   * (c) 2010-2024 Google LLC. https://angular.io/
+   * @license Angular v19.2.14
+   * (c) 2010-2025 Google LLC. https://angular.io/
    * License: MIT
    *)
 
 zone.js/fesm2015/zone.js:
   (**
    * @license Angular v<unknown>
-   * (c) 2010-2024 Google LLC. https://angular.io/
+   * (c) 2010-2025 Google LLC. https://angular.io/
    * License: MIT
    *)
 */
-/**i18n:0cac6d1b2cf6dd82771351b7bb6f64697d6ca9a4ab4277b070500ea78b3bcfa1*/
+/**i18n:a926a8319c9492ebaabf92a7e4a0931f259389354041e97f5ec61846cb4eb1b1*/
 //# sourceMappingURL=polyfills.js.map

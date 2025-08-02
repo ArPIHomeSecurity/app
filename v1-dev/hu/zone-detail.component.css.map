@@ -1,7 +1,7 @@
 {
   "version": 3,
   "sources": ["src/app/pages/zone/zone-detail.component.scss"],
-  "sourcesContent": ["\n.mat-mds-form-field {\n  width: 100%;\n}\n\nmat-checkbox {\n  margin: 15px 0px 10px 0px;\n}\n"],
-  "mappings": ";AACA,CAAA;AACE,SAAA;;AAGF;AACE,UAAA,KAAA,IAAA,KAAA;;",
+  "sourcesContent": [".mat-mds-form-field {\n  width: 100%;\n}\n\nmat-checkbox {\n  margin: 15px 0px 10px 0px;\n}\n"],
+  "mappings": ";AAAA,CAAA;AACE,SAAA;;AAGF;AACE,UAAA,KAAA,IAAA,KAAA;;",
   "names": []
 }
