@@ -629,5 +629,5 @@ export {
 @capacitor/core/dist/index.js:
   (*! Capacitor: https://capacitorjs.com/ - MIT License *)
 */
-/**i18n:a926a8319c9492ebaabf92a7e4a0931f259389354041e97f5ec61846cb4eb1b1*/
-//# sourceMappingURL=chunk-Q45EIQLZ.js.map
+/**i18n:dbcdba66f79c3e508aa30433b9167553611c4c643335d41cfdb2692d08be0e91*/
+//# sourceMappingURL=chunk-TX3CGN55.js.map

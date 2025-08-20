@@ -1,6 +1,6 @@
 import {
   WebPlugin
-} from "./chunk-Q45EIQLZ.js";
+} from "./chunk-TX3CGN55.js";
 
 // node_modules/@capgo/capacitor-native-biometric/dist/esm/web.js
 var NativeBiometricWeb = class extends WebPlugin {
@@ -30,5 +30,5 @@ var NativeBiometricWeb = class extends WebPlugin {
 export {
   NativeBiometricWeb
 };
-/**i18n:a926a8319c9492ebaabf92a7e4a0931f259389354041e97f5ec61846cb4eb1b1*/
-//# sourceMappingURL=web-WCZ72XMQ.js.map
+/**i18n:dbcdba66f79c3e508aa30433b9167553611c4c643335d41cfdb2692d08be0e91*/
+//# sourceMappingURL=web-VDBJUSVR.js.map

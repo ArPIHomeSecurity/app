@@ -1,7 +1,7 @@
 import {
   WebPlugin,
   __async
-} from "./chunk-Q45EIQLZ.js";
+} from "./chunk-TX3CGN55.js";
 
 // node_modules/@capacitor/app/dist/esm/web.js
 var AppWeb = class extends WebPlugin {
@@ -51,5 +51,5 @@ var AppWeb = class extends WebPlugin {
 export {
   AppWeb
 };
-/**i18n:a926a8319c9492ebaabf92a7e4a0931f259389354041e97f5ec61846cb4eb1b1*/
-//# sourceMappingURL=web-AWZBHEBW.js.map
+/**i18n:dbcdba66f79c3e508aa30433b9167553611c4c643335d41cfdb2692d08be0e91*/
+//# sourceMappingURL=web-FWYJRPE7.js.map
