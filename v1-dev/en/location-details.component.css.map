@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": ["src/app/pages/location/location-details.component.scss"],
+  "sourcesContent": [".scheme {\n  width: 170px;\n}\n\n.domain {\n  width: 500px;\n}\n\n.port {\n  width: 160px;\n}\n\n.details {\n  margin-top: 20px;\n  margin-bottom: 20px;\n  font-size: small;\n\n  dt {\n    float: left;\n    clear: left;\n    margin-right: 5px;\n    width: 10%;\n    font-weight: bold;\n  }\n\n  dd {\n    margin-left: 0px;\n  }\n}\n\n.status {\n  .icon-accessible {\n    margin: 15px 0px;\n    color: #4caf50;\n  }\n\n  .icon-inaccessible {\n    margin: 15px 0px;\n    color: #f44336;\n  }\n\n  .mat-spinner {\n    margin: 15px 0px;\n  }\n}\n"],
+  "mappings": ";AAAA,CAAA;AACE,SAAA;;AAGF,CAAA;AACE,SAAA;;AAGF,CAAA;AACE,SAAA;;AAGF,CAAA;AACE,cAAA;AACA,iBAAA;AACA,aAAA;;AAEA,CALF,QAKE;AACE,SAAA;AACA,SAAA;AACA,gBAAA;AACA,SAAA;AACA,eAAA;;AAGF,CAbF,QAaE;AACE,eAAA;;AAKF,CAAA,OAAA,CAAA;AACE,UAAA,KAAA;AACA,SAAA;;AAGF,CALA,OAKA,CAAA;AACE,UAAA,KAAA;AACA,SAAA;;AAGF,CAVA,OAUA,CAAA;AACE,UAAA,KAAA;;",
+  "names": []
+}

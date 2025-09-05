@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": ["src/app/components/user/user-device-registration/user-device-registration.component.scss"],
+  "sourcesContent": [".half-width {\n  width: 48%;\n  margin: auto 1%;\n}\n\n.full-width {\n  width: 100%;\n}\n\n.counter {\n  text-align: right;\n}\n\n.expiry-mode {\n  display: flex;\n  flex-direction: column;\n}\n\n.registration {\n  text-align: center;\n  margin: 15px 0px;\n\n  .code {\n    border-radius: 5px 5px 5px 5px;\n    -moz-border-radius: 5px 5px 5px 5px;\n    -webkit-border-radius: 5px 5px 5px 5px;\n    border: 1px double #000000;\n    margin: 10px 0px;\n    padding: 10px;\n  }\n}\n"],
+  "mappings": ";AAAA,CAAA;AACE,SAAA;AACA,UAAA,KAAA;;AAGF,CAAA;AACE,SAAA;;AAGF,CAAA;AACE,cAAA;;AAGF,CAAA;AACE,WAAA;AACA,kBAAA;;AAGF,CAAA;AACE,cAAA;AACA,UAAA,KAAA;;AAEA,CAJF,aAIE,CAAA;AACE,iBAAA,IAAA,IAAA,IAAA;AACA,sBAAA,IAAA,IAAA,IAAA;AACA,yBAAA,IAAA,IAAA,IAAA;AACA,UAAA,IAAA,OAAA;AACA,UAAA,KAAA;AACA,WAAA;;",
+  "names": []
+}

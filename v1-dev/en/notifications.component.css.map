@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": ["src/app/pages/config/notifications/notifications.component.scss"],
+  "sourcesContent": [".notifications {\n  margin-right: auto;\n  margin-left: auto;\n  max-width: 600px;\n\n  .mat-mdc-form-field {\n    width: 100%;\n  }\n\n  .mat-mdc-checkbox {\n    margin-bottom: 10px;\n  }\n\n  .pin-code {\n    width: 18%;\n    margin: auto 1%;\n  }\n\n  .phone-number {\n    width: 38%;\n    margin: auto 1%;\n  }\n\n  .mat-table {\n    display: block;\n  }\n\n  .mat-row,\n  .mat-header-row {\n    display: flex;\n    border-bottom-width: 1px;\n    border-bottom-style: solid;\n    align-items: center;\n    min-height: 48px;\n    padding: 0 24px;\n  }\n\n  .mat-cell,\n  .mat-header-cell {\n    flex: 1;\n    overflow: hidden;\n    word-wrap: break-word;\n    text-align: center;\n\n    mat-checkbox {\n      margin: 10px auto;\n    }\n  }\n\n  .mat-mdc-progress-spinner {\n    margin: 0px;\n  }\n}\n"],
+  "mappings": ";AAAA,CAAA;AACE,gBAAA;AACA,eAAA;AACA,aAAA;;AAEA,CALF,cAKE,CAAA;AACE,SAAA;;AAGF,CATF,cASE,CAAA;AACE,iBAAA;;AAGF,CAbF,cAaE,CAAA;AACE,SAAA;AACA,UAAA,KAAA;;AAGF,CAlBF,cAkBE,CAAA;AACE,SAAA;AACA,UAAA,KAAA;;AAGF,CAvBF,cAuBE,CAAA;AACE,WAAA;;AAGF,CA3BF,cA2BE,CAAA;AAAA,CA3BF,cA2BE,CAAA;AAEE,WAAA;AACA,uBAAA;AACA,uBAAA;AACA,eAAA;AACA,cAAA;AACA,WAAA,EAAA;;AAGF,CArCF,cAqCE,CAAA;AAAA,CArCF,cAqCE,CAAA;AAEE,QAAA;AACA,YAAA;AACA,aAAA;AACA,cAAA;;AAEA,CA5CJ,cA4CI,CAPF,SAOE;AAAA,CA5CJ,cA4CI,CAPF,gBAOE;AACE,UAAA,KAAA;;AAIJ,CAjDF,cAiDE,CAAA;AACE,UAAA;;",
+  "names": []
+}

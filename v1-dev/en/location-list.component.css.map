@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": ["src/app/pages/location/location-list.component.scss"],
+  "sourcesContent": ["::ng-deep .mat-mdc-card-header {\n  .mat-mdc-card-avatar {\n    .mat-icon {\n      margin: 15px 10px;\n    }\n  }\n\n  .mat-mdc-card-header-text {\n    margin-bottom: 20px;\n  }\n}\n\n::ng-deep .mat-mdc-card-header-text {\n  width: 100%;\n\n  .mat-mdc-card-subtitle {\n    white-space: nowrap;\n    overflow: hidden;\n    text-overflow: ellipsis;\n  }\n}\n\n.mat-mdc-card-content {\n  padding-top: 10px;\n}\n\n.mat-mdc-form-field {\n  width: 100%;\n}\n\n.registered {\n  color: #4caf50;\n}\n\n.not-registered {\n  color: #f44336;\n}\n\n.primary,\n.secondary {\n  .icon-accessible {\n    color: #4caf50;\n  }\n\n  .icon-inaccessible {\n    color: #f44336;\n  }\n}\n\n.test-link {\n  white-space: nowrap;\n  overflow: hidden;\n  text-overflow: ellipsis;\n\n  .mat-icon {\n    font-size: 18px;\n    vertical-align: middle;\n  }\n}\n"],
+  "mappings": ";AAEI,UAAA,CAAA,oBAAA,CAAA,oBAAA,CAAA;AACE,UAAA,KAAA;;AAIJ,UAAA,CALE,oBAKF,CAAA;AACE,iBAAA;;AAIJ,UAAA,CALE;AAMA,SAAA;;AAEA,UAAA,CARA,yBAQA,CAAA;AACE,eAAA;AACA,YAAA;AACA,iBAAA;;AAIJ,CAAA;AACE,eAAA;;AAGF,CAAA;AACE,SAAA;;AAGF,CAAA;AACE,SAAA;;AAGF,CAAA;AACE,SAAA;;AAKA,CAAA,QAAA,CAAA;AAAA,CAAA,UAAA,CAAA;AACE,SAAA;;AAGF,CAJA,QAIA,CAAA;AAAA,CAJA,UAIA,CAAA;AACE,SAAA;;AAIJ,CAAA;AACE,eAAA;AACA,YAAA;AACA,iBAAA;;AAEA,CALF,UAKE,CApDE;AAqDA,aAAA;AACA,kBAAA;;",
+  "names": []
+}
