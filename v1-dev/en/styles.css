@@ -3195,12 +3195,23 @@ html {
   line-height: 40px;
   margin: auto 10px;
   text-align: center;
+  position: relative;
 }
 .argus-light-theme .mat-mdc-card.sensor-component .sensor-state.enabled {
   background-color: #4caf50;
 }
 .argus-light-theme .mat-mdc-card.sensor-component .sensor-state.disabled {
   background-color: rgb(160, 160, 160);
+}
+.argus-light-theme .mat-mdc-card.sensor-component .sensor-state.error-state {
+  background-color: #f44336;
+}
+.argus-light-theme .mat-mdc-card.sensor-component .sensor-state.error-state .error-icon {
+  color: white;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 .argus-light-theme .mat-mdc-card.sensor-component .sensor-image {
   margin: 5px;
@@ -3334,11 +3345,13 @@ html {
 .argus-light-theme .outputs {
   margin: 15px 0px !important;
 }
-.argus-light-theme .sensor-card .mat-card-title {
-  margin-left: 16px;
+.argus-light-theme .sensor-card .mat-mdc-card-subtitle.error-text {
+  display: flex;
+  align-items: center;
 }
-.argus-light-theme .sensor-card .mat-card-subtitle {
-  text-align: justify;
+.argus-light-theme .sensor-card .mat-mdc-card-subtitle.error-text .error-icon {
+  margin-right: 8px;
+  color: #f44336;
 }
 .argus-light-theme .sensor-card .attributes {
   width: 100%;
@@ -3375,10 +3388,16 @@ html {
   overflow: hidden;
 }
 .argus-light-theme .sensor-card .sensor-image {
-  border-radius: 5px;
+  height: fit-content;
+  margin-bottom: 10px;
+  border-radius: 50%;
+  border: 1px solid black;
 }
 .argus-light-theme .sensor-card .sensor-image.alerting {
   background-color: #f44336;
+}
+.argus-light-theme .sensor-card .sensor-image.error {
+  background-color: #ff9800;
 }
 .argus-dark-theme .argus-light-theme .sensor-card .sensor-image img {
   filter: invert(1);
@@ -5402,12 +5421,23 @@ html {
   line-height: 40px;
   margin: auto 10px;
   text-align: center;
+  position: relative;
 }
 .argus-dark-theme .mat-mdc-card.sensor-component .sensor-state.enabled {
   background-color: #4caf50;
 }
 .argus-dark-theme .mat-mdc-card.sensor-component .sensor-state.disabled {
   background-color: rgb(160, 160, 160);
+}
+.argus-dark-theme .mat-mdc-card.sensor-component .sensor-state.error-state {
+  background-color: #f44336;
+}
+.argus-dark-theme .mat-mdc-card.sensor-component .sensor-state.error-state .error-icon {
+  color: white;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 .argus-dark-theme .mat-mdc-card.sensor-component .sensor-image {
   margin: 5px;
@@ -5541,11 +5571,13 @@ html {
 .argus-dark-theme .outputs {
   margin: 15px 0px !important;
 }
-.argus-dark-theme .sensor-card .mat-card-title {
-  margin-left: 16px;
+.argus-dark-theme .sensor-card .mat-mdc-card-subtitle.error-text {
+  display: flex;
+  align-items: center;
 }
-.argus-dark-theme .sensor-card .mat-card-subtitle {
-  text-align: justify;
+.argus-dark-theme .sensor-card .mat-mdc-card-subtitle.error-text .error-icon {
+  margin-right: 8px;
+  color: #f44336;
 }
 .argus-dark-theme .sensor-card .attributes {
   width: 100%;
@@ -5582,10 +5614,16 @@ html {
   overflow: hidden;
 }
 .argus-dark-theme .sensor-card .sensor-image {
-  border-radius: 5px;
+  height: fit-content;
+  margin-bottom: 10px;
+  border-radius: 50%;
+  border: 1px solid black;
 }
 .argus-dark-theme .sensor-card .sensor-image.alerting {
   background-color: #f44336;
+}
+.argus-dark-theme .sensor-card .sensor-image.error {
+  background-color: #ff9800;
 }
 .argus-dark-theme .argus-dark-theme .sensor-card .sensor-image img {
   filter: invert(1);
