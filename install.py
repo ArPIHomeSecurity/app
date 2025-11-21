@@ -1,4 +1,16 @@
-#!/usr/bin/env python3
+#!/usr/bin/python3
+# explicitly run in system python3 to avoid issues with virtual environments
+"""
+ArPI Upgrade Script
+
+Stable installation example:
+curl -sSL https://app.arpi-security.info/install.py | /usr/bin/python3 -
+
+Prerelease installation example:
+curl -sSL https://app.arpi-security.info/install.py | /usr/bin/python3 - --prerelease
+
+"""
+
 import argparse
 from dataclasses import dataclass
 import json
@@ -43,13 +55,13 @@ def get_latest_release(api_url, prerelease=False) -> dict:
     raise Exception("No suitable release found.")
 
 
-def download_asset(release):
+def download_asset(release, extension=".tar.gz") -> str:
     """
     Download the tar.gz asset from the release.
     """
     for asset in release["assets"]:
         print(f"      🔎 Checking asset: {asset['name']}")
-        if asset["name"].endswith(".tar.gz"):
+        if asset["name"].endswith(extension):
             url = asset["browser_download_url"]
             local_path = os.path.join(tempfile.gettempdir(), asset["name"])
             print(f"      ⬇️  Downloading asset: {asset['name']} from {url}")
@@ -105,28 +117,35 @@ def get_webapplication_version() -> VersionInfo | None:
         print("⚠️  Warning: Webapplication version file not found")
 
 
-def upgrade_server(tmp_dir, board_version: str):
+def upgrade_server(tmp_dir, wheel_path, board_version: str):
     """
     Execute install.py from the extracted server files.
     """
     install_config = {
         "PYTHONPATH": "src",
-        "INSTALL_SOURCE": tmp_dir,
         "BOARD_VERSION": board_version,
     }
 
     # deploy source code
-    os.system(
+    deploy_command = (
         f"cd {tmp_dir}; "
-        f"sudo -E {' '.join(f'{key}={value}' for key, value in install_config.items())} "
-        f"python3 -m install deploy-code --backup;"
+        f"sudo {' '.join(f'{key}={value}' for key, value in install_config.items())} "
+        f"python3 ./src/installer/cli.py bootstrap"
     )
+    subprocess.run(deploy_command, shell=True, check=True)
 
-    os.system(
-        f"cd {tmp_dir}; "
-        f"sudo -E {' '.join(f'{key}={value}' for key, value in install_config.items())} "
-        f"python3 -m install install"
+    # install wheel with "simulator" and "device" extras
+    pip_install_command = (
+        f"pip3 install --user --break-system-packages --upgrade {wheel_path}[device,simulator]"
     )
+    subprocess.run(pip_install_command, shell=True, check=True)
+
+    install_command = (
+        f"cd {tmp_dir}; "
+        f"sudo {' '.join(f'{key}={value}' for key, value in install_config.items())} "
+        f"./src/installer/cli.py post-install"
+    )
+    subprocess.run(install_command, shell=True, check=True)
 
 
 def upgrade_webapplication(tmp_dir):
@@ -237,8 +256,11 @@ def upgrade_project(release: dict, project: str, board_version: str):
     print(f"      📂 Decompressed to: {tmp_dir}")
 
     if project == "server":
+        wheel_path = download_asset(release, extension=".whl")
+        print(f"      📦 Downloaded wheel to: {wheel_path}")
+
         print("      ⚙️  Upgrading server files...")
-        upgrade_server(tmp_dir, board_version)
+        upgrade_server(tmp_dir, wheel_path, board_version)
     elif project == "webapplication":
         print("      ⚙️  Upgrading webapplication files...")
         upgrade_webapplication(tmp_dir)
@@ -262,11 +284,12 @@ def main():
     """
     Main entry point for the upgrade script.
     """
-    print("🔧 Starting ArPI upgrade process...")
     parser = argparse.ArgumentParser()
     parser.add_argument("--prerelease", action="store_true", help="Use latest prerelease")
     parser.add_argument("--board-version", type=str, help="Board version (2 or 3)", default="2")
     args = parser.parse_args()
+
+    print("🔧 Starting ArPI upgrade process...")
 
     # ensure required packages are installed
     install_packages(["pipenv", "python3-click"])
@@ -292,10 +315,16 @@ def main():
     print("🎉 Upgrade process finished.")
 
 
-if __name__ == "__main__":
+def cli_main():
     try:
         main()
         exit(0)
+    except KeyboardInterrupt:
+        pass
     except Exception as e:
         print(f"  ❌ Something went wrong: {e}")
         exit(1)
+
+
+if __name__ == "__main__":
+    cli_main()
