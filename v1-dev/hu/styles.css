@@ -3341,10 +3341,6 @@ html {
 .argus-light-theme ul {
   margin-top: 0px;
 }
-.argus-light-theme .sensors,
-.argus-light-theme .outputs {
-  margin: 15px 0px !important;
-}
 .argus-light-theme .sensor-card .mat-mdc-card-subtitle.error-text {
   display: flex;
   align-items: center;
@@ -5566,10 +5562,6 @@ html {
 }
 .argus-dark-theme ul {
   margin-top: 0px;
-}
-.argus-dark-theme .sensors,
-.argus-dark-theme .outputs {
-  margin: 15px 0px !important;
 }
 .argus-dark-theme .sensor-card .mat-mdc-card-subtitle.error-text {
   display: flex;
