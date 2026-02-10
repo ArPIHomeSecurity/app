@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": ["src/app/components/user/mcp-token-dialog/mcp-token-dialog.component.scss"],
+  "sourcesContent": [".full-width {\n  width: 100%;\n}\n"],
+  "mappings": ";AAAA,CAAA;AACE,SAAA;;",
+  "names": []
+}
