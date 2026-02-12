@@ -13,7 +13,7 @@
     if (e === 0 && !(i === 0) && i % 1e6 === 0 && v === 0 || !(e >= 0 && e <= 5)) return 4;
     return 5;
   }
-  global2.ng.common.locales["it"] = ["it", [["m.", "p."], ["AM", "PM"], u], u, [["D", "L", "M", "M", "G", "V", "S"], ["dom", "lun", "mar", "mer", "gio", "ven", "sab"], ["domenica", "luned\xEC", "marted\xEC", "mercoled\xEC", "gioved\xEC", "venerd\xEC", "sabato"], ["dom", "lun", "mar", "mer", "gio", "ven", "sab"]], u, [["G", "F", "M", "A", "M", "G", "L", "A", "S", "O", "N", "D"], ["gen", "feb", "mar", "apr", "mag", "giu", "lug", "ago", "set", "ott", "nov", "dic"], ["gennaio", "febbraio", "marzo", "aprile", "maggio", "giugno", "luglio", "agosto", "settembre", "ottobre", "novembre", "dicembre"]], u, [["aC", "dC"], ["a.C.", "d.C."], ["avanti Cristo", "dopo Cristo"]], 1, [6, 0], ["dd/MM/yy", "d MMM y", "d MMMM y", "EEEE d MMMM y"], ["HH:mm", "HH:mm:ss", "HH:mm:ss z", "HH:mm:ss zzzz"], ["{1}, {0}", u, "{1} {0}", u], [",", ".", ";", "%", "+", "-", "E", "\xD7", "\u2030", "\u221E", "NaN", ":"], ["#,##0.###", "#,##0%", "#,##0.00\xA0\xA4", "#E0"], "EUR", "\u20AC", "euro", {
+  global2.ng.common.locales["it"] = ["it", [["m.", "p."], ["AM", "PM"]], u, [["D", "L", "M", "M", "G", "V", "S"], ["dom", "lun", "mar", "mer", "gio", "ven", "sab"], ["domenica", "luned\xEC", "marted\xEC", "mercoled\xEC", "gioved\xEC", "venerd\xEC", "sabato"], ["dom", "lun", "mar", "mer", "gio", "ven", "sab"]], u, [["G", "F", "M", "A", "M", "G", "L", "A", "S", "O", "N", "D"], ["gen", "feb", "mar", "apr", "mag", "giu", "lug", "ago", "set", "ott", "nov", "dic"], ["gennaio", "febbraio", "marzo", "aprile", "maggio", "giugno", "luglio", "agosto", "settembre", "ottobre", "novembre", "dicembre"]], u, [["aC", "dC"], ["a.C.", "d.C."], ["avanti Cristo", "dopo Cristo"]], 1, [6, 0], ["dd/MM/yy", "d MMM y", "d MMMM y", "EEEE d MMMM y"], ["HH:mm", "HH:mm:ss", "HH:mm:ss z", "HH:mm:ss zzzz"], ["{1}, {0}", u, "{1} {0}", u], [",", ".", ";", "%", "+", "-", "E", "\xD7", "\u2030", "\u221E", "NaN", ":"], ["#,##0.###", "#,##0%", "#,##0.00\xA0\xA4", "#E0"], "EUR", "\u20AC", "euro", {
     "BRL": [u, "R$"],
     "BYN": [u, "Br"],
     "EGP": [u, "\xA3E"],
@@ -41,7 +41,7 @@
     if (n === 1) return 1;
     return 5;
   }
-  global2.ng.common.locales["hu"] = ["hu", [["de.", "du."], u, u], u, [["V", "H", "K", "Sz", "Cs", "P", "Sz"], ["V", "H", "K", "Sze", "Cs", "P", "Szo"], ["vas\xE1rnap", "h\xE9tf\u0151", "kedd", "szerda", "cs\xFCt\xF6rt\xF6k", "p\xE9ntek", "szombat"], ["V", "H", "K", "Sze", "Cs", "P", "Szo"]], u, [["J", "F", "M", "\xC1", "M", "J", "J", "A", "Sz", "O", "N", "D"], ["jan.", "febr.", "m\xE1rc.", "\xE1pr.", "m\xE1j.", "j\xFAn.", "j\xFAl.", "aug.", "szept.", "okt.", "nov.", "dec."], ["janu\xE1r", "febru\xE1r", "m\xE1rcius", "\xE1prilis", "m\xE1jus", "j\xFAnius", "j\xFAlius", "augusztus", "szeptember", "okt\xF3ber", "november", "december"]], u, [["ie.", "isz."], ["i. e.", "i. sz."], ["Krisztus el\u0151tt", "id\u0151sz\xE1m\xEDt\xE1sunk szerint"]], 1, [6, 0], ["y. MM. dd.", "y. MMM d.", "y. MMMM d.", "y. MMMM d., EEEE"], ["H:mm", "H:mm:ss", "H:mm:ss z", "H:mm:ss zzzz"], ["{1} {0}", u, u, u], [",", "\xA0", ";", "%", "+", "-", "E", "\xD7", "\u2030", "\u221E", "NaN", ":"], ["#,##0.###", "#,##0%", "#,##0.00\xA0\xA4", "#E0"], "HUF", "Ft", "magyar forint", {
+  global2.ng.common.locales["hu"] = ["hu", [["de.", "du."]], u, [["V", "H", "K", "Sz", "Cs", "P", "Sz"], ["V", "H", "K", "Sze", "Cs", "P", "Szo"], ["vas\xE1rnap", "h\xE9tf\u0151", "kedd", "szerda", "cs\xFCt\xF6rt\xF6k", "p\xE9ntek", "szombat"], ["V", "H", "K", "Sze", "Cs", "P", "Szo"]], u, [["J", "F", "M", "\xC1", "M", "J", "J", "A", "Sz", "O", "N", "D"], ["jan.", "febr.", "m\xE1rc.", "\xE1pr.", "m\xE1j.", "j\xFAn.", "j\xFAl.", "aug.", "szept.", "okt.", "nov.", "dec."], ["janu\xE1r", "febru\xE1r", "m\xE1rcius", "\xE1prilis", "m\xE1jus", "j\xFAnius", "j\xFAlius", "augusztus", "szeptember", "okt\xF3ber", "november", "december"]], u, [["ie.", "isz."], ["i. e.", "i. sz."], ["Krisztus el\u0151tt", "id\u0151sz\xE1m\xEDt\xE1sunk szerint"]], 1, [6, 0], ["y. MM. dd.", "y. MMM d.", "y. MMMM d.", "y. MMMM d., EEEE"], ["H:mm", "H:mm:ss", "H:mm:ss z", "H:mm:ss zzzz"], ["{1} {0}", u, u, u], [",", "\xA0", ";", "%", "+", "-", "E", "\xD7", "\u2030", "\u221E", "NaN", ":"], ["#,##0.###", "#,##0%", "#,##0.00\xA0\xA4", "#E0"], "HUF", "Ft", "magyar forint", {
     "AUD": [u, "$"],
     "BRL": [u, "R$"],
     "BYN": [u, "\u0440."],
@@ -64,7 +64,7 @@
   }, "ltr", plural, [[["\xE9jf\xE9l", "d\xE9l", "reggel", "de.", "du.", "este", "\xE9jjel", "hajnal"], u, ["\xE9jf\xE9l", "d\xE9l", "reggel", "d\xE9lel\u0151tt", "d\xE9lut\xE1n", "este", "\xE9jjel", "hajnal"]], u, ["00:00", "12:00", ["06:00", "09:00"], ["09:00", "12:00"], ["12:00", "18:00"], ["18:00", "21:00"], ["21:00", "04:00"], ["04:00", "06:00"]]]];
 })(globalThis);
 
-// node_modules/@angular/localize/fesm2022/localize-CajB9YLv.mjs
+// node_modules/@angular/localize/fesm2022/_localize-chunk.mjs
 var BLOCK_MARKER$1 = ":";
 var Endian;
 (function (Endian2) {
@@ -2527,11 +2527,11 @@ patchBrowser(Zone$1);
    * found in the LICENSE file at https://angular.dev/license
    *)
 
-@angular/localize/fesm2022/localize-CajB9YLv.mjs:
+@angular/localize/fesm2022/_localize-chunk.mjs:
 @angular/localize/fesm2022/init.mjs:
   (**
-   * @license Angular v19.2.14
-   * (c) 2010-2025 Google LLC. https://angular.io/
+   * @license Angular v21.1.4
+   * (c) 2010-2026 Google LLC. https://angular.dev/
    * License: MIT
    *)
 
