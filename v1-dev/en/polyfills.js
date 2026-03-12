@@ -2530,7 +2530,7 @@ patchBrowser(Zone$1);
 @angular/localize/fesm2022/_localize-chunk.mjs:
 @angular/localize/fesm2022/init.mjs:
   (**
-   * @license Angular v21.1.4
+   * @license Angular v21.2.4
    * (c) 2010-2026 Google LLC. https://angular.dev/
    * License: MIT
    *)
