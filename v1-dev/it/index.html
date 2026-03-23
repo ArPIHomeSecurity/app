@@ -54,7 +54,18 @@
           <div style="left: 80px; top: 122px; animation-delay: 0.625s"></div>
           <div style="left: 122px; top: 122px; animation-delay: 0.5s"></div>
         </div>
+        <button id="cancel-spinner">
+          Cancel
+        </button>
       </div>
     </app-root>
+    <script>
+      document.getElementById('cancel-spinner').onclick = function() {
+        // Cancel the running backend configuration
+        if (window.abortBackendConfiguration) {
+          window.abortBackendConfiguration();
+        }
+      };
+    </script>
   <link rel="modulepreload" href="chunk-M3V4MLVE.js"><link rel="modulepreload" href="chunk-MCN2H52N.js"><script src="polyfills.js" type="module"></script><script src="main.js" type="module"></script></body>
 </html>
