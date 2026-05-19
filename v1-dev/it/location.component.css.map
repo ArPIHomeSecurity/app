@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": ["src/app/pages/config/notifications/location.component.scss"],
+  "sourcesContent": [".location-form {\n  margin-right: auto;\n  margin-left: auto;\n  max-width: 600px;\n}\n"],
+  "mappings": ";AAAA,CAAA;AACE,gBAAA;AACA,eAAA;AACA,aAAA;;",
+  "names": []
+}

@@ -598,37 +598,42 @@
   display: none;
 }
 ::ng-deep .small-screen .footer {
-  display: flex;
   flex-direction: column;
 }
-::ng-deep .small-screen .footer .links a,
-::ng-deep .small-screen .footer .versions a {
-  color: white;
+::ng-deep .small-screen .footer .links {
+  flex-direction: column;
 }
-::ng-deep .small-screen .footer .links,
-::ng-deep .small-screen .footer .versions {
-  margin: auto;
+::ng-deep .small-screen .footer .links .separator {
+  display: none;
 }
 ::ng-deep .small-screen .footer .versions {
-  line-height: 2;
+  flex-direction: row;
+  margin: 10px auto;
 }
 ::ng-deep .large-screen .menu-button,
 ::ng-deep .large-screen .logo-button {
   display: none;
 }
 ::ng-deep .large-screen .footer {
-  display: flex;
   flex-direction: row;
 }
-::ng-deep .large-screen .footer .links a {
-  color: white;
-}
 ::ng-deep .large-screen .footer .links {
-  margin: auto;
+  flex-direction: row;
+  padding: 10px;
 }
 ::ng-deep .large-screen .footer .versions {
-  line-height: 2;
-  margin-right: 60px;
+  flex-direction: column;
+  margin: 5px;
+}
+::ng-deep .large-screen .footer .versions .version {
+  display: flex;
+  font-size: 12px;
+  margin: 0px 10px;
+}
+::ng-deep .large-screen .footer .versions .version b {
+  display: inline-block;
+  width: 55px;
+  text-align: right;
 }
 .system-states {
   display: flex;
@@ -2865,22 +2870,6 @@ html {
   flex: 1;
   display: block;
 }
-.argus-light-theme .footer {
-  color: white;
-  background-color: #3f51b5;
-}
-.argus-light-theme .versions .version b {
-  display: table-cell;
-  text-align: right;
-}
-.argus-light-theme .versions .version {
-  display: table-row;
-  font-size: 10px;
-  margin: 0px 15px;
-}
-.argus-light-theme .versions {
-  display: table;
-}
 .argus-light-theme .mat-mdc-card.message {
   margin: 5px;
   background-color: #f8d7da;
@@ -2922,6 +2911,28 @@ html {
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
+}
+.argus-light-theme .footer {
+  display: flex;
+  color: white;
+  background-color: #3f51b5;
+}
+.argus-light-theme .footer .links {
+  display: flex;
+  margin: 5px auto;
+  white-space: nowrap;
+}
+.argus-light-theme .footer .links a {
+  color: white;
+  height: 20px;
+}
+.argus-light-theme .footer .versions {
+  display: flex;
+  margin: 5px auto;
+}
+.argus-light-theme .footer .versions .version {
+  font-size: 12px;
+  margin: 0px 10px;
 }
 .argus-light-theme {
 }
@@ -5360,22 +5371,6 @@ html {
   flex: 1;
   display: block;
 }
-.argus-dark-theme .footer {
-  color: white;
-  background-color: #3f51b5;
-}
-.argus-dark-theme .versions .version b {
-  display: table-cell;
-  text-align: right;
-}
-.argus-dark-theme .versions .version {
-  display: table-row;
-  font-size: 10px;
-  margin: 0px 15px;
-}
-.argus-dark-theme .versions {
-  display: table;
-}
 .argus-dark-theme .mat-mdc-card.message {
   margin: 5px;
   background-color: #f8d7da;
@@ -5417,6 +5412,28 @@ html {
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
+}
+.argus-dark-theme .footer {
+  display: flex;
+  color: white;
+  background-color: #3f51b5;
+}
+.argus-dark-theme .footer .links {
+  display: flex;
+  margin: 5px auto;
+  white-space: nowrap;
+}
+.argus-dark-theme .footer .links a {
+  color: white;
+  height: 20px;
+}
+.argus-dark-theme .footer .versions {
+  display: flex;
+  margin: 5px auto;
+}
+.argus-dark-theme .footer .versions .version {
+  font-size: 12px;
+  margin: 0px 10px;
 }
 .argus-dark-theme {
 }

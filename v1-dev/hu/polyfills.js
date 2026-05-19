@@ -2530,7 +2530,7 @@ patchBrowser(Zone$1);
 @angular/localize/fesm2022/_localize-chunk.mjs:
 @angular/localize/fesm2022/init.mjs:
   (**
-   * @license Angular v21.2.4
+   * @license Angular v21.2.6
    * (c) 2010-2026 Google LLC. https://angular.dev/
    * License: MIT
    *)
@@ -2542,5 +2542,5 @@ zone.js/fesm2015/zone.js:
    * License: MIT
    *)
 */
-/**i18n:5a2c3827deb5207c9b2cd52e3c980a766623046180337536c8d49c0b2e22128f*/
+/**i18n:ea45c52975d47568b6faa2a5532f62ce31bbe5ac9f3480e1421dd4c5c621f472*/
 //# sourceMappingURL=polyfills.js.map
