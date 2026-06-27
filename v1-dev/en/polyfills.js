@@ -1,4 +1,11 @@
 // node_modules/@angular/common/locales/global/it.js
+/**
+ * @license
+ * Copyright Google LLC All Rights Reserved.
+ *
+ * Use of this source code is governed by an MIT-style license that can be
+ * found in the LICENSE file at https://angular.dev/license
+ */
 (function (global2) {
   global2.ng ??= {};
   global2.ng.common ??= {};
@@ -31,6 +38,13 @@
 })(globalThis);
 
 // node_modules/@angular/common/locales/global/hu.js
+/**
+ * @license
+ * Copyright Google LLC All Rights Reserved.
+ *
+ * Use of this source code is governed by an MIT-style license that can be
+ * found in the LICENSE file at https://angular.dev/license
+ */
 (function (global2) {
   global2.ng ??= {};
   global2.ng.common ??= {};
@@ -65,6 +79,11 @@
 })(globalThis);
 
 // node_modules/@angular/localize/fesm2022/_localize-chunk.mjs
+/**
+ * @license Angular v21.2.17
+ * (c) 2010-2026 Google LLC. https://angular.dev/
+ * License: MIT
+ */
 var BLOCK_MARKER$1 = ":";
 var Endian;
 (function (Endian2) {
@@ -99,9 +118,19 @@ function stripBlock(messagePart, rawMessagePart) {
 }
 
 // node_modules/@angular/localize/fesm2022/init.mjs
+/**
+ * @license Angular v21.2.17
+ * (c) 2010-2026 Google LLC. https://angular.dev/
+ * License: MIT
+ */
 globalThis.$localize = $localize;
 
 // node_modules/zone.js/fesm2015/zone.js
+/**
+ * @license Angular v<unknown>
+ * (c) 2010-2025 Google LLC. https://angular.io/
+ * License: MIT
+ */
 var global = globalThis;
 function __symbol__(name) {
   const symbolPrefix = global["__Zone_symbol_prefix"] || "__zone_symbol__";
@@ -2515,32 +2544,5 @@ patchBrowser(Zone$1);
 
 // angular:polyfills:angular:polyfills
 (globalThis.$localize ??= {}).locale = "en";
-/*! Bundled license information:
-
-@angular/common/locales/global/it.js:
-@angular/common/locales/global/hu.js:
-  (**
-   * @license
-   * Copyright Google LLC All Rights Reserved.
-   *
-   * Use of this source code is governed by an MIT-style license that can be
-   * found in the LICENSE file at https://angular.dev/license
-   *)
-
-@angular/localize/fesm2022/_localize-chunk.mjs:
-@angular/localize/fesm2022/init.mjs:
-  (**
-   * @license Angular v21.2.6
-   * (c) 2010-2026 Google LLC. https://angular.dev/
-   * License: MIT
-   *)
-
-zone.js/fesm2015/zone.js:
-  (**
-   * @license Angular v<unknown>
-   * (c) 2010-2025 Google LLC. https://angular.io/
-   * License: MIT
-   *)
-*/
-/**i18n:ea45c52975d47568b6faa2a5532f62ce31bbe5ac9f3480e1421dd4c5c621f472*/
+/**i18n:844cb23937cb18e063019abbea27c7cc10cb69c529bae5db8bcff75d4424506f*/
 //# sourceMappingURL=polyfills.js.map
