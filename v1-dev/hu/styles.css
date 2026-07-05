@@ -583,6 +583,8 @@
   height: 100%;
 }
 .app-viewport {
+  --app-top-safe-area: env(safe-area-inset-top, 0px);
+  --app-bottom-safe-area: env(safe-area-inset-bottom, 0px);
   position: fixed;
   top: 0;
   bottom: 0;
@@ -2830,6 +2832,13 @@ html {
 .argus-light-theme .mat-toolbar .menu {
   margin-right: 10px;
 }
+.argus-light-theme {
+}
+.argus-light-theme .mat-toolbar {
+  padding-top: var(--app-top-safe-area);
+  min-height: calc(45px + var(--app-top-safe-area));
+  box-sizing: border-box;
+}
 .argus-light-theme .mat-toolbar .mat-button {
   min-width: 0;
   padding: 0px;
@@ -2839,21 +2848,21 @@ html {
   float: none;
 }
 .argus-light-theme .all-wrap {
-  min-height: calc(100dvh - 45px);
+  min-height: calc(100dvh - 45px - var(--app-top-safe-area));
 }
 .argus-light-theme .page-wrapper {
   display: flex;
   flex-direction: column;
-  min-height: calc(100dvh - 45px);
+  min-height: calc(100dvh - 45px - var(--app-top-safe-area));
   overflow: hidden;
 }
 .argus-light-theme app-root.demo .all-wrap {
-  min-height: calc(100dvh - 128px);
+  min-height: calc(100dvh - 128px - var(--app-top-safe-area));
 }
 .argus-light-theme app-root.demo .page-wrapper {
   display: flex;
   flex-direction: column;
-  min-height: calc(100dvh - 128px);
+  min-height: calc(100dvh - 128px - var(--app-top-safe-area));
 }
 .argus-light-theme .page {
   height: 100%;
@@ -2895,6 +2904,10 @@ html {
 .argus-light-theme .menu .mat-expansion-panel-body .mat-list-item-content {
   padding-left: 32px !important;
 }
+.argus-light-theme mat-sidenav mat-nav-list {
+  padding-bottom: calc(16px + var(--app-bottom-safe-area));
+  box-sizing: border-box;
+}
 .argus-light-theme #overlay {
   position: fixed;
   display: block;
@@ -2916,6 +2929,8 @@ html {
   display: flex;
   color: white;
   background-color: #3f51b5;
+  padding-bottom: var(--app-bottom-safe-area);
+  box-sizing: border-box;
 }
 .argus-light-theme .footer .links {
   display: flex;
@@ -5331,6 +5346,13 @@ html {
 .argus-dark-theme .mat-toolbar .menu {
   margin-right: 10px;
 }
+.argus-dark-theme {
+}
+.argus-dark-theme .mat-toolbar {
+  padding-top: var(--app-top-safe-area);
+  min-height: calc(45px + var(--app-top-safe-area));
+  box-sizing: border-box;
+}
 .argus-dark-theme .mat-toolbar .mat-button {
   min-width: 0;
   padding: 0px;
@@ -5340,21 +5362,21 @@ html {
   float: none;
 }
 .argus-dark-theme .all-wrap {
-  min-height: calc(100dvh - 45px);
+  min-height: calc(100dvh - 45px - var(--app-top-safe-area));
 }
 .argus-dark-theme .page-wrapper {
   display: flex;
   flex-direction: column;
-  min-height: calc(100dvh - 45px);
+  min-height: calc(100dvh - 45px - var(--app-top-safe-area));
   overflow: hidden;
 }
 .argus-dark-theme app-root.demo .all-wrap {
-  min-height: calc(100dvh - 128px);
+  min-height: calc(100dvh - 128px - var(--app-top-safe-area));
 }
 .argus-dark-theme app-root.demo .page-wrapper {
   display: flex;
   flex-direction: column;
-  min-height: calc(100dvh - 128px);
+  min-height: calc(100dvh - 128px - var(--app-top-safe-area));
 }
 .argus-dark-theme .page {
   height: 100%;
@@ -5396,6 +5418,10 @@ html {
 .argus-dark-theme .menu .mat-expansion-panel-body .mat-list-item-content {
   padding-left: 32px !important;
 }
+.argus-dark-theme mat-sidenav mat-nav-list {
+  padding-bottom: calc(16px + var(--app-bottom-safe-area));
+  box-sizing: border-box;
+}
 .argus-dark-theme #overlay {
   position: fixed;
   display: block;
@@ -5417,6 +5443,8 @@ html {
   display: flex;
   color: white;
   background-color: #3f51b5;
+  padding-bottom: var(--app-bottom-safe-area);
+  box-sizing: border-box;
 }
 .argus-dark-theme .footer .links {
   display: flex;
