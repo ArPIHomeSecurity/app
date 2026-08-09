@@ -80,7 +80,7 @@
 
 // node_modules/@angular/localize/fesm2022/_localize-chunk.mjs
 /**
- * @license Angular v21.2.17
+ * @license Angular v21.2.18
  * (c) 2010-2026 Google LLC. https://angular.dev/
  * License: MIT
  */
@@ -119,7 +119,7 @@ function stripBlock(messagePart, rawMessagePart) {
 
 // node_modules/@angular/localize/fesm2022/init.mjs
 /**
- * @license Angular v21.2.17
+ * @license Angular v21.2.18
  * (c) 2010-2026 Google LLC. https://angular.dev/
  * License: MIT
  */
