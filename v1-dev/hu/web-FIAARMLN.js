@@ -1,7 +1,7 @@
 import {
   WebPlugin,
   __async
-} from "./chunk-6LMO74N5.js";
+} from "./chunk-EQKHTVIS.js";
 
 // node_modules/@capacitor/local-notifications/dist/esm/web.js
 var LocalNotificationsWeb = class extends WebPlugin {
@@ -202,5 +202,5 @@ var LocalNotificationsWeb = class extends WebPlugin {
 export {
   LocalNotificationsWeb
 };
-/**i18n:c913664c17706f71ddb5ca8668a321b44a778fb83cae606a9226faaa520d056c*/
-//# sourceMappingURL=web-BNMMLOUA.js.map
+/**i18n:6be944a70878f01a5560184f6b07ac753fd7e9c3baa33228c44a3f7b18ffc080*/
+//# sourceMappingURL=web-FIAARMLN.js.map
