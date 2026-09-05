@@ -1,5 +1,5 @@
-import "./chunk-SNFVSPMV.js";
-import { Capacitor, __async, __commonJS, __export, __objRest, __require, __spreadProps, __spreadValues, __toESM, registerPlugin } from "./chunk-EQKHTVIS.js";
+import "./chunk-ITWXCM6D.js";
+import { Capacitor, __async, __commonJS, __export, __objRest, __require, __spreadProps, __spreadValues, __toESM, registerPlugin } from "./chunk-3JZZY7EM.js";
 
 // node_modules/moment/moment.js
 var require_moment = __commonJS({
@@ -90307,29 +90307,65 @@ var DEFAULT_NOTIFICATION_SUBSCRIPTIONS = {
   option: "notifications",
   section: "subscriptions",
   value: {
+    call1: {
+      alert_started: false,
+      alert_stopped: false,
+      power_outage_started: false,
+      power_outage_stopped: false,
+      local_network_issue_started: false,
+      local_network_issue_stopped: false,
+      internet_issue_started: false,
+      internet_issue_stopped: false
+    },
+    call2: {
+      alert_started: false,
+      alert_stopped: false,
+      power_outage_started: false,
+      power_outage_stopped: false,
+      local_network_issue_started: false,
+      local_network_issue_stopped: false,
+      internet_issue_started: false,
+      internet_issue_stopped: false
+    },
     email1: {
       alert_started: false,
       alert_stopped: false,
       power_outage_started: false,
-      power_outage_stopped: false
+      power_outage_stopped: false,
+      local_network_issue_started: false,
+      local_network_issue_stopped: false,
+      internet_issue_started: false,
+      internet_issue_stopped: false
     },
     email2: {
       alert_started: false,
       alert_stopped: false,
       power_outage_started: false,
-      power_outage_stopped: false
+      power_outage_stopped: false,
+      local_network_issue_started: false,
+      local_network_issue_stopped: false,
+      internet_issue_started: false,
+      internet_issue_stopped: false
     },
     sms1: {
       alert_started: false,
       alert_stopped: false,
       power_outage_started: false,
-      power_outage_stopped: false
+      power_outage_stopped: false,
+      local_network_issue_started: false,
+      local_network_issue_stopped: false,
+      internet_issue_started: false,
+      internet_issue_stopped: false
     },
     sms2: {
       alert_started: false,
       alert_stopped: false,
       power_outage_started: false,
-      power_outage_stopped: false
+      power_outage_stopped: false,
+      local_network_issue_started: false,
+      local_network_issue_stopped: false,
+      internet_issue_started: false,
+      internet_issue_stopped: false
     }
   }
 };
@@ -100330,7 +100366,7 @@ var AuthenticationService = class _AuthenticationService {
 
 // node_modules/@capgo/capacitor-native-biometric/dist/esm/index.js
 var NativeBiometric = registerPlugin("NativeBiometric", {
-  web: () => import("./web-Q5WQNAKW.js").then(m => new m.NativeBiometricWeb())
+  web: () => import("./web-4BMTTA3H.js").then(m => new m.NativeBiometricWeb())
 });
 
 // src/app/services/remote/biometric.service.ts
@@ -100716,7 +100752,7 @@ var Weekday;
 
 // node_modules/@capacitor/local-notifications/dist/esm/index.js
 var LocalNotifications = registerPlugin("LocalNotifications", {
-  web: () => import("./web-FIAARMLN.js").then(m => new m.LocalNotificationsWeb())
+  web: () => import("./web-2FHHHLBA.js").then(m => new m.LocalNotificationsWeb())
 });
 
 // src/app/services/remote/notification.service.ts
@@ -103958,7 +103994,7 @@ var SystemStateComponent = class _SystemStateComponent {
 
 // node_modules/@capacitor/dialog/dist/esm/index.js
 var Dialog2 = registerPlugin("Dialog", {
-  web: () => import("./web-H73NKPOJ.js").then(m => new m.DialogWeb())
+  web: () => import("./web-3U7LPQI2.js").then(m => new m.DialogWeb())
 });
 
 // src/app/upgrades.ts
@@ -104317,17 +104353,16 @@ var DemoHelpDialogComponent = class _DemoHelpDialogComponent {
     .
   </p>
   <p>
-    In the top toolbar you can find buttons for the input channels of the system to simulate the
-    interactions with the sensors.
+    In the top toolbar you can find buttons for the input channels of the system to simulate the interactions with the
+    sensors.
   </p>
   <p>
-    This page uses a mock implementation of the real backend system. May contain errors not existing
-    in the real system.
+    This page uses a mock implementation of the real backend system. May contain errors not existing in the real system.
   </p>
 
   <p>
-    You need two types of code to access the application. The first code registers your device for a
-    user. After registering the device you can access the application only with the 'access code'.
+    You need two types of code to access the application. The first code registers your device for a user. After
+    registering the device you can access the application only with the 'access code'.
   </p>
   <!-- https://stackoverflow.com/a/58115714 -->
   <table class="mat-table mat-elevation-z3">
@@ -104351,12 +104386,7 @@ var DemoHelpDialogComponent = class _DemoHelpDialogComponent {
       </td>
       <td class="mat-cell">
         {{ ADMIN_ACCESS_CODE }}
-        <button
-          mat-icon-button
-          colo7="primary"
-          onclick="this.blur()"
-          (click)="copyToClipboard(ADMIN_ACCESS_CODE)"
-        >
+        <button mat-icon-button colo7="primary" onclick="this.blur()" (click)="copyToClipboard(ADMIN_ACCESS_CODE)">
           <mat-icon>content_copy</mat-icon>
         </button>
       </td>
@@ -104365,23 +104395,13 @@ var DemoHelpDialogComponent = class _DemoHelpDialogComponent {
       <td class="mat-cell">User</td>
       <td class="mat-cell">
         {{ USER_REGISTRATION_CODE }}
-        <button
-          mat-icon-button
-          colo7="primary"
-          onclick="this.blur()"
-          (click)="copyToClipboard(USER_REGISTRATION_CODE)"
-        >
+        <button mat-icon-button colo7="primary" onclick="this.blur()" (click)="copyToClipboard(USER_REGISTRATION_CODE)">
           <mat-icon>content_copy</mat-icon>
         </button>
       </td>
       <td class="mat-cell">
         {{ USER_ACCESS_CODE }}
-        <button
-          mat-icon-button
-          colo7="primary"
-          onclick="this.blur()"
-          (click)="copyToClipboard(USER_ACCESS_CODE)"
-        >
+        <button mat-icon-button colo7="primary" onclick="this.blur()" (click)="copyToClipboard(USER_ACCESS_CODE)">
           <mat-icon>content_copy</mat-icon>
         </button>
       </td>
@@ -107458,7 +107478,7 @@ var AppComponent = class _AppComponent {
           ɵɵelement(59, "router-outlet");
           ɵɵelementEnd();
           ɵɵelementStart(60, "div", 59)(61, "div", 60)(62, "a", 61);
-          ɵɵtext(63, " ArPI Home Security ");
+          ɵɵtext(63, "ArPI Home Security");
           ɵɵelementEnd();
           ɵɵelementStart(64, "span", 62);
           ɵɵtext(65, "\xA0|\xA0");
@@ -107551,7 +107571,7 @@ var AppComponent = class _AppComponent {
         }
       },
       dependencies: [CountdownComponent, RouterOutlet, RouterLink, RouterLinkActive, MatOption, MatButton, MatIconButton, MatCard, MatCardContent, MatAccordion, MatExpansionPanel, MatExpansionPanelHeader, MatExpansionPanelTitle, MatIcon, MatList, MatNavList, MatListItem, MatListItemIcon, MatListSubheaderCssMatStyler, MatDivider, MatListItemTitle, MatMenu, MatMenuItem, MatMenuTrigger, MatProgressSpinner, MatSelect, MatSidenav, MatSidenavContainer, MatSidenavContent, MatSlideToggle, MatToolbar, MatTooltip, SystemStateComponent, DemoComponent],
-      styles: ["\n  app-root {\n  display: block;\n  width: 100%;\n  height: 100%;\n}\n.app-viewport[_ngcontent-%COMP%] {\n  --app-top-safe-area: env(safe-area-inset-top, 0px);\n  --app-bottom-safe-area: env(safe-area-inset-bottom, 0px);\n  position: fixed;\n  top: 0;\n  bottom: 0;\n  left: 0;\n  right: 0;\n  display: flex;\n  flex-direction: column;\n}\n.app-viewport[_ngcontent-%COMP%]   mat-sidenav[_ngcontent-%COMP%] {\n  width: 250px;\n}\n  .small-screen .logo {\n  display: none;\n}\n  .small-screen .footer {\n  flex-direction: column;\n}\n  .small-screen .footer .links {\n  flex-direction: column;\n}\n  .small-screen .footer .links .separator {\n  display: none;\n}\n  .small-screen .footer .versions {\n  flex-direction: row;\n  margin: 10px auto;\n}\n  .large-screen .menu-button, \n  .large-screen .logo-button {\n  display: none;\n}\n  .large-screen .footer {\n  flex-direction: row;\n}\n  .large-screen .footer .links {\n  flex-direction: row;\n  padding: 10px;\n}\n  .large-screen .footer .versions {\n  flex-direction: column;\n  margin: 5px;\n}\n  .large-screen .footer .versions .version {\n  display: flex;\n  font-size: 12px;\n  margin: 0px 10px;\n}\n  .large-screen .footer .versions .version b {\n  display: inline-block;\n  width: 55px;\n  text-align: right;\n}\n/*# sourceMappingURL=app.component.css.map */"]
+      styles: ["\n  app-root {\n  display: block;\n  width: 100%;\n  height: 100%;\n}\n.app-viewport[_ngcontent-%COMP%] {\n  --app-top-safe-area: var(--safe-area-inset-top, env(safe-area-inset-top, 0px));\n  --app-bottom-safe-area: var(--safe-area-inset-bottom, env(safe-area-inset-bottom, 0px));\n  position: fixed;\n  top: 0;\n  bottom: 0;\n  left: 0;\n  right: 0;\n  display: flex;\n  flex-direction: column;\n}\n.app-viewport[_ngcontent-%COMP%]   mat-sidenav[_ngcontent-%COMP%] {\n  width: 250px;\n}\n  .small-screen .logo {\n  display: none;\n}\n  .small-screen .footer {\n  flex-direction: column;\n}\n  .small-screen .footer .links {\n  flex-direction: column;\n}\n  .small-screen .footer .links .separator {\n  display: none;\n}\n  .small-screen .footer .versions {\n  flex-direction: row;\n  margin: 10px auto;\n}\n  .large-screen .menu-button, \n  .large-screen .logo-button {\n  display: none;\n}\n  .large-screen .footer {\n  flex-direction: row;\n}\n  .large-screen .footer .links {\n  flex-direction: row;\n  padding: 10px;\n}\n  .large-screen .footer .versions {\n  flex-direction: column;\n  margin: 5px;\n}\n  .large-screen .footer .versions .version {\n  display: flex;\n  font-size: 12px;\n  margin: 0px 10px;\n}\n  .large-screen .footer .versions .version b {\n  display: inline-block;\n  width: 55px;\n  text-align: right;\n}\n/*# sourceMappingURL=app.component.css.map */"]
     });
   }
 };
@@ -107587,11 +107607,7 @@ var AppComponent = class _AppComponent {
     <span class="spacer"></span>
     <div matTooltip="Session expiry countdown">
       @if (isSessionValid) {
-        <countdown
-          #counter
-          [config]="countdownConfig"
-          (event)="handleCountdown($event)"
-        ></countdown>
+        <countdown #counter [config]="countdownConfig" (event)="handleCountdown($event)"></countdown>
       }
     </div>
 
@@ -107640,11 +107656,7 @@ var AppComponent = class _AppComponent {
 
       <mat-nav-list>
         @if (!isLoggedIn() && locations.length > 0) {
-          <mat-list-item
-            routerLink="/login"
-            routerLinkActive="active"
-            (click)="smallScreen ? sidenav.close() : null"
-          >
+          <mat-list-item routerLink="/login" routerLinkActive="active" (click)="smallScreen ? sidenav.close() : null">
             <mat-icon matListItemIcon>login</mat-icon>
             <div matListItemTitle i18n="@@login menu link">Login</div>
           </mat-list-item>
@@ -107661,11 +107673,7 @@ var AppComponent = class _AppComponent {
           </mat-list-item>
         }
         @if (isLoggedIn()) {
-          <mat-list-item
-            routerLink="/events"
-            routerLinkActive="active"
-            (click)="smallScreen ? sidenav.close() : null"
-          >
+          <mat-list-item routerLink="/events" routerLinkActive="active" (click)="smallScreen ? sidenav.close() : null">
             <mat-icon matListItemIcon>history</mat-icon>
             <span matListItemTitle i18n="@@events menu link">Events</span>
           </mat-list-item>
@@ -107684,51 +107692,31 @@ var AppComponent = class _AppComponent {
           </mat-list-item>
         }
         @if (isLoggedIn()) {
-          <mat-list-item
-            routerLink="/areas"
-            routerLinkActive="active"
-            (click)="smallScreen ? sidenav.close() : null"
-          >
+          <mat-list-item routerLink="/areas" routerLinkActive="active" (click)="smallScreen ? sidenav.close() : null">
             <mat-icon matListItemIcon>crop</mat-icon>
             <span i18n="@@areas menu link">Areas</span>
           </mat-list-item>
         }
         @if (isLoggedIn()) {
-          <mat-list-item
-            routerLink="/zones"
-            routerLinkActive="active"
-            (click)="smallScreen ? sidenav.close() : null"
-          >
+          <mat-list-item routerLink="/zones" routerLinkActive="active" (click)="smallScreen ? sidenav.close() : null">
             <mat-icon matListItemIcon>tab</mat-icon>
             <span i18n="@@zones menu link">Zones</span>
           </mat-list-item>
         }
         @if (isLoggedIn()) {
-          <mat-list-item
-            routerLink="/sensors"
-            routerLinkActive="active"
-            (click)="smallScreen ? sidenav.close() : null"
-          >
+          <mat-list-item routerLink="/sensors" routerLinkActive="active" (click)="smallScreen ? sidenav.close() : null">
             <mat-icon matListItemIcon>input</mat-icon>
             <span i18n="@@sensors menu link">Sensors</span>
           </mat-list-item>
         }
         @if (isLoggedIn()) {
-          <mat-list-item
-            routerLink="/outputs"
-            routerLinkActive="active"
-            (click)="smallScreen ? sidenav.close() : null"
-          >
+          <mat-list-item routerLink="/outputs" routerLinkActive="active" (click)="smallScreen ? sidenav.close() : null">
             <mat-icon matListItemIcon>output</mat-icon>
             <span i18n="@@outputs menu link">Outputs</span>
           </mat-list-item>
         }
         @if (isAdminUser()) {
-          <mat-list-item
-            routerLink="/users"
-            routerLinkActive="active"
-            (click)="smallScreen ? sidenav.close() : null"
-          >
+          <mat-list-item routerLink="/users" routerLinkActive="active" (click)="smallScreen ? sidenav.close() : null">
             <mat-icon matListItemIcon>group</mat-icon>
             <span i18n="@@users menu link">Users</span>
           </mat-list-item>
@@ -107791,11 +107779,7 @@ var AppComponent = class _AppComponent {
           <mat-divider></mat-divider>
         }
         @if (isLoggedIn() && !isAdminUser()) {
-          <mat-list-item
-            routerLink="/my-user"
-            routerLinkActive="active"
-            (click)="smallScreen ? sidenav.close() : null"
-          >
+          <mat-list-item routerLink="/my-user" routerLinkActive="active" (click)="smallScreen ? sidenav.close() : null">
             <mat-icon matListItemIcon>person</mat-icon>
             <span i18n="@@my-user menu link">My user</span>
           </mat-list-item>
@@ -107812,11 +107796,7 @@ var AppComponent = class _AppComponent {
         </mat-list-item>
         <mat-list-item [disableRipple]="true">
           <mat-icon matListItemIcon>invert_colors</mat-icon>
-          <mat-slide-toggle
-            (change)="onThemeSwitched($event)"
-            [checked]="darkTheme"
-            i18n="@@dark theme"
-          >
+          <mat-slide-toggle (change)="onThemeSwitched($event)" [checked]="darkTheme" i18n="@@dark theme">
             Dark theme
           </mat-slide-toggle>
         </mat-list-item>
@@ -107828,11 +107808,7 @@ var AppComponent = class _AppComponent {
           </mat-list-item>
         }
         @if (!isMultiLocation) {
-          <mat-list-item
-            routerLink="/setup"
-            routerLinkActive="active"
-            (click)="smallScreen ? sidenav.close() : null"
-          >
+          <mat-list-item routerLink="/setup" routerLinkActive="active" (click)="smallScreen ? sidenav.close() : null">
             <mat-icon matListItemIcon>settings</mat-icon>
             <span i18n="@@setup menu link">Setup</span>
           </mat-list-item>
@@ -107869,12 +107845,7 @@ var AppComponent = class _AppComponent {
       <div class="page">
         <!-- AJAX loading spinner triggered by the loader service -->
         @if (displayLoader) {
-          <mat-progress-spinner
-            class="ajax-loader"
-            color="primary"
-            mode="indeterminate"
-            diameter="100"
-          />
+          <mat-progress-spinner class="ajax-loader" color="primary" mode="indeterminate" diameter="100" />
         }
         <router-outlet></router-outlet>
       </div>
@@ -107882,9 +107853,7 @@ var AppComponent = class _AppComponent {
       <!-- footer -->
       <div class="footer">
         <div class="links">
-          <a mat-button href="https://www.arpi-security.info/" target="project">
-            ArPI Home Security
-          </a>
+          <a mat-button href="https://www.arpi-security.info/" target="project">ArPI Home Security</a>
           <span class="separator">&nbsp;|&nbsp;</span>
           <a mat-button href="https://docs.arpi-security.info" target="docs">DOCS</a>
         </div>
@@ -107908,7 +107877,7 @@ var AppComponent = class _AppComponent {
   </mat-sidenav-container>
 </div>
 `,
-      styles: ["/* src/app/app.component.scss */\n::ng-deep app-root {\n  display: block;\n  width: 100%;\n  height: 100%;\n}\n.app-viewport {\n  --app-top-safe-area: env(safe-area-inset-top, 0px);\n  --app-bottom-safe-area: env(safe-area-inset-bottom, 0px);\n  position: fixed;\n  top: 0;\n  bottom: 0;\n  left: 0;\n  right: 0;\n  display: flex;\n  flex-direction: column;\n}\n.app-viewport mat-sidenav {\n  width: 250px;\n}\n::ng-deep .small-screen .logo {\n  display: none;\n}\n::ng-deep .small-screen .footer {\n  flex-direction: column;\n}\n::ng-deep .small-screen .footer .links {\n  flex-direction: column;\n}\n::ng-deep .small-screen .footer .links .separator {\n  display: none;\n}\n::ng-deep .small-screen .footer .versions {\n  flex-direction: row;\n  margin: 10px auto;\n}\n::ng-deep .large-screen .menu-button,\n::ng-deep .large-screen .logo-button {\n  display: none;\n}\n::ng-deep .large-screen .footer {\n  flex-direction: row;\n}\n::ng-deep .large-screen .footer .links {\n  flex-direction: row;\n  padding: 10px;\n}\n::ng-deep .large-screen .footer .versions {\n  flex-direction: column;\n  margin: 5px;\n}\n::ng-deep .large-screen .footer .versions .version {\n  display: flex;\n  font-size: 12px;\n  margin: 0px 10px;\n}\n::ng-deep .large-screen .footer .versions .version b {\n  display: inline-block;\n  width: 55px;\n  text-align: right;\n}\n/*# sourceMappingURL=app.component.css.map */\n"]
+      styles: ["/* src/app/app.component.scss */\n::ng-deep app-root {\n  display: block;\n  width: 100%;\n  height: 100%;\n}\n.app-viewport {\n  --app-top-safe-area: var(--safe-area-inset-top, env(safe-area-inset-top, 0px));\n  --app-bottom-safe-area: var(--safe-area-inset-bottom, env(safe-area-inset-bottom, 0px));\n  position: fixed;\n  top: 0;\n  bottom: 0;\n  left: 0;\n  right: 0;\n  display: flex;\n  flex-direction: column;\n}\n.app-viewport mat-sidenav {\n  width: 250px;\n}\n::ng-deep .small-screen .logo {\n  display: none;\n}\n::ng-deep .small-screen .footer {\n  flex-direction: column;\n}\n::ng-deep .small-screen .footer .links {\n  flex-direction: column;\n}\n::ng-deep .small-screen .footer .links .separator {\n  display: none;\n}\n::ng-deep .small-screen .footer .versions {\n  flex-direction: row;\n  margin: 10px auto;\n}\n::ng-deep .large-screen .menu-button,\n::ng-deep .large-screen .logo-button {\n  display: none;\n}\n::ng-deep .large-screen .footer {\n  flex-direction: row;\n}\n::ng-deep .large-screen .footer .links {\n  flex-direction: row;\n  padding: 10px;\n}\n::ng-deep .large-screen .footer .versions {\n  flex-direction: column;\n  margin: 5px;\n}\n::ng-deep .large-screen .footer .versions .version {\n  display: flex;\n  font-size: 12px;\n  margin: 0px 10px;\n}\n::ng-deep .large-screen .footer .versions .version b {\n  display: inline-block;\n  width: 55px;\n  text-align: right;\n}\n/*# sourceMappingURL=app.component.css.map */\n"]
     }]
   }], () => [{
     type: void 0,
@@ -107961,7 +107930,7 @@ var AppComponent = class _AppComponent {
   (typeof ngDevMode === "undefined" || ngDevMode) && ɵsetClassDebugInfo(AppComponent, {
     className: "AppComponent",
     filePath: "src/app/app.component.ts",
-    lineNumber: 42
+    lineNumber: 28
   });
 })();
 
@@ -108751,9 +108720,7 @@ var UserSshKeySetupDialogComponent = class _UserSshKeySetupDialogComponent {
       </mat-select>
     </mat-form-field>
 
-    <mat-form-field
-      [class.cdk-visually-hidden]="setupKeyForm.controls.setupMethod.value === 'custom'"
-    >
+    <mat-form-field [class.cdk-visually-hidden]="setupKeyForm.controls.setupMethod.value === 'custom'">
       <label i18n="@@user ssh key type">SSH key type</label>
       <mat-select formControlName="keyType">
         @for (keyType of keyTypes; track keyType) {
@@ -108764,16 +108731,12 @@ var UserSshKeySetupDialogComponent = class _UserSshKeySetupDialogComponent {
       </mat-select>
     </mat-form-field>
 
-    <mat-form-field
-      [class.cdk-visually-hidden]="setupKeyForm.controls.setupMethod.value === 'custom'"
-    >
+    <mat-form-field [class.cdk-visually-hidden]="setupKeyForm.controls.setupMethod.value === 'custom'">
       <label i18n="@@user ssh key passphrase">SSH key passphrase</label>
       <input matInput formControlName="passphrase" type="text" placeholder="Passphrase" />
     </mat-form-field>
 
-    <mat-form-field
-      [class.cdk-visually-hidden]="setupKeyForm.controls.setupMethod.value === 'generate'"
-    >
+    <mat-form-field [class.cdk-visually-hidden]="setupKeyForm.controls.setupMethod.value === 'generate'">
       <label i18n="@@user ssh key public key">SSh public key</label>
       <input matInput formControlName="publicKey" type="text" placeholder="Public key" />
     </mat-form-field>
@@ -109935,7 +109898,7 @@ var UserCardComponent = class _UserCardComponent {
     args: [{
       selector: "user-card",
       standalone: false,
-      template: '<mat-card class="user-card container-item">\n  <mat-card-header>\n    @if (user.role === roleTypes.ADMIN) {\n      <mat-icon mat-card-avatar matListIcon mat-card-avatar class="avatar">person</mat-icon>\n    }\n    @if (user.role === roleTypes.USER) {\n      <mat-icon matListIcon mat-card-avatar class="avatar">person_outline</mat-icon>\n    }\n    <mat-card-title>{{ user.name }}</mat-card-title>\n    @if (user.role === roleTypes.ADMIN) {\n      <mat-card-subtitle i18n="@@user type administrator">Administrator</mat-card-subtitle>\n    }\n    @if (user.role === roleTypes.USER) {\n      <mat-card-subtitle i18n="@@user type user">User</mat-card-subtitle>\n    }\n  </mat-card-header>\n\n  @if (loading) {\n    <mat-spinner color="primary" diameter="40"></mat-spinner>\n  }\n\n  @if (!loading) {\n    <mat-divider></mat-divider>\n\n    <mat-list>\n      <!-- Registration code -->\n      <h3 matSubheader i18n="@@user device registration code">Device registration code</h3>\n      @if (user.hasRegistrationCode) {\n        <mat-list-item>\n          <mat-icon matListItemIcon>key</mat-icon>\n          <span matListItemTitle i18n="@@user registration">Expires on:</span>\n          @if (user.registrationExpiry) {\n            <span matListItemLine>{{ user.registrationExpiry }}</span>\n          }\n          @if (!user.registrationExpiry) {\n            <span matListItemLine i18n="@@user expiry never">never</span>\n          }\n          <button\n            mat-icon-button\n            matListItemMeta\n            color="warn"\n            [disabled]="!canManageRegistration || disabled"\n            (click)="openDeleteRegistrationCodeDialog()"\n          >\n            <mat-icon color="warn">delete</mat-icon>\n          </button>\n        </mat-list-item>\n      }\n      @if (!user.hasRegistrationCode) {\n        <mat-list-item>\n          <span matListItemTitle i18n="@@user no registration code">No registration code</span>\n          <button\n            mat-icon-button\n            matListItemMeta\n            color="primary"\n            [disabled]="!canManageRegistration || disabled"\n            (click)="openDeviceRegistrationDialog()"\n          >\n            <mat-icon>add</mat-icon>\n          </button>\n        </mat-list-item>\n      }\n\n      <mat-divider></mat-divider>\n\n      <!-- Cards -->\n      <h3 matSubheader i18n="@@user cards">Cards</h3>\n      @for (card of cards; track card) {\n        <mat-list-item>\n          <mat-icon matListItemIcon>credit_card</mat-icon>\n          <mat-checkbox\n            color="primary"\n            [checked]="card.enabled"\n            [disabled]="!canManageCards || disabled"\n            (change)="toggleCardEnabled(card.id)"\n          ></mat-checkbox>\n          <span matListItemTitle>{{ card.description }}</span>\n          <div matListItemMeta>\n            <button\n              mat-icon-button\n              color="warn"\n              [disabled]="!canManageCards || disabled"\n              (click)="openDeleteCardDialog(card.id)"\n            >\n              <mat-icon>delete</mat-icon>\n            </button>\n          </div>\n        </mat-list-item>\n      }\n      @if (cards.length === 0 && !registeringCard) {\n        <mat-list-item>\n          <span matListItemTitle i18n="@@user no cards">No cards registered</span>\n          <button\n            mat-icon-button\n            matListItemMeta\n            color="primary"\n            [disabled]="!canManageCards || disabled"\n            (click)="onClickRegisterCard()"\n          >\n            <mat-icon>add</mat-icon>\n          </button>\n        </mat-list-item>\n      }\n      @if (registeringCard) {\n        <mat-list-item>\n          <mat-progress-spinner\n            matListItemIcon\n            color="primary"\n            mode="indeterminate"\n            diameter="20"\n          ></mat-progress-spinner>\n          <span matListItemTitle i18n="@@user registering card">Registering card</span>\n        </mat-list-item>\n      }\n\n      <!-- SSH key -->\n      @if (user.role === roleTypes.ADMIN) {\n        <mat-divider></mat-divider>\n        @if (hasSshKey) {\n          <mat-list-item>\n            <mat-icon matListItemIcon>terminal</mat-icon>\n            <span matListItemTitle i18n="@@user ssh key">SSH key</span>\n            <button\n              mat-icon-button\n              matListItemMeta\n              color="warn"\n              [disabled]="!canManageSshKeys || disabled"\n              (click)="openDeleteSshKeyDialog()"\n            >\n              <mat-icon color="warn">delete</mat-icon>\n            </button>\n          </mat-list-item>\n        }\n        @if (!hasSshKey) {\n          <mat-list-item>\n            <span matListItemTitle i18n="@@user no ssh key">No SSH key</span>\n            <button\n              mat-icon-button\n              matListItemMeta\n              color="primary"\n              [disabled]="!canManageSshKeys || disabled"\n              (click)="openSshKeySetupDialog()"\n            >\n              <mat-icon>add</mat-icon>\n            </button>\n          </mat-list-item>\n        }\n      }\n\n      <!-- MCP token -->\n      @if (user.role === roleTypes.ADMIN && hasMCPToken !== null) {\n        @if (hasMCPToken === true) {\n          <mat-list-item>\n            <mat-icon matListItemIcon>vpn_key</mat-icon>\n            <span matListItemTitle i18n="@@mcp token">MCP token</span>\n            <button\n              mat-icon-button\n              matListItemMeta\n              color="warn"\n              [disabled]="!canManageMCP || disabled"\n              (click)="removeMCPToken()"\n            >\n              <mat-icon color="warn">delete</mat-icon>\n            </button>\n          </mat-list-item>\n        }\n        @if (hasMCPToken === false) {\n          <mat-list-item>\n            <span matListItemTitle i18n="@@user no mcp token">No MCP token</span>\n            <button\n              mat-icon-button\n              matListItemMeta\n              color="primary"\n              [disabled]="!canManageMCP || disabled"\n              (click)="getMCPToken()"\n            >\n              <mat-icon>add</mat-icon>\n            </button>\n          </mat-list-item>\n        }\n      }\n\n      <!-- Comment -->\n      @if (user.comment) {\n        <mat-divider></mat-divider>\n        <h3 matSubheader i18n="@@user comment">Comment</h3>\n        <mat-list-item>\n          <mat-icon matListItemIcon>notes</mat-icon>\n          <span matListItemTitle>{{ user.comment }}</span>\n        </mat-list-item>\n      }\n\n      <!-- Biometric login -->\n      @if (biometricAvailable) {\n        <mat-divider></mat-divider>\n        <h3 matSubheader i18n="@@user biometric login">Biometric login</h3>\n        <mat-list-item>\n          <mat-icon matListItemIcon>\n            @if (isBiometricEnabled()) {\n              fingerprint\n            } @else {\n              fingerprint_off\n            }\n          </mat-icon>\n          <span matListItemTitle i18n="@@user biometric login">Biometric login</span>\n          <mat-slide-toggle\n            matListItemMeta\n            color="primary"\n            [checked]="isBiometricEnabled()"\n            [disabled]="disabled"\n            (change)="$event.checked ? enableBiometricLogin() : disableBiometricLogin()"\n          ></mat-slide-toggle>\n        </mat-list-item>\n      }\n    </mat-list>\n  }\n\n  <mat-divider></mat-divider>\n\n  <mat-card-actions>\n    <button mat-icon-button color="primary" [disabled]="disabled" (click)="navigateToUserEdit()">\n      <mat-icon>mode_edit</mat-icon>\n    </button>\n    <button\n      mat-icon-button\n      color="warn"\n      [disabled]="!canManageUser || disabled"\n      (click)="openDeleteUserDialog()"\n    >\n      <mat-icon>delete</mat-icon>\n    </button>\n\n    <button mat-icon-button [matMenuTriggerFor]="menu"><mat-icon>more_vert</mat-icon></button>\n    <mat-menu #menu="matMenu">\n      <button\n        mat-menu-item\n        color="primary"\n        [disabled]="!canManageRegistration || user.hasRegistrationCode || disabled"\n        i18n="@@user register device button"\n        (click)="openDeviceRegistrationDialog()"\n      >\n        Device registration\n      </button>\n      @if (canManageCards) {\n        <button\n          mat-menu-item\n          color="primary"\n          [disabled]="disabled"\n          (click)="onClickRegisterCard()"\n          i18n="@@user register card button"\n        >\n          Register card\n        </button>\n      }\n      @if (user.role === roleTypes.ADMIN) {\n        <button\n          mat-menu-item\n          color="primary"\n          [disabled]="!canManageSshKeys || hasSshKey || disabled"\n          (click)="openSshKeySetupDialog()"\n          i18n="@@user generate ssk key"\n        >\n          Setup SSH key\n        </button>\n      }\n      @if (user.role === roleTypes.ADMIN && hasMCPToken !== null) {\n        <button\n          mat-menu-item\n          color="primary"\n          [disabled]="!canManageMCP || disabled || hasMCPToken === true"\n          (click)="getMCPToken()"\n          i18n="@@user get mcp token"\n        >\n          Get MCP token\n        </button>\n      }\n\n      <!-- Biometric login -->\n      @if (biometricAvailable) {\n        <div>\n          @if (!isBiometricEnabled()) {\n            <button\n              mat-menu-item\n              color="primary"\n              [disabled]="disabled"\n              (click)="enableBiometricLogin()"\n            >\n              <span i18n="@@user enable biometric">Enable biometric login</span>\n            </button>\n          }\n          @if (isBiometricEnabled()) {\n            <button\n              mat-menu-item\n              color="warn"\n              [disabled]="disabled"\n              (click)="disableBiometricLogin()"\n            >\n              <span i18n="@@user disable biometric">Disable biometric login</span>\n            </button>\n          }\n        </div>\n      }\n    </mat-menu>\n  </mat-card-actions>\n</mat-card>\n',
+      template: '<mat-card class="user-card container-item">\n  <mat-card-header>\n    @if (user.role === roleTypes.ADMIN) {\n      <mat-icon mat-card-avatar matListIcon mat-card-avatar class="avatar">person</mat-icon>\n    }\n    @if (user.role === roleTypes.USER) {\n      <mat-icon matListIcon mat-card-avatar class="avatar">person_outline</mat-icon>\n    }\n    <mat-card-title>{{ user.name }}</mat-card-title>\n    @if (user.role === roleTypes.ADMIN) {\n      <mat-card-subtitle i18n="@@user type administrator">Administrator</mat-card-subtitle>\n    }\n    @if (user.role === roleTypes.USER) {\n      <mat-card-subtitle i18n="@@user type user">User</mat-card-subtitle>\n    }\n  </mat-card-header>\n\n  @if (loading) {\n    <mat-spinner color="primary" diameter="40"></mat-spinner>\n  }\n\n  @if (!loading) {\n    <mat-divider></mat-divider>\n\n    <mat-list>\n      <!-- Registration code -->\n      <h3 matSubheader i18n="@@user device registration code">Device registration code</h3>\n      @if (user.hasRegistrationCode) {\n        <mat-list-item>\n          <mat-icon matListItemIcon>key</mat-icon>\n          <span matListItemTitle i18n="@@user registration">Expires on:</span>\n          @if (user.registrationExpiry) {\n            <span matListItemLine>{{ user.registrationExpiry }}</span>\n          }\n          @if (!user.registrationExpiry) {\n            <span matListItemLine i18n="@@user expiry never">never</span>\n          }\n          <button\n            mat-icon-button\n            matListItemMeta\n            color="warn"\n            [disabled]="!canManageRegistration || disabled"\n            (click)="openDeleteRegistrationCodeDialog()"\n          >\n            <mat-icon color="warn">delete</mat-icon>\n          </button>\n        </mat-list-item>\n      }\n      @if (!user.hasRegistrationCode) {\n        <mat-list-item>\n          <span matListItemTitle i18n="@@user no registration code">No registration code</span>\n          <button\n            mat-icon-button\n            matListItemMeta\n            color="primary"\n            [disabled]="!canManageRegistration || disabled"\n            (click)="openDeviceRegistrationDialog()"\n          >\n            <mat-icon>add</mat-icon>\n          </button>\n        </mat-list-item>\n      }\n\n      <mat-divider></mat-divider>\n\n      <!-- Cards -->\n      <h3 matSubheader i18n="@@user cards">Cards</h3>\n      @for (card of cards; track card) {\n        <mat-list-item>\n          <mat-icon matListItemIcon>credit_card</mat-icon>\n          <mat-checkbox\n            color="primary"\n            [checked]="card.enabled"\n            [disabled]="!canManageCards || disabled"\n            (change)="toggleCardEnabled(card.id)"\n          ></mat-checkbox>\n          <span matListItemTitle>{{ card.description }}</span>\n          <div matListItemMeta>\n            <button\n              mat-icon-button\n              color="warn"\n              [disabled]="!canManageCards || disabled"\n              (click)="openDeleteCardDialog(card.id)"\n            >\n              <mat-icon>delete</mat-icon>\n            </button>\n          </div>\n        </mat-list-item>\n      }\n      @if (cards.length === 0 && !registeringCard) {\n        <mat-list-item>\n          <span matListItemTitle i18n="@@user no cards">No cards registered</span>\n          <button\n            mat-icon-button\n            matListItemMeta\n            color="primary"\n            [disabled]="!canManageCards || disabled"\n            (click)="onClickRegisterCard()"\n          >\n            <mat-icon>add</mat-icon>\n          </button>\n        </mat-list-item>\n      }\n      @if (registeringCard) {\n        <mat-list-item>\n          <mat-progress-spinner\n            matListItemIcon\n            color="primary"\n            mode="indeterminate"\n            diameter="20"\n          ></mat-progress-spinner>\n          <span matListItemTitle i18n="@@user registering card">Registering card</span>\n        </mat-list-item>\n      }\n\n      <!-- SSH key -->\n      @if (user.role === roleTypes.ADMIN) {\n        <mat-divider></mat-divider>\n        @if (hasSshKey) {\n          <mat-list-item>\n            <mat-icon matListItemIcon>terminal</mat-icon>\n            <span matListItemTitle i18n="@@user ssh key">SSH key</span>\n            <button\n              mat-icon-button\n              matListItemMeta\n              color="warn"\n              [disabled]="!canManageSshKeys || disabled"\n              (click)="openDeleteSshKeyDialog()"\n            >\n              <mat-icon color="warn">delete</mat-icon>\n            </button>\n          </mat-list-item>\n        }\n        @if (!hasSshKey) {\n          <mat-list-item>\n            <span matListItemTitle i18n="@@user no ssh key">No SSH key</span>\n            <button\n              mat-icon-button\n              matListItemMeta\n              color="primary"\n              [disabled]="!canManageSshKeys || disabled"\n              (click)="openSshKeySetupDialog()"\n            >\n              <mat-icon>add</mat-icon>\n            </button>\n          </mat-list-item>\n        }\n      }\n\n      <!-- MCP token -->\n      @if (user.role === roleTypes.ADMIN && hasMCPToken !== null) {\n        @if (hasMCPToken === true) {\n          <mat-list-item>\n            <mat-icon matListItemIcon>vpn_key</mat-icon>\n            <span matListItemTitle i18n="@@mcp token">MCP token</span>\n            <button\n              mat-icon-button\n              matListItemMeta\n              color="warn"\n              [disabled]="!canManageMCP || disabled"\n              (click)="removeMCPToken()"\n            >\n              <mat-icon color="warn">delete</mat-icon>\n            </button>\n          </mat-list-item>\n        }\n        @if (hasMCPToken === false) {\n          <mat-list-item>\n            <span matListItemTitle i18n="@@user no mcp token">No MCP token</span>\n            <button\n              mat-icon-button\n              matListItemMeta\n              color="primary"\n              [disabled]="!canManageMCP || disabled"\n              (click)="getMCPToken()"\n            >\n              <mat-icon>add</mat-icon>\n            </button>\n          </mat-list-item>\n        }\n      }\n\n      <!-- Comment -->\n      @if (user.comment) {\n        <mat-divider></mat-divider>\n        <h3 matSubheader i18n="@@user comment">Comment</h3>\n        <mat-list-item>\n          <mat-icon matListItemIcon>notes</mat-icon>\n          <span matListItemTitle>{{ user.comment }}</span>\n        </mat-list-item>\n      }\n\n      <!-- Biometric login -->\n      @if (biometricAvailable) {\n        <mat-divider></mat-divider>\n        <h3 matSubheader i18n="@@user biometric login">Biometric login</h3>\n        <mat-list-item>\n          <mat-icon matListItemIcon>\n            @if (isBiometricEnabled()) {\n              fingerprint\n            } @else {\n              fingerprint_off\n            }\n          </mat-icon>\n          <span matListItemTitle i18n="@@user biometric login">Biometric login</span>\n          <mat-slide-toggle\n            matListItemMeta\n            color="primary"\n            [checked]="isBiometricEnabled()"\n            [disabled]="disabled"\n            (change)="$event.checked ? enableBiometricLogin() : disableBiometricLogin()"\n          ></mat-slide-toggle>\n        </mat-list-item>\n      }\n    </mat-list>\n  }\n\n  <mat-divider></mat-divider>\n\n  <mat-card-actions>\n    <button mat-icon-button color="primary" [disabled]="disabled" (click)="navigateToUserEdit()">\n      <mat-icon>mode_edit</mat-icon>\n    </button>\n    <button mat-icon-button color="warn" [disabled]="!canManageUser || disabled" (click)="openDeleteUserDialog()">\n      <mat-icon>delete</mat-icon>\n    </button>\n\n    <button mat-icon-button [matMenuTriggerFor]="menu"><mat-icon>more_vert</mat-icon></button>\n    <mat-menu #menu="matMenu">\n      <button\n        mat-menu-item\n        color="primary"\n        [disabled]="!canManageRegistration || user.hasRegistrationCode || disabled"\n        i18n="@@user register device button"\n        (click)="openDeviceRegistrationDialog()"\n      >\n        Device registration\n      </button>\n      @if (canManageCards) {\n        <button\n          mat-menu-item\n          color="primary"\n          [disabled]="disabled"\n          (click)="onClickRegisterCard()"\n          i18n="@@user register card button"\n        >\n          Register card\n        </button>\n      }\n      @if (user.role === roleTypes.ADMIN) {\n        <button\n          mat-menu-item\n          color="primary"\n          [disabled]="!canManageSshKeys || hasSshKey || disabled"\n          (click)="openSshKeySetupDialog()"\n          i18n="@@user generate ssk key"\n        >\n          Setup SSH key\n        </button>\n      }\n      @if (user.role === roleTypes.ADMIN && hasMCPToken !== null) {\n        <button\n          mat-menu-item\n          color="primary"\n          [disabled]="!canManageMCP || disabled || hasMCPToken === true"\n          (click)="getMCPToken()"\n          i18n="@@user get mcp token"\n        >\n          Get MCP token\n        </button>\n      }\n\n      <!-- Biometric login -->\n      @if (biometricAvailable) {\n        <div>\n          @if (!isBiometricEnabled()) {\n            <button mat-menu-item color="primary" [disabled]="disabled" (click)="enableBiometricLogin()">\n              <span i18n="@@user enable biometric">Enable biometric login</span>\n            </button>\n          }\n          @if (isBiometricEnabled()) {\n            <button mat-menu-item color="warn" [disabled]="disabled" (click)="disableBiometricLogin()">\n              <span i18n="@@user disable biometric">Disable biometric login</span>\n            </button>\n          }\n        </div>\n      }\n    </mat-menu>\n  </mat-card-actions>\n</mat-card>\n',
       styles: ["/* src/app/components/user/user-card/user-card.component.scss */\n.user-card .avatar {\n  font-size: 40px;\n}\n.user-card .mat-mdc-progress-spinner {\n  margin: 10px;\n}\n/*# sourceMappingURL=user-card.component.css.map */\n"]
     }]
   }], () => [{
@@ -110004,7 +109967,7 @@ var UserCardComponent = class _UserCardComponent {
   (typeof ngDevMode === "undefined" || ngDevMode) && ɵsetClassDebugInfo(UserCardComponent, {
     className: "UserCardComponent",
     filePath: "src/app/components/user/user-card/user-card.component.ts",
-    lineNumber: 42
+    lineNumber: 27
   });
 })();
 
@@ -110673,11 +110636,7 @@ var AreaListComponent = class _AreaListComponent extends ConfigurationBaseCompon
                   mat-icon-button
                   cdkDragHandle
                   class="drag-handle"
-                  [disabled]="
-                    ![monitoringStates.READY, monitoringStates.INVALID_CONFIG].includes(
-                      monitoringState
-                    )
-                  "
+                  [disabled]="![monitoringStates.READY, monitoringStates.INVALID_CONFIG].includes(monitoringState)"
                 >
                   <mat-icon>drag_indicator</mat-icon>
                 </button>
@@ -110793,7 +110752,7 @@ var AreaListComponent = class _AreaListComponent extends ConfigurationBaseCompon
   (typeof ngDevMode === "undefined" || ngDevMode) && ɵsetClassDebugInfo(AreaListComponent, {
     className: "AreaListComponent",
     filePath: "src/app/pages/area/area-list.component.ts",
-    lineNumber: 36
+    lineNumber: 32
   });
 })();
 
@@ -111087,7 +111046,7 @@ var AreaDetailComponent = class _AreaDetailComponent extends ConfigurationBaseCo
     args: [{
       providers: [],
       standalone: false,
-      template: '<div class="container">\n  @if (area) {\n    <mat-card class="container-item area-form">\n      <mat-card-content>\n        <form [formGroup]="areaForm" (ngSubmit)="onSubmit()" novalidate>\n          <mat-form-field>\n            <mat-label i18n="@@name">Name</mat-label>\n            <input\n              matInput\n              i18n-placeholder="@@name"\n              placeholder="Name"\n              formControlName="name"\n              required\n              maxlength="32"\n            />\n          </mat-form-field>\n        </form>\n      </mat-card-content>\n      <mat-divider></mat-divider>\n      <mat-card-actions align="end">\n        <button\n          mat-icon-button\n          color="primary"\n          [disabled]="areaForm.invalid || monitoringState != monitoringStates.READY"\n          (click)="onSubmit()"\n        >\n          <mat-icon>save</mat-icon>\n        </button>\n        @if (areaId > 0) {\n          <button\n            mat-icon-button\n            color="warn"\n            type="button"\n            (click)="openDeleteDialog(area.id)"\n            [disabled]="\n              getSensors().length > 0 ||\n              getOutputs().length > 0 ||\n              monitoringState != monitoringStates.READY\n            "\n          >\n            <mat-icon>delete</mat-icon>\n          </button>\n        }\n        <button mat-icon-button color="accent" type="button" (click)="onCancel()">\n          <mat-icon>cancel</mat-icon>\n        </button>\n      </mat-card-actions>\n    </mat-card>\n  }\n\n  @if (area === null) {\n    <div>\n      <h1 i18n="@@area not found">The area was not found!</h1>\n    </div>\n  }\n</div>\n',
+      template: '<div class="container">\n  @if (area) {\n    <mat-card class="container-item area-form">\n      <mat-card-content>\n        <form [formGroup]="areaForm" (ngSubmit)="onSubmit()" novalidate>\n          <mat-form-field>\n            <mat-label i18n="@@name">Name</mat-label>\n            <input\n              matInput\n              i18n-placeholder="@@name"\n              placeholder="Name"\n              formControlName="name"\n              required\n              maxlength="32"\n            />\n          </mat-form-field>\n        </form>\n      </mat-card-content>\n      <mat-divider></mat-divider>\n      <mat-card-actions align="end">\n        <button\n          mat-icon-button\n          color="primary"\n          [disabled]="areaForm.invalid || monitoringState != monitoringStates.READY"\n          (click)="onSubmit()"\n        >\n          <mat-icon>save</mat-icon>\n        </button>\n        @if (areaId > 0) {\n          <button\n            mat-icon-button\n            color="warn"\n            type="button"\n            (click)="openDeleteDialog(area.id)"\n            [disabled]="getSensors().length > 0 || getOutputs().length > 0 || monitoringState != monitoringStates.READY"\n          >\n            <mat-icon>delete</mat-icon>\n          </button>\n        }\n        <button mat-icon-button color="accent" type="button" (click)="onCancel()">\n          <mat-icon>cancel</mat-icon>\n        </button>\n      </mat-card-actions>\n    </mat-card>\n  }\n\n  @if (area === null) {\n    <div>\n      <h1 i18n="@@area not found">The area was not found!</h1>\n    </div>\n  }\n</div>\n',
       styles: ["/* src/app/pages/area/area-detail.component.scss */\n.mat-mdc-form-field {\n  width: 100%;\n}\nmat-checkbox {\n  margin: 15px 0px 10px 0px;\n}\n/*# sourceMappingURL=area-detail.component.css.map */\n"]
     }]
   }], () => [{
@@ -111202,7 +111161,7 @@ var BackendErrorComponent = class _BackendErrorComponent {
         }
         let i18n_5;
         if (false) {
-          const MSG_EXTERNAL_backend_error_reload$$SRC_APP_PAGES_BACKEND_ERROR_BACKEND_ERROR_COMPONENT_TS_5 = goog.getMsg(" Try to reconnect ");
+          const MSG_EXTERNAL_backend_error_reload$$SRC_APP_PAGES_BACKEND_ERROR_BACKEND_ERROR_COMPONENT_TS_5 = goog.getMsg("Try to reconnect");
           i18n_5 = MSG_EXTERNAL_backend_error_reload$$SRC_APP_PAGES_BACKEND_ERROR_BACKEND_ERROR_COMPONENT_TS_5;
         } else {
           i18n_5 = " Prova a riconnetterti ";
@@ -111286,15 +111245,8 @@ var BackendErrorComponent = class _BackendErrorComponent {
     <mat-divider></mat-divider>
 
     <mat-card-actions>
-      <a mat-raised-button color="primary" (click)="reloadHome()" i18n="@@backend error reload">
-        Try to reconnect
-      </a>
-      <a
-        mat-raised-button
-        color="primary"
-        [routerLink]="['/locations']"
-        i18n="@@backend error locations"
-      >
+      <a mat-raised-button color="primary" (click)="reloadHome()" i18n="@@backend error reload">Try to reconnect</a>
+      <a mat-raised-button color="primary" [routerLink]="['/locations']" i18n="@@backend error locations">
         Edit locations
       </a>
     </mat-card-actions>
@@ -111331,7 +111283,7 @@ function ClockComponent_Conditional_0_For_45_For_2_Template(rf, ctx) {
     const group_r4 = ɵɵnextContext().$implicit;
     ɵɵproperty("value", group_r4.groupName + "/" + name_r3);
     ɵɵadvance();
-    ɵɵtextInterpolate2(" ", group_r4.groupName, "/", name_r3, " ");
+    ɵɵtextInterpolate2("", group_r4.groupName, "/", name_r3);
   }
 }
 function ClockComponent_Conditional_0_For_45_Template(rf, ctx) {
@@ -111781,9 +111733,7 @@ var ClockComponent = class _ClockComponent extends ConfigurationBaseComponent {
                 @for (group of timezoneGroupOptions | async; track group) {
                   <mat-optgroup [label]="group.groupName">
                     @for (name of group.zoneNames; track name) {
-                      <mat-option [value]="group.groupName + '/' + name">
-                        {{ group.groupName }}/{{ name }}
-                      </mat-option>
+                      <mat-option [value]="group.groupName + '/' + name">{{ group.groupName }}/{{ name }}</mat-option>
                     }
                   </mat-optgroup>
                 }
@@ -111813,11 +111763,7 @@ var ClockComponent = class _ClockComponent extends ConfigurationBaseComponent {
             <mat-list-item class="clock">
               <span i18n="@@clock uptime system">System</span>
               <span class="spacer"></span>
-              {{
-                clock.uptime === null
-                  ? " - - - "
-                  : getDuration(clock.uptime) + " (" + clock.uptime + " s)"
-              }}
+              {{ clock.uptime === null ? " - - - " : getDuration(clock.uptime) + " (" + clock.uptime + " s)" }}
             </mat-list-item>
             <mat-list-item class="clock">
               <span i18n="@@clock uptime server">Server</span>
@@ -112074,7 +112020,7 @@ var KeypadComponent = class _KeypadComponent extends ConfigurationBaseComponent 
     args: [{
       providers: [],
       standalone: false,
-      template: '@if (keypad != null) {\n  <div class="container">\n    <form [formGroup]="keypadForm" (ngSubmit)="onSubmit()" class="keypad-form">\n      <mat-accordion class="full-width">\n        <mat-expansion-panel expanded="true">\n          <mat-expansion-panel-header>\n            <mat-panel-title i18n="@@keypad settings">Keypad settings</mat-panel-title>\n          </mat-expansion-panel-header>\n          <div class="row">\n            @if (keypadTypes) {\n              <mat-checkbox formControlName="keypadEnabled" color="primary" i18n="@@keypad enabled">\n                Enabled\n              </mat-checkbox>\n            }\n            <mat-form-field>\n              <mat-label i18n="@@keypad type">Keypad type</mat-label>\n              <mat-select\n                formControlName="keypadType"\n                i18n-placeholder="@@keypad type"\n                placeholder="Keypad type"\n              >\n                @for (type of keypadTypes; track type) {\n                  <mat-option [value]="type.id">\n                    {{ type.name }}\n                  </mat-option>\n                }\n              </mat-select>\n            </mat-form-field>\n          </div>\n        </mat-expansion-panel>\n      </mat-accordion>\n      <div class="form-actions">\n        <button\n          mat-raised-button\n          color="primary"\n          type="submit"\n          [disabled]="keypadForm.invalid || monitoringState != monitoringStates.READY"\n          i18n="@@save button"\n        >\n          Save\n        </button>\n      </div>\n    </form>\n  </div>\n}\n',
+      template: '@if (keypad != null) {\n  <div class="container">\n    <form [formGroup]="keypadForm" (ngSubmit)="onSubmit()" class="keypad-form">\n      <mat-accordion class="full-width">\n        <mat-expansion-panel expanded="true">\n          <mat-expansion-panel-header>\n            <mat-panel-title i18n="@@keypad settings">Keypad settings</mat-panel-title>\n          </mat-expansion-panel-header>\n          <div class="row">\n            @if (keypadTypes) {\n              <mat-checkbox formControlName="keypadEnabled" color="primary" i18n="@@keypad enabled">\n                Enabled\n              </mat-checkbox>\n            }\n            <mat-form-field>\n              <mat-label i18n="@@keypad type">Keypad type</mat-label>\n              <mat-select formControlName="keypadType" i18n-placeholder="@@keypad type" placeholder="Keypad type">\n                @for (type of keypadTypes; track type) {\n                  <mat-option [value]="type.id">\n                    {{ type.name }}\n                  </mat-option>\n                }\n              </mat-select>\n            </mat-form-field>\n          </div>\n        </mat-expansion-panel>\n      </mat-accordion>\n      <div class="form-actions">\n        <button\n          mat-raised-button\n          color="primary"\n          type="submit"\n          [disabled]="keypadForm.invalid || monitoringState != monitoringStates.READY"\n          i18n="@@save button"\n        >\n          Save\n        </button>\n      </div>\n    </form>\n  </div>\n}\n',
       styles: ["/* src/app/pages/config/keypad/keypad.component.scss */\n.keypad-form {\n  margin-right: auto;\n  margin-left: auto;\n  max-width: 600px;\n}\n.keypad-form .mat-mdc-form-field {\n  width: 100%;\n}\n.keypad {\n  margin: 2px 2px 10px 2px;\n}\nng2-timezone-picker {\n  display: inline-block;\n}\n.mat-table {\n  display: block;\n}\n.mat-row,\n.mat-header-row {\n  display: flex;\n  border-bottom-width: 1px;\n  border-bottom-style: solid;\n  align-items: center;\n  min-height: 48px;\n  padding: 0 24px;\n}\n.mat-cell,\n.mat-header-cell {\n  flex: 1;\n  overflow: hidden;\n  word-wrap: break-word;\n}\n/*# sourceMappingURL=keypad.component.css.map */\n"]
     }]
   }], () => [{
@@ -112109,7 +112055,7 @@ var KeypadComponent = class _KeypadComponent extends ConfigurationBaseComponent 
   (typeof ngDevMode === "undefined" || ngDevMode) && ɵsetClassDebugInfo(KeypadComponent, {
     className: "KeypadComponent",
     filePath: "src/app/pages/config/keypad/keypad.component.ts",
-    lineNumber: 29
+    lineNumber: 24
   });
 })();
 
@@ -112392,43 +112338,57 @@ function MqttComponent_ng_template_1_Template(rf, ctx) {
     ɵɵelementStart(0, "mat-list")(1, "mat-list-item")(2, "span", 34);
     ɵɵi18n(3, 16);
     ɵɵelementEnd();
-    ɵɵtext(4);
+    ɵɵelementStart(4, "div", 35);
+    ɵɵtext(5);
     ɵɵelementEnd();
-    ɵɵelementStart(5, "mat-list-item")(6, "span", 34);
-    ɵɵi18n(7, 17);
+    ɵɵelementStart(6, "div", 36)(7, "button", 37);
+    ɵɵlistener("click", function MqttComponent_ng_template_1_Template_button_click_7_listener() {
+      const config_r5 = ɵɵrestoreView(_r4).config;
+      const ctx_r1 = ɵɵnextContext();
+      return ɵɵresetView(ctx_r1.copyToClipboard(ctx_r1.getMqttUrl(config_r5)));
+    });
+    ɵɵelementStart(8, "mat-icon");
+    ɵɵtext(9, "content_copy");
+    ɵɵelementEnd()()()();
+    ɵɵelementStart(10, "mat-list-item")(11, "span", 34);
+    ɵɵi18n(12, 17);
     ɵɵelementEnd();
-    ɵɵtext(8);
-    ɵɵelementStart(9, "button", 35);
-    ɵɵlistener("click", function MqttComponent_ng_template_1_Template_button_click_9_listener() {
+    ɵɵelementStart(13, "div", 35);
+    ɵɵtext(14);
+    ɵɵelementEnd();
+    ɵɵelementStart(15, "div", 36)(16, "button", 37);
+    ɵɵlistener("click", function MqttComponent_ng_template_1_Template_button_click_16_listener() {
       const config_r5 = ɵɵrestoreView(_r4).config;
       const ctx_r1 = ɵɵnextContext();
       return ɵɵresetView(ctx_r1.copyToClipboard(ctx_r1.getMqttUsername(config_r5)));
     });
-    ɵɵelementStart(10, "mat-icon");
-    ɵɵtext(11, "content_copy");
-    ɵɵelementEnd()()();
-    ɵɵelementStart(12, "mat-list-item")(13, "span", 34);
-    ɵɵi18n(14, 18);
+    ɵɵelementStart(17, "mat-icon");
+    ɵɵtext(18, "content_copy");
+    ɵɵelementEnd()()()();
+    ɵɵelementStart(19, "mat-list-item")(20, "span", 34);
+    ɵɵi18n(21, 18);
     ɵɵelementEnd();
-    ɵɵtext(15);
-    ɵɵelementStart(16, "button", 35);
-    ɵɵlistener("click", function MqttComponent_ng_template_1_Template_button_click_16_listener() {
+    ɵɵelementStart(22, "div", 35);
+    ɵɵtext(23);
+    ɵɵelementEnd();
+    ɵɵelementStart(24, "div", 36)(25, "button", 37);
+    ɵɵlistener("click", function MqttComponent_ng_template_1_Template_button_click_25_listener() {
       const config_r5 = ɵɵrestoreView(_r4).config;
       const ctx_r1 = ɵɵnextContext();
       return ɵɵresetView(ctx_r1.copyToClipboard(ctx_r1.getMqttPassword(config_r5)));
     });
-    ɵɵelementStart(17, "mat-icon");
-    ɵɵtext(18, "content_copy");
-    ɵɵelementEnd()()()();
+    ɵɵelementStart(26, "mat-icon");
+    ɵɵtext(27, "content_copy");
+    ɵɵelementEnd()()()()();
   }
   if (rf & 2) {
     const config_r5 = ctx.config;
     const ctx_r1 = ɵɵnextContext();
-    ɵɵadvance(4);
+    ɵɵadvance(5);
     ɵɵtextInterpolate1(" ", ctx_r1.getMqttUrl(config_r5), " ");
-    ɵɵadvance(4);
+    ɵɵadvance(9);
     ɵɵtextInterpolate1(" ", ctx_r1.getMqttUsername(config_r5), " ");
-    ɵɵadvance(7);
+    ɵɵadvance(9);
     ɵɵtextInterpolate1(" ", ctx_r1.getMqttPassword(config_r5) || "No password set", " ");
   }
 }
@@ -112606,14 +112566,14 @@ var MqttComponent = class _MqttComponent extends ConfigurationBaseComponent {
         }
         let i18n_1;
         if (false) {
-          const MSG_EXTERNAL_network_mqtt_description$$SRC_APP_PAGES_CONFIG_NETWORK_MQTT_COMPONENT_TS_1 = goog.getMsg(" Configure MQTT broker connection ");
+          const MSG_EXTERNAL_network_mqtt_description$$SRC_APP_PAGES_CONFIG_NETWORK_MQTT_COMPONENT_TS_1 = goog.getMsg("Configure MQTT broker connection");
           i18n_1 = MSG_EXTERNAL_network_mqtt_description$$SRC_APP_PAGES_CONFIG_NETWORK_MQTT_COMPONENT_TS_1;
         } else {
           i18n_1 = " Configure MQTT broker connection ";
         }
         let i18n_2;
         if (false) {
-          const MSG_EXTERNAL_network_mqtt_enable$$SRC_APP_PAGES_CONFIG_NETWORK_MQTT_COMPONENT_TS_2 = goog.getMsg(" Enable MQTT connection ");
+          const MSG_EXTERNAL_network_mqtt_enable$$SRC_APP_PAGES_CONFIG_NETWORK_MQTT_COMPONENT_TS_2 = goog.getMsg("Enable MQTT connection");
           i18n_2 = MSG_EXTERNAL_network_mqtt_enable$$SRC_APP_PAGES_CONFIG_NETWORK_MQTT_COMPONENT_TS_2;
         } else {
           i18n_2 = " Enable MQTT connection ";
@@ -112690,7 +112650,7 @@ var MqttComponent = class _MqttComponent extends ConfigurationBaseComponent {
         }
         let i18n_13;
         if (false) {
-          const MSG_EXTERNAL_network_mqtt_enable_tls$$SRC_APP_PAGES_CONFIG_NETWORK_MQTT_COMPONENT_TS_13 = goog.getMsg(" Enable TLS ");
+          const MSG_EXTERNAL_network_mqtt_enable_tls$$SRC_APP_PAGES_CONFIG_NETWORK_MQTT_COMPONENT_TS_13 = goog.getMsg("Enable TLS");
           i18n_13 = MSG_EXTERNAL_network_mqtt_enable_tls$$SRC_APP_PAGES_CONFIG_NETWORK_MQTT_COMPONENT_TS_13;
         } else {
           i18n_13 = " Enable TLS ";
@@ -112718,7 +112678,7 @@ var MqttComponent = class _MqttComponent extends ConfigurationBaseComponent {
         }
         let i18n_17;
         if (false) {
-          const MSG_EXTERNAL_network_mqtt_internal_broker_control$$SRC_APP_PAGES_CONFIG_NETWORK_MQTT_COMPONENT_TS_17 = goog.getMsg(" Internal MQTT Broker read and control ");
+          const MSG_EXTERNAL_network_mqtt_internal_broker_control$$SRC_APP_PAGES_CONFIG_NETWORK_MQTT_COMPONENT_TS_17 = goog.getMsg("Internal MQTT Broker read and control");
           i18n_17 = MSG_EXTERNAL_network_mqtt_internal_broker_control$$SRC_APP_PAGES_CONFIG_NETWORK_MQTT_COMPONENT_TS_17;
         } else {
           i18n_17 = "Internal MQTT Broker read and control";
@@ -112751,18 +112711,18 @@ var MqttComponent = class _MqttComponent extends ConfigurationBaseComponent {
         } else {
           i18n_21 = "MQTT Password";
         }
-        return [["internalCredentials", ""], i18n_0, i18n_1, i18n_2, i18n_3, i18n_4, i18n_7, i18n_8, i18n_11, i18n_12, i18n_13, i18n_14, i18n_15, i18n_16, i18n_17, i18n_18, i18n_19, i18n_20, i18n_21, [1, "mqtt-form", 3, "formGroup"], [1, "mqtt-form", 3, "ngSubmit", "formGroup"], [1, "row"], ["formControlName", "mqttEnabled"], ["formControlName", "mqttExternal"], [1, "form-actions"], ["mat-raised-button", "", "color", "primary", "type", "submit", 3, "disabled"], [1, "container-item"], ["matInput", "", "formControlName", "mqttHostname", "placeholder", i18n_5], ["type", "number", "matInput", "", "formControlName", "mqttPort", "placeholder", i18n_6], ["matInput", "", "formControlName", "mqttUsername", "placeholder", i18n_9], ["type", "password", "matInput", "", "formControlName", "mqttPassword", "placeholder", i18n_10], ["formControlName", "mqttTlsEnabled"], ["formControlName", "mqttTlsInsecure"], [4, "ngTemplateOutlet", "ngTemplateOutletContext"], ["matListItemTitle", ""], ["type", "button", "mat-icon-button", "", "color", "primary", "onclick", "this.blur()", 3, "click"]];
+        return [["internalCredentials", ""], i18n_0, i18n_1, i18n_2, i18n_3, i18n_4, i18n_7, i18n_8, i18n_11, i18n_12, i18n_13, i18n_14, i18n_15, i18n_16, i18n_17, i18n_18, i18n_19, i18n_20, i18n_21, [1, "mqtt-form", 3, "formGroup"], [1, "mqtt-form", 3, "ngSubmit", "formGroup"], [1, "row"], ["formControlName", "mqttEnabled"], ["formControlName", "mqttExternal"], [1, "form-actions"], ["mat-raised-button", "", "color", "primary", "type", "submit", 3, "disabled"], [1, "container-item"], ["matInput", "", "formControlName", "mqttHostname", "placeholder", i18n_5], ["type", "number", "matInput", "", "formControlName", "mqttPort", "placeholder", i18n_6], ["matInput", "", "formControlName", "mqttUsername", "placeholder", i18n_9], ["type", "password", "matInput", "", "formControlName", "mqttPassword", "placeholder", i18n_10], ["formControlName", "mqttTlsEnabled"], ["formControlName", "mqttTlsInsecure"], [4, "ngTemplateOutlet", "ngTemplateOutletContext"], ["matListItemTitle", ""], ["matListItemLine", ""], ["matListItemMeta", ""], ["type", "button", "mat-icon-button", "", "color", "primary", "onclick", "this.blur()", 3, "click"]];
       },
       template: function MqttComponent_Template(rf, ctx) {
         if (rf & 1) {
           ɵɵconditionalCreate(0, MqttComponent_Conditional_0_Template, 7, 1, "mat-expansion-panel");
-          ɵɵtemplate(1, MqttComponent_ng_template_1_Template, 19, 3, "ng-template", null, 0, ɵɵtemplateRefExtractor);
+          ɵɵtemplate(1, MqttComponent_ng_template_1_Template, 28, 3, "ng-template", null, 0, ɵɵtemplateRefExtractor);
         }
         if (rf & 2) {
           ɵɵconditional((ctx.mqttConnection == null ? null : ctx.mqttConnection.value) ? 0 : -1);
         }
       },
-      dependencies: [ReactiveFormsModule, ɵNgNoValidate, DefaultValueAccessor, NumberValueAccessor, NgControlStatus, NgControlStatusGroup, FormGroupDirective, FormControlName, MatExpansionModule, MatExpansionPanel, MatExpansionPanelHeader, MatExpansionPanelTitle, MatExpansionPanelDescription, MatCheckboxModule, MatCheckbox, MatFormFieldModule, MatFormField, MatLabel, MatInputModule, MatInput, MatButtonModule, MatButton, MatIconButton, MatDividerModule, MatListModule, MatList, MatListItem, MatListItemTitle, MatIconModule, MatIcon, NgTemplateOutlet],
+      dependencies: [ReactiveFormsModule, ɵNgNoValidate, DefaultValueAccessor, NumberValueAccessor, NgControlStatus, NgControlStatusGroup, FormGroupDirective, FormControlName, MatExpansionModule, MatExpansionPanel, MatExpansionPanelHeader, MatExpansionPanelTitle, MatExpansionPanelDescription, MatCheckboxModule, MatCheckbox, MatFormFieldModule, MatFormField, MatLabel, MatInputModule, MatInput, MatButtonModule, MatButton, MatIconButton, MatDividerModule, MatListModule, MatList, MatListItem, MatListItemLine, MatListItemTitle, MatListItemMeta, MatIconModule, MatIcon, NgTemplateOutlet],
       styles: ["\n.mqtt-form[_ngcontent-%COMP%] {\n  margin-right: auto;\n  margin-left: auto;\n  max-width: 600px;\n}\n/*# sourceMappingURL=mqtt.component.css.map */"]
     });
   }
@@ -112779,16 +112739,12 @@ var MqttComponent = class _MqttComponent extends ConfigurationBaseComponent {
   <mat-expansion-panel>
     <mat-expansion-panel-header>
       <mat-panel-title i18n="@@network mqtt settings">MQTT Settings</mat-panel-title>
-      <mat-panel-description i18n="@@network mqtt description">
-        Configure MQTT broker connection
-      </mat-panel-description>
+      <mat-panel-description i18n="@@network mqtt description">Configure MQTT broker connection</mat-panel-description>
     </mat-expansion-panel-header>
     @if (mqttForm) {
       <form [formGroup]="mqttForm" (ngSubmit)="onSaveMqtt()" class="mqtt-form">
         <div class="row">
-          <mat-checkbox formControlName="mqttEnabled" i18n="@@network mqtt enable">
-            Enable MQTT connection
-          </mat-checkbox>
+          <mat-checkbox formControlName="mqttEnabled" i18n="@@network mqtt enable">Enable MQTT connection</mat-checkbox>
           <mat-checkbox formControlName="mqttExternal" i18n="@@network mqtt external">
             Use external MQTT broker
           </mat-checkbox>
@@ -112841,9 +112797,7 @@ var MqttComponent = class _MqttComponent extends ConfigurationBaseComponent {
         }
         @if (mqttForm.controls["mqttEnabled"].value && mqttForm.controls["mqttExternal"].value) {
           <div class="row">
-            <mat-checkbox formControlName="mqttTlsEnabled" i18n="@@network mqtt enable tls">
-              Enable TLS
-            </mat-checkbox>
+            <mat-checkbox formControlName="mqttTlsEnabled" i18n="@@network mqtt enable tls">Enable TLS</mat-checkbox>
             <mat-checkbox formControlName="mqttTlsInsecure" i18n="@@network mqtt insecure tls">
               Allow insecure TLS connection
             </mat-checkbox>
@@ -112855,12 +112809,8 @@ var MqttComponent = class _MqttComponent extends ConfigurationBaseComponent {
             <p i18n="@@network mqtt internal broker read info">
               For external clients that only display the state of the system.
             </p>
-            <ng-container
-              *ngTemplateOutlet="internalCredentials; context: { config: mqttInternalRead }"
-            ></ng-container>
-            <h3 i18n="@@network mqtt internal broker control">
-              Internal MQTT Broker read and control
-            </h3>
+            <ng-container *ngTemplateOutlet="internalCredentials; context: { config: mqttInternalRead }"></ng-container>
+            <h3 i18n="@@network mqtt internal broker control">Internal MQTT Broker read and control</h3>
             <p i18n="@@network mqtt internal broker control info">
               For external clients that also arm and disarm the system, like Home Assistant.
             </p>
@@ -112874,9 +112824,7 @@ var MqttComponent = class _MqttComponent extends ConfigurationBaseComponent {
             mat-raised-button
             color="primary"
             type="submit"
-            [disabled]="
-              monitoringState != monitoringStates.READY || mqttForm.invalid || mqttForm.pristine
-            "
+            [disabled]="monitoringState != monitoringStates.READY || mqttForm.invalid || mqttForm.pristine"
             i18n="@@save button"
           >
             Save
@@ -112891,33 +112839,54 @@ var MqttComponent = class _MqttComponent extends ConfigurationBaseComponent {
   <mat-list>
     <mat-list-item>
       <span matListItemTitle i18n="@@network mqtt url">MQTT URL</span>
-      {{ getMqttUrl(config) }}
+      <div matListItemLine>
+        {{ getMqttUrl(config) }}
+      </div>
+      <div matListItemMeta>
+        <button
+          type="button"
+          mat-icon-button
+          color="primary"
+          onclick="this.blur()"
+          (click)="copyToClipboard(getMqttUrl(config))"
+        >
+          <mat-icon>content_copy</mat-icon>
+        </button>
+      </div>
     </mat-list-item>
     <mat-list-item>
       <span matListItemTitle i18n="@@network mqtt username">MQTT Username</span>
-      {{ getMqttUsername(config) }}
-      <button
-        type="button"
-        mat-icon-button
-        color="primary"
-        onclick="this.blur()"
-        (click)="copyToClipboard(getMqttUsername(config))"
-      >
-        <mat-icon>content_copy</mat-icon>
-      </button>
+      <div matListItemLine>
+        {{ getMqttUsername(config) }}
+      </div>
+      <div matListItemMeta>
+        <button
+          type="button"
+          mat-icon-button
+          color="primary"
+          onclick="this.blur()"
+          (click)="copyToClipboard(getMqttUsername(config))"
+        >
+          <mat-icon>content_copy</mat-icon>
+        </button>
+      </div>
     </mat-list-item>
     <mat-list-item>
       <span matListItemTitle i18n="@@network mqtt password">MQTT Password</span>
-      {{ getMqttPassword(config) || "No password set" }}
-      <button
-        type="button"
-        mat-icon-button
-        color="primary"
-        onclick="this.blur()"
-        (click)="copyToClipboard(getMqttPassword(config))"
-      >
-        <mat-icon>content_copy</mat-icon>
-      </button>
+      <div matListItemLine>
+        {{ getMqttPassword(config) || "No password set" }}
+      </div>
+      <div matListItemMeta>
+        <button
+          type="button"
+          mat-icon-button
+          color="primary"
+          onclick="this.blur()"
+          (click)="copyToClipboard(getMqttPassword(config))"
+        >
+          <mat-icon>content_copy</mat-icon>
+        </button>
+      </div>
     </mat-list-item>
   </mat-list>
 </ng-template>
@@ -112960,7 +112929,7 @@ var MqttComponent = class _MqttComponent extends ConfigurationBaseComponent {
   (typeof ngDevMode === "undefined" || ngDevMode) && ɵsetClassDebugInfo(MqttComponent, {
     className: "MqttComponent",
     filePath: "src/app/pages/config/network/mqtt.component.ts",
-    lineNumber: 54
+    lineNumber: 44
   });
 })();
 
@@ -113369,7 +113338,7 @@ var NetworkComponent = class _NetworkComponent extends ConfigurationBaseComponen
         }
         let i18n_6;
         if (false) {
-          const MSG_EXTERNAL_network_remote_access$$SRC_APP_PAGES_CONFIG_NETWORK_NETWORK_COMPONENT_TS_6 = goog.getMsg(" Remote access by hostname ");
+          const MSG_EXTERNAL_network_remote_access$$SRC_APP_PAGES_CONFIG_NETWORK_NETWORK_COMPONENT_TS_6 = goog.getMsg("Remote access by hostname");
           i18n_6 = MSG_EXTERNAL_network_remote_access$$SRC_APP_PAGES_CONFIG_NETWORK_NETWORK_COMPONENT_TS_6;
         } else {
           i18n_6 = " Accesso remoto attraverso il nome dell'host ";
@@ -113485,7 +113454,7 @@ var NetworkComponent = class _NetworkComponent extends ConfigurationBaseComponen
     type: Component,
     args: [{
       standalone: false,
-      template: '@if (dyndns != null && access != null) {\n  <div class="container">\n    <mat-accordion multi="true">\n      <mat-expansion-panel>\n        <mat-expansion-panel-header>\n          <mat-panel-title i18n="@@network dns">Dynamic DNS</mat-panel-title>\n          <mat-panel-description i18n="@@network remote access">\n            Remote access by hostname\n          </mat-panel-description>\n        </mat-expansion-panel-header>\n        <form [formGroup]="dyndnsForm" (ngSubmit)="onSaveDyndns()" class="network-form">\n          <div class="row">\n            <mat-form-field class="container-item">\n              <mat-label i18n="@@network provider">Provider</mat-label>\n              <mat-select\n                formControlName="dyndnsProvider"\n                i18n-placeholder="@@network provider"\n                placeholder="Provider"\n              >\n                @for (provider of providers; track provider) {\n                  <mat-option [value]="provider.value">\n                    {{ provider.label }}\n                  </mat-option>\n                }\n              </mat-select>\n            </mat-form-field>\n            <mat-form-field class="container-item">\n              <mat-label i18n="@@network hostname">Hostname</mat-label>\n              <input\n                matInput\n                formControlName="dyndnsHostname"\n                i18n-placeholder="@@network hostname"\n                placeholder="Hostname"\n              />\n            </mat-form-field>\n          </div>\n          <div class="row">\n            <mat-form-field class="container-item">\n              <mat-label i18n="@@network username">Username</mat-label>\n              <input\n                matInput\n                formControlName="dyndnsUsername"\n                i18n-placeholder="@@network username"\n                placeholder="Username"\n              />\n            </mat-form-field>\n            <mat-form-field class="container-item">\n              <mat-label i18n="@@network password">Password</mat-label>\n              <input\n                type="password"\n                matInput\n                formControlName="dyndnsPassword"\n                (focus)="onPasswordFocus()"\n                (blur)="onPasswordBlur()"\n                i18n-placeholder="@@network password"\n                placeholder="Password"\n              />\n            </mat-form-field>\n          </div>\n          <div class="row">\n            <mat-form-field class="container-item">\n              <mat-label i18n="@@network certbot email">Certbot email</mat-label>\n              <input\n                type="email"\n                matInput\n                formControlName="certbotEmail"\n                i18n-placeholder="@@network certbot email"\n                placeholder="Certbot email"\n              />\n            </mat-form-field>\n          </div>\n          <mat-checkbox formControlName="dyndnsRestrictHost" i18n="@@network restrict host">\n            Restrict access to host\n          </mat-checkbox>\n          <div class="form-actions">\n            <button\n              mat-raised-button\n              color="primary"\n              type="submit"\n              [disabled]="\n                monitoringState != monitoringStates.READY ||\n                dyndnsForm.invalid ||\n                dyndnsForm.pristine\n              "\n              i18n="@@save button"\n            >\n              Save\n            </button>\n          </div>\n        </form>\n      </mat-expansion-panel>\n      <mat-expansion-panel>\n        <mat-expansion-panel-header>\n          <mat-panel-title i18n="@@network terminal access">Terminal access</mat-panel-title>\n          <mat-panel-description i18n="@@network ssh settings">SSH settings</mat-panel-description>\n        </mat-expansion-panel-header>\n        <form [formGroup]="accessForm" (ngSubmit)="onSaveAccess()" class="network-form">\n          <mat-checkbox formControlName="accessSshService" i18n="@@network enable ssh">\n            Enable SSH connection\n          </mat-checkbox>\n          <br />\n          <mat-checkbox\n            formControlName="accessSshRestrictLocalNetwork"\n            i18n="@@network restrict local"\n          >\n            Restrict SSH connection to local network\n          </mat-checkbox>\n          <br />\n          <mat-checkbox\n            formControlName="accessSshPasswordAuthentication"\n            i18n="@@network password authentication"\n          >\n            Enable SSH password authentication\n          </mat-checkbox>\n          <div class="form-actions">\n            <button\n              mat-raised-button\n              color="primary"\n              type="submit"\n              [disabled]="\n                !(\n                  monitoringState == monitoringStates.READY ||\n                  monitoringState == monitoringStates.ARMED\n                ) ||\n                accessForm.invalid ||\n                accessForm.pristine\n              "\n              i18n="@@save button"\n            >\n              Save\n            </button>\n          </div>\n        </form>\n      </mat-expansion-panel>\n      <app-mqtt></app-mqtt>\n      <app-mcp-access></app-mcp-access>\n    </mat-accordion>\n    @if (publicUrl !== null) {\n      <div class="status">\n        @if (publicUrlAccessible === true) {\n          <mat-icon class="icon-accessible link-icon">check</mat-icon>\n        }\n        @if (publicUrlAccessible === false) {\n          <mat-icon class="icon-inaccessible link-icon">error</mat-icon>\n        }\n        @if (publicUrlAccessible === null) {\n          <mat-spinner diameter="16"></mat-spinner>\n        }\n        <a mat-button color="primary" href="{{ publicUrl }}" target="_blank">\n          {{ publicUrl }}\n          <mat-icon class="link-icon" iconPositionEnd>open_in_new</mat-icon>\n        </a>\n      </div>\n    }\n  </div>\n}\n',
+      template: '@if (dyndns != null && access != null) {\n  <div class="container">\n    <mat-accordion multi="true">\n      <mat-expansion-panel>\n        <mat-expansion-panel-header>\n          <mat-panel-title i18n="@@network dns">Dynamic DNS</mat-panel-title>\n          <mat-panel-description i18n="@@network remote access">Remote access by hostname</mat-panel-description>\n        </mat-expansion-panel-header>\n        <form [formGroup]="dyndnsForm" (ngSubmit)="onSaveDyndns()" class="network-form">\n          <div class="row">\n            <mat-form-field class="container-item">\n              <mat-label i18n="@@network provider">Provider</mat-label>\n              <mat-select formControlName="dyndnsProvider" i18n-placeholder="@@network provider" placeholder="Provider">\n                @for (provider of providers; track provider) {\n                  <mat-option [value]="provider.value">\n                    {{ provider.label }}\n                  </mat-option>\n                }\n              </mat-select>\n            </mat-form-field>\n            <mat-form-field class="container-item">\n              <mat-label i18n="@@network hostname">Hostname</mat-label>\n              <input\n                matInput\n                formControlName="dyndnsHostname"\n                i18n-placeholder="@@network hostname"\n                placeholder="Hostname"\n              />\n            </mat-form-field>\n          </div>\n          <div class="row">\n            <mat-form-field class="container-item">\n              <mat-label i18n="@@network username">Username</mat-label>\n              <input\n                matInput\n                formControlName="dyndnsUsername"\n                i18n-placeholder="@@network username"\n                placeholder="Username"\n              />\n            </mat-form-field>\n            <mat-form-field class="container-item">\n              <mat-label i18n="@@network password">Password</mat-label>\n              <input\n                type="password"\n                matInput\n                formControlName="dyndnsPassword"\n                (focus)="onPasswordFocus()"\n                (blur)="onPasswordBlur()"\n                i18n-placeholder="@@network password"\n                placeholder="Password"\n              />\n            </mat-form-field>\n          </div>\n          <div class="row">\n            <mat-form-field class="container-item">\n              <mat-label i18n="@@network certbot email">Certbot email</mat-label>\n              <input\n                type="email"\n                matInput\n                formControlName="certbotEmail"\n                i18n-placeholder="@@network certbot email"\n                placeholder="Certbot email"\n              />\n            </mat-form-field>\n          </div>\n          <mat-checkbox formControlName="dyndnsRestrictHost" i18n="@@network restrict host">\n            Restrict access to host\n          </mat-checkbox>\n          <div class="form-actions">\n            <button\n              mat-raised-button\n              color="primary"\n              type="submit"\n              [disabled]="monitoringState != monitoringStates.READY || dyndnsForm.invalid || dyndnsForm.pristine"\n              i18n="@@save button"\n            >\n              Save\n            </button>\n          </div>\n        </form>\n      </mat-expansion-panel>\n      <mat-expansion-panel>\n        <mat-expansion-panel-header>\n          <mat-panel-title i18n="@@network terminal access">Terminal access</mat-panel-title>\n          <mat-panel-description i18n="@@network ssh settings">SSH settings</mat-panel-description>\n        </mat-expansion-panel-header>\n        <form [formGroup]="accessForm" (ngSubmit)="onSaveAccess()" class="network-form">\n          <mat-checkbox formControlName="accessSshService" i18n="@@network enable ssh">\n            Enable SSH connection\n          </mat-checkbox>\n          <br />\n          <mat-checkbox formControlName="accessSshRestrictLocalNetwork" i18n="@@network restrict local">\n            Restrict SSH connection to local network\n          </mat-checkbox>\n          <br />\n          <mat-checkbox formControlName="accessSshPasswordAuthentication" i18n="@@network password authentication">\n            Enable SSH password authentication\n          </mat-checkbox>\n          <div class="form-actions">\n            <button\n              mat-raised-button\n              color="primary"\n              type="submit"\n              [disabled]="\n                !(monitoringState == monitoringStates.READY || monitoringState == monitoringStates.ARMED) ||\n                accessForm.invalid ||\n                accessForm.pristine\n              "\n              i18n="@@save button"\n            >\n              Save\n            </button>\n          </div>\n        </form>\n      </mat-expansion-panel>\n      <app-mqtt></app-mqtt>\n      <app-mcp-access></app-mcp-access>\n    </mat-accordion>\n    @if (publicUrl !== null) {\n      <div class="status">\n        @if (publicUrlAccessible === true) {\n          <mat-icon class="icon-accessible link-icon">check</mat-icon>\n        }\n        @if (publicUrlAccessible === false) {\n          <mat-icon class="icon-inaccessible link-icon">error</mat-icon>\n        }\n        @if (publicUrlAccessible === null) {\n          <mat-spinner diameter="16"></mat-spinner>\n        }\n        <a mat-button color="primary" href="{{ publicUrl }}" target="_blank">\n          {{ publicUrl }}\n          <mat-icon class="link-icon" iconPositionEnd>open_in_new</mat-icon>\n        </a>\n      </div>\n    }\n  </div>\n}\n',
       styles: ["/* src/app/pages/config/network/network.component.scss */\n.network-form {\n  margin-right: auto;\n  margin-left: auto;\n  max-width: 600px;\n}\n.mat-table {\n  display: block;\n}\n.mat-row,\n.mat-header-row {\n  display: flex;\n  border-bottom-width: 1px;\n  border-bottom-style: solid;\n  align-items: center;\n  min-height: 48px;\n  padding: 0 24px;\n}\n.mat-cell,\n.mat-header-cell {\n  flex: 1;\n  overflow: hidden;\n  word-wrap: break-word;\n}\n.status {\n  margin: 10px 5px;\n}\n.status .link-icon {\n  vertical-align: middle;\n  margin: 3px;\n}\n.status .icon-accessible {\n  color: green;\n}\n.status .icon-inaccessible {\n  color: red;\n}\n.status mat-spinner {\n  float: left;\n}\n/*# sourceMappingURL=network.component.css.map */\n"]
     }]
   }], () => [{
@@ -113526,7 +113495,7 @@ var NetworkComponent = class _NetworkComponent extends ConfigurationBaseComponen
   (typeof ngDevMode === "undefined" || ngDevMode) && ɵsetClassDebugInfo(NetworkComponent, {
     className: "NetworkComponent",
     filePath: "src/app/pages/config/network/network.component.ts",
-    lineNumber: 31
+    lineNumber: 26
   });
 })();
 
@@ -113638,7 +113607,7 @@ var LocationComponent = class _LocationComponent extends ConfigurationBaseCompon
     this.monitoringService = monitoringService;
     this.fb = fb;
     this.snackBar = snackBar;
-    this.locationOption = null;
+    this.hasLocationOption = false;
   }
   ngOnInit() {
     super.initialize();
@@ -113654,12 +113623,12 @@ var LocationComponent = class _LocationComponent extends ConfigurationBaseCompon
     this.loader.display(true);
     this.configService.getOption("system", "location").pipe(finalize(() => this.loader.display(false))).subscribe({
       next: locationOption => {
-        this.locationOption = locationOption;
-        this.updateLocationForm(this.locationOption);
+        this.hasLocationOption = Boolean(locationOption?.value != null);
+        this.updateLocationForm(locationOption);
       },
       error: () => {
-        this.locationOption = null;
-        this.updateLocationForm(this.locationOption);
+        this.hasLocationOption = false;
+        this.updateLocationForm(null);
       }
     });
   }
@@ -113727,7 +113696,7 @@ var LocationComponent = class _LocationComponent extends ConfigurationBaseCompon
         }
         let i18n_1;
         if (false) {
-          const MSG_EXTERNAL_notifications_location_settings$$SRC_APP_PAGES_CONFIG_NOTIFICATIONS_LOCATION_COMPONENT_TS_1 = goog.getMsg(" Configure source location ");
+          const MSG_EXTERNAL_notifications_location_settings$$SRC_APP_PAGES_CONFIG_NOTIFICATIONS_LOCATION_COMPONENT_TS_1 = goog.getMsg("Configure source location");
           i18n_1 = MSG_EXTERNAL_notifications_location_settings$$SRC_APP_PAGES_CONFIG_NOTIFICATIONS_LOCATION_COMPONENT_TS_1;
         } else {
           i18n_1 = " Configura la localit\xE0 della notifica ";
@@ -113914,7 +113883,7 @@ var LocationComponent = class _LocationComponent extends ConfigurationBaseCompon
           ɵɵconditionalCreate(0, LocationComponent_Conditional_0_Template, 7, 1, "mat-expansion-panel");
         }
         if (rf & 2) {
-          ɵɵconditional(ctx.locationOption ? 0 : -1);
+          ɵɵconditional(ctx.hasLocationOption ? 0 : -1);
         }
       },
       dependencies: [ReactiveFormsModule, ɵNgNoValidate, DefaultValueAccessor, NumberValueAccessor, NgControlStatus, NgControlStatusGroup, FormGroupDirective, FormControlName, MatExpansionModule, MatExpansionPanel, MatExpansionPanelHeader, MatExpansionPanelTitle, MatExpansionPanelDescription, MatFormFieldModule, MatFormField, MatLabel, MatInputModule, MatInput, MatButtonModule, MatButton],
@@ -113929,7 +113898,7 @@ var LocationComponent = class _LocationComponent extends ConfigurationBaseCompon
       selector: "app-location",
       standalone: true,
       imports: [ReactiveFormsModule, MatExpansionModule, MatFormFieldModule, MatInputModule, MatButtonModule],
-      template: '@if (locationOption) {\n  <mat-expansion-panel>\n    <mat-expansion-panel-header>\n      <mat-panel-title i18n="@@notifications location">Location</mat-panel-title>\n      <mat-panel-description i18n="@@notifications location settings">\n        Configure source location\n      </mat-panel-description>\n    </mat-expansion-panel-header>\n    @if (locationForm) {\n      <form [formGroup]="locationForm" (ngSubmit)="onSaveLocation()" class="location-form">\n        <div class="row">\n          <mat-form-field class="container-item">\n            <mat-label i18n="@@notifications location name">Location name</mat-label>\n            <input\n              matInput\n              formControlName="name"\n              i18n-placeholder="@@notifications location name"\n              placeholder="Location name"\n            />\n          </mat-form-field>\n          <mat-form-field class="container-item">\n            <mat-label i18n="@@notifications location description">Description</mat-label>\n            <input\n              matInput\n              formControlName="description"\n              i18n-placeholder="@@notifications location description"\n              placeholder="Description"\n            />\n          </mat-form-field>\n        </div>\n        <div class="row">\n          <mat-form-field class="container-item">\n            <mat-label i18n="@@notifications location latitude">Latitude</mat-label>\n            <input\n              type="number"\n              matInput\n              formControlName="latitude"\n              i18n-placeholder="@@notifications location latitude"\n              placeholder="Latitude"\n            />\n          </mat-form-field>\n          <mat-form-field class="container-item">\n            <mat-label i18n="@@notifications location longitude">Longitude</mat-label>\n            <input\n              type="number"\n              matInput\n              formControlName="longitude"\n              i18n-placeholder="@@notifications location longitude"\n              placeholder="Longitude"\n            />\n          </mat-form-field>\n        </div>\n        <div class="row">\n          <mat-form-field class="container-item">\n            <mat-label i18n="@@notifications location country">Country</mat-label>\n            <input\n              matInput\n              formControlName="country"\n              i18n-placeholder="@@notifications location country"\n              placeholder="Country"\n            />\n          </mat-form-field>\n          <mat-form-field class="container-item">\n            <mat-label i18n="@@notifications location state">State / Region</mat-label>\n            <input\n              matInput\n              formControlName="state"\n              i18n-placeholder="@@notifications location state"\n              placeholder="State / Region"\n            />\n          </mat-form-field>\n        </div>\n        <div class="row">\n          <mat-form-field class="container-item">\n            <mat-label i18n="@@notifications location city">City</mat-label>\n            <input\n              matInput\n              formControlName="city"\n              i18n-placeholder="@@notifications location city"\n              placeholder="City"\n            />\n          </mat-form-field>\n          <mat-form-field class="container-item">\n            <mat-label i18n="@@notifications location zip code">ZIP code</mat-label>\n            <input\n              matInput\n              formControlName="zip_code"\n              i18n-placeholder="@@notifications location zip code"\n              placeholder="ZIP code"\n            />\n          </mat-form-field>\n        </div>\n        <mat-form-field>\n          <mat-label i18n="@@notifications location address">Address</mat-label>\n          <input\n            matInput\n            formControlName="address"\n            i18n-placeholder="@@notifications location address"\n            placeholder="Address"\n          />\n        </mat-form-field>\n        <div class="row">\n          <mat-form-field class="container-item">\n            <mat-label i18n="@@notifications location contact name">Contact name</mat-label>\n            <input\n              matInput\n              formControlName="contactName"\n              i18n-placeholder="@@notifications location contact name"\n              placeholder="Contact name"\n            />\n          </mat-form-field>\n          <mat-form-field class="container-item">\n            <mat-label i18n="@@notifications location contact phone">Contact phone</mat-label>\n            <input\n              matInput\n              formControlName="contactPhone"\n              i18n-placeholder="@@notifications location contact phone"\n              placeholder="Contact phone"\n            />\n          </mat-form-field>\n        </div>\n        <mat-form-field>\n          <mat-label i18n="@@notifications location contact email">Contact email</mat-label>\n          <input\n            type="email"\n            matInput\n            formControlName="contactEmail"\n            i18n-placeholder="@@notifications location contact email"\n            placeholder="Contact email"\n          />\n        </mat-form-field>\n        <div class="form-actions">\n          <button\n            mat-raised-button\n            color="primary"\n            type="submit"\n            [disabled]="locationForm.invalid || locationForm.pristine"\n            i18n="@@save button"\n          >\n            Save\n          </button>\n        </div>\n      </form>\n    }\n  </mat-expansion-panel>\n}\n',
+      template: '@if (hasLocationOption) {\n  <mat-expansion-panel>\n    <mat-expansion-panel-header>\n      <mat-panel-title i18n="@@notifications location">Location</mat-panel-title>\n      <mat-panel-description i18n="@@notifications location settings">Configure source location</mat-panel-description>\n    </mat-expansion-panel-header>\n    @if (locationForm) {\n      <form [formGroup]="locationForm" (ngSubmit)="onSaveLocation()" class="location-form">\n        <div class="row">\n          <mat-form-field class="container-item">\n            <mat-label i18n="@@notifications location name">Location name</mat-label>\n            <input\n              matInput\n              formControlName="name"\n              i18n-placeholder="@@notifications location name"\n              placeholder="Location name"\n            />\n          </mat-form-field>\n          <mat-form-field class="container-item">\n            <mat-label i18n="@@notifications location description">Description</mat-label>\n            <input\n              matInput\n              formControlName="description"\n              i18n-placeholder="@@notifications location description"\n              placeholder="Description"\n            />\n          </mat-form-field>\n        </div>\n        <div class="row">\n          <mat-form-field class="container-item">\n            <mat-label i18n="@@notifications location latitude">Latitude</mat-label>\n            <input\n              type="number"\n              matInput\n              formControlName="latitude"\n              i18n-placeholder="@@notifications location latitude"\n              placeholder="Latitude"\n            />\n          </mat-form-field>\n          <mat-form-field class="container-item">\n            <mat-label i18n="@@notifications location longitude">Longitude</mat-label>\n            <input\n              type="number"\n              matInput\n              formControlName="longitude"\n              i18n-placeholder="@@notifications location longitude"\n              placeholder="Longitude"\n            />\n          </mat-form-field>\n        </div>\n        <div class="row">\n          <mat-form-field class="container-item">\n            <mat-label i18n="@@notifications location country">Country</mat-label>\n            <input\n              matInput\n              formControlName="country"\n              i18n-placeholder="@@notifications location country"\n              placeholder="Country"\n            />\n          </mat-form-field>\n          <mat-form-field class="container-item">\n            <mat-label i18n="@@notifications location state">State / Region</mat-label>\n            <input\n              matInput\n              formControlName="state"\n              i18n-placeholder="@@notifications location state"\n              placeholder="State / Region"\n            />\n          </mat-form-field>\n        </div>\n        <div class="row">\n          <mat-form-field class="container-item">\n            <mat-label i18n="@@notifications location city">City</mat-label>\n            <input\n              matInput\n              formControlName="city"\n              i18n-placeholder="@@notifications location city"\n              placeholder="City"\n            />\n          </mat-form-field>\n          <mat-form-field class="container-item">\n            <mat-label i18n="@@notifications location zip code">ZIP code</mat-label>\n            <input\n              matInput\n              formControlName="zip_code"\n              i18n-placeholder="@@notifications location zip code"\n              placeholder="ZIP code"\n            />\n          </mat-form-field>\n        </div>\n        <mat-form-field>\n          <mat-label i18n="@@notifications location address">Address</mat-label>\n          <input\n            matInput\n            formControlName="address"\n            i18n-placeholder="@@notifications location address"\n            placeholder="Address"\n          />\n        </mat-form-field>\n        <div class="row">\n          <mat-form-field class="container-item">\n            <mat-label i18n="@@notifications location contact name">Contact name</mat-label>\n            <input\n              matInput\n              formControlName="contactName"\n              i18n-placeholder="@@notifications location contact name"\n              placeholder="Contact name"\n            />\n          </mat-form-field>\n          <mat-form-field class="container-item">\n            <mat-label i18n="@@notifications location contact phone">Contact phone</mat-label>\n            <input\n              matInput\n              formControlName="contactPhone"\n              i18n-placeholder="@@notifications location contact phone"\n              placeholder="Contact phone"\n            />\n          </mat-form-field>\n        </div>\n        <mat-form-field>\n          <mat-label i18n="@@notifications location contact email">Contact email</mat-label>\n          <input\n            type="email"\n            matInput\n            formControlName="contactEmail"\n            i18n-placeholder="@@notifications location contact email"\n            placeholder="Contact email"\n          />\n        </mat-form-field>\n        <div class="form-actions">\n          <button\n            mat-raised-button\n            color="primary"\n            type="submit"\n            [disabled]="locationForm.invalid || locationForm.pristine"\n            i18n="@@save button"\n          >\n            Save\n          </button>\n        </div>\n      </form>\n    }\n  </mat-expansion-panel>\n}\n',
       styles: ["/* src/app/pages/config/notifications/location.component.scss */\n.location-form {\n  margin-right: auto;\n  margin-left: auto;\n  max-width: 600px;\n}\n/*# sourceMappingURL=location.component.css.map */\n"]
     }]
   }], () => [{
@@ -113966,7 +113935,7 @@ var LocationComponent = class _LocationComponent extends ConfigurationBaseCompon
   (typeof ngDevMode === "undefined" || ngDevMode) && ɵsetClassDebugInfo(LocationComponent, {
     className: "LocationComponent",
     filePath: "src/app/pages/config/notifications/location.component.ts",
-    lineNumber: 41
+    lineNumber: 32
   });
 })();
 
@@ -114189,55 +114158,374 @@ var SmsMessagesDialogComponent = class _SmsMessagesDialogComponent {
   });
 })();
 
+// src/app/pages/config/notifications/sms-action.component.ts
+function SmsActionComponent_Conditional_0_Template(rf, ctx) {
+  if (rf & 1) {
+    const _r1 = ɵɵgetCurrentView();
+    ɵɵelementStart(0, "mat-expansion-panel")(1, "mat-expansion-panel-header")(2, "mat-panel-title");
+    ɵɵi18n(3, 0);
+    ɵɵelementEnd();
+    ɵɵelementStart(4, "mat-panel-description");
+    ɵɵi18n(5, 1);
+    ɵɵelementEnd()();
+    ɵɵelementStart(6, "form", 10);
+    ɵɵlistener("ngSubmit", function SmsActionComponent_Conditional_0_Template_form_ngSubmit_6_listener() {
+      ɵɵrestoreView(_r1);
+      const ctx_r1 = ɵɵnextContext();
+      return ɵɵresetView(ctx_r1.onSaveSmsAction());
+    });
+    ɵɵelementStart(7, "mat-checkbox", 11);
+    ɵɵi18n(8, 2);
+    ɵɵelementEnd();
+    ɵɵelementStart(9, "mat-checkbox", 12);
+    ɵɵi18n(10, 3);
+    ɵɵelementEnd();
+    ɵɵelementStart(11, "mat-checkbox", 13);
+    ɵɵi18n(12, 4);
+    ɵɵelementEnd();
+    ɵɵelementStart(13, "mat-checkbox", 14);
+    ɵɵi18n(14, 5);
+    ɵɵelementEnd();
+    ɵɵelementStart(15, "div", 15)(16, "mat-form-field")(17, "mat-label");
+    ɵɵi18n(18, 6);
+    ɵɵelementEnd();
+    ɵɵelement(19, "input", 16);
+    ɵɵelementEnd();
+    ɵɵelementStart(20, "mat-form-field")(21, "mat-label");
+    ɵɵi18n(22, 7);
+    ɵɵelementEnd();
+    ɵɵelement(23, "input", 17);
+    ɵɵelementEnd();
+    ɵɵelementStart(24, "mat-form-field")(25, "mat-label");
+    ɵɵi18n(26, 8);
+    ɵɵelementEnd();
+    ɵɵelement(27, "input", 18);
+    ɵɵelementEnd()();
+    ɵɵelementStart(28, "div", 19)(29, "button", 20);
+    ɵɵi18n(30, 9);
+    ɵɵelementEnd()()()();
+  }
+  if (rf & 2) {
+    const ctx_r1 = ɵɵnextContext();
+    ɵɵadvance(6);
+    ɵɵproperty("formGroup", ctx_r1.smsActionForm);
+    ɵɵadvance(23);
+    ɵɵproperty("disabled", ctx_r1.monitoringState != ctx_r1.monitoringStates.READY || ctx_r1.smsActionForm.invalid || ctx_r1.smsActionForm.pristine);
+  }
+}
+var scheduleMicrotask8 = Promise.resolve(null);
+var SmsActionComponent = class _SmsActionComponent extends ConfigurationBaseComponent {
+  constructor(configService, eventService, loader, monitoringService, fb, snackBar) {
+    super(eventService, loader, monitoringService);
+    this.configService = configService;
+    this.eventService = eventService;
+    this.loader = loader;
+    this.monitoringService = monitoringService;
+    this.fb = fb;
+    this.snackBar = snackBar;
+    this.hasSmsActionOption = false;
+  }
+  ngOnInit() {
+    super.initialize();
+    scheduleMicrotask8.then(() => {
+      this.loader.display(true);
+    });
+    this.updateComponent();
+  }
+  ngOnDestroy() {
+    super.destroy();
+  }
+  updateComponent() {
+    this.loader.display(true);
+    forkJoin({
+      smsAction: this.configService.getOption("notifications", "sms_action"),
+      smsCommand: this.configService.getOption("notifications", "sms_command")
+    }).pipe(finalize(() => this.loader.display(false))).subscribe({
+      next: options => {
+        this.hasSmsActionOption = Boolean(options.smsAction?.value != null);
+        this.updateForm(options.smsAction, options.smsCommand);
+      },
+      error: () => {
+        this.hasSmsActionOption = false;
+        this.updateForm(null, null);
+      }
+    });
+  }
+  updateForm(smsAction, smsCommand) {
+    this.smsActionForm = this.fb.group({
+      smsActionEnabled: getValue(smsAction?.value, "enabled", false),
+      checkPhoneNumber: getValue(smsAction?.value, "check_phone_number", true),
+      accessCodeRequired: getValue(smsAction?.value, "access_code_required", false),
+      caseSensitive: getValue(smsCommand?.value, "case_sensitive", false),
+      armAwayCommand: getValue(smsCommand?.value, "arm_away_command", "away"),
+      armStayCommand: getValue(smsCommand?.value, "arm_stay_command", "stay"),
+      disarmCommand: getValue(smsCommand?.value, "disarm_command", "disarm")
+    });
+  }
+  prepareSmsAction() {
+    const formModel = this.smsActionForm.value;
+    return {
+      enabled: formModel.smsActionEnabled || false,
+      check_phone_number: formModel.checkPhoneNumber || false,
+      access_code_required: formModel.accessCodeRequired || false
+    };
+  }
+  prepareSmsCommand() {
+    const formModel = this.smsActionForm.value;
+    return {
+      case_sensitive: formModel.caseSensitive || false,
+      arm_away_command: formModel.armAwayCommand,
+      arm_stay_command: formModel.armStayCommand,
+      disarm_command: formModel.disarmCommand
+    };
+  }
+  onSaveSmsAction() {
+    this.loader.disable(true);
+    forkJoin([this.configService.setOption("notifications", "sms_action", this.prepareSmsAction()), this.configService.setOption("notifications", "sms_command", this.prepareSmsCommand())]).pipe(finalize(() => this.loader.disable(false))).subscribe({
+      next: () => this.updateComponent(),
+      error: () => this.snackBar.open("Aggiornamento fallito!", void 0, {
+        duration: environment.snackDuration
+      })
+    });
+  }
+  static {
+    this.ɵfac = function SmsActionComponent_Factory(__ngFactoryType__) {
+      return new (__ngFactoryType__ || _SmsActionComponent)(ɵɵdirectiveInject("ConfigurationService"), ɵɵdirectiveInject("EventService"), ɵɵdirectiveInject("LoaderService"), ɵɵdirectiveInject("MonitoringService"), ɵɵdirectiveInject(UntypedFormBuilder), ɵɵdirectiveInject(MatSnackBar));
+    };
+  }
+  static {
+    this.ɵcmp = /* @__PURE__ */ɵɵdefineComponent({
+      type: _SmsActionComponent,
+      selectors: [["app-sms-action"]],
+      features: [ɵɵInheritDefinitionFeature],
+      decls: 1,
+      vars: 1,
+      consts: () => {
+        let i18n_0;
+        if (false) {
+          const MSG_EXTERNAL_notifications_sms_action$$SRC_APP_PAGES_CONFIG_NOTIFICATIONS_SMS_ACTION_COMPONENT_TS_0 = goog.getMsg("SMS action");
+          i18n_0 = MSG_EXTERNAL_notifications_sms_action$$SRC_APP_PAGES_CONFIG_NOTIFICATIONS_SMS_ACTION_COMPONENT_TS_0;
+        } else {
+          i18n_0 = "SMS action";
+        }
+        let i18n_1;
+        if (false) {
+          const MSG_EXTERNAL_notifications_sms_action_settings$$SRC_APP_PAGES_CONFIG_NOTIFICATIONS_SMS_ACTION_COMPONENT_TS_1 = goog.getMsg("SMS action settings");
+          i18n_1 = MSG_EXTERNAL_notifications_sms_action_settings$$SRC_APP_PAGES_CONFIG_NOTIFICATIONS_SMS_ACTION_COMPONENT_TS_1;
+        } else {
+          i18n_1 = "SMS action settings";
+        }
+        let i18n_2;
+        if (false) {
+          const MSG_EXTERNAL_notifications_sms_action_enabled$$SRC_APP_PAGES_CONFIG_NOTIFICATIONS_SMS_ACTION_COMPONENT_TS_2 = goog.getMsg(" SMS action enabled ");
+          i18n_2 = MSG_EXTERNAL_notifications_sms_action_enabled$$SRC_APP_PAGES_CONFIG_NOTIFICATIONS_SMS_ACTION_COMPONENT_TS_2;
+        } else {
+          i18n_2 = " SMS action enabled ";
+        }
+        let i18n_3;
+        if (false) {
+          const MSG_EXTERNAL_notifications_check_phone_number$$SRC_APP_PAGES_CONFIG_NOTIFICATIONS_SMS_ACTION_COMPONENT_TS_3 = goog.getMsg(" Check phone number ");
+          i18n_3 = MSG_EXTERNAL_notifications_check_phone_number$$SRC_APP_PAGES_CONFIG_NOTIFICATIONS_SMS_ACTION_COMPONENT_TS_3;
+        } else {
+          i18n_3 = " Check phone number ";
+        }
+        let i18n_4;
+        if (false) {
+          const MSG_EXTERNAL_notifications_access_code_required$$SRC_APP_PAGES_CONFIG_NOTIFICATIONS_SMS_ACTION_COMPONENT_TS_4 = goog.getMsg(" Access code required ");
+          i18n_4 = MSG_EXTERNAL_notifications_access_code_required$$SRC_APP_PAGES_CONFIG_NOTIFICATIONS_SMS_ACTION_COMPONENT_TS_4;
+        } else {
+          i18n_4 = " Access code required ";
+        }
+        let i18n_5;
+        if (false) {
+          const MSG_EXTERNAL_notifications_sms_command_case_sensitive$$SRC_APP_PAGES_CONFIG_NOTIFICATIONS_SMS_ACTION_COMPONENT_TS_5 = goog.getMsg(" Commands are case sensitive ");
+          i18n_5 = MSG_EXTERNAL_notifications_sms_command_case_sensitive$$SRC_APP_PAGES_CONFIG_NOTIFICATIONS_SMS_ACTION_COMPONENT_TS_5;
+        } else {
+          i18n_5 = " Commands are case sensitive ";
+        }
+        let i18n_6;
+        if (false) {
+          const MSG_EXTERNAL_notifications_sms_arm_away_command$$SRC_APP_PAGES_CONFIG_NOTIFICATIONS_SMS_ACTION_COMPONENT_TS_6 = goog.getMsg("Arm away command");
+          i18n_6 = MSG_EXTERNAL_notifications_sms_arm_away_command$$SRC_APP_PAGES_CONFIG_NOTIFICATIONS_SMS_ACTION_COMPONENT_TS_6;
+        } else {
+          i18n_6 = "Arm away command";
+        }
+        let i18n_7;
+        if (false) {
+          const MSG_EXTERNAL_notifications_sms_arm_stay_command$$SRC_APP_PAGES_CONFIG_NOTIFICATIONS_SMS_ACTION_COMPONENT_TS_7 = goog.getMsg("Arm stay command");
+          i18n_7 = MSG_EXTERNAL_notifications_sms_arm_stay_command$$SRC_APP_PAGES_CONFIG_NOTIFICATIONS_SMS_ACTION_COMPONENT_TS_7;
+        } else {
+          i18n_7 = "Arm stay command";
+        }
+        let i18n_8;
+        if (false) {
+          const MSG_EXTERNAL_notifications_sms_disarm_command$$SRC_APP_PAGES_CONFIG_NOTIFICATIONS_SMS_ACTION_COMPONENT_TS_8 = goog.getMsg("Disarm command");
+          i18n_8 = MSG_EXTERNAL_notifications_sms_disarm_command$$SRC_APP_PAGES_CONFIG_NOTIFICATIONS_SMS_ACTION_COMPONENT_TS_8;
+        } else {
+          i18n_8 = "Disarm command";
+        }
+        let i18n_9;
+        if (false) {
+          const MSG_EXTERNAL_save_button$$SRC_APP_PAGES_CONFIG_NOTIFICATIONS_SMS_ACTION_COMPONENT_TS_9 = goog.getMsg(" Save ");
+          i18n_9 = MSG_EXTERNAL_save_button$$SRC_APP_PAGES_CONFIG_NOTIFICATIONS_SMS_ACTION_COMPONENT_TS_9;
+        } else {
+          i18n_9 = " Salvare ";
+        }
+        return [i18n_0, i18n_1, i18n_2, i18n_3, i18n_4, i18n_5, i18n_6, i18n_7, i18n_8, i18n_9, [3, "ngSubmit", "formGroup"], ["formControlName", "smsActionEnabled"], ["formControlName", "checkPhoneNumber"], ["formControlName", "accessCodeRequired"], ["formControlName", "caseSensitive"], [1, "row"], ["matInput", "", "formControlName", "armAwayCommand"], ["matInput", "", "formControlName", "armStayCommand"], ["matInput", "", "formControlName", "disarmCommand"], [1, "form-actions"], ["mat-raised-button", "", "color", "primary", "type", "submit", 3, "disabled"]];
+      },
+      template: function SmsActionComponent_Template(rf, ctx) {
+        if (rf & 1) {
+          ɵɵconditionalCreate(0, SmsActionComponent_Conditional_0_Template, 31, 2, "mat-expansion-panel");
+        }
+        if (rf & 2) {
+          ɵɵconditional(ctx.hasSmsActionOption ? 0 : -1);
+        }
+      },
+      dependencies: [ReactiveFormsModule, ɵNgNoValidate, DefaultValueAccessor, NgControlStatus, NgControlStatusGroup, FormGroupDirective, FormControlName, MatExpansionModule, MatExpansionPanel, MatExpansionPanelHeader, MatExpansionPanelTitle, MatExpansionPanelDescription, MatCheckboxModule, MatCheckbox, MatFormFieldModule, MatFormField, MatLabel, MatInputModule, MatInput, MatButtonModule, MatButton],
+      encapsulation: 2
+    });
+  }
+};
+(() => {
+  (typeof ngDevMode === "undefined" || ngDevMode) && setClassMetadata(SmsActionComponent, [{
+    type: Component,
+    args: [{
+      selector: "app-sms-action",
+      standalone: true,
+      imports: [ReactiveFormsModule, MatExpansionModule, MatCheckboxModule, MatFormFieldModule, MatInputModule, MatButtonModule],
+      template: '@if (hasSmsActionOption) {\n  <mat-expansion-panel>\n    <mat-expansion-panel-header>\n      <mat-panel-title i18n="@@notifications sms action">SMS action</mat-panel-title>\n      <mat-panel-description i18n="@@notifications sms action settings">SMS action settings</mat-panel-description>\n    </mat-expansion-panel-header>\n    <form [formGroup]="smsActionForm" (ngSubmit)="onSaveSmsAction()">\n      <mat-checkbox formControlName="smsActionEnabled" i18n="@@notifications sms action enabled">\n        SMS action enabled\n      </mat-checkbox>\n      <mat-checkbox formControlName="checkPhoneNumber" i18n="@@notifications check phone number">\n        Check phone number\n      </mat-checkbox>\n      <mat-checkbox formControlName="accessCodeRequired" i18n="@@notifications access code required">\n        Access code required\n      </mat-checkbox>\n      <mat-checkbox formControlName="caseSensitive" i18n="@@notifications sms command case sensitive">\n        Commands are case sensitive\n      </mat-checkbox>\n      <div class="row">\n        <mat-form-field>\n          <mat-label i18n="@@notifications sms arm away command">Arm away command</mat-label>\n          <input matInput formControlName="armAwayCommand" />\n        </mat-form-field>\n        <mat-form-field>\n          <mat-label i18n="@@notifications sms arm stay command">Arm stay command</mat-label>\n          <input matInput formControlName="armStayCommand" />\n        </mat-form-field>\n        <mat-form-field>\n          <mat-label i18n="@@notifications sms disarm command">Disarm command</mat-label>\n          <input matInput formControlName="disarmCommand" />\n        </mat-form-field>\n      </div>\n      <div class="form-actions">\n        <button\n          mat-raised-button\n          color="primary"\n          type="submit"\n          [disabled]="monitoringState != monitoringStates.READY || smsActionForm.invalid || smsActionForm.pristine"\n          i18n="@@save button"\n        >\n          Save\n        </button>\n      </div>\n    </form>\n  </mat-expansion-panel>\n}\n'
+    }]
+  }], () => [{
+    type: void 0,
+    decorators: [{
+      type: Inject,
+      args: ["ConfigurationService"]
+    }]
+  }, {
+    type: void 0,
+    decorators: [{
+      type: Inject,
+      args: ["EventService"]
+    }]
+  }, {
+    type: void 0,
+    decorators: [{
+      type: Inject,
+      args: ["LoaderService"]
+    }]
+  }, {
+    type: void 0,
+    decorators: [{
+      type: Inject,
+      args: ["MonitoringService"]
+    }]
+  }, {
+    type: UntypedFormBuilder
+  }, {
+    type: MatSnackBar
+  }], null);
+})();
+(() => {
+  (typeof ngDevMode === "undefined" || ngDevMode) && ɵsetClassDebugInfo(SmsActionComponent, {
+    className: "SmsActionComponent",
+    filePath: "src/app/pages/config/notifications/sms-action.component.ts",
+    lineNumber: 35
+  });
+})();
+
 // src/app/pages/config/notifications/notifications.component.ts
 var _c034 = ["snackbarTemplateEmail"];
 var _c126 = ["snackbarTemplateSms"];
 var _c217 = ["snackbarTemplateCall"];
+var _forTrack03 = ($index, $item) => $item.key;
 function NotificationsComponent_Conditional_0_Conditional_43_Template(rf, ctx) {
   if (rf & 1) {
     ɵɵelementStart(0, "mat-icon");
-    ɵɵelement(1, "mat-spinner", 100);
+    ɵɵelement(1, "mat-spinner", 70);
     ɵɵelementEnd();
   }
 }
 function NotificationsComponent_Conditional_0_Conditional_71_Template(rf, ctx) {
   if (rf & 1) {
     ɵɵelementStart(0, "mat-icon");
-    ɵɵelement(1, "mat-spinner", 100);
+    ɵɵelement(1, "mat-spinner", 70);
     ɵɵelementEnd();
   }
 }
 function NotificationsComponent_Conditional_0_Conditional_75_Template(rf, ctx) {
   if (rf & 1) {
     ɵɵelementStart(0, "mat-icon");
-    ɵɵelement(1, "mat-spinner", 100);
+    ɵɵelement(1, "mat-spinner", 70);
     ɵɵelementEnd();
+  }
+}
+function NotificationsComponent_Conditional_0_For_92_Template(rf, ctx) {
+  if (rf & 1) {
+    ɵɵelementStart(0, "div", 67);
+    ɵɵtext(1);
+    ɵɵelementEnd();
+  }
+  if (rf & 2) {
+    const channel_r3 = ctx.$implicit;
+    ɵɵadvance();
+    ɵɵtextInterpolate(channel_r3.label);
+  }
+}
+function NotificationsComponent_Conditional_0_For_94_For_4_Template(rf, ctx) {
+  if (rf & 1) {
+    ɵɵelementStart(0, "div", 71);
+    ɵɵelement(1, "mat-checkbox", 72);
+    ɵɵelementEnd();
+  }
+  if (rf & 2) {
+    const channel_r4 = ctx.$implicit;
+    const type_r5 = ɵɵnextContext().$implicit;
+    const ctx_r1 = ɵɵnextContext(2);
+    ɵɵadvance();
+    ɵɵproperty("formControlName", ctx_r1.subscriptionControl(channel_r4.key, type_r5));
+  }
+}
+function NotificationsComponent_Conditional_0_For_94_Template(rf, ctx) {
+  if (rf & 1) {
+    ɵɵelementStart(0, "div", 68)(1, "div", 71);
+    ɵɵtext(2);
+    ɵɵelementEnd();
+    ɵɵrepeaterCreate(3, NotificationsComponent_Conditional_0_For_94_For_4_Template, 2, 1, "div", 71, _forTrack03);
+    ɵɵelementEnd();
+  }
+  if (rf & 2) {
+    const type_r5 = ctx.$implicit;
+    const ctx_r1 = ɵɵnextContext(2);
+    ɵɵadvance(2);
+    ɵɵtextInterpolate(ctx_r1.subscriptionTypeLabel(type_r5));
+    ɵɵadvance();
+    ɵɵrepeater(ctx_r1.subscriptionChannels);
   }
 }
 function NotificationsComponent_Conditional_0_Template(rf, ctx) {
   if (rf & 1) {
     const _r1 = ɵɵgetCurrentView();
-    ɵɵelementStart(0, "div", 56)(1, "mat-accordion", 57)(2, "mat-expansion-panel")(3, "mat-expansion-panel-header")(4, "mat-panel-title");
+    ɵɵelementStart(0, "div", 46)(1, "mat-accordion", 47)(2, "mat-expansion-panel")(3, "mat-expansion-panel-header")(4, "mat-panel-title");
     ɵɵi18n(5, 3);
     ɵɵelementEnd();
     ɵɵelementStart(6, "mat-panel-description");
     ɵɵi18n(7, 4);
     ɵɵelementEnd()();
-    ɵɵelementStart(8, "form", 58);
+    ɵɵelementStart(8, "form", 48);
     ɵɵlistener("ngSubmit", function NotificationsComponent_Conditional_0_Template_form_ngSubmit_8_listener() {
       ɵɵrestoreView(_r1);
       const ctx_r1 = ɵɵnextContext();
       return ɵɵresetView(ctx_r1.onSubmitSmtp());
     });
-    ɵɵelementStart(9, "div", 59)(10, "mat-form-field")(11, "mat-label");
+    ɵɵelementStart(9, "div", 49)(10, "mat-form-field")(11, "mat-label");
     ɵɵi18n(12, 5);
     ɵɵelementEnd();
-    ɵɵelement(13, "input", 60);
+    ɵɵelement(13, "input", 50);
     ɵɵelementEnd();
     ɵɵelementStart(14, "mat-form-field")(15, "mat-label");
     ɵɵi18n(16, 6);
     ɵɵelementEnd();
-    ɵɵelementStart(17, "input", 61);
+    ɵɵelementStart(17, "input", 51);
     ɵɵlistener("focus", function NotificationsComponent_Conditional_0_Template_input_focus_17_listener() {
       ɵɵrestoreView(_r1);
       const ctx_r1 = ɵɵnextContext();
@@ -114248,33 +114536,33 @@ function NotificationsComponent_Conditional_0_Template(rf, ctx) {
       return ɵɵresetView(ctx_r1.onPasswordBlur());
     });
     ɵɵelementEnd()()();
-    ɵɵelementStart(18, "div", 59)(19, "mat-form-field")(20, "mat-label");
+    ɵɵelementStart(18, "div", 49)(19, "mat-form-field")(20, "mat-label");
     ɵɵi18n(21, 7);
     ɵɵelementEnd();
-    ɵɵelement(22, "input", 62);
+    ɵɵelement(22, "input", 52);
     ɵɵelementEnd();
     ɵɵelementStart(23, "mat-form-field")(24, "mat-label");
     ɵɵi18n(25, 8);
     ɵɵelementEnd();
-    ɵɵelement(26, "input", 63);
+    ɵɵelement(26, "input", 53);
     ɵɵelementEnd()();
     ɵɵelementStart(27, "mat-form-field")(28, "mat-label");
     ɵɵi18n(29, 9);
     ɵɵelementEnd();
-    ɵɵelement(30, "input", 64);
+    ɵɵelement(30, "input", 54);
     ɵɵelementEnd();
     ɵɵelementStart(31, "mat-form-field")(32, "mat-label");
     ɵɵi18n(33, 10);
     ɵɵelementEnd();
-    ɵɵelement(34, "input", 65);
+    ɵɵelement(34, "input", 55);
     ɵɵelementEnd();
-    ɵɵelementStart(35, "mat-checkbox", 66);
+    ɵɵelementStart(35, "mat-checkbox", 56);
     ɵɵi18n(36, 11);
     ɵɵelementEnd();
-    ɵɵelementStart(37, "div", 59)(38, "button", 67);
+    ɵɵelementStart(37, "div", 49)(38, "button", 57);
     ɵɵi18n(39, 12);
     ɵɵelementEnd();
-    ɵɵelementStart(40, "button", 68);
+    ɵɵelementStart(40, "button", 58);
     ɵɵlistener("click", function NotificationsComponent_Conditional_0_Template_button_click_40_listener() {
       ɵɵrestoreView(_r1);
       const ctx_r1 = ɵɵnextContext();
@@ -114291,34 +114579,34 @@ function NotificationsComponent_Conditional_0_Template(rf, ctx) {
     ɵɵelementStart(48, "mat-panel-description");
     ɵɵi18n(49, 15);
     ɵɵelementEnd()();
-    ɵɵelementStart(50, "form", 58);
+    ɵɵelementStart(50, "form", 48);
     ɵɵlistener("ngSubmit", function NotificationsComponent_Conditional_0_Template_form_ngSubmit_50_listener() {
       ɵɵrestoreView(_r1);
       const ctx_r1 = ɵɵnextContext();
       return ɵɵresetView(ctx_r1.onSubmitGsm());
     });
-    ɵɵelementStart(51, "mat-form-field", 69)(52, "mat-label");
+    ɵɵelementStart(51, "mat-form-field", 59)(52, "mat-label");
     ɵɵi18n(53, 16);
     ɵɵelementEnd();
-    ɵɵelement(54, "input", 70);
+    ɵɵelement(54, "input", 60);
     ɵɵelementEnd();
-    ɵɵelementStart(55, "mat-form-field", 71)(56, "mat-label");
+    ɵɵelementStart(55, "mat-form-field", 61)(56, "mat-label");
     ɵɵi18n(57, 17);
     ɵɵelementEnd();
-    ɵɵelement(58, "input", 72);
+    ɵɵelement(58, "input", 62);
     ɵɵelementEnd();
-    ɵɵelementStart(59, "mat-form-field", 71)(60, "mat-label");
+    ɵɵelementStart(59, "mat-form-field", 61)(60, "mat-label");
     ɵɵi18n(61, 18);
     ɵɵelementEnd();
-    ɵɵelement(62, "input", 73);
+    ɵɵelement(62, "input", 63);
     ɵɵelementEnd();
-    ɵɵelementStart(63, "mat-checkbox", 74);
+    ɵɵelementStart(63, "mat-checkbox", 64);
     ɵɵi18n(64, 19);
     ɵɵelementEnd();
-    ɵɵelementStart(65, "div", 59)(66, "button", 67);
+    ɵɵelementStart(65, "div", 49)(66, "button", 57);
     ɵɵi18n(67, 20);
     ɵɵelementEnd();
-    ɵɵelementStart(68, "button", 68);
+    ɵɵelementStart(68, "button", 58);
     ɵɵlistener("click", function NotificationsComponent_Conditional_0_Template_button_click_68_listener() {
       ɵɵrestoreView(_r1);
       const ctx_r1 = ɵɵnextContext();
@@ -114329,7 +114617,7 @@ function NotificationsComponent_Conditional_0_Template(rf, ctx) {
     ɵɵelementEnd();
     ɵɵconditionalCreate(71, NotificationsComponent_Conditional_0_Conditional_71_Template, 2, 0, "mat-icon");
     ɵɵelementEnd();
-    ɵɵelementStart(72, "button", 68);
+    ɵɵelementStart(72, "button", 58);
     ɵɵlistener("click", function NotificationsComponent_Conditional_0_Template_button_click_72_listener() {
       ɵɵrestoreView(_r1);
       const ctx_r1 = ɵɵnextContext();
@@ -114340,7 +114628,7 @@ function NotificationsComponent_Conditional_0_Template(rf, ctx) {
     ɵɵelementEnd();
     ɵɵconditionalCreate(75, NotificationsComponent_Conditional_0_Conditional_75_Template, 2, 0, "mat-icon");
     ɵɵelementEnd();
-    ɵɵelementStart(76, "button", 68);
+    ɵɵelementStart(76, "button", 58);
     ɵɵlistener("click", function NotificationsComponent_Conditional_0_Template_button_click_76_listener() {
       ɵɵrestoreView(_r1);
       const ctx_r1 = ɵɵnextContext();
@@ -114349,127 +114637,30 @@ function NotificationsComponent_Conditional_0_Template(rf, ctx) {
     ɵɵelementStart(77, "span");
     ɵɵi18n(78, 23);
     ɵɵelementEnd()()()()();
-    ɵɵelementStart(79, "mat-expansion-panel")(80, "mat-expansion-panel-header")(81, "mat-panel-title");
-    ɵɵi18n(82, 24);
+    ɵɵelement(79, "app-sms-action");
+    ɵɵelementStart(80, "mat-expansion-panel")(81, "mat-expansion-panel-header")(82, "mat-panel-title");
+    ɵɵi18n(83, 24);
     ɵɵelementEnd();
-    ɵɵelementStart(83, "mat-panel-description");
-    ɵɵi18n(84, 25);
+    ɵɵelementStart(84, "mat-panel-description");
+    ɵɵi18n(85, 25);
     ɵɵelementEnd()();
-    ɵɵelementStart(85, "form", 58);
-    ɵɵlistener("ngSubmit", function NotificationsComponent_Conditional_0_Template_form_ngSubmit_85_listener() {
+    ɵɵelementStart(86, "form", 48);
+    ɵɵlistener("ngSubmit", function NotificationsComponent_Conditional_0_Template_form_ngSubmit_86_listener() {
       ɵɵrestoreView(_r1);
       const ctx_r1 = ɵɵnextContext();
       return ɵɵresetView(ctx_r1.onSubmitSubscriptions());
     });
-    ɵɵelementStart(86, "div", 75)(87, "div", 76)(88, "div", 77);
-    ɵɵi18n(89, 26);
+    ɵɵelementStart(87, "div", 65)(88, "div", 66)(89, "div", 67);
+    ɵɵi18n(90, 26);
     ɵɵelementEnd();
-    ɵɵelementStart(90, "div", 77);
-    ɵɵi18n(91, 27);
+    ɵɵrepeaterCreate(91, NotificationsComponent_Conditional_0_For_92_Template, 2, 1, "div", 67, _forTrack03);
     ɵɵelementEnd();
-    ɵɵelementStart(92, "div", 77);
-    ɵɵi18n(93, 28);
+    ɵɵrepeaterCreate(93, NotificationsComponent_Conditional_0_For_94_Template, 5, 1, "div", 68, ɵɵrepeaterTrackByIdentity);
     ɵɵelementEnd();
-    ɵɵelementStart(94, "div", 77);
-    ɵɵi18n(95, 29);
-    ɵɵelementEnd();
-    ɵɵelementStart(96, "div", 77);
-    ɵɵi18n(97, 30);
-    ɵɵelementEnd();
-    ɵɵelementStart(98, "div", 77);
-    ɵɵi18n(99, 31);
-    ɵɵelementEnd();
-    ɵɵelementStart(100, "div", 77);
-    ɵɵi18n(101, 32);
-    ɵɵelementEnd()();
-    ɵɵelementStart(102, "div", 78)(103, "div", 79);
-    ɵɵi18n(104, 33);
-    ɵɵelementEnd();
-    ɵɵelementStart(105, "div", 79);
-    ɵɵelement(106, "mat-checkbox", 80);
-    ɵɵelementEnd();
-    ɵɵelementStart(107, "div", 79);
-    ɵɵelement(108, "mat-checkbox", 81);
-    ɵɵelementEnd();
-    ɵɵelementStart(109, "div", 79);
-    ɵɵelement(110, "mat-checkbox", 82);
-    ɵɵelementEnd();
-    ɵɵelementStart(111, "div", 79);
-    ɵɵelement(112, "mat-checkbox", 83);
-    ɵɵelementEnd();
-    ɵɵelementStart(113, "div", 79);
-    ɵɵelement(114, "mat-checkbox", 84);
-    ɵɵelementEnd();
-    ɵɵelementStart(115, "div", 79);
-    ɵɵelement(116, "mat-checkbox", 85);
-    ɵɵelementEnd()();
-    ɵɵelementStart(117, "div", 78)(118, "div", 79);
-    ɵɵi18n(119, 34);
-    ɵɵelementEnd();
-    ɵɵelementStart(120, "div", 79);
-    ɵɵelement(121, "mat-checkbox", 86);
-    ɵɵelementEnd();
-    ɵɵelementStart(122, "div", 79);
-    ɵɵelement(123, "mat-checkbox", 87);
-    ɵɵelementEnd();
-    ɵɵelementStart(124, "div", 79);
-    ɵɵelement(125, "mat-checkbox", 88);
-    ɵɵelementEnd();
-    ɵɵelementStart(126, "div", 79);
-    ɵɵelement(127, "mat-checkbox", 89);
-    ɵɵelementEnd();
-    ɵɵelementStart(128, "div", 79);
-    ɵɵelement(129, "mat-checkbox", 90);
-    ɵɵelementEnd();
-    ɵɵelementStart(130, "div", 79);
-    ɵɵelement(131, "mat-checkbox", 90);
-    ɵɵelementEnd()();
-    ɵɵelementStart(132, "div", 78)(133, "div", 79);
-    ɵɵi18n(134, 35);
-    ɵɵelementEnd();
-    ɵɵelementStart(135, "div", 79);
-    ɵɵelement(136, "mat-checkbox", 91);
-    ɵɵelementEnd();
-    ɵɵelementStart(137, "div", 79);
-    ɵɵelement(138, "mat-checkbox", 92);
-    ɵɵelementEnd();
-    ɵɵelementStart(139, "div", 79);
-    ɵɵelement(140, "mat-checkbox", 93);
-    ɵɵelementEnd();
-    ɵɵelementStart(141, "div", 79);
-    ɵɵelement(142, "mat-checkbox", 94);
-    ɵɵelementEnd();
-    ɵɵelementStart(143, "div", 79);
-    ɵɵelement(144, "mat-checkbox", 90);
-    ɵɵelementEnd();
-    ɵɵelementStart(145, "div", 79);
-    ɵɵelement(146, "mat-checkbox", 90);
-    ɵɵelementEnd()();
-    ɵɵelementStart(147, "div", 78)(148, "div", 79);
-    ɵɵi18n(149, 36);
-    ɵɵelementEnd();
-    ɵɵelementStart(150, "div", 79);
-    ɵɵelement(151, "mat-checkbox", 95);
-    ɵɵelementEnd();
-    ɵɵelementStart(152, "div", 79);
-    ɵɵelement(153, "mat-checkbox", 96);
-    ɵɵelementEnd();
-    ɵɵelementStart(154, "div", 79);
-    ɵɵelement(155, "mat-checkbox", 97);
-    ɵɵelementEnd();
-    ɵɵelementStart(156, "div", 79);
-    ɵɵelement(157, "mat-checkbox", 98);
-    ɵɵelementEnd();
-    ɵɵelementStart(158, "div", 79);
-    ɵɵelement(159, "mat-checkbox", 90);
-    ɵɵelementEnd();
-    ɵɵelementStart(160, "div", 79);
-    ɵɵelement(161, "mat-checkbox", 90);
-    ɵɵelementEnd()()();
-    ɵɵelementStart(162, "div", 99)(163, "button", 67);
-    ɵɵi18n(164, 37);
+    ɵɵelementStart(95, "div", 69)(96, "button", 57);
+    ɵɵi18n(97, 27);
     ɵɵelementEnd()()()();
-    ɵɵelement(165, "app-location");
+    ɵɵelement(98, "app-location");
     ɵɵelementEnd()();
   }
   if (rf & 2) {
@@ -114496,37 +114687,41 @@ function NotificationsComponent_Conditional_0_Template(rf, ctx) {
     ɵɵconditional(ctx_r1.testingCall ? 75 : -1);
     ɵɵadvance();
     ɵɵproperty("disabled", ctx_r1.monitoringState != ctx_r1.monitoringStates.READY || ctx_r1.gsmForm.touched || !ctx_r1.canTestGsm());
-    ɵɵadvance(9);
+    ɵɵadvance(10);
     ɵɵproperty("formGroup", ctx_r1.subscriptionsForm);
-    ɵɵadvance(78);
+    ɵɵadvance(5);
+    ɵɵrepeater(ctx_r1.subscriptionChannels);
+    ɵɵadvance(2);
+    ɵɵrepeater(ctx_r1.subscriptionTypes);
+    ɵɵadvance(3);
     ɵɵproperty("disabled", ctx_r1.monitoringState != ctx_r1.monitoringStates.READY || !ctx_r1.subscriptionsForm.valid || ctx_r1.subscriptionsForm.pristine);
   }
 }
 function NotificationsComponent_ng_template_1_Conditional_0_Case_2_Template(rf, ctx) {
   if (rf & 1) {
     ɵɵelementStart(0, "div");
-    ɵɵi18n(1, 38);
+    ɵɵi18n(1, 28);
     ɵɵelementEnd();
   }
 }
 function NotificationsComponent_ng_template_1_Conditional_0_Case_3_Template(rf, ctx) {
   if (rf & 1) {
     ɵɵelementStart(0, "div");
-    ɵɵi18n(1, 39);
+    ɵɵi18n(1, 29);
     ɵɵelementEnd();
   }
 }
 function NotificationsComponent_ng_template_1_Conditional_0_Case_5_Template(rf, ctx) {
   if (rf & 1) {
     ɵɵelementStart(0, "div");
-    ɵɵi18n(1, 40);
+    ɵɵi18n(1, 30);
     ɵɵelementEnd();
   }
 }
 function NotificationsComponent_ng_template_1_Conditional_0_Case_6_Template(rf, ctx) {
   if (rf & 1) {
     ɵɵelementStart(0, "div");
-    ɵɵi18n(1, 41);
+    ɵɵi18n(1, 31);
     ɵɵelementEnd();
   }
 }
@@ -114552,7 +114747,7 @@ function NotificationsComponent_ng_template_1_Conditional_0_Template(rf, ctx) {
 function NotificationsComponent_ng_template_1_Conditional_1_Template(rf, ctx) {
   if (rf & 1) {
     ɵɵelementStart(0, "div");
-    ɵɵi18nStart(1, 42);
+    ɵɵi18nStart(1, 32);
     ɵɵelement(2, "br");
     ɵɵi18nEnd();
     ɵɵelementEnd();
@@ -114561,7 +114756,7 @@ function NotificationsComponent_ng_template_1_Conditional_1_Template(rf, ctx) {
 function NotificationsComponent_ng_template_1_Conditional_2_Template(rf, ctx) {
   if (rf & 1) {
     ɵɵelementStart(0, "div");
-    ɵɵi18n(1, 43);
+    ɵɵi18n(1, 33);
     ɵɵelementEnd();
   }
 }
@@ -114583,28 +114778,28 @@ function NotificationsComponent_ng_template_1_Template(rf, ctx) {
 function NotificationsComponent_ng_template_3_Conditional_0_Case_2_Template(rf, ctx) {
   if (rf & 1) {
     ɵɵelementStart(0, "div");
-    ɵɵi18n(1, 44);
+    ɵɵi18n(1, 34);
     ɵɵelementEnd();
   }
 }
 function NotificationsComponent_ng_template_3_Conditional_0_Case_3_Template(rf, ctx) {
   if (rf & 1) {
     ɵɵelementStart(0, "div");
-    ɵɵi18n(1, 45);
+    ɵɵi18n(1, 35);
     ɵɵelementEnd();
   }
 }
 function NotificationsComponent_ng_template_3_Conditional_0_Case_5_Template(rf, ctx) {
   if (rf & 1) {
     ɵɵelementStart(0, "div");
-    ɵɵi18n(1, 46);
+    ɵɵi18n(1, 36);
     ɵɵelementEnd();
   }
 }
 function NotificationsComponent_ng_template_3_Conditional_0_Case_6_Template(rf, ctx) {
   if (rf & 1) {
     ɵɵelementStart(0, "div");
-    ɵɵi18n(1, 47);
+    ɵɵi18n(1, 37);
     ɵɵelementEnd();
   }
 }
@@ -114630,14 +114825,14 @@ function NotificationsComponent_ng_template_3_Conditional_0_Template(rf, ctx) {
 function NotificationsComponent_ng_template_3_Conditional_1_Template(rf, ctx) {
   if (rf & 1) {
     ɵɵelementStart(0, "div");
-    ɵɵi18n(1, 48);
+    ɵɵi18n(1, 38);
     ɵɵelementEnd();
   }
 }
 function NotificationsComponent_ng_template_3_Conditional_2_Template(rf, ctx) {
   if (rf & 1) {
     ɵɵelementStart(0, "div");
-    ɵɵi18n(1, 49);
+    ɵɵi18n(1, 39);
     ɵɵelementEnd();
   }
 }
@@ -114659,28 +114854,28 @@ function NotificationsComponent_ng_template_3_Template(rf, ctx) {
 function NotificationsComponent_ng_template_5_Conditional_0_Case_2_Template(rf, ctx) {
   if (rf & 1) {
     ɵɵelementStart(0, "div");
-    ɵɵi18n(1, 50);
+    ɵɵi18n(1, 40);
     ɵɵelementEnd();
   }
 }
 function NotificationsComponent_ng_template_5_Conditional_0_Case_3_Template(rf, ctx) {
   if (rf & 1) {
     ɵɵelementStart(0, "div");
-    ɵɵi18n(1, 51);
+    ɵɵi18n(1, 41);
     ɵɵelementEnd();
   }
 }
 function NotificationsComponent_ng_template_5_Conditional_0_Case_5_Template(rf, ctx) {
   if (rf & 1) {
     ɵɵelementStart(0, "div");
-    ɵɵi18n(1, 52);
+    ɵɵi18n(1, 42);
     ɵɵelementEnd();
   }
 }
 function NotificationsComponent_ng_template_5_Conditional_0_Case_6_Template(rf, ctx) {
   if (rf & 1) {
     ɵɵelementStart(0, "div");
-    ɵɵi18n(1, 53);
+    ɵɵi18n(1, 43);
     ɵɵelementEnd();
   }
 }
@@ -114706,14 +114901,14 @@ function NotificationsComponent_ng_template_5_Conditional_0_Template(rf, ctx) {
 function NotificationsComponent_ng_template_5_Conditional_1_Template(rf, ctx) {
   if (rf & 1) {
     ɵɵelementStart(0, "div");
-    ɵɵi18n(1, 54);
+    ɵɵi18n(1, 44);
     ɵɵelementEnd();
   }
 }
 function NotificationsComponent_ng_template_5_Conditional_2_Template(rf, ctx) {
   if (rf & 1) {
     ɵɵelementStart(0, "div");
-    ɵɵi18n(1, 55);
+    ɵɵi18n(1, 45);
     ɵɵelementEnd();
   }
 }
@@ -114732,7 +114927,7 @@ function NotificationsComponent_ng_template_5_Template(rf, ctx) {
     ɵɵconditional(ctx_r1.testCallResult["phone1"] == false || ctx_r1.testCallResult["phone2"] == false || ctx_r1.testCallResult["connection"] == false ? 2 : -1);
   }
 }
-var scheduleMicrotask8 = Promise.resolve(null);
+var scheduleMicrotask9 = Promise.resolve(null);
 var NotificationsComponent = class _NotificationsComponent extends ConfigurationBaseComponent {
   constructor(configService, eventService, loader, monitoringService, snackBar, fb, dialog) {
     super(eventService, loader, monitoringService);
@@ -114750,10 +114945,40 @@ var NotificationsComponent = class _NotificationsComponent extends Configuration
     this.testingSms = false;
     this.testCallResult = {};
     this.testingCall = false;
+    this.subscriptionChannels = [{
+      key: "email1",
+      label: "Invia e-mail 1"
+    }, {
+      key: "email2",
+      label: "Invia e-mail 2"
+    }, {
+      key: "sms1",
+      label: "Inviare SMS 1"
+    }, {
+      key: "sms2",
+      label: "Inviare SMS 2"
+    }, {
+      key: "call1",
+      label: "Chiamata 1"
+    }, {
+      key: "call2",
+      label: "Chiamata 1"
+    }];
+    this.subscriptionTypes = [];
+    this.subscriptionTypeLabels = {
+      alert_started: "Allarme avviato",
+      alert_stopped: "Allarme interrotto",
+      power_outage_started: " Inizio interruzione di corrente ",
+      power_outage_stopped: " Fine interruzione di corrente ",
+      local_network_issue_started: "Local network issue started",
+      local_network_issue_stopped: "Local network issue stopped",
+      internet_issue_started: "Internet issue started",
+      internet_issue_stopped: "Internet issue stopped"
+    };
   }
   ngOnInit() {
     super.initialize();
-    scheduleMicrotask8.then(() => {
+    scheduleMicrotask9.then(() => {
       this.loader.display(true);
     });
     this.updateComponent();
@@ -114761,6 +114986,27 @@ var NotificationsComponent = class _NotificationsComponent extends Configuration
   }
   ngOnDestroy() {
     super.destroy();
+  }
+  subscriptionControl(channel, type) {
+    return `${channel}_${type}`;
+  }
+  subscriptionTypeLabel(type) {
+    return this.subscriptionTypeLabels[type] ?? type.replace(/_/g, " ").replace(/^./, first2 => first2.toUpperCase());
+  }
+  /**
+   * The backend always returns every accepted notification type for each channel,
+   * so the response defines which subscriptions can be configured.
+   */
+  detectSubscriptionTypes(subscriptions) {
+    const types = [];
+    for (const channel of this.subscriptionChannels) {
+      for (const type of Object.keys(getValue(subscriptions, channel.key, {}))) {
+        if (!types.includes(type)) {
+          types.push(type);
+        }
+      }
+    }
+    return types.length ? types : Object.keys(DEFAULT_NOTIFICATION_SUBSCRIPTIONS.value.email1);
   }
   updateForm(smtp, gsm, subscriptions) {
     this.smtpForm = this.fb.group({
@@ -114778,26 +115024,15 @@ var NotificationsComponent = class _NotificationsComponent extends Configuration
       phoneNumber2: getValue(gsm.value, "phone_number_2"),
       gsmEnabled: getValue(gsm.value, "enabled")
     });
-    this.subscriptionsForm = this.fb.group({
-      alertStartedCall1: getValue(getValue(subscriptions.value, "call1"), "alert_started"),
-      alertStartedCall2: getValue(getValue(subscriptions.value, "call2"), "alert_started"),
-      alertStartedEmail1: getValue(getValue(subscriptions.value, "email1"), "alert_started"),
-      alertStoppedEmail1: getValue(getValue(subscriptions.value, "email1"), "alert_stopped"),
-      powerOutageStartedEmail1: getValue(getValue(subscriptions.value, "email1"), "power_outage_started"),
-      powerOutageStoppedEmail1: getValue(getValue(subscriptions.value, "email1"), "power_outage_stopped"),
-      alertStartedEmail2: getValue(getValue(subscriptions.value, "email2"), "alert_started"),
-      alertStoppedEmail2: getValue(getValue(subscriptions.value, "email2"), "alert_stopped"),
-      powerOutageStartedEmail2: getValue(getValue(subscriptions.value, "email2"), "power_outage_started"),
-      powerOutageStoppedEmail2: getValue(getValue(subscriptions.value, "email2"), "power_outage_stopped"),
-      alertStartedSms1: getValue(getValue(subscriptions.value, "sms1"), "alert_started"),
-      alertStoppedSms1: getValue(getValue(subscriptions.value, "sms1"), "alert_stopped"),
-      powerOutageStartedSms1: getValue(getValue(subscriptions.value, "sms1"), "power_outage_started"),
-      powerOutageStoppedSms1: getValue(getValue(subscriptions.value, "sms1"), "power_outage_stopped"),
-      alertStartedSms2: getValue(getValue(subscriptions.value, "sms2"), "alert_started"),
-      alertStoppedSms2: getValue(getValue(subscriptions.value, "sms2"), "alert_stopped"),
-      powerOutageStartedSms2: getValue(getValue(subscriptions.value, "sms2"), "power_outage_started"),
-      powerOutageStoppedSms2: getValue(getValue(subscriptions.value, "sms2"), "power_outage_stopped")
-    });
+    this.subscriptionTypes = this.detectSubscriptionTypes(subscriptions.value);
+    const subscriptionControls = {};
+    for (const channel of this.subscriptionChannels) {
+      const channelValue = getValue(subscriptions.value, channel.key, {});
+      for (const type of this.subscriptionTypes) {
+        subscriptionControls[this.subscriptionControl(channel.key, type)] = getValue(channelValue, type, false) === true;
+      }
+    }
+    this.subscriptionsForm = this.fb.group(subscriptionControls);
   }
   updateComponent() {
     forkJoin({
@@ -114836,38 +115071,15 @@ var NotificationsComponent = class _NotificationsComponent extends Configuration
   }
   prepareSubscriptions() {
     const formModel = this.subscriptionsForm.value;
-    return {
-      call1: {
-        alert_started: formModel.alertStartedCall1
-      },
-      call2: {
-        alert_started: formModel.alertStartedCall2
-      },
-      email1: {
-        alert_started: formModel.alertStartedEmail1,
-        alert_stopped: formModel.alertStoppedEmail1,
-        power_outage_started: formModel.powerOutageStartedEmail1,
-        power_outage_stopped: formModel.powerOutageStoppedEmail1
-      },
-      email2: {
-        alert_started: formModel.alertStartedEmail2,
-        alert_stopped: formModel.alertStoppedEmail2,
-        power_outage_started: formModel.powerOutageStartedEmail2,
-        power_outage_stopped: formModel.powerOutageStoppedEmail2
-      },
-      sms1: {
-        alert_started: formModel.alertStartedSms1,
-        alert_stopped: formModel.alertStoppedSms1,
-        power_outage_started: formModel.powerOutageStartedSms1,
-        power_outage_stopped: formModel.powerOutageStoppedSms1
-      },
-      sms2: {
-        alert_started: formModel.alertStartedSms2,
-        alert_stopped: formModel.alertStoppedSms2,
-        power_outage_started: formModel.powerOutageStartedSms2,
-        power_outage_stopped: formModel.powerOutageStoppedSms2
+    const subscriptions = {};
+    for (const channel of this.subscriptionChannels) {
+      const channelSubscriptions = {};
+      for (const type of this.subscriptionTypes) {
+        channelSubscriptions[type] = formModel[this.subscriptionControl(channel.key, type)] === true;
       }
-    };
+      subscriptions[channel.key] = channelSubscriptions;
+    }
+    return subscriptions;
   }
   canSaveSmtp() {
     return this.monitoringState == MONITORING_STATE.READY && this.smtpForm.valid && !this.smtpForm.pristine;
@@ -114972,14 +115184,14 @@ var NotificationsComponent = class _NotificationsComponent extends Configuration
   }
   onPasswordFocus() {
     const passwordControl = this.smtpForm.get("smtpPassword");
-    if (passwordControl.value == DEFAULT_PASSWORD_VALUE) {
+    if (passwordControl && passwordControl.value == DEFAULT_PASSWORD_VALUE) {
       passwordControl.markAsTouched();
       passwordControl.setValue("");
     }
   }
   onPasswordBlur() {
     const passwordControl = this.smtpForm.get("smtpPassword");
-    if (!passwordControl.dirty) {
+    if (passwordControl && !passwordControl.dirty) {
       passwordControl.setValue(DEFAULT_PASSWORD_VALUE);
     }
   }
@@ -115147,7 +115359,7 @@ var NotificationsComponent = class _NotificationsComponent extends Configuration
         }
         let i18n_17;
         if (false) {
-          const MSG_EXTERNAL_notifications_smtp_enabled$$SRC_APP_PAGES_CONFIG_NOTIFICATIONS_NOTIFICATIONS_COMPONENT_TS_17 = goog.getMsg(" SMTP enabled ");
+          const MSG_EXTERNAL_notifications_smtp_enabled$$SRC_APP_PAGES_CONFIG_NOTIFICATIONS_NOTIFICATIONS_COMPONENT_TS_17 = goog.getMsg("SMTP enabled");
           i18n_17 = MSG_EXTERNAL_notifications_smtp_enabled$$SRC_APP_PAGES_CONFIG_NOTIFICATIONS_NOTIFICATIONS_COMPONENT_TS_17;
         } else {
           i18n_17 = " SMTP abilitato ";
@@ -115203,7 +115415,7 @@ var NotificationsComponent = class _NotificationsComponent extends Configuration
         }
         let i18n_25;
         if (false) {
-          const MSG_EXTERNAL_notifications_gsm_enabled$$SRC_APP_PAGES_CONFIG_NOTIFICATIONS_NOTIFICATIONS_COMPONENT_TS_25 = goog.getMsg(" GSM enabled ");
+          const MSG_EXTERNAL_notifications_gsm_enabled$$SRC_APP_PAGES_CONFIG_NOTIFICATIONS_NOTIFICATIONS_COMPONENT_TS_25 = goog.getMsg("GSM enabled");
           i18n_25 = MSG_EXTERNAL_notifications_gsm_enabled$$SRC_APP_PAGES_CONFIG_NOTIFICATIONS_NOTIFICATIONS_COMPONENT_TS_25;
         } else {
           i18n_25 = " GSM abilitato ";
@@ -115259,225 +115471,155 @@ var NotificationsComponent = class _NotificationsComponent extends Configuration
         }
         let i18n_33;
         if (false) {
-          const MSG_EXTERNAL_notifications_send_email1$$SRC_APP_PAGES_CONFIG_NOTIFICATIONS_NOTIFICATIONS_COMPONENT_TS_33 = goog.getMsg("Send Email 1");
-          i18n_33 = MSG_EXTERNAL_notifications_send_email1$$SRC_APP_PAGES_CONFIG_NOTIFICATIONS_NOTIFICATIONS_COMPONENT_TS_33;
+          const MSG_EXTERNAL_save_button$$SRC_APP_PAGES_CONFIG_NOTIFICATIONS_NOTIFICATIONS_COMPONENT_TS_33 = goog.getMsg(" Save ");
+          i18n_33 = MSG_EXTERNAL_save_button$$SRC_APP_PAGES_CONFIG_NOTIFICATIONS_NOTIFICATIONS_COMPONENT_TS_33;
         } else {
-          i18n_33 = "Invia e-mail 1";
+          i18n_33 = " Salvare ";
         }
         let i18n_34;
         if (false) {
-          const MSG_EXTERNAL_notifications_send_email2$$SRC_APP_PAGES_CONFIG_NOTIFICATIONS_NOTIFICATIONS_COMPONENT_TS_34 = goog.getMsg("Send Email 2");
-          i18n_34 = MSG_EXTERNAL_notifications_send_email2$$SRC_APP_PAGES_CONFIG_NOTIFICATIONS_NOTIFICATIONS_COMPONENT_TS_34;
+          const MSG_EXTERNAL_notifications_email1_success$$SRC_APP_PAGES_CONFIG_NOTIFICATIONS_NOTIFICATIONS_COMPONENT_TS_34 = goog.getMsg("Email sent successfully to email address 1!");
+          i18n_34 = MSG_EXTERNAL_notifications_email1_success$$SRC_APP_PAGES_CONFIG_NOTIFICATIONS_NOTIFICATIONS_COMPONENT_TS_34;
         } else {
-          i18n_34 = "Invia e-mail 2";
+          i18n_34 = " Email inviata con successo all'indirizzo email 1! ";
         }
         let i18n_35;
         if (false) {
-          const MSG_EXTERNAL_notifications_send_sms1$$SRC_APP_PAGES_CONFIG_NOTIFICATIONS_NOTIFICATIONS_COMPONENT_TS_35 = goog.getMsg("Send SMS 1");
-          i18n_35 = MSG_EXTERNAL_notifications_send_sms1$$SRC_APP_PAGES_CONFIG_NOTIFICATIONS_NOTIFICATIONS_COMPONENT_TS_35;
+          const MSG_EXTERNAL_email1_failed$$SRC_APP_PAGES_CONFIG_NOTIFICATIONS_NOTIFICATIONS_COMPONENT_TS_35 = goog.getMsg("Failed to send to email address 1!");
+          i18n_35 = MSG_EXTERNAL_email1_failed$$SRC_APP_PAGES_CONFIG_NOTIFICATIONS_NOTIFICATIONS_COMPONENT_TS_35;
         } else {
-          i18n_35 = "Inviare SMS 1";
+          i18n_35 = "Invio fallito all'indirizzo e-mail 1!";
         }
         let i18n_36;
         if (false) {
-          const MSG_EXTERNAL_notifications_send_sms2$$SRC_APP_PAGES_CONFIG_NOTIFICATIONS_NOTIFICATIONS_COMPONENT_TS_36 = goog.getMsg("Send SMS 2");
-          i18n_36 = MSG_EXTERNAL_notifications_send_sms2$$SRC_APP_PAGES_CONFIG_NOTIFICATIONS_NOTIFICATIONS_COMPONENT_TS_36;
+          const MSG_EXTERNAL_notifications_email2_success$$SRC_APP_PAGES_CONFIG_NOTIFICATIONS_NOTIFICATIONS_COMPONENT_TS_36 = goog.getMsg("Email sent successfully to email address 2!");
+          i18n_36 = MSG_EXTERNAL_notifications_email2_success$$SRC_APP_PAGES_CONFIG_NOTIFICATIONS_NOTIFICATIONS_COMPONENT_TS_36;
         } else {
-          i18n_36 = "Inviare SMS 2";
+          i18n_36 = " Email inviata con successo all'indirizzo email 2! ";
         }
         let i18n_37;
         if (false) {
-          const MSG_EXTERNAL_notifications_call_1$$SRC_APP_PAGES_CONFIG_NOTIFICATIONS_NOTIFICATIONS_COMPONENT_TS_37 = goog.getMsg("Call 1");
-          i18n_37 = MSG_EXTERNAL_notifications_call_1$$SRC_APP_PAGES_CONFIG_NOTIFICATIONS_NOTIFICATIONS_COMPONENT_TS_37;
+          const MSG_EXTERNAL_notifications_email2_failed$$SRC_APP_PAGES_CONFIG_NOTIFICATIONS_NOTIFICATIONS_COMPONENT_TS_37 = goog.getMsg("Failed to send to email address 2!");
+          i18n_37 = MSG_EXTERNAL_notifications_email2_failed$$SRC_APP_PAGES_CONFIG_NOTIFICATIONS_NOTIFICATIONS_COMPONENT_TS_37;
         } else {
-          i18n_37 = "Chiamata 1";
+          i18n_37 = " Invio fallito all'indirizzo e-mail 2! ";
         }
         let i18n_38;
         if (false) {
-          const MSG_EXTERNAL_notifications_call_2$$SRC_APP_PAGES_CONFIG_NOTIFICATIONS_NOTIFICATIONS_COMPONENT_TS_38 = goog.getMsg("Call 2");
-          i18n_38 = MSG_EXTERNAL_notifications_call_2$$SRC_APP_PAGES_CONFIG_NOTIFICATIONS_NOTIFICATIONS_COMPONENT_TS_38;
-        } else {
-          i18n_38 = "Chiamata 1";
-        }
-        let i18n_39;
-        if (false) {
-          const MSG_EXTERNAL_notifications_alert_started$$SRC_APP_PAGES_CONFIG_NOTIFICATIONS_NOTIFICATIONS_COMPONENT_TS_39 = goog.getMsg("Alert started");
-          i18n_39 = MSG_EXTERNAL_notifications_alert_started$$SRC_APP_PAGES_CONFIG_NOTIFICATIONS_NOTIFICATIONS_COMPONENT_TS_39;
-        } else {
-          i18n_39 = "Allarme avviato";
-        }
-        let i18n_40;
-        if (false) {
-          const MSG_EXTERNAL_notifications_alert_stopped$$SRC_APP_PAGES_CONFIG_NOTIFICATIONS_NOTIFICATIONS_COMPONENT_TS_40 = goog.getMsg("Alert stopped");
-          i18n_40 = MSG_EXTERNAL_notifications_alert_stopped$$SRC_APP_PAGES_CONFIG_NOTIFICATIONS_NOTIFICATIONS_COMPONENT_TS_40;
-        } else {
-          i18n_40 = "Allarme interrotto";
-        }
-        let i18n_41;
-        if (false) {
-          const MSG_EXTERNAL_notifications_power_outage_started$$SRC_APP_PAGES_CONFIG_NOTIFICATIONS_NOTIFICATIONS_COMPONENT_TS_41 = goog.getMsg(" Power outage started ");
-          i18n_41 = MSG_EXTERNAL_notifications_power_outage_started$$SRC_APP_PAGES_CONFIG_NOTIFICATIONS_NOTIFICATIONS_COMPONENT_TS_41;
-        } else {
-          i18n_41 = " Inizio interruzione di corrente ";
-        }
-        let i18n_42;
-        if (false) {
-          const MSG_EXTERNAL_notifications_power_outage_stopped$$SRC_APP_PAGES_CONFIG_NOTIFICATIONS_NOTIFICATIONS_COMPONENT_TS_42 = goog.getMsg(" Power outage stopped ");
-          i18n_42 = MSG_EXTERNAL_notifications_power_outage_stopped$$SRC_APP_PAGES_CONFIG_NOTIFICATIONS_NOTIFICATIONS_COMPONENT_TS_42;
-        } else {
-          i18n_42 = " Fine interruzione di corrente ";
-        }
-        let i18n_43;
-        if (false) {
-          const MSG_EXTERNAL_save_button$$SRC_APP_PAGES_CONFIG_NOTIFICATIONS_NOTIFICATIONS_COMPONENT_TS_43 = goog.getMsg(" Save ");
-          i18n_43 = MSG_EXTERNAL_save_button$$SRC_APP_PAGES_CONFIG_NOTIFICATIONS_NOTIFICATIONS_COMPONENT_TS_43;
-        } else {
-          i18n_43 = " Salvare ";
-        }
-        let i18n_44;
-        if (false) {
-          const MSG_EXTERNAL_notifications_email1_success$$SRC_APP_PAGES_CONFIG_NOTIFICATIONS_NOTIFICATIONS_COMPONENT_TS_44 = goog.getMsg(" Email sent successfully to email address 1! ");
-          i18n_44 = MSG_EXTERNAL_notifications_email1_success$$SRC_APP_PAGES_CONFIG_NOTIFICATIONS_NOTIFICATIONS_COMPONENT_TS_44;
-        } else {
-          i18n_44 = " Email inviata con successo all'indirizzo email 1! ";
-        }
-        let i18n_45;
-        if (false) {
-          const MSG_EXTERNAL_email1_failed$$SRC_APP_PAGES_CONFIG_NOTIFICATIONS_NOTIFICATIONS_COMPONENT_TS_45 = goog.getMsg("Failed to send to email address 1!");
-          i18n_45 = MSG_EXTERNAL_email1_failed$$SRC_APP_PAGES_CONFIG_NOTIFICATIONS_NOTIFICATIONS_COMPONENT_TS_45;
-        } else {
-          i18n_45 = "Invio fallito all'indirizzo e-mail 1!";
-        }
-        let i18n_46;
-        if (false) {
-          const MSG_EXTERNAL_notifications_email2_success$$SRC_APP_PAGES_CONFIG_NOTIFICATIONS_NOTIFICATIONS_COMPONENT_TS_46 = goog.getMsg(" Email sent successfully to email address 2! ");
-          i18n_46 = MSG_EXTERNAL_notifications_email2_success$$SRC_APP_PAGES_CONFIG_NOTIFICATIONS_NOTIFICATIONS_COMPONENT_TS_46;
-        } else {
-          i18n_46 = " Email inviata con successo all'indirizzo email 2! ";
-        }
-        let i18n_47;
-        if (false) {
-          const MSG_EXTERNAL_notifications_email2_failed$$SRC_APP_PAGES_CONFIG_NOTIFICATIONS_NOTIFICATIONS_COMPONENT_TS_47 = goog.getMsg("Failed to send to email address 2!");
-          i18n_47 = MSG_EXTERNAL_notifications_email2_failed$$SRC_APP_PAGES_CONFIG_NOTIFICATIONS_NOTIFICATIONS_COMPONENT_TS_47;
-        } else {
-          i18n_47 = " Invio fallito all'indirizzo e-mail 2! ";
-        }
-        let i18n_48;
-        if (false) {
-          const MSG_EXTERNAL_notifications_smtp_connection_failed$$SRC_APP_PAGES_CONFIG_NOTIFICATIONS_NOTIFICATIONS_COMPONENT_TS_48 = goog.getMsg(" Failed to connect to SMTP server! {$lineBreak} Please check logs for more information! ", {
+          const MSG_EXTERNAL_notifications_smtp_connection_failed$$SRC_APP_PAGES_CONFIG_NOTIFICATIONS_NOTIFICATIONS_COMPONENT_TS_38 = goog.getMsg(" Failed to connect to SMTP server! {$lineBreak} Please check logs for more information! ", {
             "lineBreak": "\uFFFD#2\uFFFD\uFFFD/#2\uFFFD"
           }, {
             original_code: {
               "lineBreak": "<br />"
             }
           });
-          i18n_48 = MSG_EXTERNAL_notifications_smtp_connection_failed$$SRC_APP_PAGES_CONFIG_NOTIFICATIONS_NOTIFICATIONS_COMPONENT_TS_48;
+          i18n_38 = MSG_EXTERNAL_notifications_smtp_connection_failed$$SRC_APP_PAGES_CONFIG_NOTIFICATIONS_NOTIFICATIONS_COMPONENT_TS_38;
         } else {
-          i18n_48 = " Impossibile connettersi al server SMTP!" + "\uFFFD#2\uFFFD\uFFFD/#2\uFFFD" + "Controllare i log per maggiori informazioni! ";
+          i18n_38 = " Impossibile connettersi al server SMTP!" + "\uFFFD#2\uFFFD\uFFFD/#2\uFFFD" + "Controllare i log per maggiori informazioni! ";
+        }
+        let i18n_39;
+        if (false) {
+          const MSG_EXTERNAL_notifications_test_failed$$SRC_APP_PAGES_CONFIG_NOTIFICATIONS_NOTIFICATIONS_COMPONENT_TS_39 = goog.getMsg("Please check logs for more information!");
+          i18n_39 = MSG_EXTERNAL_notifications_test_failed$$SRC_APP_PAGES_CONFIG_NOTIFICATIONS_NOTIFICATIONS_COMPONENT_TS_39;
+        } else {
+          i18n_39 = " Per ulteriori informazioni, consultare i log! ";
+        }
+        let i18n_40;
+        if (false) {
+          const MSG_EXTERNAL_notifications_sms1_success$$SRC_APP_PAGES_CONFIG_NOTIFICATIONS_NOTIFICATIONS_COMPONENT_TS_40 = goog.getMsg("SMS sent successfully to phone 1!");
+          i18n_40 = MSG_EXTERNAL_notifications_sms1_success$$SRC_APP_PAGES_CONFIG_NOTIFICATIONS_NOTIFICATIONS_COMPONENT_TS_40;
+        } else {
+          i18n_40 = " SMS inviato con successo al telefono 1! ";
+        }
+        let i18n_41;
+        if (false) {
+          const MSG_EXTERNAL_notifications_sms1_failed$$SRC_APP_PAGES_CONFIG_NOTIFICATIONS_NOTIFICATIONS_COMPONENT_TS_41 = goog.getMsg("Failed to send SMS to phone 1!");
+          i18n_41 = MSG_EXTERNAL_notifications_sms1_failed$$SRC_APP_PAGES_CONFIG_NOTIFICATIONS_NOTIFICATIONS_COMPONENT_TS_41;
+        } else {
+          i18n_41 = " Fallito l'invio di SMS al telefono 1! ";
+        }
+        let i18n_42;
+        if (false) {
+          const MSG_EXTERNAL_notifications_sms2_success$$SRC_APP_PAGES_CONFIG_NOTIFICATIONS_NOTIFICATIONS_COMPONENT_TS_42 = goog.getMsg("SMS sent successfully to phone 2!");
+          i18n_42 = MSG_EXTERNAL_notifications_sms2_success$$SRC_APP_PAGES_CONFIG_NOTIFICATIONS_NOTIFICATIONS_COMPONENT_TS_42;
+        } else {
+          i18n_42 = " SMS inviato con successo al telefono 2! ";
+        }
+        let i18n_43;
+        if (false) {
+          const MSG_EXTERNAL_notifications_sms2_failed$$SRC_APP_PAGES_CONFIG_NOTIFICATIONS_NOTIFICATIONS_COMPONENT_TS_43 = goog.getMsg("Failed to send SMS to phone 2!");
+          i18n_43 = MSG_EXTERNAL_notifications_sms2_failed$$SRC_APP_PAGES_CONFIG_NOTIFICATIONS_NOTIFICATIONS_COMPONENT_TS_43;
+        } else {
+          i18n_43 = " Fallito l'invio di SMS al telefono 2! ";
+        }
+        let i18n_44;
+        if (false) {
+          const MSG_EXTERNAL_notifications_gsm_connection_failed$$SRC_APP_PAGES_CONFIG_NOTIFICATIONS_NOTIFICATIONS_COMPONENT_TS_44 = goog.getMsg("Failed to connect to GSM module!");
+          i18n_44 = MSG_EXTERNAL_notifications_gsm_connection_failed$$SRC_APP_PAGES_CONFIG_NOTIFICATIONS_NOTIFICATIONS_COMPONENT_TS_44;
+        } else {
+          i18n_44 = " Impossibile connettersi al modulo GSM! ";
+        }
+        let i18n_45;
+        if (false) {
+          const MSG_EXTERNAL_notifications_test_failed$$SRC_APP_PAGES_CONFIG_NOTIFICATIONS_NOTIFICATIONS_COMPONENT_TS_45 = goog.getMsg("Please check logs for more information!");
+          i18n_45 = MSG_EXTERNAL_notifications_test_failed$$SRC_APP_PAGES_CONFIG_NOTIFICATIONS_NOTIFICATIONS_COMPONENT_TS_45;
+        } else {
+          i18n_45 = " Per ulteriori informazioni, consultare i log! ";
+        }
+        let i18n_46;
+        if (false) {
+          const MSG_EXTERNAL_notifications_call1_success$$SRC_APP_PAGES_CONFIG_NOTIFICATIONS_NOTIFICATIONS_COMPONENT_TS_46 = goog.getMsg("Successfully called phone 1!");
+          i18n_46 = MSG_EXTERNAL_notifications_call1_success$$SRC_APP_PAGES_CONFIG_NOTIFICATIONS_NOTIFICATIONS_COMPONENT_TS_46;
+        } else {
+          i18n_46 = " Chiamato con successo il telefono 1! ";
+        }
+        let i18n_47;
+        if (false) {
+          const MSG_EXTERNAL_notifications_call1_failed$$SRC_APP_PAGES_CONFIG_NOTIFICATIONS_NOTIFICATIONS_COMPONENT_TS_47 = goog.getMsg("Failed to call phone 1!");
+          i18n_47 = MSG_EXTERNAL_notifications_call1_failed$$SRC_APP_PAGES_CONFIG_NOTIFICATIONS_NOTIFICATIONS_COMPONENT_TS_47;
+        } else {
+          i18n_47 = "Impossibile chiamare il telefono 1!";
+        }
+        let i18n_48;
+        if (false) {
+          const MSG_EXTERNAL_notifications_call2_success$$SRC_APP_PAGES_CONFIG_NOTIFICATIONS_NOTIFICATIONS_COMPONENT_TS_48 = goog.getMsg("Successfully called phone 2!");
+          i18n_48 = MSG_EXTERNAL_notifications_call2_success$$SRC_APP_PAGES_CONFIG_NOTIFICATIONS_NOTIFICATIONS_COMPONENT_TS_48;
+        } else {
+          i18n_48 = " Chiamato con successo il telefono 2! ";
         }
         let i18n_49;
         if (false) {
-          const MSG_EXTERNAL_notifications_test_failed$$SRC_APP_PAGES_CONFIG_NOTIFICATIONS_NOTIFICATIONS_COMPONENT_TS_49 = goog.getMsg("Please check logs for more information!");
-          i18n_49 = MSG_EXTERNAL_notifications_test_failed$$SRC_APP_PAGES_CONFIG_NOTIFICATIONS_NOTIFICATIONS_COMPONENT_TS_49;
+          const MSG_EXTERNAL_notifications_call2_failed$$SRC_APP_PAGES_CONFIG_NOTIFICATIONS_NOTIFICATIONS_COMPONENT_TS_49 = goog.getMsg("Failed to call phone 2!");
+          i18n_49 = MSG_EXTERNAL_notifications_call2_failed$$SRC_APP_PAGES_CONFIG_NOTIFICATIONS_NOTIFICATIONS_COMPONENT_TS_49;
         } else {
-          i18n_49 = " Per ulteriori informazioni, consultare i log! ";
+          i18n_49 = "Mancata chiamata al telefono 2!";
         }
         let i18n_50;
         if (false) {
-          const MSG_EXTERNAL_notifications_sms1_success$$SRC_APP_PAGES_CONFIG_NOTIFICATIONS_NOTIFICATIONS_COMPONENT_TS_50 = goog.getMsg("SMS sent successfully to phone 1!");
-          i18n_50 = MSG_EXTERNAL_notifications_sms1_success$$SRC_APP_PAGES_CONFIG_NOTIFICATIONS_NOTIFICATIONS_COMPONENT_TS_50;
+          const MSG_EXTERNAL_notifications_gsm_connection_failed$$SRC_APP_PAGES_CONFIG_NOTIFICATIONS_NOTIFICATIONS_COMPONENT_TS_50 = goog.getMsg("Failed to connect to GSM module!");
+          i18n_50 = MSG_EXTERNAL_notifications_gsm_connection_failed$$SRC_APP_PAGES_CONFIG_NOTIFICATIONS_NOTIFICATIONS_COMPONENT_TS_50;
         } else {
-          i18n_50 = " SMS inviato con successo al telefono 1! ";
+          i18n_50 = " Impossibile connettersi al modulo GSM! ";
         }
         let i18n_51;
         if (false) {
-          const MSG_EXTERNAL_notifications_sms1_failed$$SRC_APP_PAGES_CONFIG_NOTIFICATIONS_NOTIFICATIONS_COMPONENT_TS_51 = goog.getMsg("Failed to send SMS to phone 1!");
-          i18n_51 = MSG_EXTERNAL_notifications_sms1_failed$$SRC_APP_PAGES_CONFIG_NOTIFICATIONS_NOTIFICATIONS_COMPONENT_TS_51;
+          const MSG_EXTERNAL_notifications_test_failed$$SRC_APP_PAGES_CONFIG_NOTIFICATIONS_NOTIFICATIONS_COMPONENT_TS_51 = goog.getMsg("Please check logs for more information!");
+          i18n_51 = MSG_EXTERNAL_notifications_test_failed$$SRC_APP_PAGES_CONFIG_NOTIFICATIONS_NOTIFICATIONS_COMPONENT_TS_51;
         } else {
-          i18n_51 = " Fallito l'invio di SMS al telefono 1! ";
+          i18n_51 = " Per ulteriori informazioni, consultare i log! ";
         }
-        let i18n_52;
-        if (false) {
-          const MSG_EXTERNAL_notifications_sms2_success$$SRC_APP_PAGES_CONFIG_NOTIFICATIONS_NOTIFICATIONS_COMPONENT_TS_52 = goog.getMsg("SMS sent successfully to phone 2!");
-          i18n_52 = MSG_EXTERNAL_notifications_sms2_success$$SRC_APP_PAGES_CONFIG_NOTIFICATIONS_NOTIFICATIONS_COMPONENT_TS_52;
-        } else {
-          i18n_52 = " SMS inviato con successo al telefono 2! ";
-        }
-        let i18n_53;
-        if (false) {
-          const MSG_EXTERNAL_notifications_sms2_failed$$SRC_APP_PAGES_CONFIG_NOTIFICATIONS_NOTIFICATIONS_COMPONENT_TS_53 = goog.getMsg("Failed to send SMS to phone 2!");
-          i18n_53 = MSG_EXTERNAL_notifications_sms2_failed$$SRC_APP_PAGES_CONFIG_NOTIFICATIONS_NOTIFICATIONS_COMPONENT_TS_53;
-        } else {
-          i18n_53 = " Fallito l'invio di SMS al telefono 2! ";
-        }
-        let i18n_54;
-        if (false) {
-          const MSG_EXTERNAL_notifications_gsm_connection_failed$$SRC_APP_PAGES_CONFIG_NOTIFICATIONS_NOTIFICATIONS_COMPONENT_TS_54 = goog.getMsg("Failed to connect to GSM module!");
-          i18n_54 = MSG_EXTERNAL_notifications_gsm_connection_failed$$SRC_APP_PAGES_CONFIG_NOTIFICATIONS_NOTIFICATIONS_COMPONENT_TS_54;
-        } else {
-          i18n_54 = " Impossibile connettersi al modulo GSM! ";
-        }
-        let i18n_55;
-        if (false) {
-          const MSG_EXTERNAL_notifications_test_failed$$SRC_APP_PAGES_CONFIG_NOTIFICATIONS_NOTIFICATIONS_COMPONENT_TS_55 = goog.getMsg("Please check logs for more information!");
-          i18n_55 = MSG_EXTERNAL_notifications_test_failed$$SRC_APP_PAGES_CONFIG_NOTIFICATIONS_NOTIFICATIONS_COMPONENT_TS_55;
-        } else {
-          i18n_55 = " Per ulteriori informazioni, consultare i log! ";
-        }
-        let i18n_56;
-        if (false) {
-          const MSG_EXTERNAL_notifications_call1_success$$SRC_APP_PAGES_CONFIG_NOTIFICATIONS_NOTIFICATIONS_COMPONENT_TS_56 = goog.getMsg("Successfully called phone 1!");
-          i18n_56 = MSG_EXTERNAL_notifications_call1_success$$SRC_APP_PAGES_CONFIG_NOTIFICATIONS_NOTIFICATIONS_COMPONENT_TS_56;
-        } else {
-          i18n_56 = " Chiamato con successo il telefono 1! ";
-        }
-        let i18n_57;
-        if (false) {
-          const MSG_EXTERNAL_notifications_call1_failed$$SRC_APP_PAGES_CONFIG_NOTIFICATIONS_NOTIFICATIONS_COMPONENT_TS_57 = goog.getMsg("Failed to call phone 1!");
-          i18n_57 = MSG_EXTERNAL_notifications_call1_failed$$SRC_APP_PAGES_CONFIG_NOTIFICATIONS_NOTIFICATIONS_COMPONENT_TS_57;
-        } else {
-          i18n_57 = "Impossibile chiamare il telefono 1!";
-        }
-        let i18n_58;
-        if (false) {
-          const MSG_EXTERNAL_notifications_call2_success$$SRC_APP_PAGES_CONFIG_NOTIFICATIONS_NOTIFICATIONS_COMPONENT_TS_58 = goog.getMsg("Successfully called phone 2!");
-          i18n_58 = MSG_EXTERNAL_notifications_call2_success$$SRC_APP_PAGES_CONFIG_NOTIFICATIONS_NOTIFICATIONS_COMPONENT_TS_58;
-        } else {
-          i18n_58 = " Chiamato con successo il telefono 2! ";
-        }
-        let i18n_59;
-        if (false) {
-          const MSG_EXTERNAL_notifications_call2_failed$$SRC_APP_PAGES_CONFIG_NOTIFICATIONS_NOTIFICATIONS_COMPONENT_TS_59 = goog.getMsg("Failed to call phone 2!");
-          i18n_59 = MSG_EXTERNAL_notifications_call2_failed$$SRC_APP_PAGES_CONFIG_NOTIFICATIONS_NOTIFICATIONS_COMPONENT_TS_59;
-        } else {
-          i18n_59 = "Mancata chiamata al telefono 2!";
-        }
-        let i18n_60;
-        if (false) {
-          const MSG_EXTERNAL_notifications_gsm_connection_failed$$SRC_APP_PAGES_CONFIG_NOTIFICATIONS_NOTIFICATIONS_COMPONENT_TS_60 = goog.getMsg("Failed to connect to GSM module!");
-          i18n_60 = MSG_EXTERNAL_notifications_gsm_connection_failed$$SRC_APP_PAGES_CONFIG_NOTIFICATIONS_NOTIFICATIONS_COMPONENT_TS_60;
-        } else {
-          i18n_60 = " Impossibile connettersi al modulo GSM! ";
-        }
-        let i18n_61;
-        if (false) {
-          const MSG_EXTERNAL_notifications_test_failed$$SRC_APP_PAGES_CONFIG_NOTIFICATIONS_NOTIFICATIONS_COMPONENT_TS_61 = goog.getMsg("Please check logs for more information!");
-          i18n_61 = MSG_EXTERNAL_notifications_test_failed$$SRC_APP_PAGES_CONFIG_NOTIFICATIONS_NOTIFICATIONS_COMPONENT_TS_61;
-        } else {
-          i18n_61 = " Per ulteriori informazioni, consultare i log! ";
-        }
-        return [["snackbarTemplateEmail", ""], ["snackbarTemplateSms", ""], ["snackbarTemplateCall", ""], i18n_9, i18n_10, i18n_11, i18n_12, i18n_13, i18n_14, i18n_15, i18n_16, i18n_17, i18n_18, i18n_19, i18n_20, i18n_21, i18n_22, i18n_23, i18n_24, i18n_25, i18n_26, i18n_27, i18n_28, i18n_29, i18n_30, i18n_31, i18n_32, i18n_33, i18n_34, i18n_35, i18n_36, i18n_37, i18n_38, i18n_39, i18n_40, i18n_41, i18n_42, i18n_43, i18n_44, i18n_45, i18n_46, i18n_47, i18n_48, i18n_49, i18n_50, i18n_51, i18n_52, i18n_53, i18n_54, i18n_55, i18n_56, i18n_57, i18n_58, i18n_59, i18n_60, i18n_61, [1, "container"], ["multi", "true", 1, "notifications"], [3, "ngSubmit", "formGroup"], [1, "row"], ["matInput", "", "formControlName", "smtpUsername", "placeholder", i18n_0], ["type", "password", "matInput", "", "formControlName", "smtpPassword", "placeholder", i18n_1, 3, "focus", "blur"], ["matInput", "", "formControlName", "smtpHostname", "placeholder", i18n_2], ["matInput", "", "formControlName", "smtpPort", "placeholder", i18n_3], ["matInput", "", "formControlName", "emailAddress1", "placeholder", i18n_4], ["matInput", "", "formControlName", "emailAddress2", "placeholder", i18n_5], ["formControlName", "smtpEnabled"], ["mat-raised-button", "", "color", "primary", "type", "submit", 3, "disabled"], ["mat-raised-button", "", "color", "primary", "type", "button", 3, "click", "disabled"], [1, "pin-code"], ["matInput", "", "formControlName", "pinCode", "placeholder", i18n_6], [1, "phone-number"], ["matInput", "", "formControlName", "phoneNumber1", "placeholder", i18n_7], ["matInput", "", "formControlName", "phoneNumber2", "placeholder", i18n_8], ["formControlName", "gsmEnabled"], [1, "mat-table"], [1, "mat-header-row"], [1, "mat-header-cell"], [1, "mat-row"], [1, "mat-cell"], ["formControlName", "alertStartedEmail1"], ["formControlName", "alertStartedEmail2"], ["formControlName", "alertStartedSms1"], ["formControlName", "alertStartedSms2"], ["formControlName", "alertStartedCall1"], ["formControlName", "alertStartedCall2"], ["formControlName", "alertStoppedEmail1"], ["formControlName", "alertStoppedEmail2"], ["formControlName", "alertStoppedSms1"], ["formControlName", "alertStoppedSms2"], ["disabled", ""], ["formControlName", "powerOutageStartedEmail1"], ["formControlName", "powerOutageStartedEmail2"], ["formControlName", "powerOutageStartedSms1"], ["formControlName", "powerOutageStartedSms2"], ["formControlName", "powerOutageStoppedEmail1"], ["formControlName", "powerOutageStoppedEmail2"], ["formControlName", "powerOutageStoppedSms1"], ["formControlName", "powerOutageStoppedSms2"], [1, "form-actions"], ["diameter", "18"]];
+        return [["snackbarTemplateEmail", ""], ["snackbarTemplateSms", ""], ["snackbarTemplateCall", ""], i18n_9, i18n_10, i18n_11, i18n_12, i18n_13, i18n_14, i18n_15, i18n_16, i18n_17, i18n_18, i18n_19, i18n_20, i18n_21, i18n_22, i18n_23, i18n_24, i18n_25, i18n_26, i18n_27, i18n_28, i18n_29, i18n_30, i18n_31, i18n_32, i18n_33, i18n_34, i18n_35, i18n_36, i18n_37, i18n_38, i18n_39, i18n_40, i18n_41, i18n_42, i18n_43, i18n_44, i18n_45, i18n_46, i18n_47, i18n_48, i18n_49, i18n_50, i18n_51, [1, "container"], ["multi", "true", 1, "notifications"], [3, "ngSubmit", "formGroup"], [1, "row"], ["matInput", "", "formControlName", "smtpUsername", "placeholder", i18n_0], ["type", "password", "matInput", "", "formControlName", "smtpPassword", "placeholder", i18n_1, 3, "focus", "blur"], ["matInput", "", "formControlName", "smtpHostname", "placeholder", i18n_2], ["matInput", "", "formControlName", "smtpPort", "placeholder", i18n_3], ["matInput", "", "formControlName", "emailAddress1", "placeholder", i18n_4], ["matInput", "", "formControlName", "emailAddress2", "placeholder", i18n_5], ["formControlName", "smtpEnabled"], ["mat-raised-button", "", "color", "primary", "type", "submit", 3, "disabled"], ["mat-raised-button", "", "color", "primary", "type", "button", 3, "click", "disabled"], [1, "pin-code"], ["matInput", "", "formControlName", "pinCode", "placeholder", i18n_6], [1, "phone-number"], ["matInput", "", "formControlName", "phoneNumber1", "placeholder", i18n_7], ["matInput", "", "formControlName", "phoneNumber2", "placeholder", i18n_8], ["formControlName", "gsmEnabled"], [1, "mat-table"], [1, "mat-header-row"], [1, "mat-header-cell"], [1, "mat-row"], [1, "form-actions"], ["diameter", "18"], [1, "mat-cell"], [3, "formControlName"]];
       },
       template: function NotificationsComponent_Template(rf, ctx) {
         if (rf & 1) {
-          ɵɵconditionalCreate(0, NotificationsComponent_Conditional_0_Template, 166, 13, "div", 56);
+          ɵɵconditionalCreate(0, NotificationsComponent_Conditional_0_Template, 99, 13, "div", 46);
           ɵɵtemplate(1, NotificationsComponent_ng_template_1_Template, 3, 3, "ng-template", null, 0, ɵɵtemplateRefExtractor)(3, NotificationsComponent_ng_template_3_Template, 3, 3, "ng-template", null, 1, ɵɵtemplateRefExtractor)(5, NotificationsComponent_ng_template_5_Template, 3, 3, "ng-template", null, 2, ɵɵtemplateRefExtractor);
         }
         if (rf & 2) {
           ɵɵconditional(ctx.smtpForm != null && ctx.gsmForm != null && ctx.subscriptionsForm != null ? 0 : -1);
         }
       },
-      dependencies: [ɵNgNoValidate, DefaultValueAccessor, NgControlStatus, NgControlStatusGroup, FormGroupDirective, FormControlName, LocationComponent, MatButton, MatCheckbox, MatAccordion, MatExpansionPanel, MatExpansionPanelHeader, MatExpansionPanelTitle, MatExpansionPanelDescription, MatIcon, MatInput, MatFormField, MatLabel, MatProgressSpinner],
+      dependencies: [ɵNgNoValidate, DefaultValueAccessor, NgControlStatus, NgControlStatusGroup, FormGroupDirective, FormControlName, LocationComponent, SmsActionComponent, MatButton, MatCheckbox, MatAccordion, MatExpansionPanel, MatExpansionPanelHeader, MatExpansionPanelTitle, MatExpansionPanelDescription, MatIcon, MatInput, MatFormField, MatLabel, MatProgressSpinner],
       styles: ["\n.notifications[_ngcontent-%COMP%] {\n  margin-right: auto;\n  margin-left: auto;\n  max-width: 600px;\n}\n.notifications[_ngcontent-%COMP%]   .mat-mdc-form-field[_ngcontent-%COMP%] {\n  width: 100%;\n}\n.notifications[_ngcontent-%COMP%]   .mat-mdc-checkbox[_ngcontent-%COMP%] {\n  margin-bottom: 10px;\n}\n.notifications[_ngcontent-%COMP%]   .pin-code[_ngcontent-%COMP%] {\n  width: 18%;\n  margin: auto 1%;\n}\n.notifications[_ngcontent-%COMP%]   .phone-number[_ngcontent-%COMP%] {\n  width: 38%;\n  margin: auto 1%;\n}\n.notifications[_ngcontent-%COMP%]   .mat-table[_ngcontent-%COMP%] {\n  display: block;\n}\n.notifications[_ngcontent-%COMP%]   .mat-row[_ngcontent-%COMP%], \n.notifications[_ngcontent-%COMP%]   .mat-header-row[_ngcontent-%COMP%] {\n  display: flex;\n  border-bottom-width: 1px;\n  border-bottom-style: solid;\n  align-items: center;\n  min-height: 48px;\n  padding: 0 24px;\n}\n.notifications[_ngcontent-%COMP%]   .mat-cell[_ngcontent-%COMP%], \n.notifications[_ngcontent-%COMP%]   .mat-header-cell[_ngcontent-%COMP%] {\n  flex: 1;\n  overflow: hidden;\n  word-wrap: break-word;\n  text-align: center;\n}\n.notifications[_ngcontent-%COMP%]   .mat-cell[_ngcontent-%COMP%]   mat-checkbox[_ngcontent-%COMP%], \n.notifications[_ngcontent-%COMP%]   .mat-header-cell[_ngcontent-%COMP%]   mat-checkbox[_ngcontent-%COMP%] {\n  margin: 10px auto;\n}\n.notifications[_ngcontent-%COMP%]   .mat-mdc-progress-spinner[_ngcontent-%COMP%] {\n  margin: 0px;\n}\n/*# sourceMappingURL=notifications.component.css.map */"]
     });
   }
@@ -115487,7 +115629,7 @@ var NotificationsComponent = class _NotificationsComponent extends Configuration
     type: Component,
     args: [{
       standalone: false,
-      template: '@if (smtpForm != null && gsmForm != null && subscriptionsForm != null) {\n  <div class="container">\n    <mat-accordion multi="true" class="notifications">\n      <mat-expansion-panel>\n        <mat-expansion-panel-header>\n          <mat-panel-title i18n="@@notifications smtp">SMTP</mat-panel-title>\n          <mat-panel-description i18n="@@notifications smtp settings">\n            SMTP settings for sending notifications\n          </mat-panel-description>\n        </mat-expansion-panel-header>\n        <form [formGroup]="smtpForm" (ngSubmit)="onSubmitSmtp()">\n          <div class="row">\n            <mat-form-field>\n              <mat-label i18n="@@notifications smtp username">SMTP username</mat-label>\n              <input\n                matInput\n                formControlName="smtpUsername"\n                i18n-placeholder="@@notifications smtp username"\n                placeholder="SMTP username"\n              />\n            </mat-form-field>\n            <mat-form-field>\n              <mat-label i18n="@@notifications smtp password">SMTP password</mat-label>\n              <input\n                type="password"\n                matInput\n                formControlName="smtpPassword"\n                (focus)="onPasswordFocus()"\n                (blur)="onPasswordBlur()"\n                i18n-placeholder="@@notifications smtp password"\n                placeholder="SMTP password"\n              />\n            </mat-form-field>\n          </div>\n          <div class="row">\n            <mat-form-field>\n              <mat-label i18n="@@notifications smtp hostname">SMTP hostname</mat-label>\n              <input\n                matInput\n                formControlName="smtpHostname"\n                i18n-placeholder="@@notifications smtp hostname"\n                placeholder="SMTP hostname"\n              />\n            </mat-form-field>\n            <mat-form-field>\n              <mat-label i18n="@@notifications smtp port">SMTP port</mat-label>\n              <input\n                matInput\n                formControlName="smtpPort"\n                i18n-placeholder="@@notifications smtp port"\n                placeholder="SMTP port"\n              />\n            </mat-form-field>\n          </div>\n          <mat-form-field>\n            <mat-label i18n="@@notifications smtp email1">Email address 1</mat-label>\n            <input\n              matInput\n              formControlName="emailAddress1"\n              i18n-placeholder="@@notifications smtp email1"\n              placeholder="Email address 1"\n            />\n          </mat-form-field>\n          <mat-form-field>\n            <mat-label i18n="@@notifications smtp email2">Email address 2</mat-label>\n            <input\n              matInput\n              formControlName="emailAddress2"\n              i18n-placeholder="@@notifications smtp email2"\n              placeholder="Email address 2"\n            />\n          </mat-form-field>\n          <mat-checkbox formControlName="smtpEnabled" i18n="@@notifications smtp enabled">\n            SMTP enabled\n          </mat-checkbox>\n          <div class="row">\n            <button\n              mat-raised-button\n              color="primary"\n              type="submit"\n              [disabled]="!canSaveSmtp()"\n              i18n="@@save button"\n            >\n              Save\n            </button>\n            <button\n              mat-raised-button\n              color="primary"\n              type="button"\n              (click)="onSendTestEmail()"\n              [disabled]="!canTestSmtp()"\n            >\n              <span i18n="@@notifications send test email">Send test email</span>\n              @if (testingEmail) {\n                <mat-icon>\n                  <mat-spinner diameter="18" />\n                </mat-icon>\n              }\n            </button>\n          </div>\n        </form>\n      </mat-expansion-panel>\n      <mat-expansion-panel>\n        <mat-expansion-panel-header>\n          <mat-panel-title i18n="@@notifications gsm">GSM</mat-panel-title>\n          <mat-panel-description i18n="@@notifications gsm settings">\n            Mobil settings for sending notifications\n          </mat-panel-description>\n        </mat-expansion-panel-header>\n        <form [formGroup]="gsmForm" (ngSubmit)="onSubmitGsm()">\n          <mat-form-field class="pin-code">\n            <mat-label i18n="@@notifications sim card pin">SIM card PIN code</mat-label>\n            <input\n              matInput\n              formControlName="pinCode"\n              i18n-placeholder="@@notifications sim card pin"\n              placeholder="SIM card PIN code"\n            />\n          </mat-form-field>\n          <mat-form-field class="phone-number">\n            <mat-label i18n="@@notifications target phone1">Target phone number 1</mat-label>\n            <input\n              matInput\n              formControlName="phoneNumber1"\n              i18n-placeholder="@@notifications target phone1"\n              placeholder="Target phone number 1"\n            />\n          </mat-form-field>\n          <mat-form-field class="phone-number">\n            <mat-label i18n="@@notifications target phone2">Target phone number 2</mat-label>\n            <input\n              matInput\n              formControlName="phoneNumber2"\n              i18n-placeholder="@@notifications target phone2"\n              placeholder="Target phone number 2"\n            />\n          </mat-form-field>\n          <mat-checkbox formControlName="gsmEnabled" i18n="@@notifications gsm enabled">\n            GSM enabled\n          </mat-checkbox>\n          <div class="row">\n            <button\n              mat-raised-button\n              color="primary"\n              type="submit"\n              [disabled]="!canSaveGsm()"\n              i18n="@@save button"\n            >\n              Save\n            </button>\n            <button\n              mat-raised-button\n              color="primary"\n              type="button"\n              (click)="onSendTestSMS()"\n              [disabled]="\n                monitoringState != monitoringStates.READY || gsmForm.touched || !canTestGsm()\n              "\n            >\n              <span i18n="@@notifications send test sms">Send test SMS</span>\n              @if (testingSms) {\n                <mat-icon>\n                  <mat-spinner diameter="18" />\n                </mat-icon>\n              }\n            </button>\n            <button\n              mat-raised-button\n              color="primary"\n              type="button"\n              (click)="onTestCall()"\n              [disabled]="\n                monitoringState != monitoringStates.READY || gsmForm.touched || !canTestGsm()\n              "\n            >\n              <span i18n="@@notifications test call">Test call</span>\n              @if (testingCall) {\n                <mat-icon>\n                  <mat-spinner diameter="18" />\n                </mat-icon>\n              }\n            </button>\n            <button\n              mat-raised-button\n              color="primary"\n              type="button"\n              (click)="onShowSmsMessages()"\n              [disabled]="\n                monitoringState != monitoringStates.READY || gsmForm.touched || !canTestGsm()\n              "\n            >\n              <span i18n="@@notification sms">SMS messages</span>\n            </button>\n          </div>\n        </form>\n      </mat-expansion-panel>\n      <mat-expansion-panel>\n        <mat-expansion-panel-header>\n          <mat-panel-title i18n="@@notifications subscriptions">Subscriptions</mat-panel-title>\n          <mat-panel-description i18n="@@notifications subscriptions settings">\n            Configure subscriptions\n          </mat-panel-description>\n        </mat-expansion-panel-header>\n        <form [formGroup]="subscriptionsForm" (ngSubmit)="onSubmitSubscriptions()">\n          <div class="mat-table">\n            <div class="mat-header-row">\n              <div class="mat-header-cell" i18n="@@notifications source">Event</div>\n              <div class="mat-header-cell" i18n="@@notifications send email1">Send Email 1</div>\n              <div class="mat-header-cell" i18n="@@notifications send email2">Send Email 2</div>\n              <div class="mat-header-cell" i18n="@@notifications send sms1">Send SMS 1</div>\n              <div class="mat-header-cell" i18n="@@notifications send sms2">Send SMS 2</div>\n              <div class="mat-header-cell" i18n="@@notifications call 1">Call 1</div>\n              <div class="mat-header-cell" i18n="@@notifications call 2">Call 2</div>\n            </div>\n            <div class="mat-row">\n              <div class="mat-cell" i18n="@@notifications alert started">Alert started</div>\n              <div class="mat-cell">\n                <mat-checkbox formControlName="alertStartedEmail1"></mat-checkbox>\n              </div>\n              <div class="mat-cell">\n                <mat-checkbox formControlName="alertStartedEmail2"></mat-checkbox>\n              </div>\n              <div class="mat-cell">\n                <mat-checkbox formControlName="alertStartedSms1"></mat-checkbox>\n              </div>\n              <div class="mat-cell">\n                <mat-checkbox formControlName="alertStartedSms2"></mat-checkbox>\n              </div>\n              <div class="mat-cell">\n                <mat-checkbox formControlName="alertStartedCall1"></mat-checkbox>\n              </div>\n              <div class="mat-cell">\n                <mat-checkbox formControlName="alertStartedCall2"></mat-checkbox>\n              </div>\n            </div>\n            <div class="mat-row">\n              <div class="mat-cell" i18n="@@notifications alert stopped">Alert stopped</div>\n              <div class="mat-cell">\n                <mat-checkbox formControlName="alertStoppedEmail1"></mat-checkbox>\n              </div>\n              <div class="mat-cell">\n                <mat-checkbox formControlName="alertStoppedEmail2"></mat-checkbox>\n              </div>\n              <div class="mat-cell">\n                <mat-checkbox formControlName="alertStoppedSms1"></mat-checkbox>\n              </div>\n              <div class="mat-cell">\n                <mat-checkbox formControlName="alertStoppedSms2"></mat-checkbox>\n              </div>\n              <div class="mat-cell">\n                <mat-checkbox disabled></mat-checkbox>\n              </div>\n              <div class="mat-cell">\n                <mat-checkbox disabled></mat-checkbox>\n              </div>\n            </div>\n            <div class="mat-row">\n              <div class="mat-cell" i18n="@@notifications power outage started">\n                Power outage started\n              </div>\n              <div class="mat-cell">\n                <mat-checkbox formControlName="powerOutageStartedEmail1"></mat-checkbox>\n              </div>\n              <div class="mat-cell">\n                <mat-checkbox formControlName="powerOutageStartedEmail2"></mat-checkbox>\n              </div>\n              <div class="mat-cell">\n                <mat-checkbox formControlName="powerOutageStartedSms1"></mat-checkbox>\n              </div>\n              <div class="mat-cell">\n                <mat-checkbox formControlName="powerOutageStartedSms2"></mat-checkbox>\n              </div>\n              <div class="mat-cell">\n                <mat-checkbox disabled></mat-checkbox>\n              </div>\n              <div class="mat-cell">\n                <mat-checkbox disabled></mat-checkbox>\n              </div>\n            </div>\n            <div class="mat-row">\n              <div class="mat-cell" i18n="@@notifications power outage stopped">\n                Power outage stopped\n              </div>\n              <div class="mat-cell">\n                <mat-checkbox formControlName="powerOutageStoppedEmail1"></mat-checkbox>\n              </div>\n              <div class="mat-cell">\n                <mat-checkbox formControlName="powerOutageStoppedEmail2"></mat-checkbox>\n              </div>\n              <div class="mat-cell">\n                <mat-checkbox formControlName="powerOutageStoppedSms1"></mat-checkbox>\n              </div>\n              <div class="mat-cell">\n                <mat-checkbox formControlName="powerOutageStoppedSms2"></mat-checkbox>\n              </div>\n              <div class="mat-cell">\n                <mat-checkbox disabled></mat-checkbox>\n              </div>\n              <div class="mat-cell">\n                <mat-checkbox disabled></mat-checkbox>\n              </div>\n            </div>\n          </div>\n          <div class="form-actions">\n            <button\n              mat-raised-button\n              color="primary"\n              type="submit"\n              [disabled]="\n                monitoringState != monitoringStates.READY ||\n                !subscriptionsForm.valid ||\n                subscriptionsForm.pristine\n              "\n              i18n="@@save button"\n            >\n              Save\n            </button>\n          </div>\n        </form>\n      </mat-expansion-panel>\n      <app-location></app-location>\n    </mat-accordion>\n  </div>\n}\n\n<ng-template #snackbarTemplateEmail>\n  @if (testEmailResult) {\n    <div>\n      <div>\n        @switch (testEmailResult["email1"]) {\n          @case (true) {\n            <div i18n="@@notifications email1 success">\n              Email sent successfully to email address 1!\n            </div>\n          }\n          @case (false) {\n            <div i18n="@@email1 failed">Failed to send to email address 1!</div>\n          }\n        }\n      </div>\n      <div>\n        @switch (testEmailResult["email2"]) {\n          @case (true) {\n            <div i18n="@@notifications email2 success">\n              Email sent successfully to email address 2!\n            </div>\n          }\n          @case (false) {\n            <div i18n="@@notifications email2 failed">Failed to send to email address 2!</div>\n          }\n        }\n      </div>\n    </div>\n  }\n  @if (testEmailResult["connection"] == false) {\n    <div i18n="@@notifications smtp connection failed">\n      Failed to connect to SMTP server!\n      <br />\n      Please check logs for more information!\n    </div>\n  }\n  @if (\n    testEmailResult["email1"] == false ||\n    testEmailResult["email2"] == false ||\n    testEmailResult["connection"] == false\n  ) {\n    <div i18n="@@notifications test failed">Please check logs for more information!</div>\n  }\n</ng-template>\n\n<ng-template #snackbarTemplateSms>\n  @if (testSmsResult) {\n    <div>\n      <div>\n        @switch (testSmsResult["phone1"]) {\n          @case (true) {\n            <div i18n="@@notifications sms1 success">SMS sent successfully to phone 1!</div>\n          }\n          @case (false) {\n            <div i18n="@@notifications sms1 failed">Failed to send SMS to phone 1!</div>\n          }\n        }\n      </div>\n      <div>\n        @switch (testSmsResult["phone2"]) {\n          @case (true) {\n            <div i18n="@@notifications sms2 success">SMS sent successfully to phone 2!</div>\n          }\n          @case (false) {\n            <div i18n="@@notifications sms2 failed">Failed to send SMS to phone 2!</div>\n          }\n        }\n      </div>\n    </div>\n  }\n  @if (testSmsResult["connection"] == false) {\n    <div i18n="@@notifications gsm connection failed">Failed to connect to GSM module!</div>\n  }\n  @if (\n    testSmsResult["phone1"] == false ||\n    testSmsResult["phone2"] == false ||\n    testSmsResult["connection"] == false\n  ) {\n    <div i18n="@@notifications test failed">Please check logs for more information!</div>\n  }\n</ng-template>\n\n<ng-template #snackbarTemplateCall>\n  @if (testCallResult) {\n    <div>\n      <div>\n        @switch (testCallResult["phone1"]) {\n          @case (true) {\n            <div i18n="@@notifications call1 success">Successfully called phone 1!</div>\n          }\n          @case (false) {\n            <div i18n="@@notifications call1 failed">Failed to call phone 1!</div>\n          }\n        }\n      </div>\n      <div>\n        @switch (testCallResult["phone2"]) {\n          @case (true) {\n            <div i18n="@@notifications call2 success">Successfully called phone 2!</div>\n          }\n          @case (false) {\n            <div i18n="@@notifications call2 failed">Failed to call phone 2!</div>\n          }\n        }\n      </div>\n    </div>\n  }\n  @if (testCallResult["connection"] == false) {\n    <div i18n="@@notifications gsm connection failed">Failed to connect to GSM module!</div>\n  }\n  @if (\n    testCallResult["phone1"] == false ||\n    testCallResult["phone2"] == false ||\n    testCallResult["connection"] == false\n  ) {\n    <div i18n="@@notifications test failed">Please check logs for more information!</div>\n  }\n</ng-template>\n',
+      template: '@if (smtpForm != null && gsmForm != null && subscriptionsForm != null) {\n  <div class="container">\n    <mat-accordion multi="true" class="notifications">\n      <mat-expansion-panel>\n        <mat-expansion-panel-header>\n          <mat-panel-title i18n="@@notifications smtp">SMTP</mat-panel-title>\n          <mat-panel-description i18n="@@notifications smtp settings">\n            SMTP settings for sending notifications\n          </mat-panel-description>\n        </mat-expansion-panel-header>\n        <form [formGroup]="smtpForm" (ngSubmit)="onSubmitSmtp()">\n          <div class="row">\n            <mat-form-field>\n              <mat-label i18n="@@notifications smtp username">SMTP username</mat-label>\n              <input\n                matInput\n                formControlName="smtpUsername"\n                i18n-placeholder="@@notifications smtp username"\n                placeholder="SMTP username"\n              />\n            </mat-form-field>\n            <mat-form-field>\n              <mat-label i18n="@@notifications smtp password">SMTP password</mat-label>\n              <input\n                type="password"\n                matInput\n                formControlName="smtpPassword"\n                (focus)="onPasswordFocus()"\n                (blur)="onPasswordBlur()"\n                i18n-placeholder="@@notifications smtp password"\n                placeholder="SMTP password"\n              />\n            </mat-form-field>\n          </div>\n          <div class="row">\n            <mat-form-field>\n              <mat-label i18n="@@notifications smtp hostname">SMTP hostname</mat-label>\n              <input\n                matInput\n                formControlName="smtpHostname"\n                i18n-placeholder="@@notifications smtp hostname"\n                placeholder="SMTP hostname"\n              />\n            </mat-form-field>\n            <mat-form-field>\n              <mat-label i18n="@@notifications smtp port">SMTP port</mat-label>\n              <input\n                matInput\n                formControlName="smtpPort"\n                i18n-placeholder="@@notifications smtp port"\n                placeholder="SMTP port"\n              />\n            </mat-form-field>\n          </div>\n          <mat-form-field>\n            <mat-label i18n="@@notifications smtp email1">Email address 1</mat-label>\n            <input\n              matInput\n              formControlName="emailAddress1"\n              i18n-placeholder="@@notifications smtp email1"\n              placeholder="Email address 1"\n            />\n          </mat-form-field>\n          <mat-form-field>\n            <mat-label i18n="@@notifications smtp email2">Email address 2</mat-label>\n            <input\n              matInput\n              formControlName="emailAddress2"\n              i18n-placeholder="@@notifications smtp email2"\n              placeholder="Email address 2"\n            />\n          </mat-form-field>\n          <mat-checkbox formControlName="smtpEnabled" i18n="@@notifications smtp enabled">SMTP enabled</mat-checkbox>\n          <div class="row">\n            <button mat-raised-button color="primary" type="submit" [disabled]="!canSaveSmtp()" i18n="@@save button">\n              Save\n            </button>\n            <button\n              mat-raised-button\n              color="primary"\n              type="button"\n              (click)="onSendTestEmail()"\n              [disabled]="!canTestSmtp()"\n            >\n              <span i18n="@@notifications send test email">Send test email</span>\n              @if (testingEmail) {\n                <mat-icon>\n                  <mat-spinner diameter="18" />\n                </mat-icon>\n              }\n            </button>\n          </div>\n        </form>\n      </mat-expansion-panel>\n      <mat-expansion-panel>\n        <mat-expansion-panel-header>\n          <mat-panel-title i18n="@@notifications gsm">GSM</mat-panel-title>\n          <mat-panel-description i18n="@@notifications gsm settings">\n            Mobil settings for sending notifications\n          </mat-panel-description>\n        </mat-expansion-panel-header>\n        <form [formGroup]="gsmForm" (ngSubmit)="onSubmitGsm()">\n          <mat-form-field class="pin-code">\n            <mat-label i18n="@@notifications sim card pin">SIM card PIN code</mat-label>\n            <input\n              matInput\n              formControlName="pinCode"\n              i18n-placeholder="@@notifications sim card pin"\n              placeholder="SIM card PIN code"\n            />\n          </mat-form-field>\n          <mat-form-field class="phone-number">\n            <mat-label i18n="@@notifications target phone1">Target phone number 1</mat-label>\n            <input\n              matInput\n              formControlName="phoneNumber1"\n              i18n-placeholder="@@notifications target phone1"\n              placeholder="Target phone number 1"\n            />\n          </mat-form-field>\n          <mat-form-field class="phone-number">\n            <mat-label i18n="@@notifications target phone2">Target phone number 2</mat-label>\n            <input\n              matInput\n              formControlName="phoneNumber2"\n              i18n-placeholder="@@notifications target phone2"\n              placeholder="Target phone number 2"\n            />\n          </mat-form-field>\n          <mat-checkbox formControlName="gsmEnabled" i18n="@@notifications gsm enabled">GSM enabled</mat-checkbox>\n          <div class="row">\n            <button mat-raised-button color="primary" type="submit" [disabled]="!canSaveGsm()" i18n="@@save button">\n              Save\n            </button>\n            <button\n              mat-raised-button\n              color="primary"\n              type="button"\n              (click)="onSendTestSMS()"\n              [disabled]="monitoringState != monitoringStates.READY || gsmForm.touched || !canTestGsm()"\n            >\n              <span i18n="@@notifications send test sms">Send test SMS</span>\n              @if (testingSms) {\n                <mat-icon>\n                  <mat-spinner diameter="18" />\n                </mat-icon>\n              }\n            </button>\n            <button\n              mat-raised-button\n              color="primary"\n              type="button"\n              (click)="onTestCall()"\n              [disabled]="monitoringState != monitoringStates.READY || gsmForm.touched || !canTestGsm()"\n            >\n              <span i18n="@@notifications test call">Test call</span>\n              @if (testingCall) {\n                <mat-icon>\n                  <mat-spinner diameter="18" />\n                </mat-icon>\n              }\n            </button>\n            <button\n              mat-raised-button\n              color="primary"\n              type="button"\n              (click)="onShowSmsMessages()"\n              [disabled]="monitoringState != monitoringStates.READY || gsmForm.touched || !canTestGsm()"\n            >\n              <span i18n="@@notification sms">SMS messages</span>\n            </button>\n          </div>\n        </form>\n      </mat-expansion-panel>\n      <app-sms-action></app-sms-action>\n      <mat-expansion-panel>\n        <mat-expansion-panel-header>\n          <mat-panel-title i18n="@@notifications subscriptions">Subscriptions</mat-panel-title>\n          <mat-panel-description i18n="@@notifications subscriptions settings">\n            Configure subscriptions\n          </mat-panel-description>\n        </mat-expansion-panel-header>\n        <form [formGroup]="subscriptionsForm" (ngSubmit)="onSubmitSubscriptions()">\n          <div class="mat-table">\n            <div class="mat-header-row">\n              <div class="mat-header-cell" i18n="@@notifications source">Event</div>\n              @for (channel of subscriptionChannels; track channel.key) {\n                <div class="mat-header-cell">{{ channel.label }}</div>\n              }\n            </div>\n            @for (type of subscriptionTypes; track type) {\n              <div class="mat-row">\n                <div class="mat-cell">{{ subscriptionTypeLabel(type) }}</div>\n                @for (channel of subscriptionChannels; track channel.key) {\n                  <div class="mat-cell">\n                    <mat-checkbox [formControlName]="subscriptionControl(channel.key, type)"></mat-checkbox>\n                  </div>\n                }\n              </div>\n            }\n          </div>\n          <div class="form-actions">\n            <button\n              mat-raised-button\n              color="primary"\n              type="submit"\n              [disabled]="\n                monitoringState != monitoringStates.READY || !subscriptionsForm.valid || subscriptionsForm.pristine\n              "\n              i18n="@@save button"\n            >\n              Save\n            </button>\n          </div>\n        </form>\n      </mat-expansion-panel>\n      <app-location></app-location>\n    </mat-accordion>\n  </div>\n}\n\n<ng-template #snackbarTemplateEmail>\n  @if (testEmailResult) {\n    <div>\n      <div>\n        @switch (testEmailResult["email1"]) {\n          @case (true) {\n            <div i18n="@@notifications email1 success">Email sent successfully to email address 1!</div>\n          }\n          @case (false) {\n            <div i18n="@@email1 failed">Failed to send to email address 1!</div>\n          }\n        }\n      </div>\n      <div>\n        @switch (testEmailResult["email2"]) {\n          @case (true) {\n            <div i18n="@@notifications email2 success">Email sent successfully to email address 2!</div>\n          }\n          @case (false) {\n            <div i18n="@@notifications email2 failed">Failed to send to email address 2!</div>\n          }\n        }\n      </div>\n    </div>\n  }\n  @if (testEmailResult["connection"] == false) {\n    <div i18n="@@notifications smtp connection failed">\n      Failed to connect to SMTP server!\n      <br />\n      Please check logs for more information!\n    </div>\n  }\n  @if (\n    testEmailResult["email1"] == false || testEmailResult["email2"] == false || testEmailResult["connection"] == false\n  ) {\n    <div i18n="@@notifications test failed">Please check logs for more information!</div>\n  }\n</ng-template>\n\n<ng-template #snackbarTemplateSms>\n  @if (testSmsResult) {\n    <div>\n      <div>\n        @switch (testSmsResult["phone1"]) {\n          @case (true) {\n            <div i18n="@@notifications sms1 success">SMS sent successfully to phone 1!</div>\n          }\n          @case (false) {\n            <div i18n="@@notifications sms1 failed">Failed to send SMS to phone 1!</div>\n          }\n        }\n      </div>\n      <div>\n        @switch (testSmsResult["phone2"]) {\n          @case (true) {\n            <div i18n="@@notifications sms2 success">SMS sent successfully to phone 2!</div>\n          }\n          @case (false) {\n            <div i18n="@@notifications sms2 failed">Failed to send SMS to phone 2!</div>\n          }\n        }\n      </div>\n    </div>\n  }\n  @if (testSmsResult["connection"] == false) {\n    <div i18n="@@notifications gsm connection failed">Failed to connect to GSM module!</div>\n  }\n  @if (testSmsResult["phone1"] == false || testSmsResult["phone2"] == false || testSmsResult["connection"] == false) {\n    <div i18n="@@notifications test failed">Please check logs for more information!</div>\n  }\n</ng-template>\n\n<ng-template #snackbarTemplateCall>\n  @if (testCallResult) {\n    <div>\n      <div>\n        @switch (testCallResult["phone1"]) {\n          @case (true) {\n            <div i18n="@@notifications call1 success">Successfully called phone 1!</div>\n          }\n          @case (false) {\n            <div i18n="@@notifications call1 failed">Failed to call phone 1!</div>\n          }\n        }\n      </div>\n      <div>\n        @switch (testCallResult["phone2"]) {\n          @case (true) {\n            <div i18n="@@notifications call2 success">Successfully called phone 2!</div>\n          }\n          @case (false) {\n            <div i18n="@@notifications call2 failed">Failed to call phone 2!</div>\n          }\n        }\n      </div>\n    </div>\n  }\n  @if (testCallResult["connection"] == false) {\n    <div i18n="@@notifications gsm connection failed">Failed to connect to GSM module!</div>\n  }\n  @if (\n    testCallResult["phone1"] == false || testCallResult["phone2"] == false || testCallResult["connection"] == false\n  ) {\n    <div i18n="@@notifications test failed">Please check logs for more information!</div>\n  }\n</ng-template>\n',
       styles: ["/* src/app/pages/config/notifications/notifications.component.scss */\n.notifications {\n  margin-right: auto;\n  margin-left: auto;\n  max-width: 600px;\n}\n.notifications .mat-mdc-form-field {\n  width: 100%;\n}\n.notifications .mat-mdc-checkbox {\n  margin-bottom: 10px;\n}\n.notifications .pin-code {\n  width: 18%;\n  margin: auto 1%;\n}\n.notifications .phone-number {\n  width: 38%;\n  margin: auto 1%;\n}\n.notifications .mat-table {\n  display: block;\n}\n.notifications .mat-row,\n.notifications .mat-header-row {\n  display: flex;\n  border-bottom-width: 1px;\n  border-bottom-style: solid;\n  align-items: center;\n  min-height: 48px;\n  padding: 0 24px;\n}\n.notifications .mat-cell,\n.notifications .mat-header-cell {\n  flex: 1;\n  overflow: hidden;\n  word-wrap: break-word;\n  text-align: center;\n}\n.notifications .mat-cell mat-checkbox,\n.notifications .mat-header-cell mat-checkbox {\n  margin: 10px auto;\n}\n.notifications .mat-mdc-progress-spinner {\n  margin: 0px;\n}\n/*# sourceMappingURL=notifications.component.css.map */\n"]
     }]
   }], () => [{
@@ -115542,7 +115684,7 @@ var NotificationsComponent = class _NotificationsComponent extends Configuration
   (typeof ngDevMode === "undefined" || ngDevMode) && ɵsetClassDebugInfo(NotificationsComponent, {
     className: "NotificationsComponent",
     filePath: "src/app/pages/config/notifications/notifications.component.ts",
-    lineNumber: 43
+    lineNumber: 30
   });
 })();
 
@@ -115641,7 +115783,7 @@ function SyrenComponent_Conditional_0_Template(rf, ctx) {
     ɵɵconditional(ctx_r1.testInProgress ? 52 : -1);
   }
 }
-var scheduleMicrotask9 = Promise.resolve(null);
+var scheduleMicrotask10 = Promise.resolve(null);
 var SyrenComponent = class _SyrenComponent extends ConfigurationBaseComponent {
   constructor(eventService, loader, monitoringService, configurationService, fb, snackBar) {
     super(eventService, loader, monitoringService);
@@ -115655,7 +115797,7 @@ var SyrenComponent = class _SyrenComponent extends ConfigurationBaseComponent {
   }
   ngOnInit() {
     super.initialize();
-    scheduleMicrotask9.then(() => {
+    scheduleMicrotask10.then(() => {
       this.loader.display(true);
     });
     this.updateComponent();
@@ -115912,7 +116054,7 @@ var SyrenComponent = class _SyrenComponent extends ConfigurationBaseComponent {
     args: [{
       providers: [],
       standalone: false,
-      template: '@if (syren != null) {\n  <div class="container">\n    <form [formGroup]="syrenForm" (ngSubmit)="onSubmit()" class="syren-form">\n      <mat-accordion class="container-item">\n        <mat-expansion-panel expanded="true">\n          <mat-expansion-panel-header>\n            <mat-panel-title i18n="@@syren sources">Syren</mat-panel-title>\n          </mat-expansion-panel-header>\n          <div class="silent">\n            <h4 i18n="@@syren volume">Syren volume</h4>\n            <mat-radio-group class="silent" formControlName="silentAlert">\n              <mat-radio-button value="undefined">\n                <span i18n="@@syren silent undefined">Normal</span>\n              </mat-radio-button>\n              <mat-radio-button value="silent">\n                <span i18n="@@syren silent">Silent alert</span>\n              </mat-radio-button>\n              <mat-radio-button value="loud">\n                <span i18n="@@syren silent loud">Loud alarm (forced)</span>\n              </mat-radio-button>\n            </mat-radio-group>\n          </div>\n          <mat-divider></mat-divider>\n          <h4 i18n="@@syren timing">Syren timing</h4>\n          <div class="timing row">\n            <mat-form-field>\n              <input\n                matInput\n                type="number"\n                min="0"\n                i18n-placeholder="@@syren delay"\n                placeholder="Delay"\n                formControlName="delay"\n                required\n              />\n              <mat-hint i18n="@@syren delay hint">Delay the syren in seconds</mat-hint>\n            </mat-form-field>\n            <mat-form-field>\n              <input\n                matInput\n                type="number"\n                min="0"\n                i18n-placeholder="@@syren duration"\n                placeholder="Duration"\n                formControlName="duration"\n                required\n              />\n              <mat-hint i18n="@@syren duration hint">Stop the syren in seconds</mat-hint>\n            </mat-form-field>\n          </div>\n          <mat-divider></mat-divider>\n          <h4 i18n="@@syren sensitivity alert">Alert sensitivity</h4>\n          <div class="sensitivity row">\n            <mat-checkbox\n              formControlName="sensitivity"\n              color="primary"\n              i18n="@@syren sensitivity custom"\n              (change)="onSensitivityChanged($event)"\n            >\n              Custom sensitivity\n            </mat-checkbox>\n            <mat-form-field>\n              <mat-label i18n="@@alert monitor period">Monitoring period [s]</mat-label>\n              <input matInput formControlName="monitorPeriod" type="number" min="1" required />\n            </mat-form-field>\n            <mat-form-field>\n              <mat-label i18n="@@alert monitor threshold">Monitoring threshold [%]</mat-label>\n              <input\n                matInput\n                formControlName="monitorThreshold"\n                type="number"\n                min="0"\n                max="100"\n                required\n              />\n            </mat-form-field>\n          </div>\n        </mat-expansion-panel>\n      </mat-accordion>\n      <div class="form-actions row">\n        <button\n          mat-raised-button\n          type="submit"\n          color="primary"\n          [disabled]="syrenForm.invalid || monitoringState != monitoringStates.READY"\n          i18n="@@save button"\n        >\n          Save\n        </button>\n        <button\n          mat-raised-button\n          type="button"\n          color="primary"\n          [disabled]="\n            syrenForm.invalid || monitoringState != monitoringStates.READY || testInProgress\n          "\n          (click)="onTestSyren()"\n        >\n          <span i18n="@@syren test">Test</span>\n          @if (testInProgress) {\n            <mat-icon>\n              <mat-progress-spinner class="test-spinner" diameter="18" />\n            </mat-icon>\n          }\n        </button>\n      </div>\n    </form>\n  </div>\n}\n',
+      template: '@if (syren != null) {\n  <div class="container">\n    <form [formGroup]="syrenForm" (ngSubmit)="onSubmit()" class="syren-form">\n      <mat-accordion class="container-item">\n        <mat-expansion-panel expanded="true">\n          <mat-expansion-panel-header>\n            <mat-panel-title i18n="@@syren sources">Syren</mat-panel-title>\n          </mat-expansion-panel-header>\n          <div class="silent">\n            <h4 i18n="@@syren volume">Syren volume</h4>\n            <mat-radio-group class="silent" formControlName="silentAlert">\n              <mat-radio-button value="undefined">\n                <span i18n="@@syren silent undefined">Normal</span>\n              </mat-radio-button>\n              <mat-radio-button value="silent">\n                <span i18n="@@syren silent">Silent alert</span>\n              </mat-radio-button>\n              <mat-radio-button value="loud">\n                <span i18n="@@syren silent loud">Loud alarm (forced)</span>\n              </mat-radio-button>\n            </mat-radio-group>\n          </div>\n          <mat-divider></mat-divider>\n          <h4 i18n="@@syren timing">Syren timing</h4>\n          <div class="timing row">\n            <mat-form-field>\n              <input\n                matInput\n                type="number"\n                min="0"\n                i18n-placeholder="@@syren delay"\n                placeholder="Delay"\n                formControlName="delay"\n                required\n              />\n              <mat-hint i18n="@@syren delay hint">Delay the syren in seconds</mat-hint>\n            </mat-form-field>\n            <mat-form-field>\n              <input\n                matInput\n                type="number"\n                min="0"\n                i18n-placeholder="@@syren duration"\n                placeholder="Duration"\n                formControlName="duration"\n                required\n              />\n              <mat-hint i18n="@@syren duration hint">Stop the syren in seconds</mat-hint>\n            </mat-form-field>\n          </div>\n          <mat-divider></mat-divider>\n          <h4 i18n="@@syren sensitivity alert">Alert sensitivity</h4>\n          <div class="sensitivity row">\n            <mat-checkbox\n              formControlName="sensitivity"\n              color="primary"\n              i18n="@@syren sensitivity custom"\n              (change)="onSensitivityChanged($event)"\n            >\n              Custom sensitivity\n            </mat-checkbox>\n            <mat-form-field>\n              <mat-label i18n="@@alert monitor period">Monitoring period [s]</mat-label>\n              <input matInput formControlName="monitorPeriod" type="number" min="1" required />\n            </mat-form-field>\n            <mat-form-field>\n              <mat-label i18n="@@alert monitor threshold">Monitoring threshold [%]</mat-label>\n              <input matInput formControlName="monitorThreshold" type="number" min="0" max="100" required />\n            </mat-form-field>\n          </div>\n        </mat-expansion-panel>\n      </mat-accordion>\n      <div class="form-actions row">\n        <button\n          mat-raised-button\n          type="submit"\n          color="primary"\n          [disabled]="syrenForm.invalid || monitoringState != monitoringStates.READY"\n          i18n="@@save button"\n        >\n          Save\n        </button>\n        <button\n          mat-raised-button\n          type="button"\n          color="primary"\n          [disabled]="syrenForm.invalid || monitoringState != monitoringStates.READY || testInProgress"\n          (click)="onTestSyren()"\n        >\n          <span i18n="@@syren test">Test</span>\n          @if (testInProgress) {\n            <mat-icon>\n              <mat-progress-spinner class="test-spinner" diameter="18" />\n            </mat-icon>\n          }\n        </button>\n      </div>\n    </form>\n  </div>\n}\n',
       styles: ["/* src/app/pages/config/syren/syren.component.scss */\n.syren-form {\n  margin-right: auto;\n  margin-left: auto;\n  max-width: 600px;\n}\n.syren {\n  margin: 2px 2px 10px 2px;\n}\n.timing {\n  height: 80px;\n}\n.form-actions .mat-mdc-progress-spinner {\n  margin: 0px;\n}\n.mat-table {\n  display: block;\n}\n.mat-row,\n.mat-header-row {\n  display: flex;\n  border-bottom-width: 1px;\n  border-bottom-style: solid;\n  align-items: center;\n  min-height: 48px;\n  padding: 0 24px;\n}\n.mat-cell,\n.mat-header-cell {\n  flex: 1;\n  overflow: hidden;\n  word-wrap: break-word;\n}\n.mat-mdc-form-field {\n  width: 100%;\n}\n.test-spinner {\n  float: right;\n  margin: 10px 10px;\n}\n.silent,\n.timing,\n.sensitivity {\n  margin: 15px 0px;\n}\n::ng-deep .sensitivity .mat-checkbox label {\n  margin-top: 15px;\n}\n/*# sourceMappingURL=syren.component.css.map */\n"]
     }]
   }], () => [{
@@ -115949,13 +116091,13 @@ var SyrenComponent = class _SyrenComponent extends ConfigurationBaseComponent {
   (typeof ngDevMode === "undefined" || ngDevMode) && ɵsetClassDebugInfo(SyrenComponent, {
     className: "SyrenComponent",
     filePath: "src/app/pages/config/syren/syren.component.ts",
-    lineNumber: 27
+    lineNumber: 22
   });
 })();
 
 // node_modules/@capacitor/app/dist/esm/index.js
 var App = registerPlugin("App", {
-  web: () => import("./web-GV3HXP4U.js").then(m => new m.AppWeb())
+  web: () => import("./web-LDZ3GTTM.js").then(m => new m.AppWeb())
 });
 
 // src/app/components/controller/controller.ts
@@ -116539,7 +116681,7 @@ var AreaComponent = class _AreaComponent {
   (typeof ngDevMode === "undefined" || ngDevMode) && ɵsetClassDebugInfo(AreaComponent, {
     className: "AreaComponent",
     filePath: "src/app/components/area/area.ts",
-    lineNumber: 20
+    lineNumber: 14
   });
 })();
 
@@ -117169,7 +117311,7 @@ var HomeComponent = class _HomeComponent {
     args: [{
       providers: [],
       standalone: false,
-      template: '<div class="container">\n  <div class="container-item controller">\n    <component-controller\n      [armState]="armState"\n      [monitoringState]="monitoringState"\n      [sensorAlert]="sensorAlert"\n      [systemAlert]="alert != null"\n      (armChanged)="armChanged($event)"\n    />\n  </div>\n\n  @if (alert) {\n    <div class="container-item alert">\n      <mat-expansion-panel class="alert" color="warn">\n        <mat-expansion-panel-header>\n          <mat-panel-title>\n            <mat-icon matListIcon class="blinking material-icons-outlined">warning</mat-icon>\n            @if (alert.silent) {\n              <mat-icon matListIcon class="material-icons-outlined">volume_mute</mat-icon>\n            }\n            @if (!alert.silent) {\n              <mat-icon matListIcon class="material-icons-outlined">volume_up</mat-icon>\n            }\n            <div>{{ alert.startTime }}</div>\n          </mat-panel-title>\n        </mat-expansion-panel-header>\n        <div class="column">\n          @for (sensor of alert.sensors; track sensor) {\n            <component-sensor [sensor]="sensor" />\n          }\n        </div>\n      </mat-expansion-panel>\n    </div>\n  }\n\n  @if (areas.length == 1) {\n    <div class="container-item areas">\n      @for (sensor of sensors; track sensor) {\n        <component-sensor\n          [sensor]="sensor"\n          [delay]="getSensorDelay(sensor.areaId, sensor.zoneId)"\n        />\n      }\n    </div>\n  }\n\n  @if (areas.length > 1) {\n    <div class="container-item areas">\n      @for (area of areas; track areaIdentify($index, area)) {\n        <component-area\n          [area]="area"\n          [sensors]="getSensors(area.id)"\n          [delays]="getSensorDelays(area.id)"\n          [monitoringState]="monitoringState"\n        />\n      }\n    </div>\n  }\n\n  @if (outputs) {\n    <div class="container-item">\n      @for (output of outputs; track output) {\n        <component-output [output]="output" />\n      }\n    </div>\n  }\n</div>\n',
+      template: '<div class="container">\n  <div class="container-item controller">\n    <component-controller\n      [armState]="armState"\n      [monitoringState]="monitoringState"\n      [sensorAlert]="sensorAlert"\n      [systemAlert]="alert != null"\n      (armChanged)="armChanged($event)"\n    />\n  </div>\n\n  @if (alert) {\n    <div class="container-item alert">\n      <mat-expansion-panel class="alert" color="warn">\n        <mat-expansion-panel-header>\n          <mat-panel-title>\n            <mat-icon matListIcon class="blinking material-icons-outlined">warning</mat-icon>\n            @if (alert.silent) {\n              <mat-icon matListIcon class="material-icons-outlined">volume_mute</mat-icon>\n            }\n            @if (!alert.silent) {\n              <mat-icon matListIcon class="material-icons-outlined">volume_up</mat-icon>\n            }\n            <div>{{ alert.startTime }}</div>\n          </mat-panel-title>\n        </mat-expansion-panel-header>\n        <div class="column">\n          @for (sensor of alert.sensors; track sensor) {\n            <component-sensor [sensor]="sensor" />\n          }\n        </div>\n      </mat-expansion-panel>\n    </div>\n  }\n\n  @if (areas.length == 1) {\n    <div class="container-item areas">\n      @for (sensor of sensors; track sensor) {\n        <component-sensor [sensor]="sensor" [delay]="getSensorDelay(sensor.areaId, sensor.zoneId)" />\n      }\n    </div>\n  }\n\n  @if (areas.length > 1) {\n    <div class="container-item areas">\n      @for (area of areas; track areaIdentify($index, area)) {\n        <component-area\n          [area]="area"\n          [sensors]="getSensors(area.id)"\n          [delays]="getSensorDelays(area.id)"\n          [monitoringState]="monitoringState"\n        />\n      }\n    </div>\n  }\n\n  @if (outputs) {\n    <div class="container-item">\n      @for (output of outputs; track output) {\n        <component-output [output]="output" />\n      }\n    </div>\n  }\n</div>\n',
       styles: ["/* src/app/pages/home/home.component.scss */\n/*# sourceMappingURL=home.component.css.map */\n"]
     }]
   }], () => [{
@@ -118305,14 +118447,14 @@ var LocationDetailsComponent = class _LocationDetailsComponent {
         }
         let i18n_5;
         if (false) {
-          const MSG_EXTERNAL_location_check$$SRC_APP_PAGES_LOCATION_LOCATION_DETAILS_COMPONENT_TS_5 = goog.getMsg(" Check API version and certificate ");
+          const MSG_EXTERNAL_location_check$$SRC_APP_PAGES_LOCATION_LOCATION_DETAILS_COMPONENT_TS_5 = goog.getMsg("Check API version and certificate");
           i18n_5 = MSG_EXTERNAL_location_check$$SRC_APP_PAGES_LOCATION_LOCATION_DETAILS_COMPONENT_TS_5;
         } else {
           i18n_5 = "Controllare la versione e il certificato API";
         }
         let i18n_6;
         if (false) {
-          const MSG_EXTERNAL_location_check$$SRC_APP_PAGES_LOCATION_LOCATION_DETAILS_COMPONENT_TS_6 = goog.getMsg(" Check API version and certificate ");
+          const MSG_EXTERNAL_location_check$$SRC_APP_PAGES_LOCATION_LOCATION_DETAILS_COMPONENT_TS_6 = goog.getMsg("Check API version and certificate");
           i18n_6 = MSG_EXTERNAL_location_check$$SRC_APP_PAGES_LOCATION_LOCATION_DETAILS_COMPONENT_TS_6;
         } else {
           i18n_6 = "Controllare la versione e il certificato API";
@@ -118347,7 +118489,7 @@ var LocationDetailsComponent = class _LocationDetailsComponent {
         }
         let i18n_11;
         if (false) {
-          const MSG_EXTERNAL_location_device_not_registered$$SRC_APP_PAGES_LOCATION_LOCATION_DETAILS_COMPONENT_TS_11 = goog.getMsg(" Device NOT registered ");
+          const MSG_EXTERNAL_location_device_not_registered$$SRC_APP_PAGES_LOCATION_LOCATION_DETAILS_COMPONENT_TS_11 = goog.getMsg("Device NOT registered");
           i18n_11 = MSG_EXTERNAL_location_device_not_registered$$SRC_APP_PAGES_LOCATION_LOCATION_DETAILS_COMPONENT_TS_11;
         } else {
           i18n_11 = "Dispositivo NON registrato";
@@ -118386,7 +118528,7 @@ var LocationDetailsComponent = class _LocationDetailsComponent {
     args: [{
       selector: "app-location-details",
       standalone: false,
-      template: '<div class="container">\n  @if (location) {\n    <mat-card class="container-item zone-form">\n      <mat-card-content>\n        <form [formGroup]="locationForm" (ngSubmit)="onSubmit()">\n          <div class="column">\n            <div class="row">\n              <mat-form-field class="name" floatLabel="always">\n                <mat-label i18n="@@location name">Name</mat-label>\n                <input\n                  matInput\n                  type="text"\n                  class="form-control"\n                  maxlength="16"\n                  formControlName="name"\n                />\n              </mat-form-field>\n              @if (location.id != null && notificationsAvailable) {\n                <div class="notifications">\n                  <mat-icon matSuffix>notifications</mat-icon>\n                  <mat-slide-toggle\n                    matSuffix\n                    color="primary"\n                    formControlName="notifications"\n                  ></mat-slide-toggle>\n                </div>\n              }\n            </div>\n            <div class="row">\n              <mat-form-field class="domain" floatLabel="always">\n                <mat-label i18n="@@location primary domain">Primary Domain</mat-label>\n                <span matTextPrefix>https://</span>\n                <input\n                  matInput\n                  type="text"\n                  autocapitalize="off"\n                  class="form-control"\n                  name="primaryDomain"\n                  formControlName="primaryDomain"\n                  (change)="onFieldChange($event)"\n                />\n                @if (showApiLink && testResult?.primary === false) {\n                  <mat-hint>\n                    <a\n                      href="https://{{ location.primaryDomain }}:{{\n                        location.primaryPort\n                      }}/api/version"\n                      target="_blank"\n                    >\n                      <span i18n="@@location check" class="no-wrap">\n                        Check API version and certificate\n                      </span>\n                      <mat-icon>open_in_new</mat-icon>\n                    </a>\n                  </mat-hint>\n                }\n              </mat-form-field>\n              <mat-form-field class="port">\n                <mat-label i18n="@@location port">Port</mat-label>\n                <input\n                  matInput\n                  type="number"\n                  class="form-control"\n                  name="primaryPort"\n                  formControlName="primaryPort"\n                  (change)="onFieldChange($event)"\n                />\n              </mat-form-field>\n              @if (testResult !== null) {\n                <div class="status">\n                  @if (testResult.primary === true) {\n                    <mat-icon class="icon-accessible">check_circle</mat-icon>\n                  }\n                  @if (testResult.primary === false) {\n                    <mat-icon class="icon-inaccessible">error</mat-icon>\n                  }\n                  @if (testResult.primary === null) {\n                    <mat-spinner diameter="16" />\n                  }\n                </div>\n              }\n            </div>\n            <div class="row">\n              <mat-form-field class="domain" floatLabel="always">\n                <mat-label i18n="@@location secondary domain">Secondary Domain</mat-label>\n                <span matTextPrefix>https://</span>\n                <input\n                  matInput\n                  type="text"\n                  autocapitalize="off"\n                  class="form-control"\n                  name="secondaryDomain"\n                  formControlName="secondaryDomain"\n                  (change)="onFieldChange($event)"\n                />\n                @if (showApiLink && testResult?.secondary === false) {\n                  <mat-hint>\n                    <a\n                      href="https://{{ location.secondaryDomain }}:{{\n                        location.secondaryPort\n                      }}/api/version"\n                      target="_blank"\n                    >\n                      <span i18n="@@location check" class="no-wrap">\n                        Check API version and certificate\n                      </span>\n                      <mat-icon>open_in_new</mat-icon>\n                    </a>\n                  </mat-hint>\n                }\n              </mat-form-field>\n              <mat-form-field class="port">\n                <mat-label i18n="@@location port">Port</mat-label>\n                <input\n                  matInput\n                  type="number"\n                  class="form-control"\n                  name="secondaryPort"\n                  formControlName="secondaryPort"\n                  (change)="onFieldChange($event)"\n                />\n              </mat-form-field>\n              @if (testResult !== null) {\n                <div class="status">\n                  @if (testResult.secondary === true) {\n                    <mat-icon class="icon-accessible">check_circle</mat-icon>\n                  }\n                  @if (testResult.secondary === false) {\n                    <mat-icon class="icon-inaccessible">error</mat-icon>\n                  }\n                  @if (testResult.secondary === undefined) {\n                    <mat-icon class="icon-na">not_interested</mat-icon>\n                  }\n                  @if (testResult.secondary === null) {\n                    <mat-spinner diameter="16" />\n                  }\n                </div>\n              }\n            </div>\n          </div>\n        </form>\n      </mat-card-content>\n      @if (location.id) {\n        <mat-divider></mat-divider>\n        <mat-card-content class="details">\n          <dl>\n            @if (location.id) {\n              <dt>ID</dt>\n              <dd>{{ location.id }}</dd>\n            }\n            @if (systemLocationName) {\n              <dt i18n="@@location system name">Remote name</dt>\n              <dd>\n                {{ systemLocationName }}\n                <button mat-icon-button class="small" (click)="onSaveRemoteToLocalname()">\n                  <mat-icon>content_copy</mat-icon>\n                </button>\n              </dd>\n            }\n            @if (version) {\n              <dt i18n="@@location code">Code</dt>\n              <dd>{{ version.version_tag }}</dd>\n            }\n            @if (boardVersion) {\n              <dt i18n="@@location board">Board</dt>\n              <dd>{{ boardVersion }}</dd>\n            }\n          </dl>\n          @if (location.id != null) {\n            <div class="register">\n              <mat-divider></mat-divider>\n              @if (isRegistered() === true) {\n                <div>\n                  <mat-icon class="icon-accessible">check_circle</mat-icon>\n                  <div class="text" i18n="@@location device registered">Device registered</div>\n                </div>\n              }\n              @if (isRegistered() === false) {\n                <div>\n                  <mat-icon class="icon-inaccessible">error</mat-icon>\n                  <div class="text" i18n="@@location device not registered">\n                    Device NOT registered\n                  </div>\n                </div>\n              }\n            </div>\n          }\n          @if (alreadyExists() && newLocation) {\n            <app-message type="warning" [message]="ALREADY_EXISTS"></app-message>\n          }\n        </mat-card-content>\n      }\n      <mat-divider></mat-divider>\n      <mat-card-actions align="end">\n        <button\n          mat-icon-button\n          color="primary"\n          (click)="executeLocationTest()"\n          [disabled]="locationForm.invalid"\n        >\n          <mat-icon>search</mat-icon>\n        </button>\n        <button mat-icon-button color="primary" (click)="onSubmit()" [disabled]="cantSave()">\n          <mat-icon>save</mat-icon>\n        </button>\n        @if (!newLocation && isMultiLocation) {\n          <button\n            mat-icon-button\n            color="warn"\n            type="button"\n            (click)="openDeleteDialog()"\n            [disabled]="selectedLocationId === location.id || location.id == null"\n          >\n            <mat-icon>delete</mat-icon>\n          </button>\n        }\n        @if (!firstLocation) {\n          <button mat-icon-button color="accent" type="button" (click)="onCancel()">\n            <mat-icon>cancel</mat-icon>\n          </button>\n        }\n      </mat-card-actions>\n    </mat-card>\n  }\n\n  @if (location == null) {\n    <div class="container-item">\n      <h1 i18n="@@location not found">The location was not found!</h1>\n    </div>\n  }\n</div>\n',
+      template: '<div class="container">\n  @if (location) {\n    <mat-card class="container-item zone-form">\n      <mat-card-content>\n        <form [formGroup]="locationForm" (ngSubmit)="onSubmit()">\n          <div class="column">\n            <div class="row">\n              <mat-form-field class="name" floatLabel="always">\n                <mat-label i18n="@@location name">Name</mat-label>\n                <input matInput type="text" class="form-control" maxlength="16" formControlName="name" />\n              </mat-form-field>\n              @if (location.id != null && notificationsAvailable) {\n                <div class="notifications">\n                  <mat-icon matSuffix>notifications</mat-icon>\n                  <mat-slide-toggle matSuffix color="primary" formControlName="notifications"></mat-slide-toggle>\n                </div>\n              }\n            </div>\n            <div class="row">\n              <mat-form-field class="domain" floatLabel="always">\n                <mat-label i18n="@@location primary domain">Primary Domain</mat-label>\n                <span matTextPrefix>https://</span>\n                <input\n                  matInput\n                  type="text"\n                  autocapitalize="off"\n                  class="form-control"\n                  name="primaryDomain"\n                  formControlName="primaryDomain"\n                  (change)="onFieldChange($event)"\n                />\n                @if (showApiLink && testResult?.primary === false) {\n                  <mat-hint>\n                    <a\n                      href="https://{{ location.primaryDomain }}:{{ location.primaryPort }}/api/version"\n                      target="_blank"\n                    >\n                      <span i18n="@@location check" class="no-wrap">Check API version and certificate</span>\n                      <mat-icon>open_in_new</mat-icon>\n                    </a>\n                  </mat-hint>\n                }\n              </mat-form-field>\n              <mat-form-field class="port">\n                <mat-label i18n="@@location port">Port</mat-label>\n                <input\n                  matInput\n                  type="number"\n                  class="form-control"\n                  name="primaryPort"\n                  formControlName="primaryPort"\n                  (change)="onFieldChange($event)"\n                />\n              </mat-form-field>\n              @if (testResult !== null) {\n                <div class="status">\n                  @if (testResult.primary === true) {\n                    <mat-icon class="icon-accessible">check_circle</mat-icon>\n                  }\n                  @if (testResult.primary === false) {\n                    <mat-icon class="icon-inaccessible">error</mat-icon>\n                  }\n                  @if (testResult.primary === null) {\n                    <mat-spinner diameter="16" />\n                  }\n                </div>\n              }\n            </div>\n            <div class="row">\n              <mat-form-field class="domain" floatLabel="always">\n                <mat-label i18n="@@location secondary domain">Secondary Domain</mat-label>\n                <span matTextPrefix>https://</span>\n                <input\n                  matInput\n                  type="text"\n                  autocapitalize="off"\n                  class="form-control"\n                  name="secondaryDomain"\n                  formControlName="secondaryDomain"\n                  (change)="onFieldChange($event)"\n                />\n                @if (showApiLink && testResult?.secondary === false) {\n                  <mat-hint>\n                    <a\n                      href="https://{{ location.secondaryDomain }}:{{ location.secondaryPort }}/api/version"\n                      target="_blank"\n                    >\n                      <span i18n="@@location check" class="no-wrap">Check API version and certificate</span>\n                      <mat-icon>open_in_new</mat-icon>\n                    </a>\n                  </mat-hint>\n                }\n              </mat-form-field>\n              <mat-form-field class="port">\n                <mat-label i18n="@@location port">Port</mat-label>\n                <input\n                  matInput\n                  type="number"\n                  class="form-control"\n                  name="secondaryPort"\n                  formControlName="secondaryPort"\n                  (change)="onFieldChange($event)"\n                />\n              </mat-form-field>\n              @if (testResult !== null) {\n                <div class="status">\n                  @if (testResult.secondary === true) {\n                    <mat-icon class="icon-accessible">check_circle</mat-icon>\n                  }\n                  @if (testResult.secondary === false) {\n                    <mat-icon class="icon-inaccessible">error</mat-icon>\n                  }\n                  @if (testResult.secondary === undefined) {\n                    <mat-icon class="icon-na">not_interested</mat-icon>\n                  }\n                  @if (testResult.secondary === null) {\n                    <mat-spinner diameter="16" />\n                  }\n                </div>\n              }\n            </div>\n          </div>\n        </form>\n      </mat-card-content>\n      @if (location.id) {\n        <mat-divider></mat-divider>\n        <mat-card-content class="details">\n          <dl>\n            @if (location.id) {\n              <dt>ID</dt>\n              <dd>{{ location.id }}</dd>\n            }\n            @if (systemLocationName) {\n              <dt i18n="@@location system name">Remote name</dt>\n              <dd>\n                {{ systemLocationName }}\n                <button mat-icon-button class="small" (click)="onSaveRemoteToLocalname()">\n                  <mat-icon>content_copy</mat-icon>\n                </button>\n              </dd>\n            }\n            @if (version) {\n              <dt i18n="@@location code">Code</dt>\n              <dd>{{ version.version_tag }}</dd>\n            }\n            @if (boardVersion) {\n              <dt i18n="@@location board">Board</dt>\n              <dd>{{ boardVersion }}</dd>\n            }\n          </dl>\n          @if (location.id != null) {\n            <div class="register">\n              <mat-divider></mat-divider>\n              @if (isRegistered() === true) {\n                <div>\n                  <mat-icon class="icon-accessible">check_circle</mat-icon>\n                  <div class="text" i18n="@@location device registered">Device registered</div>\n                </div>\n              }\n              @if (isRegistered() === false) {\n                <div>\n                  <mat-icon class="icon-inaccessible">error</mat-icon>\n                  <div class="text" i18n="@@location device not registered">Device NOT registered</div>\n                </div>\n              }\n            </div>\n          }\n          @if (alreadyExists() && newLocation) {\n            <app-message type="warning" [message]="ALREADY_EXISTS"></app-message>\n          }\n        </mat-card-content>\n      }\n      <mat-divider></mat-divider>\n      <mat-card-actions align="end">\n        <button mat-icon-button color="primary" (click)="executeLocationTest()" [disabled]="locationForm.invalid">\n          <mat-icon>search</mat-icon>\n        </button>\n        <button mat-icon-button color="primary" (click)="onSubmit()" [disabled]="cantSave()">\n          <mat-icon>save</mat-icon>\n        </button>\n        @if (!newLocation && isMultiLocation) {\n          <button\n            mat-icon-button\n            color="warn"\n            type="button"\n            (click)="openDeleteDialog()"\n            [disabled]="selectedLocationId === location.id || location.id == null"\n          >\n            <mat-icon>delete</mat-icon>\n          </button>\n        }\n        @if (!firstLocation) {\n          <button mat-icon-button color="accent" type="button" (click)="onCancel()">\n            <mat-icon>cancel</mat-icon>\n          </button>\n        }\n      </mat-card-actions>\n    </mat-card>\n  }\n\n  @if (location == null) {\n    <div class="container-item">\n      <h1 i18n="@@location not found">The location was not found!</h1>\n    </div>\n  }\n</div>\n',
       styles: ["/* src/app/pages/location/location-details.component.scss */\n.name {\n  width: 425px;\n}\n.notifications {\n  margin: auto;\n  display: flex;\n  align-items: center;\n}\n.scheme {\n  width: 170px;\n}\n.domain {\n  width: 500px;\n}\n.port {\n  width: 160px;\n}\n.icon-accessible {\n  color: #4caf50;\n}\n.icon-inaccessible {\n  color: #f44336;\n}\n.status .mat-icon {\n  margin: 15px 0px;\n}\n.status .mat-spinner {\n  margin: 15px 0px;\n}\nbutton.small {\n  color: blue;\n  width: 20px !important;\n  height: 20px !important;\n  padding: 0px !important;\n  margin-left: 10px;\n  vertical-align: middle;\n}\nbutton.small mat-icon {\n  width: 20px;\n  height: 20px;\n  font-size: 16px;\n}\n.details {\n  margin-top: 20px;\n  margin-bottom: 20px;\n  font-size: small;\n}\n.details dt {\n  float: left;\n  clear: left;\n  margin-right: 5px;\n  width: 100px;\n  font-weight: bold;\n  text-align: right;\n}\n.details dd {\n  margin-left: 10px;\n}\n.details .register .mat-icon {\n  vertical-align: middle;\n  margin-top: -3px;\n}\n.details .register .text {\n  display: inline-block;\n  margin-top: 20px;\n  margin-left: 10px;\n}\n/*# sourceMappingURL=location-details.component.css.map */\n"]
     }]
   }], () => [{
@@ -119177,7 +119319,7 @@ var LocationListComponent = class _LocationListComponent extends ConfigurationBa
         }
         let i18n_7;
         if (false) {
-          const MSG_EXTERNAL_location_location$$SRC_APP_PAGES_LOCATION_LOCATION_LIST_COMPONENT_TS_7 = goog.getMsg(" Location: {$interpolation} ", {
+          const MSG_EXTERNAL_location_location$$SRC_APP_PAGES_LOCATION_LOCATION_LIST_COMPONENT_TS_7 = goog.getMsg("Location: {$interpolation}", {
             "interpolation": "\uFFFD0\uFFFD"
           }, {
             original_code: {
@@ -119239,7 +119381,7 @@ var LocationListComponent = class _LocationListComponent extends ConfigurationBa
         }
         let i18n_15;
         if (false) {
-          const MSG_EXTERNAL_location_welcome_title$$SRC_APP_PAGES_LOCATION_LOCATION_LIST_COMPONENT_TS_15 = goog.getMsg(" Welcome to ArPI Home Security ");
+          const MSG_EXTERNAL_location_welcome_title$$SRC_APP_PAGES_LOCATION_LOCATION_LIST_COMPONENT_TS_15 = goog.getMsg("Welcome to ArPI Home Security");
           i18n_15 = MSG_EXTERNAL_location_welcome_title$$SRC_APP_PAGES_LOCATION_LOCATION_LIST_COMPONENT_TS_15;
         } else {
           i18n_15 = " Welcome to ArPI Home Security ";
@@ -119274,7 +119416,7 @@ var LocationListComponent = class _LocationListComponent extends ConfigurationBa
         }
         let i18n_20;
         if (false) {
-          const MSG_EXTERNAL_location_software_installation_guide$$SRC_APP_PAGES_LOCATION_LOCATION_LIST_COMPONENT_TS_20 = goog.getMsg(" Software installation guide ");
+          const MSG_EXTERNAL_location_software_installation_guide$$SRC_APP_PAGES_LOCATION_LOCATION_LIST_COMPONENT_TS_20 = goog.getMsg("Software installation guide");
           i18n_20 = MSG_EXTERNAL_location_software_installation_guide$$SRC_APP_PAGES_LOCATION_LOCATION_LIST_COMPONENT_TS_20;
         } else {
           i18n_20 = " Software installation guide ";
@@ -119382,11 +119524,7 @@ var LocationListComponent = class _LocationListComponent extends ConfigurationBa
       template: `<div class="container">
   @if (locations && locations.length > 0) {
     <div>
-      <div
-        cdkDropList
-        (cdkDropListDropped)="onDrop($event)"
-        [cdkDropListDisabled]="!isMultiLocation"
-      >
+      <div cdkDropList (cdkDropListDropped)="onDrop($event)" [cdkDropListDisabled]="!isMultiLocation">
         @for (location of locations; track getLocationKey(index); let index = $index) {
           <mat-card
             id="location-{{ location.id }}"
@@ -119465,9 +119603,7 @@ var LocationListComponent = class _LocationListComponent extends ConfigurationBa
                     notifications
                   </mat-icon>
                 </div>
-                <mat-card-title i18n="@@location location">
-                  Location: {{ location.name }}
-                </mat-card-title>
+                <mat-card-title i18n="@@location location">Location: {{ location.name }}</mat-card-title>
                 @if (location.id != null) {
                   <mat-card-subtitle>ID: {{ location.id }}</mat-card-subtitle>
                 }
@@ -119503,16 +119639,10 @@ var LocationListComponent = class _LocationListComponent extends ConfigurationBa
             <mat-card-content>
               <mat-list>
                 <mat-list-item class="primary">
-                  @if (
-                    getTestResult(location.id) === null ||
-                    getTestResult(location.id).primary === undefined
-                  ) {
+                  @if (getTestResult(location.id) === null || getTestResult(location.id).primary === undefined) {
                     <mat-icon matListItemIcon>link</mat-icon>
                   }
-                  @if (
-                    getTestResult(location.id) !== null &&
-                    getTestResult(location.id).primary === null
-                  ) {
+                  @if (getTestResult(location.id) !== null && getTestResult(location.id).primary === null) {
                     <mat-spinner matListItemIcon diameter="16" />
                   }
                   @if (getTestResult(location.id)?.primary === true) {
@@ -119531,15 +119661,11 @@ var LocationListComponent = class _LocationListComponent extends ConfigurationBa
                     <div matListItemLine>-</div>
                   }
                   @if (
-                    showApiLink &&
-                    getTestResult(location.id) !== null &&
-                    getTestResult(location.id).primary === false
+                    showApiLink && getTestResult(location.id) !== null && getTestResult(location.id).primary === false
                   ) {
                     <div matListItemLine>
                       <a
-                        href="https://{{ location.primaryDomain }}:{{
-                          location.primaryPort
-                        }}/api/version"
+                        href="https://{{ location.primaryDomain }}:{{ location.primaryPort }}/api/version"
                         target="_blank"
                         class="test-link"
                       >
@@ -119550,16 +119676,10 @@ var LocationListComponent = class _LocationListComponent extends ConfigurationBa
                   }
                 </mat-list-item>
                 <mat-list-item class="secondary">
-                  @if (
-                    getTestResult(location.id) === null ||
-                    getTestResult(location.id).secondary === undefined
-                  ) {
+                  @if (getTestResult(location.id) === null || getTestResult(location.id).secondary === undefined) {
                     <mat-icon matListItemIcon>link</mat-icon>
                   }
-                  @if (
-                    getTestResult(location.id) !== null &&
-                    getTestResult(location.id)?.secondary === null
-                  ) {
+                  @if (getTestResult(location.id) !== null && getTestResult(location.id)?.secondary === null) {
                     <mat-spinner matListItemIcon diameter="16" />
                   }
                   @if (getTestResult(location.id)?.secondary === true) {
@@ -119578,15 +119698,11 @@ var LocationListComponent = class _LocationListComponent extends ConfigurationBa
                     <div matListItemLine>-</div>
                   }
                   @if (
-                    showApiLink &&
-                    getTestResult(location.id) !== null &&
-                    getTestResult(location.id).secondary === false
+                    showApiLink && getTestResult(location.id) !== null && getTestResult(location.id).secondary === false
                   ) {
                     <div matListItemLine>
                       <a
-                        href="https://{{ location.secondaryDomain }}:{{
-                          location.secondaryPort
-                        }}/api/version"
+                        href="https://{{ location.secondaryDomain }}:{{ location.secondaryPort }}/api/version"
                         target="_blank"
                         class="test-link"
                       >
@@ -119656,9 +119772,7 @@ var LocationListComponent = class _LocationListComponent extends ConfigurationBa
           <div mat-card-avatar>
             <mat-icon color="primary" class="avatar-icon">home</mat-icon>
           </div>
-          <mat-card-title i18n="@@location welcome title">
-            Welcome to ArPI Home Security
-          </mat-card-title>
+          <mat-card-title i18n="@@location welcome title">Welcome to ArPI Home Security</mat-card-title>
           <mat-card-subtitle i18n="@@location welcome subtitle">
             Your smart security system starts here
           </mat-card-subtitle>
@@ -119687,9 +119801,7 @@ var LocationListComponent = class _LocationListComponent extends ConfigurationBa
                     target="_blank"
                     rel="noopener"
                   >
-                    <span i18n="@@location software installation guide">
-                      Software installation guide
-                    </span>
+                    <span i18n="@@location software installation guide">Software installation guide</span>
                     <mat-icon>open_in_new</mat-icon>
                   </a>
                 </li>
@@ -119727,12 +119839,7 @@ var LocationListComponent = class _LocationListComponent extends ConfigurationBa
           </mat-card>
         </mat-card-content>
         <mat-card-actions style="gap: 10px">
-          <button
-            mat-raised-button
-            color="accent"
-            routerLink="/location/add"
-            i18n="@@location get started"
-          >
+          <button mat-raised-button color="accent" routerLink="/location/add" i18n="@@location get started">
             Get Started: Add Location
           </button>
           <a
@@ -119816,7 +119923,7 @@ var LocationListComponent = class _LocationListComponent extends ConfigurationBa
   (typeof ngDevMode === "undefined" || ngDevMode) && ɵsetClassDebugInfo(LocationListComponent, {
     className: "LocationListComponent",
     filePath: "src/app/pages/location/location-list.component.ts",
-    lineNumber: 42
+    lineNumber: 34
   });
 })();
 
@@ -120461,28 +120568,28 @@ var LoginComponent = class _LoginComponent {
         }
         let i18n_8;
         if (false) {
-          const MSG_EXTERNAL_login_missing_device_token$$SRC_APP_PAGES_LOGIN_LOGIN_COMPONENT_TS_8 = goog.getMsg(" Missing device token! Register your device! ");
+          const MSG_EXTERNAL_login_missing_device_token$$SRC_APP_PAGES_LOGIN_LOGIN_COMPONENT_TS_8 = goog.getMsg("Missing device token! Register your device!");
           i18n_8 = MSG_EXTERNAL_login_missing_device_token$$SRC_APP_PAGES_LOGIN_LOGIN_COMPONENT_TS_8;
         } else {
           i18n_8 = " Manca il token del dispositivo! Registra il tuo dispositivo! ";
         }
         let i18n_9;
         if (false) {
-          const MSG_EXTERNAL_login_invalid_device_token$$SRC_APP_PAGES_LOGIN_LOGIN_COMPONENT_TS_9 = goog.getMsg(" Invalid device token! Update your device registration! ");
+          const MSG_EXTERNAL_login_invalid_device_token$$SRC_APP_PAGES_LOGIN_LOGIN_COMPONENT_TS_9 = goog.getMsg("Invalid device token! Update your device registration!");
           i18n_9 = MSG_EXTERNAL_login_invalid_device_token$$SRC_APP_PAGES_LOGIN_LOGIN_COMPONENT_TS_9;
         } else {
           i18n_9 = " Token dispositivo non valido! Aggiornare la registrazione del dispositivo! ";
         }
         let i18n_10;
         if (false) {
-          const MSG_EXTERNAL_login_expired_registration_code$$SRC_APP_PAGES_LOGIN_LOGIN_COMPONENT_TS_10 = goog.getMsg(" Expired device registration code! ");
+          const MSG_EXTERNAL_login_expired_registration_code$$SRC_APP_PAGES_LOGIN_LOGIN_COMPONENT_TS_10 = goog.getMsg("Expired device registration code!");
           i18n_10 = MSG_EXTERNAL_login_expired_registration_code$$SRC_APP_PAGES_LOGIN_LOGIN_COMPONENT_TS_10;
         } else {
           i18n_10 = " Codice di registrazione del dispositivo scaduto! ";
         }
         let i18n_11;
         if (false) {
-          const MSG_EXTERNAL_login_invalid_user_id$$SRC_APP_PAGES_LOGIN_LOGIN_COMPONENT_TS_11 = goog.getMsg(" Invalid user id! Update your device registration! ");
+          const MSG_EXTERNAL_login_invalid_user_id$$SRC_APP_PAGES_LOGIN_LOGIN_COMPONENT_TS_11 = goog.getMsg("Invalid user id! Update your device registration!");
           i18n_11 = MSG_EXTERNAL_login_invalid_user_id$$SRC_APP_PAGES_LOGIN_LOGIN_COMPONENT_TS_11;
         } else {
           i18n_11 = " ID utente non valido! Aggiornare la registrazione del dispositivo! ";
@@ -120517,7 +120624,7 @@ var LoginComponent = class _LoginComponent {
         }
         let i18n_16;
         if (false) {
-          const MSG_EXTERNAL_biometric_description$$SRC_APP_PAGES_LOGIN_LOGIN_COMPONENT_TS_16 = goog.getMsg(" Do you want to use biometric login? ");
+          const MSG_EXTERNAL_biometric_description$$SRC_APP_PAGES_LOGIN_LOGIN_COMPONENT_TS_16 = goog.getMsg("Do you want to use biometric login?");
           i18n_16 = MSG_EXTERNAL_biometric_description$$SRC_APP_PAGES_LOGIN_LOGIN_COMPONENT_TS_16;
         } else {
           i18n_16 = " Volete utilizzare il login biometrico? ";
@@ -120609,12 +120716,7 @@ var LoginComponent = class _LoginComponent {
             </mat-icon>
           </mat-form-field>
           <div class="form-group actions">
-            <button
-              mat-raised-button
-              (click)="register()"
-              [disabled]="loading || !registerForm.valid"
-              color="primary"
-            >
+            <button mat-raised-button (click)="register()" [disabled]="loading || !registerForm.valid" color="primary">
               <span i18n="Register button">Register</span>
               @if (loading) {
                 <mat-icon>
@@ -120683,12 +120785,7 @@ var LoginComponent = class _LoginComponent {
               }
             </button>
             @if (canLoginWithBiometric()) {
-              <button
-                mat-raised-button
-                (click)="loginBiometric()"
-                [disabled]="loading"
-                color="primary"
-              >
+              <button mat-raised-button (click)="loginBiometric()" [disabled]="loading" color="primary">
                 <span i18n="@@login biometric login">Biometric login</span>
               </button>
             }
@@ -120700,24 +120797,16 @@ var LoginComponent = class _LoginComponent {
                   <div i18n="@@login host not allowed">Host not allowed!</div>
                 }
                 @case ("missing device token") {
-                  <div i18n="@@login missing device token">
-                    Missing device token! Register your device!
-                  </div>
+                  <div i18n="@@login missing device token">Missing device token! Register your device!</div>
                 }
                 @case ("invalid device token") {
-                  <div i18n="@@login invalid device token">
-                    Invalid device token! Update your device registration!
-                  </div>
+                  <div i18n="@@login invalid device token">Invalid device token! Update your device registration!</div>
                 }
                 @case ("expired registration code") {
-                  <div i18n="@@login expired registration code">
-                    Expired device registration code!
-                  </div>
+                  <div i18n="@@login expired registration code">Expired device registration code!</div>
                 }
                 @case ("invalid user id") {
-                  <div i18n="@@login invalid user id">
-                    Invalid user id! Update your device registration!
-                  </div>
+                  <div i18n="@@login invalid user id">Invalid user id! Update your device registration!</div>
                 }
                 @case ("invalid registration code") {
                   <div i18n="@@login invalid registration code">Invalid registration code!</div>
@@ -120744,9 +120833,7 @@ var LoginComponent = class _LoginComponent {
     <mat-card class="biometric container-item">
       <mat-card-header>
         <mat-icon mat-card-avatar>fingerprint</mat-icon>
-        <mat-card-title i18n="@@biometric description">
-          Do you want to use biometric login?
-        </mat-card-title>
+        <mat-card-title i18n="@@biometric description">Do you want to use biometric login?</mat-card-title>
         <mat-card-subtitle i18n="@@biometric question">
           You can use biometric login to access the security system.
         </mat-card-subtitle>
@@ -120822,7 +120909,7 @@ var LoginComponent = class _LoginComponent {
   (typeof ngDevMode === "undefined" || ngDevMode) && ɵsetClassDebugInfo(LoginComponent, {
     className: "LoginComponent",
     filePath: "src/app/pages/login/login.component.ts",
-    lineNumber: 30
+    lineNumber: 19
   });
 })();
 
@@ -121256,7 +121343,7 @@ function SensorListComponent_Conditional_1_Template(rf, ctx) {
     ɵɵproperty("disabled", ctx_r1.monitoringState != ctx_r1.monitoringStates.READY);
   }
 }
-var scheduleMicrotask10 = Promise.resolve(null);
+var scheduleMicrotask11 = Promise.resolve(null);
 var SensorListComponent = class _SensorListComponent extends ConfigurationBaseComponent {
   constructor(areaService, authService, eventService, loader, monitoringService, sensorService, zoneService, dialog, snackBar) {
     super(eventService, loader, monitoringService);
@@ -121283,7 +121370,7 @@ var SensorListComponent = class _SensorListComponent extends ConfigurationBaseCo
   ngOnInit() {
     super.initialize();
     this.editableStates.push(MONITORING_STATE.INVALID_CONFIG);
-    scheduleMicrotask10.then(() => {
+    scheduleMicrotask11.then(() => {
       this.loader.display(true);
     });
     this.updateComponent();
@@ -121628,9 +121715,7 @@ var SensorListComponent = class _SensorListComponent extends ConfigurationBaseCo
                   @default {
                     <img
                       mat-card-sm-image
-                      src="https://via.placeholder.com/100?text={{
-                        getSensorTypeName(sensor.typeId)
-                      }}"
+                      src="https://via.placeholder.com/100?text={{ getSensorTypeName(sensor.typeId) }}"
                     />
                   }
                 }
@@ -121658,28 +121743,16 @@ var SensorListComponent = class _SensorListComponent extends ConfigurationBaseCo
                               @case ("image") {
                                 @switch (attribute.iconSwitch) {
                                   @case (1) {
-                                    <img
-                                      ngClass="sensor-icon"
-                                      src="assets/images/sensor_motion.png"
-                                    />
+                                    <img ngClass="sensor-icon" src="assets/images/sensor_motion.png" />
                                   }
                                   @case (2) {
-                                    <img
-                                      ngClass="sensor-icon"
-                                      src="assets/images/sensor_tamper.png"
-                                    />
+                                    <img ngClass="sensor-icon" src="assets/images/sensor_tamper.png" />
                                   }
                                   @case (3) {
-                                    <img
-                                      ngClass="sensor-icon"
-                                      src="assets/images/sensor_open.png"
-                                    />
+                                    <img ngClass="sensor-icon" src="assets/images/sensor_open.png" />
                                   }
                                   @case (4) {
-                                    <img
-                                      ngClass="sensor-icon"
-                                      src="assets/images/sensor_break.png"
-                                    />
+                                    <img ngClass="sensor-icon" src="assets/images/sensor_break.png" />
                                   }
                                   @default {
                                     <img
@@ -121711,11 +121784,7 @@ var SensorListComponent = class _SensorListComponent extends ConfigurationBaseCo
                   mat-icon-button
                   cdkDragHandle
                   class="drag-handle"
-                  [disabled]="
-                    ![monitoringStates.READY, monitoringStates.INVALID_CONFIG].includes(
-                      monitoringState
-                    )
-                  "
+                  [disabled]="![monitoringStates.READY, monitoringStates.INVALID_CONFIG].includes(monitoringState)"
                 >
                   <mat-icon>drag_indicator</mat-icon>
                 </button>
@@ -121723,11 +121792,7 @@ var SensorListComponent = class _SensorListComponent extends ConfigurationBaseCo
                   mat-icon-button
                   [routerLink]="['/sensor', sensor.id]"
                   color="primary"
-                  [disabled]="
-                    ![monitoringStates.READY, monitoringStates.INVALID_CONFIG].includes(
-                      monitoringState
-                    )
-                  "
+                  [disabled]="![monitoringStates.READY, monitoringStates.INVALID_CONFIG].includes(monitoringState)"
                 >
                   <mat-icon>mode_edit</mat-icon>
                 </button>
@@ -121735,11 +121800,7 @@ var SensorListComponent = class _SensorListComponent extends ConfigurationBaseCo
                   mat-icon-button
                   (click)="onResetReferences(sensor.id)"
                   color="accent"
-                  [disabled]="
-                    ![monitoringStates.READY, monitoringStates.INVALID_CONFIG].includes(
-                      monitoringState
-                    )
-                  "
+                  [disabled]="![monitoringStates.READY, monitoringStates.INVALID_CONFIG].includes(monitoringState)"
                 >
                   <mat-icon>refresh</mat-icon>
                 </button>
@@ -121747,11 +121808,7 @@ var SensorListComponent = class _SensorListComponent extends ConfigurationBaseCo
                   mat-icon-button
                   (click)="openDeleteDialog(sensor.id)"
                   color="warn"
-                  [disabled]="
-                    ![monitoringStates.READY, monitoringStates.INVALID_CONFIG].includes(
-                      monitoringState
-                    )
-                  "
+                  [disabled]="![monitoringStates.READY, monitoringStates.INVALID_CONFIG].includes(monitoringState)"
                 >
                   <mat-icon>delete</mat-icon>
                 </button>
@@ -121867,7 +121924,7 @@ var SensorListComponent = class _SensorListComponent extends ConfigurationBaseCo
   (typeof ngDevMode === "undefined" || ngDevMode) && ɵsetClassDebugInfo(SensorListComponent, {
     className: "SensorListComponent",
     filePath: "src/app/pages/sensor/sensor-list.component.ts",
-    lineNumber: 57
+    lineNumber: 53
   });
 })();
 
@@ -122542,7 +122599,7 @@ function SensorDetailComponent_Conditional_2_Template(rf, ctx) {
     ɵɵelementEnd()();
   }
 }
-var scheduleMicrotask11 = Promise.resolve(null);
+var scheduleMicrotask12 = Promise.resolve(null);
 var SensorDetailComponent = class _SensorDetailComponent extends ConfigurationBaseComponent {
   constructor(eventService, loader, monitoringService, sensorService, zoneService, areaService, router, fb, route, dialog, snackBar) {
     super(eventService, loader, monitoringService);
@@ -122572,7 +122629,7 @@ var SensorDetailComponent = class _SensorDetailComponent extends ConfigurationBa
   ngOnInit() {
     super.initialize();
     this.editableStates.push(MONITORING_STATE.INVALID_CONFIG);
-    scheduleMicrotask11.then(() => {
+    scheduleMicrotask12.then(() => {
       this.loader.display(true);
     });
     this.baseSubscriptions.push(this.eventService.listen("system_state_change").subscribe(monitoringState => this.monitoringState = string2MonitoringState(monitoringState)));
@@ -123111,14 +123168,14 @@ var SensorDetailComponent = class _SensorDetailComponent extends ConfigurationBa
         }
         let i18n_9;
         if (false) {
-          const MSG_EXTERNAL_sensor_enabled$$SRC_APP_PAGES_SENSOR_SENSOR_DETAIL_COMPONENT_TS_9 = goog.getMsg(" Enabled ");
+          const MSG_EXTERNAL_sensor_enabled$$SRC_APP_PAGES_SENSOR_SENSOR_DETAIL_COMPONENT_TS_9 = goog.getMsg("Enabled");
           i18n_9 = MSG_EXTERNAL_sensor_enabled$$SRC_APP_PAGES_SENSOR_SENSOR_DETAIL_COMPONENT_TS_9;
         } else {
           i18n_9 = "Abilitato";
         }
         let i18n_10;
         if (false) {
-          const MSG_EXTERNAL_sensor_hidden$$SRC_APP_PAGES_SENSOR_SENSOR_DETAIL_COMPONENT_TS_10 = goog.getMsg(" Hidden ");
+          const MSG_EXTERNAL_sensor_hidden$$SRC_APP_PAGES_SENSOR_SENSOR_DETAIL_COMPONENT_TS_10 = goog.getMsg("Hidden");
           i18n_10 = MSG_EXTERNAL_sensor_hidden$$SRC_APP_PAGES_SENSOR_SENSOR_DETAIL_COMPONENT_TS_10;
         } else {
           i18n_10 = "Nascosto";
@@ -123251,28 +123308,28 @@ var SensorDetailComponent = class _SensorDetailComponent extends ConfigurationBa
         }
         let i18n_29;
         if (false) {
-          const MSG_EXTERNAL_sensor_channel_basic$$SRC_APP_PAGES_SENSOR_SENSOR_DETAIL_COMPONENT_TS_29 = goog.getMsg(" Basic ");
+          const MSG_EXTERNAL_sensor_channel_basic$$SRC_APP_PAGES_SENSOR_SENSOR_DETAIL_COMPONENT_TS_29 = goog.getMsg("Basic");
           i18n_29 = MSG_EXTERNAL_sensor_channel_basic$$SRC_APP_PAGES_SENSOR_SENSOR_DETAIL_COMPONENT_TS_29;
         } else {
           i18n_29 = "Generali";
         }
         let i18n_30;
         if (false) {
-          const MSG_EXTERNAL_sensor_channel_normal$$SRC_APP_PAGES_SENSOR_SENSOR_DETAIL_COMPONENT_TS_30 = goog.getMsg(" Normal ");
+          const MSG_EXTERNAL_sensor_channel_normal$$SRC_APP_PAGES_SENSOR_SENSOR_DETAIL_COMPONENT_TS_30 = goog.getMsg("Normal");
           i18n_30 = MSG_EXTERNAL_sensor_channel_normal$$SRC_APP_PAGES_SENSOR_SENSOR_DETAIL_COMPONENT_TS_30;
         } else {
           i18n_30 = "Normale";
         }
         let i18n_31;
         if (false) {
-          const MSG_EXTERNAL_sensor_channel_a$$SRC_APP_PAGES_SENSOR_SENSOR_DETAIL_COMPONENT_TS_31 = goog.getMsg(" Channel A ");
+          const MSG_EXTERNAL_sensor_channel_a$$SRC_APP_PAGES_SENSOR_SENSOR_DETAIL_COMPONENT_TS_31 = goog.getMsg("Channel A");
           i18n_31 = MSG_EXTERNAL_sensor_channel_a$$SRC_APP_PAGES_SENSOR_SENSOR_DETAIL_COMPONENT_TS_31;
         } else {
           i18n_31 = "Canale A";
         }
         let i18n_32;
         if (false) {
-          const MSG_EXTERNAL_sensor_channel_b$$SRC_APP_PAGES_SENSOR_SENSOR_DETAIL_COMPONENT_TS_32 = goog.getMsg(" Channel B ");
+          const MSG_EXTERNAL_sensor_channel_b$$SRC_APP_PAGES_SENSOR_SENSOR_DETAIL_COMPONENT_TS_32 = goog.getMsg("Channel B");
           i18n_32 = MSG_EXTERNAL_sensor_channel_b$$SRC_APP_PAGES_SENSOR_SENSOR_DETAIL_COMPONENT_TS_32;
         } else {
           i18n_32 = "Canale B";
@@ -123307,14 +123364,14 @@ var SensorDetailComponent = class _SensorDetailComponent extends ConfigurationBa
         }
         let i18n_37;
         if (false) {
-          const MSG_EXTERNAL_sensor_eol_single$$SRC_APP_PAGES_SENSOR_SENSOR_DETAIL_COMPONENT_TS_37 = goog.getMsg(" Single EOL ");
+          const MSG_EXTERNAL_sensor_eol_single$$SRC_APP_PAGES_SENSOR_SENSOR_DETAIL_COMPONENT_TS_37 = goog.getMsg("Single EOL");
           i18n_37 = MSG_EXTERNAL_sensor_eol_single$$SRC_APP_PAGES_SENSOR_SENSOR_DETAIL_COMPONENT_TS_37;
         } else {
           i18n_37 = "EOL singolo";
         }
         let i18n_38;
         if (false) {
-          const MSG_EXTERNAL_sensor_eol_double$$SRC_APP_PAGES_SENSOR_SENSOR_DETAIL_COMPONENT_TS_38 = goog.getMsg(" Double EOL ");
+          const MSG_EXTERNAL_sensor_eol_double$$SRC_APP_PAGES_SENSOR_SENSOR_DETAIL_COMPONENT_TS_38 = goog.getMsg("Double EOL");
           i18n_38 = MSG_EXTERNAL_sensor_eol_double$$SRC_APP_PAGES_SENSOR_SENSOR_DETAIL_COMPONENT_TS_38;
         } else {
           i18n_38 = "Doppio EOL";
@@ -123444,11 +123501,7 @@ var SensorDetailComponent = class _SensorDetailComponent extends ConfigurationBa
         <form [formGroup]="sensorForm" (ngSubmit)="onSubmit()" novalidate class="column">
           <mat-form-field>
             <mat-label i18n="@@sensor channel">Channel</mat-label>
-            <mat-select
-              formControlName="channel"
-              i18n-placeholder="@@sensor channel"
-              placeholder="Channel"
-            >
+            <mat-select formControlName="channel" i18n-placeholder="@@sensor channel" placeholder="Channel">
               @for (channel of orderedChannels(); track channel) {
                 <mat-option [value]="channel.channel" [disabled]="isChannelDisabled(channel)">
                   @if (channel.channel === -1) {
@@ -123510,12 +123563,8 @@ var SensorDetailComponent = class _SensorDetailComponent extends ConfigurationBa
             ></textarea>
           </mat-form-field>
           <div class="row">
-            <mat-checkbox formControlName="enabled" color="primary" i18n="@@sensor enabled">
-              Enabled
-            </mat-checkbox>
-            <mat-checkbox formControlName="hidden" color="primary" i18n="@@sensor hidden">
-              Hidden
-            </mat-checkbox>
+            <mat-checkbox formControlName="enabled" color="primary" i18n="@@sensor enabled">Enabled</mat-checkbox>
+            <mat-checkbox formControlName="hidden" color="primary" i18n="@@sensor hidden">Hidden</mat-checkbox>
           </div>
           @if (boardVersion > 2) {
             <mat-divider></mat-divider>
@@ -123534,18 +123583,10 @@ var SensorDetailComponent = class _SensorDetailComponent extends ConfigurationBa
                     placeholder="Channel type"
                     (selectionChange)="onChannelTypeChanged($event)"
                   >
-                    <mat-option [value]="channelTypes.BASIC" i18n="@@sensor channel basic">
-                      Basic
-                    </mat-option>
-                    <mat-option [value]="channelTypes.NORMAL" i18n="@@sensor channel normal">
-                      Normal
-                    </mat-option>
-                    <mat-option [value]="channelTypes.CHANNEL_A" i18n="@@sensor channel a">
-                      Channel A
-                    </mat-option>
-                    <mat-option [value]="channelTypes.CHANNEL_B" i18n="@@sensor channel b">
-                      Channel B
-                    </mat-option>
+                    <mat-option [value]="channelTypes.BASIC" i18n="@@sensor channel basic">Basic</mat-option>
+                    <mat-option [value]="channelTypes.NORMAL" i18n="@@sensor channel normal">Normal</mat-option>
+                    <mat-option [value]="channelTypes.CHANNEL_A" i18n="@@sensor channel a">Channel A</mat-option>
+                    <mat-option [value]="channelTypes.CHANNEL_B" i18n="@@sensor channel b">Channel B</mat-option>
                   </mat-select>
                 </mat-form-field>
                 <mat-form-field>
@@ -123565,17 +123606,9 @@ var SensorDetailComponent = class _SensorDetailComponent extends ConfigurationBa
                 </mat-form-field>
                 <mat-form-field>
                   <mat-label i18n="@@sensor eol count">EOL count</mat-label>
-                  <mat-select
-                    formControlName="eolCount"
-                    i18n-placeholder="@@sensor eol count"
-                    placeholder="EOL count"
-                  >
-                    <mat-option [value]="eolCounts.SINGLE" i18n="@@sensor eol single">
-                      Single EOL
-                    </mat-option>
-                    <mat-option [value]="eolCounts.DOUBLE" i18n="@@sensor eol double">
-                      Double EOL
-                    </mat-option>
+                  <mat-select formControlName="eolCount" i18n-placeholder="@@sensor eol count" placeholder="EOL count">
+                    <mat-option [value]="eolCounts.SINGLE" i18n="@@sensor eol single">Single EOL</mat-option>
+                    <mat-option [value]="eolCounts.DOUBLE" i18n="@@sensor eol double">Double EOL</mat-option>
                   </mat-select>
                 </mat-form-field>
               </div>
@@ -123616,14 +123649,7 @@ var SensorDetailComponent = class _SensorDetailComponent extends ConfigurationBa
                 </mat-form-field>
                 <mat-form-field>
                   <mat-label i18n="@@sensor monitor threshold">Monitoring threshold [%]</mat-label>
-                  <input
-                    matInput
-                    formControlName="monitorThreshold"
-                    type="number"
-                    min="0"
-                    max="100"
-                    required
-                  />
+                  <input matInput formControlName="monitorThreshold" type="number" min="0" max="100" required />
                 </mat-form-field>
               </div>
             }
@@ -123847,9 +123873,7 @@ var SensorDetailComponent = class _SensorDetailComponent extends ConfigurationBa
             color="warn"
             type="button"
             (click)="openDeleteDialog(sensor.id)"
-            [disabled]="
-              ![monitoringStates.READY, monitoringStates.INVALID_CONFIG].includes(monitoringState)
-            "
+            [disabled]="![monitoringStates.READY, monitoringStates.INVALID_CONFIG].includes(monitoringState)"
           >
             <mat-icon>delete</mat-icon>
           </button>
@@ -124111,7 +124135,7 @@ function UserDetailComponent_Conditional_2_Template(rf, ctx) {
     ɵɵelementEnd()();
   }
 }
-var scheduleMicrotask12 = Promise.resolve(null);
+var scheduleMicrotask13 = Promise.resolve(null);
 var UserDetailComponent = class _UserDetailComponent extends ConfigurationBaseComponent {
   constructor(authenticationService, eventService, loader, monitoringService, userService, router, fb, route, dialog, snackBar) {
     super(eventService, loader, monitoringService);
@@ -124154,7 +124178,7 @@ var UserDetailComponent = class _UserDetailComponent extends ConfigurationBaseCo
   ngOnInit() {
     super.initialize();
     if (this.userId != null) {
-      scheduleMicrotask12.then(() => {
+      scheduleMicrotask13.then(() => {
         this.loader.display(true);
       });
       this.userService.getUser(this.userId).pipe(catchError(error => {
@@ -124581,7 +124605,7 @@ var UserDetailComponent = class _UserDetailComponent extends ConfigurationBaseCo
   (typeof ngDevMode === "undefined" || ngDevMode) && ɵsetClassDebugInfo(UserDetailComponent, {
     className: "UserDetailComponent",
     filePath: "src/app/pages/user/user-detail.component.ts",
-    lineNumber: 37
+    lineNumber: 31
   });
 })();
 
@@ -124652,7 +124676,7 @@ function UserListComponent_ng_template_8_Template(rf, ctx) {
     ɵɵconditional(ctx_r1.registering_card ? 0 : -1);
   }
 }
-var scheduleMicrotask13 = Promise.resolve(null);
+var scheduleMicrotask14 = Promise.resolve(null);
 var UserListComponent = class _UserListComponent extends ConfigurationBaseComponent {
   constructor(authService, loader, eventService, monitoringService, userService, cardService, dialog, snackBar, router) {
     super(eventService, loader, monitoringService);
@@ -124672,7 +124696,7 @@ var UserListComponent = class _UserListComponent extends ConfigurationBaseCompon
   }
   ngOnInit() {
     super.initialize();
-    scheduleMicrotask13.then(() => {
+    scheduleMicrotask14.then(() => {
       this.loader.display(true);
     });
     this.updateComponent();
@@ -125211,7 +125235,7 @@ function ZoneListComponent_Conditional_1_Template(rf, ctx) {
     ɵɵproperty("disabled", ctx_r1.monitoringState != ctx_r1.monitoringStates.READY);
   }
 }
-var scheduleMicrotask14 = Promise.resolve(null);
+var scheduleMicrotask15 = Promise.resolve(null);
 var ZoneListComponent = class _ZoneListComponent extends ConfigurationBaseComponent {
   constructor(authService, eventService, loader, monitoringService, sensorService, zoneService, dialog, snackBar) {
     super(eventService, loader, monitoringService);
@@ -125233,7 +125257,7 @@ var ZoneListComponent = class _ZoneListComponent extends ConfigurationBaseCompon
   }
   ngOnInit() {
     super.initialize();
-    scheduleMicrotask14.then(() => {
+    scheduleMicrotask15.then(() => {
       this.loader.display(true);
     });
     this.updateComponent();
@@ -125623,11 +125647,7 @@ var ZoneListComponent = class _ZoneListComponent extends ConfigurationBaseCompon
                   mat-icon-button
                   cdkDragHandle
                   class="drag-handle"
-                  [disabled]="
-                    ![monitoringStates.READY, monitoringStates.INVALID_CONFIG].includes(
-                      monitoringState
-                    )
-                  "
+                  [disabled]="![monitoringStates.READY, monitoringStates.INVALID_CONFIG].includes(monitoringState)"
                 >
                   <mat-icon>drag_indicator</mat-icon>
                 </button>
@@ -125643,9 +125663,7 @@ var ZoneListComponent = class _ZoneListComponent extends ConfigurationBaseCompon
                   mat-icon-button
                   (click)="openDeleteDialog(zone.id)"
                   color="warn"
-                  [disabled]="
-                    getSensors(zone.id).length > 0 || monitoringState != monitoringStates.READY
-                  "
+                  [disabled]="getSensors(zone.id).length > 0 || monitoringState != monitoringStates.READY"
                 >
                   <mat-icon>delete</mat-icon>
                 </button>
@@ -125733,7 +125751,7 @@ var ZoneListComponent = class _ZoneListComponent extends ConfigurationBaseCompon
   (typeof ngDevMode === "undefined" || ngDevMode) && ɵsetClassDebugInfo(ZoneListComponent, {
     className: "ZoneListComponent",
     filePath: "src/app/pages/zone/zone-list.component.ts",
-    lineNumber: 35
+    lineNumber: 31
   });
 })();
 
@@ -125970,7 +125988,7 @@ function ZoneDetailComponent_Conditional_2_Template(rf, ctx) {
     ɵɵelementEnd()();
   }
 }
-var scheduleMicrotask15 = Promise.resolve(null);
+var scheduleMicrotask16 = Promise.resolve(null);
 var ZoneDetailComponent = class _ZoneDetailComponent extends ConfigurationBaseComponent {
   constructor(loader, eventService, monitoringService, sensorService, zoneService, route, router, fb, dialog, snackBar) {
     super(eventService, loader, monitoringService);
@@ -125994,7 +126012,7 @@ var ZoneDetailComponent = class _ZoneDetailComponent extends ConfigurationBaseCo
   ngOnInit() {
     super.initialize();
     if (this.zoneId != null) {
-      scheduleMicrotask15.then(() => {
+      scheduleMicrotask16.then(() => {
         this.loader.display(true);
       });
       forkJoin({
@@ -126538,7 +126556,7 @@ var ZoneDetailComponent = class _ZoneDetailComponent extends ConfigurationBaseCo
   (typeof ngDevMode === "undefined" || ngDevMode) && ɵsetClassDebugInfo(ZoneDetailComponent, {
     className: "ZoneDetailComponent",
     filePath: "src/app/pages/zone/zone-detail.component.ts",
-    lineNumber: 38
+    lineNumber: 33
   });
 })();
 
@@ -127221,7 +127239,7 @@ function EventsComponent_Conditional_57_Template(rf, ctx) {
     ɵɵelementEnd();
   }
 }
-var scheduleMicrotask16 = Promise.resolve(null);
+var scheduleMicrotask17 = Promise.resolve(null);
 var EventsComponent = class _EventsComponent {
   constructor(armService, sensorService, userService, loader) {
     this.armService = armService;
@@ -127450,7 +127468,7 @@ var EventsComponent = class _EventsComponent {
         }
         let i18n_2;
         if (false) {
-          const MSG_EXTERNAL_events_arm_undefined$$SRC_APP_PAGES_EVENTS_EVENTS_COMPONENT_TS_2 = goog.getMsg(" Undefined ");
+          const MSG_EXTERNAL_events_arm_undefined$$SRC_APP_PAGES_EVENTS_EVENTS_COMPONENT_TS_2 = goog.getMsg("Undefined");
           i18n_2 = MSG_EXTERNAL_events_arm_undefined$$SRC_APP_PAGES_EVENTS_EVENTS_COMPONENT_TS_2;
         } else {
           i18n_2 = " Non definito ";
@@ -127637,7 +127655,7 @@ var EventsComponent = class _EventsComponent {
           }, {
             original_code: {
               "interpolation": '{{ sensor.monitorPeriod + "s" }}',
-              "interpolation_1": "{{\n                                    sensor.monitorThreshold\n                                  }}"
+              "interpolation_1": "{{ sensor.monitorThreshold }}"
             }
           });
           i18n_27 = MSG_EXTERNAL_events_sensitivity$$SRC_APP_PAGES_EVENTS_EVENTS_COMPONENT_TS_27;
@@ -127646,7 +127664,7 @@ var EventsComponent = class _EventsComponent {
         }
         let i18n_28;
         if (false) {
-          const MSG_EXTERNAL_events_sensitivity_instant$$SRC_APP_PAGES_EVENTS_EVENTS_COMPONENT_TS_28 = goog.getMsg(" sensitivity: instant alert ");
+          const MSG_EXTERNAL_events_sensitivity_instant$$SRC_APP_PAGES_EVENTS_EVENTS_COMPONENT_TS_28 = goog.getMsg("sensitivity: instant alert");
           i18n_28 = MSG_EXTERNAL_events_sensitivity_instant$$SRC_APP_PAGES_EVENTS_EVENTS_COMPONENT_TS_28;
         } else {
           i18n_28 = " sensibilit\xE0: allarme immediato ";
@@ -127667,7 +127685,7 @@ var EventsComponent = class _EventsComponent {
         }
         let i18n_31;
         if (false) {
-          const MSG_EXTERNAL_events_disarmed_by$$SRC_APP_PAGES_EVENTS_EVENTS_COMPONENT_TS_31 = goog.getMsg(" Disarmed by {$interpolation} ", {
+          const MSG_EXTERNAL_events_disarmed_by$$SRC_APP_PAGES_EVENTS_EVENTS_COMPONENT_TS_31 = goog.getMsg("Disarmed by {$interpolation}", {
             "interpolation": "\uFFFD0\uFFFD"
           }, {
             original_code: {
@@ -127902,9 +127920,7 @@ var EventsComponent = class _EventsComponent {
       <mat-form-field appearance="fill">
         <mat-label i18n="@@events filter arm">Arm type</mat-label>
         <mat-select [(ngModel)]="armType" (ngModelChange)="filterArms()">
-          <mat-option [value]="armTypes.UNDEFINED" i18n="@@events arm undefined">
-            Undefined
-          </mat-option>
+          <mat-option [value]="armTypes.UNDEFINED" i18n="@@events arm undefined">Undefined</mat-option>
           <mat-option [value]="armTypes.AWAY" i18n="@@events arm away">AWAY</mat-option>
           <mat-option [value]="armTypes.STAY" i18n="@@events arm stay">STAY</mat-option>
           <mat-option [value]="armTypes.MIXED" i18n="@@events arm mixed">MIXED</mat-option>
@@ -127926,18 +127942,8 @@ var EventsComponent = class _EventsComponent {
       <mat-form-field appearance="fill">
         <mat-label i18n="@@events filter date">Enter a date range</mat-label>
         <mat-date-range-input [rangePicker]="picker">
-          <input
-            matStartDate
-            placeholder="Start date"
-            [(ngModel)]="startDate"
-            (ngModelChange)="filterArms()"
-          />
-          <input
-            matEndDate
-            placeholder="End date"
-            [(ngModel)]="endDate"
-            (ngModelChange)="filterArms()"
-          />
+          <input matStartDate placeholder="Start date" [(ngModel)]="startDate" (ngModelChange)="filterArms()" />
+          <input matEndDate placeholder="End date" [(ngModel)]="endDate" (ngModelChange)="filterArms()" />
         </mat-date-range-input>
         <mat-hint>YYYY-MM-DD \u2013 YYYY-MM-DD</mat-hint>
         <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
@@ -128067,15 +128073,11 @@ var EventsComponent = class _EventsComponent {
                               <span>&semi;&nbsp;</span>
                               @if (sensor.monitorPeriod != null) {
                                 <span i18n="@@events sensitivity">
-                                  sensitivity: {{ sensor.monitorPeriod + "s" }}/{{
-                                    sensor.monitorThreshold
-                                  }}%
+                                  sensitivity: {{ sensor.monitorPeriod + "s" }}/{{ sensor.monitorThreshold }}%
                                 </span>
                               }
                               @if (sensor.monitorPeriod == null) {
-                                <span i18n="@@events sensitivity instant">
-                                  sensitivity: instant alert
-                                </span>
+                                <span i18n="@@events sensitivity instant">sensitivity: instant alert</span>
                               }
                               <span>&semi;&nbsp;</span>
                               @if (sensor.silent === true) {
@@ -128088,9 +128090,7 @@ var EventsComponent = class _EventsComponent {
                           }
                         </ul>
                         @if (event.disarm?.userId) {
-                          <li i18n="@@events disarmed by">
-                            Disarmed by {{ getUsername(event.disarm?.userId) }}
-                          </li>
+                          <li i18n="@@events disarmed by">Disarmed by {{ getUsername(event.disarm?.userId) }}</li>
                         }
                         @if (event.disarm?.keypadId) {
                           <li i18n="@@events disarmed keypad">Disarmed with keypad</li>
@@ -128100,10 +128100,7 @@ var EventsComponent = class _EventsComponent {
                           !event.disarm?.keypadId &&
                           event.disarm?.time === "2000-01-01 01:00:00"
                         ) {
-                          <li
-                            [ngClass]="{ warn: event.disarm?.time == null }"
-                            i18n="@@events disarmed system"
-                          >
+                          <li [ngClass]="{ warn: event.disarm?.time == null }" i18n="@@events disarmed system">
                             Disarmed by system
                           </li>
                         }
@@ -128164,10 +128161,7 @@ var EventsComponent = class _EventsComponent {
                               <div class="mat-cell sensor-name">
                                 {{ event.sensorChanges[0].sensors[index].description }}
                                 <br />
-                                CH{{
-                                  event.sensorChanges[0].sensors[index].channel + 1
-                                    | number: "2.0-0"
-                                }}
+                                CH{{ event.sensorChanges[0].sensors[index].channel + 1 | number: "2.0-0" }}
                               </div>
                               @for (sensor of getEventSensorStates(event, index); track sensor) {
                                 <div class="mat-cell">
@@ -128235,7 +128229,7 @@ var EventsComponent = class _EventsComponent {
   (typeof ngDevMode === "undefined" || ngDevMode) && ɵsetClassDebugInfo(EventsComponent, {
     className: "EventsComponent",
     filePath: "src/app/pages/events/events.component.ts",
-    lineNumber: 38
+    lineNumber: 33
   });
 })();
 
@@ -128507,7 +128501,7 @@ function OutputDetailComponent_Conditional_2_Template(rf, ctx) {
     ɵɵelementEnd()();
   }
 }
-var scheduleMicrotask17 = Promise.resolve(null);
+var scheduleMicrotask18 = Promise.resolve(null);
 var ChannelOption = class {};
 var OutputDetailComponent = class _OutputDetailComponent extends ConfigurationBaseComponent {
   constructor(loader, eventService, monitoringService, areaService, outputService, route, router, fb, dialog, snackBar) {
@@ -128534,7 +128528,7 @@ var OutputDetailComponent = class _OutputDetailComponent extends ConfigurationBa
   }
   ngOnInit() {
     super.initialize();
-    scheduleMicrotask17.then(() => {
+    scheduleMicrotask18.then(() => {
       this.loader.display(true);
     });
     if (this.outputId != null) {
@@ -128812,7 +128806,7 @@ var OutputDetailComponent = class _OutputDetailComponent extends ConfigurationBa
         }
         let i18n_12;
         if (false) {
-          const MSG_EXTERNAL_output_enabled$$SRC_APP_PAGES_OUTPUT_OUTPUT_DETAIL_COMPONENT_TS_12 = goog.getMsg(" Enabled ");
+          const MSG_EXTERNAL_output_enabled$$SRC_APP_PAGES_OUTPUT_OUTPUT_DETAIL_COMPONENT_TS_12 = goog.getMsg("Enabled");
           i18n_12 = MSG_EXTERNAL_output_enabled$$SRC_APP_PAGES_OUTPUT_OUTPUT_DETAIL_COMPONENT_TS_12;
         } else {
           i18n_12 = " Abilitato ";
@@ -128900,7 +128894,7 @@ var OutputDetailComponent = class _OutputDetailComponent extends ConfigurationBa
     args: [{
       providers: [],
       standalone: false,
-      template: '<div class="container">\n  @if (output) {\n    <mat-card class="output-form container-item">\n      <mat-card-content>\n        <form [formGroup]="outputForm" (ngSubmit)="onSubmit()" novalidate class="column">\n          <mat-form-field>\n            <mat-label i18n="@@name">Name</mat-label>\n            <input\n              matInput\n              i18n-placeholder="@@name"\n              placeholder="Name"\n              formControlName="name"\n              required\n            />\n          </mat-form-field>\n          <mat-form-field>\n            <mat-label i18n="@@description">Description</mat-label>\n            <textarea\n              matInput\n              i18n-placeholder="@@description"\n              placeholder="Description"\n              formControlName="description"\n              required\n            ></textarea>\n          </mat-form-field>\n          <mat-form-field>\n            <mat-label i18n="@@output channel">Channel</mat-label>\n            <mat-select\n              formControlName="channel"\n              i18n-placeholder="@@output channel"\n              placeholder="Channel"\n            >\n              @for (option of this.channelOptions; track option) {\n                <mat-option\n                  [value]="option.channel"\n                  [disabled]="option.output_name || option.channel == SYREN_CHANNEL"\n                >\n                  @if (option.channel === -1) {\n                    <span i18n="@@output disconnected">Disconnected</span>\n                  }\n                  @if (option.label !== "") {\n                    <span>\n                      <span>{{ option.label }}</span>\n                      @if (option.output_name) {\n                        <span>- {{ option.output_name }}</span>\n                      }\n                    </span>\n                  }\n                </mat-option>\n              }\n            </mat-select>\n          </mat-form-field>\n          <mat-form-field>\n            <mat-label i18n="@@output trigger">Trigger</mat-label>\n            <mat-select\n              formControlName="triggerType"\n              i18n-placeholder="@@output trigger"\n              placeholder="Trigger"\n              (selectionChange)="onSelectTriggerType($event.value)"\n            >\n              @for (triggerType of outputTriggerTypes | keyvalue; track triggerType) {\n                <mat-option [value]="triggerType.value">\n                  @if (triggerType.value === outputTriggerTypes.AREA) {\n                    <span i18n="@@output area">Area</span>\n                  }\n                  @if (triggerType.value === outputTriggerTypes.SYSTEM) {\n                    <span i18n="@@output system">System</span>\n                  }\n                  @if (triggerType.value === outputTriggerTypes.BUTTON) {\n                    <span i18n="@@output button">Button</span>\n                  }\n                </mat-option>\n              }\n            </mat-select>\n          </mat-form-field>\n          @if (output.triggerType == outputTriggerTypes.AREA) {\n            <mat-form-field id="areaId">\n              <mat-label i18n="@@area">Area</mat-label>\n              <mat-select formControlName="areaId" i18n-placeholder="@@area" placeholder="Area">\n                @for (area of areas; track area) {\n                  <mat-option [value]="area.id">{{ area.name }}</mat-option>\n                }\n              </mat-select>\n            </mat-form-field>\n          }\n          <div class="row">\n            <mat-form-field>\n              <mat-label i18n="@@output delay">Delay [s]</mat-label>\n              <input\n                matInput\n                type="number"\n                i18n-placeholder="@@output delay"\n                placeholder="Delay [s]"\n                formControlName="delay"\n                required\n              />\n              @if (outputForm.get("delay").invalid) {\n                <mat-error>\n                  {{ outputForm.get("delay").getError("invalid") }}\n                </mat-error>\n              }\n            </mat-form-field>\n            <mat-form-field>\n              <mat-label i18n="@@output duration">Duration [s]</mat-label>\n              <input\n                matInput\n                type="number"\n                i18n-placeholder="@@output duration"\n                placeholder="Duration [s]"\n                formControlName="duration"\n                required\n              />\n              @if (outputForm.get("duration").invalid) {\n                <mat-error>\n                  {{ outputForm.get("duration").getError("invalid") }}\n                </mat-error>\n              }\n            </mat-form-field>\n          </div>\n          <div class="row">\n            <mat-checkbox formControlName="enabled" color="primary" i18n="@@output enabled">\n              Enabled\n            </mat-checkbox>\n            <mat-checkbox\n              formControlName="defaultState"\n              color="primary"\n              i18n="@@output default state"\n            >\n              Active default\n            </mat-checkbox>\n          </div>\n        </form>\n      </mat-card-content>\n      <mat-divider></mat-divider>\n      <mat-card-actions align="end">\n        <button\n          mat-icon-button\n          color="primary"\n          [disabled]="outputForm.invalid || monitoringState != monitoringStates.READY"\n          (click)="onSubmit()"\n        >\n          <mat-icon>save</mat-icon>\n        </button>\n        @if (outputId > 0) {\n          <button\n            mat-icon-button\n            color="warn"\n            type="button"\n            (click)="openDeleteDialog(output.id)"\n            [disabled]="monitoringState != monitoringStates.READY"\n          >\n            <mat-icon>delete</mat-icon>\n          </button>\n        }\n        <button mat-icon-button color="accent" type="button" (click)="onCancel()">\n          <mat-icon>cancel</mat-icon>\n        </button>\n      </mat-card-actions>\n    </mat-card>\n  }\n\n  @if (output === null) {\n    <div>\n      <h1 i18n="@@output not found">The output was not found!</h1>\n    </div>\n  }\n</div>\n',
+      template: '<div class="container">\n  @if (output) {\n    <mat-card class="output-form container-item">\n      <mat-card-content>\n        <form [formGroup]="outputForm" (ngSubmit)="onSubmit()" novalidate class="column">\n          <mat-form-field>\n            <mat-label i18n="@@name">Name</mat-label>\n            <input matInput i18n-placeholder="@@name" placeholder="Name" formControlName="name" required />\n          </mat-form-field>\n          <mat-form-field>\n            <mat-label i18n="@@description">Description</mat-label>\n            <textarea\n              matInput\n              i18n-placeholder="@@description"\n              placeholder="Description"\n              formControlName="description"\n              required\n            ></textarea>\n          </mat-form-field>\n          <mat-form-field>\n            <mat-label i18n="@@output channel">Channel</mat-label>\n            <mat-select formControlName="channel" i18n-placeholder="@@output channel" placeholder="Channel">\n              @for (option of this.channelOptions; track option) {\n                <mat-option [value]="option.channel" [disabled]="option.output_name || option.channel == SYREN_CHANNEL">\n                  @if (option.channel === -1) {\n                    <span i18n="@@output disconnected">Disconnected</span>\n                  }\n                  @if (option.label !== "") {\n                    <span>\n                      <span>{{ option.label }}</span>\n                      @if (option.output_name) {\n                        <span>- {{ option.output_name }}</span>\n                      }\n                    </span>\n                  }\n                </mat-option>\n              }\n            </mat-select>\n          </mat-form-field>\n          <mat-form-field>\n            <mat-label i18n="@@output trigger">Trigger</mat-label>\n            <mat-select\n              formControlName="triggerType"\n              i18n-placeholder="@@output trigger"\n              placeholder="Trigger"\n              (selectionChange)="onSelectTriggerType($event.value)"\n            >\n              @for (triggerType of outputTriggerTypes | keyvalue; track triggerType) {\n                <mat-option [value]="triggerType.value">\n                  @if (triggerType.value === outputTriggerTypes.AREA) {\n                    <span i18n="@@output area">Area</span>\n                  }\n                  @if (triggerType.value === outputTriggerTypes.SYSTEM) {\n                    <span i18n="@@output system">System</span>\n                  }\n                  @if (triggerType.value === outputTriggerTypes.BUTTON) {\n                    <span i18n="@@output button">Button</span>\n                  }\n                </mat-option>\n              }\n            </mat-select>\n          </mat-form-field>\n          @if (output.triggerType == outputTriggerTypes.AREA) {\n            <mat-form-field id="areaId">\n              <mat-label i18n="@@area">Area</mat-label>\n              <mat-select formControlName="areaId" i18n-placeholder="@@area" placeholder="Area">\n                @for (area of areas; track area) {\n                  <mat-option [value]="area.id">{{ area.name }}</mat-option>\n                }\n              </mat-select>\n            </mat-form-field>\n          }\n          <div class="row">\n            <mat-form-field>\n              <mat-label i18n="@@output delay">Delay [s]</mat-label>\n              <input\n                matInput\n                type="number"\n                i18n-placeholder="@@output delay"\n                placeholder="Delay [s]"\n                formControlName="delay"\n                required\n              />\n              @if (outputForm.get("delay").invalid) {\n                <mat-error>\n                  {{ outputForm.get("delay").getError("invalid") }}\n                </mat-error>\n              }\n            </mat-form-field>\n            <mat-form-field>\n              <mat-label i18n="@@output duration">Duration [s]</mat-label>\n              <input\n                matInput\n                type="number"\n                i18n-placeholder="@@output duration"\n                placeholder="Duration [s]"\n                formControlName="duration"\n                required\n              />\n              @if (outputForm.get("duration").invalid) {\n                <mat-error>\n                  {{ outputForm.get("duration").getError("invalid") }}\n                </mat-error>\n              }\n            </mat-form-field>\n          </div>\n          <div class="row">\n            <mat-checkbox formControlName="enabled" color="primary" i18n="@@output enabled">Enabled</mat-checkbox>\n            <mat-checkbox formControlName="defaultState" color="primary" i18n="@@output default state">\n              Active default\n            </mat-checkbox>\n          </div>\n        </form>\n      </mat-card-content>\n      <mat-divider></mat-divider>\n      <mat-card-actions align="end">\n        <button\n          mat-icon-button\n          color="primary"\n          [disabled]="outputForm.invalid || monitoringState != monitoringStates.READY"\n          (click)="onSubmit()"\n        >\n          <mat-icon>save</mat-icon>\n        </button>\n        @if (outputId > 0) {\n          <button\n            mat-icon-button\n            color="warn"\n            type="button"\n            (click)="openDeleteDialog(output.id)"\n            [disabled]="monitoringState != monitoringStates.READY"\n          >\n            <mat-icon>delete</mat-icon>\n          </button>\n        }\n        <button mat-icon-button color="accent" type="button" (click)="onCancel()">\n          <mat-icon>cancel</mat-icon>\n        </button>\n      </mat-card-actions>\n    </mat-card>\n  }\n\n  @if (output === null) {\n    <div>\n      <h1 i18n="@@output not found">The output was not found!</h1>\n    </div>\n  }\n</div>\n',
       styles: ["/* src/app/pages/output/output-detail.component.scss */\n.output-form {\n  margin: 15px auto;\n  max-width: 600px;\n}\n#areaId {\n  margin-top: 15px;\n}\n.mat-mdc-form-field {\n  width: 100%;\n}\nmat-checkbox {\n  margin: 15px 0px 10px 0px;\n}\n.hide {\n  display: none;\n}\n.actions button {\n  margin-right: 10px;\n}\n/*# sourceMappingURL=output-detail.component.css.map */\n"]
     }]
   }], () => [{
@@ -128949,7 +128943,7 @@ var OutputDetailComponent = class _OutputDetailComponent extends ConfigurationBa
   (typeof ngDevMode === "undefined" || ngDevMode) && ɵsetClassDebugInfo(OutputDetailComponent, {
     className: "OutputDetailComponent",
     filePath: "src/app/pages/output/output-detail.component.ts",
-    lineNumber: 52
+    lineNumber: 47
   });
 })();
 
@@ -129062,7 +129056,7 @@ function OutputListComponent_div_0_div_1_mat_card_1_mat_icon_25_Template(rf, ctx
 function OutputListComponent_div_0_div_1_mat_card_1_mat_icon_26_Template(rf, ctx) {
   if (rf & 1) {
     ɵɵelementStart(0, "mat-icon", 20);
-    ɵɵtext(1, " circle ");
+    ɵɵtext(1, "circle");
     ɵɵelementEnd();
   }
 }
@@ -129083,14 +129077,14 @@ function OutputListComponent_div_0_div_1_mat_card_1_div_28_Template(rf, ctx) {
 function OutputListComponent_div_0_div_1_mat_card_1_mat_icon_33_Template(rf, ctx) {
   if (rf & 1) {
     ɵɵelementStart(0, "mat-icon", 34);
-    ɵɵtext(1, " radio_button_unchecked ");
+    ɵɵtext(1, "radio_button_unchecked");
     ɵɵelementEnd();
   }
 }
 function OutputListComponent_div_0_div_1_mat_card_1_mat_icon_34_Template(rf, ctx) {
   if (rf & 1) {
     ɵɵelementStart(0, "mat-icon", 34);
-    ɵɵtext(1, " radio_button_checked ");
+    ɵɵtext(1, "radio_button_checked");
     ɵɵelementEnd();
   }
 }
@@ -129298,7 +129292,7 @@ function OutputListComponent_div_1_Template(rf, ctx) {
     ɵɵproperty("disabled", ctx_r1.monitoringState != ctx_r1.monitoringStates.READY);
   }
 }
-var scheduleMicrotask18 = Promise.resolve(null);
+var scheduleMicrotask19 = Promise.resolve(null);
 var OutputListComponent = class _OutputListComponent extends ConfigurationBaseComponent {
   constructor(areaService, authService, eventService, loader, monitoringService, outputService, zoneService, dialog, snackBar) {
     super(eventService, loader, monitoringService);
@@ -129321,7 +129315,7 @@ var OutputListComponent = class _OutputListComponent extends ConfigurationBaseCo
   ngOnInit() {
     super.initialize();
     this.editableStates.push(MONITORING_STATE.INVALID_CONFIG);
-    scheduleMicrotask18.then(() => {
+    scheduleMicrotask19.then(() => {
       this.loader.display(true);
     });
     this.updateComponent();
@@ -129432,7 +129426,7 @@ var OutputListComponent = class _OutputListComponent extends ConfigurationBaseCo
       consts: () => {
         let i18n_0;
         if (false) {
-          const MSG_EXTERNAL_output_disconnected$$SRC_APP_PAGES_OUTPUT_OUTPUT_LIST_COMPONENT_TS_0 = goog.getMsg(" Disconnected ");
+          const MSG_EXTERNAL_output_disconnected$$SRC_APP_PAGES_OUTPUT_OUTPUT_LIST_COMPONENT_TS_0 = goog.getMsg("Disconnected");
           i18n_0 = MSG_EXTERNAL_output_disconnected$$SRC_APP_PAGES_OUTPUT_OUTPUT_LIST_COMPONENT_TS_0;
         } else {
           i18n_0 = "Disconnesso";
@@ -129482,11 +129476,7 @@ var OutputListComponent = class _OutputListComponent extends ConfigurationBaseCo
       providers: [],
       standalone: false,
       template: `<div *ngIf="outputs != null" class="container output-list">
-  <div
-    cdkDropList
-    *ngIf="outputs.length > 0; else no_outputs"
-    (cdkDropListDropped)="onDrop($event)"
-  >
+  <div cdkDropList *ngIf="outputs.length > 0; else no_outputs" (cdkDropListDropped)="onDrop($event)">
     <mat-card
       id="output-{{ output.id }}"
       *ngFor="let output of outputs"
@@ -129501,10 +129491,7 @@ var OutputListComponent = class _OutputListComponent extends ConfigurationBaseCo
           <img *ngSwitchCase="outputTypes.OUTPUT" src="assets/images/output_oc.png" />
           <img *ngSwitchCase="outputTypes.RELAY" src="assets/images/output_relay.png" />
           <img *ngSwitchCase="null" src="assets/images/disconnected.png" />
-          <img
-            *ngSwitchDefault
-            src="https://via.placeholder.com/100?text={{ getOutputLabel(output.channel) }}"
-          />
+          <img *ngSwitchDefault src="https://via.placeholder.com/100?text={{ getOutputLabel(output.channel) }}" />
         </div>
 
         <div class="column">
@@ -129517,31 +129504,17 @@ var OutputListComponent = class _OutputListComponent extends ConfigurationBaseCo
               <mat-list-item>
                 <mat-icon matListItemIcon class="material-icons-outlined">label</mat-icon>
                 <span *ngIf="output.channel !== null">{{ getOutputLabel(output.channel) }}</span>
-                <span *ngIf="output.channel === null" i18n="@@output disconnected">
-                  Disconnected
-                </span>
+                <span *ngIf="output.channel === null" i18n="@@output disconnected">Disconnected</span>
               </mat-list-item>
               <mat-list-item [ngSwitch]="output.triggerType">
                 <mat-icon matListItemIcon class="material-icons-outlined">start</mat-icon>
-                <mat-icon
-                  *ngSwitchCase="outputTriggerTypes.AREA"
-                  matListItemIcon
-                  class="material-icons-outlined"
-                >
+                <mat-icon *ngSwitchCase="outputTriggerTypes.AREA" matListItemIcon class="material-icons-outlined">
                   crop
                 </mat-icon>
-                <mat-icon
-                  *ngSwitchCase="outputTriggerTypes.SYSTEM"
-                  matListItemIcon
-                  class="material-icons-outlined"
-                >
+                <mat-icon *ngSwitchCase="outputTriggerTypes.SYSTEM" matListItemIcon class="material-icons-outlined">
                   home
                 </mat-icon>
-                <mat-icon
-                  *ngSwitchCase="outputTriggerTypes.BUTTON"
-                  matListItemIcon
-                  class="material-icons-outlined"
-                >
+                <mat-icon *ngSwitchCase="outputTriggerTypes.BUTTON" matListItemIcon class="material-icons-outlined">
                   touch_app
                 </mat-icon>
               </mat-list-item>
@@ -129557,9 +129530,7 @@ var OutputListComponent = class _OutputListComponent extends ConfigurationBaseCo
                 >
                   check_circle
                 </mat-icon>
-                <mat-icon matListItemIcon *ngIf="!output.enabled" class="material-icons-outlined">
-                  circle
-                </mat-icon>
+                <mat-icon matListItemIcon *ngIf="!output.enabled" class="material-icons-outlined">circle</mat-icon>
                 <div *ngIf="output.enabled">
                   <span i18n="@@sensor enabled">Enabled</span>
                 </div>
@@ -129572,12 +129543,8 @@ var OutputListComponent = class _OutputListComponent extends ConfigurationBaseCo
             <mat-list class="attribute-list second-column">
               <mat-list-item>
                 <mat-icon matListItemIcon>swap_vert</mat-icon>
-                <mat-icon *ngIf="!output.defaultState" class="material-icons-outlined">
-                  radio_button_unchecked
-                </mat-icon>
-                <mat-icon *ngIf="output.defaultState" class="material-icons-outlined">
-                  radio_button_checked
-                </mat-icon>
+                <mat-icon *ngIf="!output.defaultState" class="material-icons-outlined">radio_button_unchecked</mat-icon>
+                <mat-icon *ngIf="output.defaultState" class="material-icons-outlined">radio_button_checked</mat-icon>
               </mat-list-item>
               <mat-list-item>
                 <mat-icon matListItemIcon class="material-icons-outlined">timer</mat-icon>
@@ -129610,9 +129577,7 @@ var OutputListComponent = class _OutputListComponent extends ConfigurationBaseCo
           mat-icon-button
           cdkDragHandle
           class="drag-handle"
-          [disabled]="
-            ![monitoringStates.READY, monitoringStates.INVALID_CONFIG].includes(monitoringState)
-          "
+          [disabled]="![monitoringStates.READY, monitoringStates.INVALID_CONFIG].includes(monitoringState)"
         >
           <mat-icon>drag_indicator</mat-icon>
         </button>
@@ -129620,9 +129585,7 @@ var OutputListComponent = class _OutputListComponent extends ConfigurationBaseCo
           mat-icon-button
           [routerLink]="['/output', output.id]"
           color="primary"
-          [disabled]="
-            ![monitoringStates.READY, monitoringStates.INVALID_CONFIG].includes(monitoringState)
-          "
+          [disabled]="![monitoringStates.READY, monitoringStates.INVALID_CONFIG].includes(monitoringState)"
         >
           <mat-icon>mode_edit</mat-icon>
         </button>
@@ -129630,9 +129593,7 @@ var OutputListComponent = class _OutputListComponent extends ConfigurationBaseCo
           mat-icon-button
           (click)="openDeleteDialog(output.id)"
           color="warn"
-          [disabled]="
-            ![monitoringStates.READY, monitoringStates.INVALID_CONFIG].includes(monitoringState)
-          "
+          [disabled]="![monitoringStates.READY, monitoringStates.INVALID_CONFIG].includes(monitoringState)"
         >
           <mat-icon>delete</mat-icon>
         </button>
@@ -129726,7 +129687,7 @@ var OutputListComponent = class _OutputListComponent extends ConfigurationBaseCo
   (typeof ngDevMode === "undefined" || ngDevMode) && ɵsetClassDebugInfo(OutputListComponent, {
     className: "OutputListComponent",
     filePath: "src/app/pages/output/output-list.component.ts",
-    lineNumber: 45
+    lineNumber: 41
   });
 })();
 
@@ -129967,7 +129928,7 @@ var AppModule = class _AppModule {
       }, provideHttpClient(withInterceptorsFromDi()), provideAppInitializer(configureBackend)],
       imports: [BrowserModule, ClipboardModule, CountdownModule, FormsModule, ReactiveFormsModule, OwlDateTimeModule, OwlNativeDateTimeModule, routing,
       // Standalone components
-      McpAccessComponent, MqttComponent, LocationComponent, MatAutocompleteModule, MatButtonModule, MatButtonToggleModule, MatCardModule, MatCheckboxModule, MatChipsModule, MatDatepickerModule, MatDialogModule, MatExpansionModule, MatIconModule, MatInputModule, MatListModule, MatMenuModule, MatNativeDateModule, MatPaginatorModule, MatProgressBarModule, MatProgressSpinnerModule, MatRadioModule, MatSelectModule, MatSidenavModule, MatSlideToggleModule, MatSnackBarModule, MatTableModule, MatToolbarModule, MatTooltipModule, DragDropModule]
+      McpAccessComponent, MqttComponent, LocationComponent, SmsActionComponent, MatAutocompleteModule, MatButtonModule, MatButtonToggleModule, MatCardModule, MatCheckboxModule, MatChipsModule, MatDatepickerModule, MatDialogModule, MatExpansionModule, MatIconModule, MatInputModule, MatListModule, MatMenuModule, MatNativeDateModule, MatPaginatorModule, MatProgressBarModule, MatProgressSpinnerModule, MatRadioModule, MatSelectModule, MatSidenavModule, MatSlideToggleModule, MatSnackBarModule, MatTableModule, MatToolbarModule, MatTooltipModule, DragDropModule]
     });
   }
 };
@@ -129979,7 +129940,7 @@ var AppModule = class _AppModule {
       bootstrap: [AppComponent],
       imports: [BrowserModule, ClipboardModule, CountdownModule, DigitOnlyDirective, FormsModule, ReactiveFormsModule, OwlDateTimeModule, OwlNativeDateTimeModule, routing,
       // Standalone components
-      McpAccessComponent, MqttComponent, LocationComponent, MatAutocompleteModule, MatButtonModule, MatButtonToggleModule, MatCardModule, MatCheckboxModule, MatChipsModule, MatDatepickerModule, MatDialogModule, MatExpansionModule, MatIconModule, MatInputModule, MatListModule, MatMenuModule, MatNativeDateModule, MatPaginatorModule, MatProgressBarModule, MatProgressSpinnerModule, MatRadioModule, MatSelectModule, MatSidenavModule, MatSlideToggleModule, MatSnackBarModule, MatTableModule, MatToolbarModule, MatTooltipModule, DragDropModule, LongPressToggleDirective],
+      McpAccessComponent, MqttComponent, LocationComponent, SmsActionComponent, MatAutocompleteModule, MatButtonModule, MatButtonToggleModule, MatCardModule, MatCheckboxModule, MatChipsModule, MatDatepickerModule, MatDialogModule, MatExpansionModule, MatIconModule, MatInputModule, MatListModule, MatMenuModule, MatNativeDateModule, MatPaginatorModule, MatProgressBarModule, MatProgressSpinnerModule, MatRadioModule, MatSelectModule, MatSidenavModule, MatSlideToggleModule, MatSnackBarModule, MatTableModule, MatToolbarModule, MatTooltipModule, DragDropModule, LongPressToggleDirective],
       providers: [{
         provide: AUTHENTICATION_SERVICE,
         useClass: environment.authenticationService
@@ -130071,5 +130032,5 @@ if (environment.production) {
 platformBrowser().bootstrapModule(AppModule, {
   applicationProviders: [provideZoneChangeDetection()]
 });
-/**i18n:6be944a70878f01a5560184f6b07ac753fd7e9c3baa33228c44a3f7b18ffc080*/
+/**i18n:41aecc9b292697ea52388b8d499da44cb3443ead676b9cf530100189b8c18991*/
 //# sourceMappingURL=main.js.map
