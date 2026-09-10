@@ -14,28 +14,26 @@ curl -sSL https://app.arpi-security.info/install.py | /usr/bin/python3 - --prere
 import argparse
 import json
 import os
-import re
 import shutil
 import subprocess
 import tarfile
 import tempfile
-from dataclasses import dataclass
-from typing import Callable
+from collections.abc import Callable
 
 import requests
 
-GITHUB_API_SERVER = "https://api.github.com/repos/ArPIHomeSecurity/arpi_server/releases"
-GITHUB_API_WEBAPP = "https://api.github.com/repos/ArPIHomeSecurity/arpi_webapplication/releases"
+"""
+This module provides utilities for parsing and comparing version strings.
+"""
+
+import re
+from dataclasses import dataclass
 
 VERSION_PARSER = re.compile(
     r"v?(?P<major>\d+)\.(?P<minor>\d+)\.(?P<patch>\d+)"
     r"(?:(?:[_-])?(?P<pre_release>[a-zA-Z]+)(?P<pre_release_num>\d+))?"
     r"(?::(?P<commit>[a-z0-9]{7}))?"
 )
-
-
-class AssetNotFoundError(Exception):
-    pass
 
 
 @dataclass
@@ -48,8 +46,60 @@ class VersionInfo:
     prerelease_num: int | None
     commit_id: str
 
+    @classmethod
+    def from_string(cls, version: str) -> "VersionInfo":
+        match = VERSION_PARSER.match(version)
+        if not match:
+            raise ValueError("Invalid version string format.")
 
-def get_latest_release(api_url, prerelease=False) -> dict:
+        parts = match.groupdict()
+        return cls(
+            version=version,
+            major=int(parts["major"]),
+            minor=int(parts["minor"]),
+            patch=int(parts["patch"]),
+            prerelease=parts["pre_release"],
+            prerelease_num=(int(parts["pre_release_num"]) if parts["pre_release_num"] else None),
+            commit_id=parts["commit"] or "",
+        )
+
+    def compare_version(self, other: "VersionInfo") -> int:
+        for key in ["major", "minor", "patch"]:
+            value = getattr(self, key)
+            other_value = getattr(other, key)
+            if value > other_value:
+                return 1
+            if value < other_value:
+                return -1
+
+        prerelease = self.prerelease.lower() if self.prerelease else None
+        other_prerelease = other.prerelease.lower() if other.prerelease else None
+        if prerelease != other_prerelease:
+            if prerelease is None:
+                return 1
+            if other_prerelease is None:
+                return -1
+            return 1 if prerelease > other_prerelease else -1
+
+        if self.prerelease_num != other.prerelease_num:
+            if self.prerelease_num is None:
+                return -1
+            if other.prerelease_num is None:
+                return 1
+            return 1 if self.prerelease_num > other.prerelease_num else -1
+
+        return 0
+
+
+GITHUB_API_SERVER = "https://api.github.com/repos/ArPIHomeSecurity/arpi_server/releases"
+GITHUB_API_WEBAPP = "https://api.github.com/repos/ArPIHomeSecurity/arpi_webapplication/releases"
+
+
+class AssetNotFoundError(Exception):
+    pass
+
+
+def get_latest_release(api_url: str, prerelease: bool = False) -> dict:
     """
     Fetch the latest release from the GitHub API.
     """
@@ -63,7 +113,7 @@ def get_latest_release(api_url, prerelease=False) -> dict:
     raise Exception("No suitable release found.")
 
 
-def download_asset(release, extension=".tar.gz") -> str:
+def download_asset(release: dict[str, any], extension: str = ".tar.gz") -> str:
     """
     Download the tar.gz asset from the release.
     """
@@ -76,8 +126,7 @@ def download_asset(release, extension=".tar.gz") -> str:
             with requests.get(url, stream=True) as r:
                 r.raise_for_status()
                 with open(local_path, "wb") as f:
-                    for chunk in r.iter_content(chunk_size=8192):
-                        f.write(chunk)
+                    f.writelines(r.iter_content(chunk_size=8192))
             print(f"      ✅ Asset downloaded: {local_path}")
             return local_path
 
@@ -90,7 +139,7 @@ def download_asset(release, extension=".tar.gz") -> str:
     raise AssetNotFoundError(f"No tar.gz asset found in the release for {release['tag_name']}.")
 
 
-def decompress_tar_gz(tar_path):
+def decompress_tar_gz(tar_path: str) -> str:
     """
     Extract the tar.gz archive to a temporary directory.
     """
@@ -107,20 +156,8 @@ def get_server_version() -> VersionInfo | None:
     """
     try:
         import server.version as server_version
-        m = VERSION_PARSER.match(server_version.__version__)
-        if not m:
-            raise ValueError(f"Invalid version string: {server_version.__version__}")
 
-        p = m.groupdict()
-        return VersionInfo(
-            version=server_version.__version__,
-            major=int(p["major"]),
-            minor=int(p["minor"]),
-            patch=int(p["patch"]),
-            prerelease=p["pre_release"],
-            prerelease_num=int(p["pre_release_num"]) if p["pre_release_num"] else None,
-            commit_id=p["commit"] or "",
-        )
+        return VersionInfo.from_string(server_version.__version__)
     except ImportError:
         pass
 
@@ -177,7 +214,7 @@ def upgrade_server(tmp_dir: str, wheel_path: str, board_version: str, use_simula
     subprocess.run(install_command, shell=True, check=True)
 
 
-def upgrade_webapplication(tmp_dir):
+def upgrade_webapplication(tmp_dir: str) -> None:
     """
     Copy the extracted webapplication code to /home/argus/webapplication.
     """
@@ -196,62 +233,9 @@ def upgrade_webapplication(tmp_dir):
     shutil.copytree(src_dir, dst_dir)
 
 
-def compare_versions(v1: str, v2: VersionInfo):
-    """
-    Compare two versions: v1 as string, v2 as VersionInfo.
-    Returns 1 if v1 > v2, -1 if v1 < v2, 0 if equal.
-    """
-    v1_match = VERSION_PARSER.match(v1)
-    if not v1_match:
-        print(f"Version: {v1}")
-        raise ValueError("Invalid version string format.")
-
-    v1_parts = v1_match.groupdict()
-
-    # compare major, minor, patch
-    for key in ["major", "minor", "patch"]:
-        n1 = int(v1_parts[key])
-        n2 = getattr(v2, key)
-        if n1 > n2:
-            return 1
-        elif n1 < n2:
-            return -1
-
-    # compare pre_release (None means stable, which is considered higher than any pre-release)
-    # normalize to lowercase for case-insensitive comparison
-    pre1 = v1_parts["pre_release"].lower() if v1_parts["pre_release"] else None
-    pre2 = v2.prerelease.lower() if v2.prerelease else None
-    if pre1 != pre2:
-        if pre1 is None:
-            return 1
-        if pre2 is None:
-            return -1
-        if pre1 > pre2:
-            return 1
-        elif pre1 < pre2:
-            return -1
-
-    # compare pre_release_num (None is considered lower)
-    num1 = v1_parts["pre_release_num"]
-    num2 = v2.prerelease_num
-    if num1 != (f"{num2:02}" if num2 is not None else None):
-        if num1 is None:
-            return -1
-        if num2 is None:
-            return 1
-        n1 = int(num1)
-        n2 = num2
-        if n1 > n2:
-            return 1
-        elif n1 < n2:
-            return -1
-
-    return 0
-
-
 def check_and_upgrade(
     api_url: str,
-    get_version_func: Callable[[], str],
+    get_version_func: Callable[[], VersionInfo | None],
     project_name: str,
     prerelease: bool,
     board_version: str,
@@ -269,7 +253,8 @@ def check_and_upgrade(
     print(f"    - Latest release: {latest_release['tag_name']}")
     print(f"    - Current version: {actual_version.version if actual_version else 'unknown'}")
     # if we cannot determine the actual version, assume upgrade/reinstall is needed
-    result = compare_versions(latest_release["tag_name"], actual_version) if actual_version else 1
+    latest_version = VersionInfo.from_string(latest_release["tag_name"])
+    result = latest_version.compare_version(actual_version) if actual_version else 1
     if result < 1:
         print(
             f"    ✅ No newer version, skipping {project_name} "
@@ -344,7 +329,7 @@ def main():
     print("🔧 Starting ArPI upgrade process...")
 
     # ensure required packages are installed
-    install_packages(["pipenv", "python3-click"])
+    install_packages(["python3-click"])
 
     server_upgraded = check_and_upgrade(
         GITHUB_API_SERVER,
@@ -365,7 +350,10 @@ def main():
 
     if server_upgraded or webapplication_upgraded:
         print("  🔄 Restarting services: argus_server, argus_mcp, argus_monitor, nginx ...")
-        os.system("sudo systemctl restart argus_server argus_mcp argus_monitor nginx")  # noqa: F821
+        subprocess.run(
+            ["sudo", "systemctl", "restart", "argus_server", "argus_mcp", "argus_monitor", "nginx"],
+            check=True,
+        )
         print("  ✅ Services restarted successfully")
 
     print("🎉 Upgrade process finished.")
