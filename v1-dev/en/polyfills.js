@@ -80,7 +80,7 @@
 
 // node_modules/@angular/localize/fesm2022/_localize-chunk.mjs
 /**
- * @license Angular v21.2.18
+ * @license Angular v21.2.23
  * (c) 2010-2026 Google LLC. https://angular.dev/
  * License: MIT
  */
@@ -119,7 +119,7 @@ function stripBlock(messagePart, rawMessagePart) {
 
 // node_modules/@angular/localize/fesm2022/init.mjs
 /**
- * @license Angular v21.2.18
+ * @license Angular v21.2.23
  * (c) 2010-2026 Google LLC. https://angular.dev/
  * License: MIT
  */
@@ -2544,5 +2544,5 @@ patchBrowser(Zone$1);
 
 // angular:polyfills:angular:polyfills
 (globalThis.$localize ??= {}).locale = "en";
-/**i18n:41aecc9b292697ea52388b8d499da44cb3443ead676b9cf530100189b8c18991*/
+/**i18n:26bf5e443b4e3faa1af003cbcf86633a45b644ea19b6ce64ecacbea3af76a15e*/
 //# sourceMappingURL=polyfills.js.map

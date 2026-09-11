@@ -1,5 +1,5 @@
-import "./chunk-ITWXCM6D.js";
-import { Capacitor, __async, __commonJS, __export, __objRest, __require, __spreadProps, __spreadValues, __toESM, registerPlugin } from "./chunk-3JZZY7EM.js";
+import "./chunk-J2WCR7QR.js";
+import { Capacitor, __async, __commonJS, __export, __objRest, __require, __spreadProps, __spreadValues, __toESM, registerPlugin } from "./chunk-AGZZKJUZ.js";
 
 // node_modules/moment/moment.js
 var require_moment = __commonJS({
@@ -4032,7 +4032,7 @@ var require_moment = __commonJS({
 
 // node_modules/@angular/core/fesm2022/_effect-chunk.mjs
 /**
- * @license Angular v21.2.19
+ * @license Angular v21.2.23
  * (c) 2010-2026 Google LLC. https://angular.dev/
  * License: MIT
  */
@@ -6960,7 +6960,7 @@ function tap(observerOrNext, error, complete) {
 
 // node_modules/@angular/core/fesm2022/_not_found-chunk.mjs
 /**
- * @license Angular v21.2.19
+ * @license Angular v21.2.23
  * (c) 2010-2026 Google LLC. https://angular.dev/
  * License: MIT
  */
@@ -6980,7 +6980,7 @@ function isNotFound(e) {
 
 // node_modules/@angular/core/fesm2022/_untracked-chunk.mjs
 /**
- * @license Angular v21.2.19
+ * @license Angular v21.2.23
  * (c) 2010-2026 Google LLC. https://angular.dev/
  * License: MIT
  */
@@ -7076,7 +7076,7 @@ function untracked(nonReactiveReadsFn) {
 
 // node_modules/@angular/core/fesm2022/primitives-signals.mjs
 /**
- * @license Angular v21.2.19
+ * @license Angular v21.2.23
  * (c) 2010-2026 Google LLC. https://angular.dev/
  * License: MIT
  */
@@ -7187,14 +7187,14 @@ if (typeof ngDevMode === "undefined" || ngDevMode) {
 
 // node_modules/@angular/core/fesm2022/primitives-di.mjs
 /**
- * @license Angular v21.2.19
+ * @license Angular v21.2.23
  * (c) 2010-2026 Google LLC. https://angular.dev/
  * License: MIT
  */
 
 // node_modules/@angular/core/fesm2022/_effect-chunk2.mjs
 /**
- * @license Angular v21.2.19
+ * @license Angular v21.2.23
  * (c) 2010-2026 Google LLC. https://angular.dev/
  * License: MIT
  */
@@ -7211,7 +7211,7 @@ var Version = class {
     this.patch = parts2.slice(2).join(".");
   }
 };
-var VERSION = /* @__PURE__ */new Version("21.2.19");
+var VERSION = /* @__PURE__ */new Version("21.2.23");
 var DOC_PAGE_BASE_URL = (() => {
   const full = VERSION.full;
   const isPreRelease = full.includes("-next") || full.includes("-rc") || full === "0.0.0-PLACEHOLDER";
@@ -8779,8 +8779,50 @@ function assertNodeInjector(lView, injectorIndex) {
   assertNumber(lView[injectorIndex + 7], "injectorIndex should point to a bloom filter");
   assertNumber(lView[injectorIndex + 8], "injectorIndex should point to parent injector");
 }
+var SecurityContext;
+(function (SecurityContext2) {
+  SecurityContext2[SecurityContext2["NONE"] = 0] = "NONE";
+  SecurityContext2[SecurityContext2["HTML"] = 1] = "HTML";
+  SecurityContext2[SecurityContext2["STYLE"] = 2] = "STYLE";
+  SecurityContext2[SecurityContext2["SCRIPT"] = 3] = "SCRIPT";
+  SecurityContext2[SecurityContext2["URL"] = 4] = "URL";
+  SecurityContext2[SecurityContext2["RESOURCE_URL"] = 5] = "RESOURCE_URL";
+  SecurityContext2[SecurityContext2["ATTRIBUTE_NO_BINDING"] = 6] = "ATTRIBUTE_NO_BINDING";
+})(SecurityContext || (SecurityContext = {}));
+var _SECURITY_SCHEMA;
 var SVG_NAMESPACE = "svg";
 var MATH_ML_NAMESPACE = "math";
+function SECURITY_SCHEMA() {
+  if (!_SECURITY_SCHEMA) {
+    _SECURITY_SCHEMA = {};
+    registerContext(SecurityContext.HTML, void 0, [["iframe", ["srcdoc"]], ["*", ["innerHTML", "outerHTML"]]]);
+    registerContext(SecurityContext.STYLE, void 0, [["*", ["style"]]]);
+    registerContext(SecurityContext.URL, void 0, [["*", ["formAction"]], ["area", ["href"]], ["a", ["href", "xlink:href"]], ["form", ["action"]], ["img", ["src"]], ["video", ["src"]]]);
+    registerContext(SecurityContext.URL, MATH_ML_NAMESPACE, [["*", ["href", "xlink:href"]], ["annotation", ["href", "xlink:href"]], ["annotation-xml", ["href", "xlink:href"]], ["maction", ["href", "xlink:href"]], ["malignmark", ["href", "xlink:href"]], ["math", ["href", "xlink:href"]], ["mroot", ["href", "xlink:href"]], ["msqrt", ["href", "xlink:href"]], ["merror", ["href", "xlink:href"]], ["mfrac", ["href", "xlink:href"]], ["mglyph", ["href", "xlink:href"]], ["msub", ["href", "xlink:href"]], ["msup", ["href", "xlink:href"]], ["msubsup", ["href", "xlink:href"]], ["mmultiscripts", ["href", "xlink:href"]], ["mprescripts", ["href", "xlink:href"]], ["mi", ["href", "xlink:href"]], ["mn", ["href", "xlink:href"]], ["mo", ["href", "xlink:href"]], ["mpadded", ["href", "xlink:href"]], ["mphantom", ["href", "xlink:href"]], ["mrow", ["href", "xlink:href"]], ["ms", ["href", "xlink:href"]], ["mspace", ["href", "xlink:href"]], ["mstyle", ["href", "xlink:href"]], ["mtable", ["href", "xlink:href"]], ["mtd", ["href", "xlink:href"]], ["mtr", ["href", "xlink:href"]], ["mtext", ["href", "xlink:href"]], ["mover", ["href", "xlink:href"]], ["munder", ["href", "xlink:href"]], ["munderover", ["href", "xlink:href"]], ["semantics", ["href", "xlink:href"]], ["none", ["href", "xlink:href"]]]);
+    registerContext(SecurityContext.RESOURCE_URL, void 0, [["base", ["href"]], ["embed", ["src"]], ["frame", ["src"]], ["iframe", ["src"]], ["link", ["href"]], ["object", ["codebase", "data"]]]);
+    registerContext(SecurityContext.URL, SVG_NAMESPACE, [["a", ["href", "xlink:href"]]]);
+    registerContext(SecurityContext.ATTRIBUTE_NO_BINDING, SVG_NAMESPACE, [["animate", ["attributeName", "values", "to", "from"]], ["set", ["to", "attributeName"]], ["animateMotion", ["attributeName"]], ["animateTransform", ["attributeName"]]]);
+    registerContext(SecurityContext.ATTRIBUTE_NO_BINDING, void 0, [["unknown", ["attributeName", "values", "to", "from", "sandbox", "allow", "allowFullscreen", "referrerPolicy", "csp", "fetchPriority"]], ["iframe", ["sandbox", "allow", "allowFullscreen", "referrerPolicy", "csp", "fetchPriority"]]]);
+  }
+  return _SECURITY_SCHEMA;
+}
+function registerContext(ctx, namespace, specs) {
+  for (const [element, attributeNames] of specs) {
+    let tagName = namespace && element !== "unknown" ? `:${namespace}:${element}` : element;
+    tagName = tagName.toLowerCase();
+    for (const attr of attributeNames) {
+      _SECURITY_SCHEMA[`${tagName}|${attr.toLowerCase()}`] = ctx;
+    }
+  }
+}
+function checkSecurityContext(tagName, propName, namespace) {
+  const schema = SECURITY_SCHEMA();
+  const normalizedTagName = tagName.toLowerCase();
+  const normalizedPropName = propName.toLowerCase();
+  const namespacedContext = namespace && normalizedTagName !== "*" && normalizedTagName !== "unknown" ? schema[`:${namespace}:${normalizedTagName}|${normalizedPropName}`] : void 0;
+  const namespacedWildcardContext = namespace ? schema[`:${namespace}:*|${normalizedPropName}`] : void 0;
+  return namespacedContext ?? namespacedWildcardContext ?? schema[`${normalizedTagName}|${normalizedPropName}`] ?? schema[`*|${normalizedPropName}`] ?? SecurityContext.NONE;
+}
 function unwrapRNode(value2) {
   while (Array.isArray(value2)) {
     value2 = value2[HOST];
@@ -10062,7 +10104,7 @@ function createEffectFn(node, fn) {
 
 // node_modules/@angular/core/fesm2022/_debug_node-chunk.mjs
 /**
- * @license Angular v21.2.19
+ * @license Angular v21.2.23
  * (c) 2010-2026 Google LLC. https://angular.dev/
  * License: MIT
  */
@@ -12372,6 +12414,12 @@ function matchingSchemas(schemas, tagName) {
   }
   return false;
 }
+var SVG_NAMESPACE2 = "svg";
+var MATH_ML_NAMESPACE2 = "math";
+var NAMESPACE_URIS = {
+  "http://www.w3.org/2000/svg": SVG_NAMESPACE2,
+  "http://www.w3.org/1998/Math/MathML": MATH_ML_NAMESPACE2
+};
 var policy$1;
 function getPolicy$1() {
   if (policy$1 === void 0) {
@@ -12773,43 +12821,24 @@ function enforceIframeSecurity(iframe) {
   iframe.srcdoc = trustedHTMLFromString("");
   nativeRemoveNode(lView[RENDERER], iframe);
 }
-var SecurityContext;
-(function (SecurityContext2) {
-  SecurityContext2[SecurityContext2["NONE"] = 0] = "NONE";
-  SecurityContext2[SecurityContext2["HTML"] = 1] = "HTML";
-  SecurityContext2[SecurityContext2["STYLE"] = 2] = "STYLE";
-  SecurityContext2[SecurityContext2["SCRIPT"] = 3] = "SCRIPT";
-  SecurityContext2[SecurityContext2["URL"] = 4] = "URL";
-  SecurityContext2[SecurityContext2["RESOURCE_URL"] = 5] = "RESOURCE_URL";
-  SecurityContext2[SecurityContext2["ATTRIBUTE_NO_BINDING"] = 6] = "ATTRIBUTE_NO_BINDING";
-})(SecurityContext || (SecurityContext = {}));
-var _SECURITY_SCHEMA;
-var SVG_NAMESPACE2 = "svg";
-var MATH_ML_NAMESPACE2 = "math";
-function SECURITY_SCHEMA() {
-  if (!_SECURITY_SCHEMA) {
-    _SECURITY_SCHEMA = {};
-    registerContext(SecurityContext.HTML, void 0, [["iframe", ["srcdoc"]], ["*", ["innerHTML", "outerHTML"]]]);
-    registerContext(SecurityContext.STYLE, void 0, [["*", ["style"]]]);
-    registerContext(SecurityContext.URL, void 0, [["*", ["formAction"]], ["area", ["href"]], ["a", ["href", "xlink:href"]], ["form", ["action"]], ["img", ["src"]], ["video", ["src"]]]);
-    registerContext(SecurityContext.URL, MATH_ML_NAMESPACE2, [["annotation", ["href", "xlink:href"]], ["annotation-xml", ["href", "xlink:href"]], ["maction", ["href", "xlink:href"]], ["malignmark", ["href", "xlink:href"]], ["math", ["href", "xlink:href"]], ["mroot", ["href", "xlink:href"]], ["msqrt", ["href", "xlink:href"]], ["merror", ["href", "xlink:href"]], ["mfrac", ["href", "xlink:href"]], ["mglyph", ["href", "xlink:href"]], ["msub", ["href", "xlink:href"]], ["msup", ["href", "xlink:href"]], ["msubsup", ["href", "xlink:href"]], ["mmultiscripts", ["href", "xlink:href"]], ["mprescripts", ["href", "xlink:href"]], ["mi", ["href", "xlink:href"]], ["mn", ["href", "xlink:href"]], ["mo", ["href", "xlink:href"]], ["mpadded", ["href", "xlink:href"]], ["mphantom", ["href", "xlink:href"]], ["mrow", ["href", "xlink:href"]], ["ms", ["href", "xlink:href"]], ["mspace", ["href", "xlink:href"]], ["mstyle", ["href", "xlink:href"]], ["mtable", ["href", "xlink:href"]], ["mtd", ["href", "xlink:href"]], ["mtr", ["href", "xlink:href"]], ["mtext", ["href", "xlink:href"]], ["mover", ["href", "xlink:href"]], ["munder", ["href", "xlink:href"]], ["munderover", ["href", "xlink:href"]], ["semantics", ["href", "xlink:href"]], ["none", ["href", "xlink:href"]]]);
-    registerContext(SecurityContext.RESOURCE_URL, void 0, [["base", ["href"]], ["embed", ["src"]], ["frame", ["src"]], ["iframe", ["src"]], ["link", ["href"]], ["object", ["codebase", "data"]]]);
-    registerContext(SecurityContext.URL, SVG_NAMESPACE2, [["a", ["href", "xlink:href"]]]);
-    registerContext(SecurityContext.ATTRIBUTE_NO_BINDING, SVG_NAMESPACE2, [["animate", ["attributeName", "values", "to", "from"]], ["set", ["to", "attributeName"]], ["animateMotion", ["attributeName"]], ["animateTransform", ["attributeName"]]]);
-    registerContext(SecurityContext.ATTRIBUTE_NO_BINDING, void 0, [["unknown", ["attributeName", "values", "to", "from", "sandbox", "allow", "allowFullscreen", "referrerPolicy", "csp", "fetchPriority"]], ["iframe", ["sandbox", "allow", "allowFullscreen", "referrerPolicy", "csp", "fetchPriority"]]]);
+function splitNsName(elementName, fatal = true) {
+  if (elementName[0] != ":") {
+    return [null, elementName];
   }
-  return _SECURITY_SCHEMA;
-}
-function registerContext(ctx, namespace, specs) {
-  for (const [element, attributeNames] of specs) {
-    let tagName = namespace && element !== "*" && element !== "unknown" ? `:${namespace}:${element}` : element;
-    tagName = tagName.toLowerCase();
-    for (const attr of attributeNames) {
-      _SECURITY_SCHEMA[`${tagName}|${attr.toLowerCase()}`] = ctx;
+  const colonIndex = elementName.indexOf(":", 1);
+  if (colonIndex === -1) {
+    if (fatal) {
+      throw new Error(`Unsupported format "${elementName}" expecting ":namespace:name"`);
+    } else {
+      return [null, elementName];
     }
   }
+  return [elementName.slice(1, colonIndex), elementName.slice(colonIndex + 1)];
 }
-function ɵɵsanitizeHtml(unsafeHtml) {
+function ɵɵsanitizeHtml(unsafeHtml, tagName, propName) {
+  if (tagName !== void 0 && propName !== void 0 && getSecurityContext(tagName, propName) !== SecurityContext.HTML) {
+    return unsafeHtml;
+  }
   const sanitizer = getSanitizer();
   if (sanitizer) {
     return trustedHTMLFromStringBypass(sanitizer.sanitize(SecurityContext.HTML, unsafeHtml) || "");
@@ -12871,36 +12900,18 @@ function ɵɵtrustConstantResourceUrl(url2) {
   }
   return trustedScriptURLFromString(url2[0]);
 }
-var RESOURCE_MAP = {
-  "embed": {
-    "src": true
-  },
-  "frame": {
-    "src": true
-  },
-  "iframe": {
-    "src": true
-  },
-  "media": {
-    "src": true
-  },
-  "base": {
-    "href": true
-  },
-  "link": {
-    "href": true
-  },
-  "object": {
-    "data": true,
-    "codebase": true
-  }
-};
 function getUrlSanitizer(tag, prop) {
-  const isResource = RESOURCE_MAP[tag.toLowerCase()]?.[prop.toLowerCase()] === true;
-  return isResource ? ɵɵsanitizeResourceUrl : ɵɵsanitizeUrl;
+  switch (getSecurityContext(tag, prop)) {
+    case SecurityContext.RESOURCE_URL:
+      return ɵɵsanitizeResourceUrl;
+    case SecurityContext.URL:
+      return ɵɵsanitizeUrl;
+    default:
+      return null;
+  }
 }
 function ɵɵsanitizeUrlOrResourceUrl(unsafeUrl, tag, prop) {
-  return getUrlSanitizer(tag, prop)(unsafeUrl);
+  return getUrlSanitizer(tag, prop)?.(unsafeUrl) ?? unsafeUrl;
 }
 function validateAgainstEventProperties(name) {
   if (name.toLowerCase().startsWith("on")) {
@@ -12913,74 +12924,81 @@ function getSanitizer() {
   const lView = getLView();
   return lView && lView[ENVIRONMENT].sanitizer;
 }
+function getSecurityContext(tagName, propName) {
+  const [namespace, resolvedTagName] = resolveElement(tagName);
+  return checkSecurityContext(resolvedTagName, propName, namespace);
+}
+function resolveElement(tagName) {
+  tagName = tagName.toLowerCase();
+  const splitResult = splitNsName(tagName, false);
+  if (splitResult[0]) {
+    return splitResult;
+  }
+  const index = getSelectedIndex();
+  const tNode = index === -1 ? null : getSelectedTNode();
+  let namespace = tNode?.namespace;
+  if (tagName === "#host" && tNode?.type === 2) {
+    const element = getNativeByTNode(tNode, getLView());
+    if (element.tagName) {
+      tagName = element.tagName.toLowerCase();
+    }
+    if (namespace == null) {
+      const namespaceURI = element.namespaceURI;
+      namespace = namespaceURI && NAMESPACE_URIS[namespaceURI];
+    }
+  }
+  return [namespace, tagName];
+}
 var SECURITY_SENSITIVE_ATTRIBUTE_NAMES = /* @__PURE__ */new Set(["href", "xlink:href"]);
-var SVG_ANIMATION_ATTRIBUTE_NAME_CANDIDATES = ["attributeName", "attributename"];
-var SECURITY_SENSITIVE_ELEMENTS = {
-  "iframe": {
-    "sandbox": true,
-    "allow": true,
-    "allowfullscreen": true,
-    "referrerpolicy": true,
-    "csp": true,
-    "fetchpriority": true
-  },
-  ":svg:animate": {
-    "attributename": true,
+var SVG_ANIMATION_SENSITIVE_STATIC_VALUES = {
+  "animate": {
     "to": SECURITY_SENSITIVE_ATTRIBUTE_NAMES,
     "values": SECURITY_SENSITIVE_ATTRIBUTE_NAMES,
     "from": SECURITY_SENSITIVE_ATTRIBUTE_NAMES
   },
-  ":svg:set": {
-    "attributename": true,
+  "set": {
     "to": SECURITY_SENSITIVE_ATTRIBUTE_NAMES
-  },
-  ":svg:animatemotion": {
-    "attributename": true
-  },
-  ":svg:animatetransform": {
-    "attributename": true
   }
 };
 function ɵɵvalidateAttribute(value2, tagName, attributeName) {
-  const lowerCaseTagName = tagName.toLowerCase();
-  const lowerCaseAttrName = attributeName.toLowerCase();
   const index = getSelectedIndex();
   const tNode = index === -1 ? null : getSelectedTNode();
   if (tNode && tNode.type !== 2) {
     return value2;
   }
-  const fullTagName = lowerCaseTagName[0] !== ":" && tNode?.namespace ? `:${tNode.namespace}:${lowerCaseTagName}` : lowerCaseTagName;
-  const validationConfig = SECURITY_SENSITIVE_ELEMENTS[fullTagName]?.[lowerCaseAttrName];
-  if (!validationConfig) {
+  const [namespace, resolvedTagName] = resolveElement(tagName);
+  const securityContext = checkSecurityContext(resolvedTagName, attributeName, namespace);
+  if (securityContext !== SecurityContext.ATTRIBUTE_NO_BINDING) {
     return value2;
   }
   const lView = getLView();
-  if (tNode && lowerCaseTagName === "iframe") {
-    const element = getNativeByTNode(tNode, lView);
-    enforceIframeSecurity(element);
-  }
-  const displayTagName = tagName[0] === ":" ? tagName.split(":").pop() : tagName;
-  if (typeof validationConfig !== "boolean") {
-    if (!tNode) {
-      const errorMessage2 = ngDevMode && `Angular has detected that the \`${attributeName}\` was applied as a binding to the <${tagName}> element. For security reasons, the \`${attributeName}\` can be set on the <${tagName}> element as a static attribute only. 
-To fix this, switch the \`${attributeName}\` binding to a static attribute in a template or in host bindings section.`;
-      throw new RuntimeError(-910, errorMessage2);
-    }
-    const element = getNativeByTNode(tNode, lView);
-    const attributeNameValue = getSecuritySensitiveSVGAnimationAttributeName(element, validationConfig);
-    if (attributeNameValue) {
-      const errorMessage2 = ngDevMode && `Angular has detected that the \`${attributeName}\` was applied as a binding to the <${displayTagName}> element${getTemplateLocationDetails(lView)}. For security reasons, the \`${attributeName}\` can be set on the <${displayTagName}> element as a static attribute only when the "attributeName" is set to '${attributeNameValue}'. 
+  if (tNode) {
+    if (resolvedTagName === "iframe") {
+      const element = getNativeByTNode(tNode, lView);
+      enforceIframeSecurity(element);
+    } else if (namespace === SVG_NAMESPACE) {
+      const config2 = SVG_ANIMATION_SENSITIVE_STATIC_VALUES[resolvedTagName]?.[attributeName.toLowerCase()];
+      if (config2) {
+        const element = getNativeByTNode(tNode, lView);
+        const attributeNameValue = getSecuritySensitiveSVGAnimationAttributeName(element, config2);
+        if (attributeNameValue) {
+          const errorMessage2 = ngDevMode && `Angular has detected that the \`${attributeName}\` was applied as a binding to the <${resolvedTagName}> element${getTemplateLocationDetails(lView)}. For security reasons, the \`${attributeName}\` can be set on the <${resolvedTagName}> element as a static attribute only when the "attributeName" is set to '${attributeNameValue}'. 
 To fix this, switch the \`${attributeNameValue}\` binding to a static attribute in a template or in host bindings section.`;
-      throw new RuntimeError(-910, errorMessage2);
+          throw new RuntimeError(-910, errorMessage2);
+        }
+        return value2;
+      }
     }
-    return value2;
   }
-  const errorMessage = ngDevMode && `Angular has detected that the \`${attributeName}\` was applied as a binding to the <${displayTagName}> element${tNode ? getTemplateLocationDetails(lView) : ""}. For security reasons, the \`${attributeName}\` can be set on the <${displayTagName}> element as a static attribute only. 
+  const errorMessage = ngDevMode && `Angular has detected that the \`${attributeName}\` was applied as a binding to the <${resolvedTagName}> element${tNode ? getTemplateLocationDetails(lView) : ""}. For security reasons, the \`${attributeName}\` can be set on the <${resolvedTagName}> element as a static attribute only. 
 To fix this, switch the \`${attributeName}\` binding to a static attribute in a template or in host bindings section.`;
   throw new RuntimeError(-910, errorMessage);
 }
 function getSecuritySensitiveSVGAnimationAttributeName(element, validationConfig) {
-  for (const attributeName of SVG_ANIMATION_ATTRIBUTE_NAME_CANDIDATES) {
+  for (const attributeName of element.getAttributeNames()) {
+    if (attributeName.toLowerCase() !== "attributename") {
+      continue;
+    }
     const attributeNameValue = element.getAttribute(attributeName);
     if (attributeNameValue !== null && validationConfig.has(attributeNameValue.toLowerCase())) {
       return attributeNameValue;
@@ -17332,7 +17350,7 @@ var ComponentFactory2 = class extends ComponentFactory$1 {
   }
 };
 function createRootTView(rootSelectorOrNode, componentDef, componentBindings, directives) {
-  const tAttributes = rootSelectorOrNode ? ["ng-version", "21.2.19"] : extractAttrsAndClassesFromSelector(componentDef.selectors[0]);
+  const tAttributes = rootSelectorOrNode ? ["ng-version", "21.2.23"] : extractAttrsAndClassesFromSelector(componentDef.selectors[0]);
   let creationBindings = null;
   let updateBindings = null;
   let varsToAllocate = 0;
@@ -23553,8 +23571,9 @@ function walkIcuTree(ast, tView, tIcu, lView, sharedUpdateOpCodes, create, remov
             const attr = elAttrs.item(i);
             const lowerAttrName = attr.name.toLowerCase();
             const hasBinding2 = !!attr.value.match(BINDING_REGEXP);
-            const elementNS = element.namespaceURI;
-            const tagNameWithNamespace = elementNS === "http://www.w3.org/2000/svg" ? `:svg:${tagName}` : elementNS === "http://www.w3.org/1998/Math/MathML" ? `:math:${tagName}` : tagName;
+            const namespaceUri = element.namespaceURI;
+            const namespace = namespaceUri && NAMESPACE_URIS[namespaceUri];
+            const tagNameWithNamespace = namespace ? `:${namespace}:${tagName}` : tagName;
             if (hasBinding2) {
               if (VALID_ATTRS.hasOwnProperty(lowerAttrName)) {
                 generateBindingUpdateOpCodes(update, attr.value, newIndex, attr.name, 0, i18nResolveSanitizer(lowerAttrName, tagNameWithNamespace));
@@ -23642,30 +23661,17 @@ function addCreateNodeAndAppend(create, marker, text, appendToParentIdx, createA
 function addCreateAttribute(create, newIndex, attrName, attrValue) {
   create.push(newIndex << 1 | 1, attrName, attrValue);
 }
-function splitNsName(elementName, fatal = true) {
-  if (elementName[0] != ":") {
-    return [null, elementName];
-  }
-  const colonIndex = elementName.indexOf(":", 1);
-  if (colonIndex === -1) {
-    if (fatal) {
-      throw new Error(`Unsupported format "${elementName}" expecting ":namespace:name"`);
-    } else {
-      return [null, elementName];
-    }
-  }
-  return [elementName.slice(1, colonIndex), elementName.slice(colonIndex + 1)];
-}
 function normalizeTagName(tagName) {
   const tagNameLower = tagName.toLowerCase();
   const [ns, name] = splitNsName(tagNameLower, false);
-  return ns === SVG_NAMESPACE || ns === MATH_ML_NAMESPACE ? `:${ns}:${name}` : name;
+  return ns === SVG_NAMESPACE2 || ns === MATH_ML_NAMESPACE2 ? `:${ns}:${name}` : name;
 }
 function i18nResolveSanitizer(attrName, tagName) {
   const lowerAttrName = attrName.toLowerCase();
   const lowerTagName = tagName ? normalizeTagName(tagName) : "*";
+  const [namespace] = splitNsName(lowerTagName, false);
   const schema = SECURITY_SCHEMA();
-  const schemaContext = schema[`${lowerTagName}|${lowerAttrName}`] || schema[`*|${lowerAttrName}`] || SecurityContext.NONE;
+  const schemaContext = schema[`${lowerTagName}|${lowerAttrName}`] || (namespace ? schema[`:${namespace}:*|${lowerAttrName}`] : void 0) || schema[`*|${lowerAttrName}`] || SecurityContext.NONE;
   switch (schemaContext) {
     case SecurityContext.HTML:
       return ɵɵsanitizeHtml;
@@ -26573,7 +26579,7 @@ var MissingTranslationStrategy;
 
 // node_modules/@angular/core/fesm2022/_resource-chunk.mjs
 /**
- * @license Angular v21.2.19
+ * @license Angular v21.2.23
  * (c) 2010-2026 Google LLC. https://angular.dev/
  * License: MIT
  */
@@ -26938,7 +26944,7 @@ var ResourceWrappedError = class extends Error {
 
 // node_modules/@angular/core/fesm2022/core.mjs
 /**
- * @license Angular v21.2.19
+ * @license Angular v21.2.23
  * (c) 2010-2026 Google LLC. https://angular.dev/
  * License: MIT
  */
@@ -28725,7 +28731,7 @@ var REQUEST_CONTEXT = new InjectionToken(typeof ngDevMode === "undefined" || ngD
 
 // node_modules/@angular/common/fesm2022/_platform_location-chunk.mjs
 /**
- * @license Angular v21.2.19
+ * @license Angular v21.2.23
  * (c) 2010-2026 Google LLC. https://angular.dev/
  * License: MIT
  */
@@ -28845,7 +28851,7 @@ var BrowserPlatformLocation = class _BrowserPlatformLocation extends PlatformLoc
 
 // node_modules/@angular/common/fesm2022/_location-chunk.mjs
 /**
- * @license Angular v21.2.19
+ * @license Angular v21.2.23
  * (c) 2010-2026 Google LLC. https://angular.dev/
  * License: MIT
  */
@@ -29155,7 +29161,7 @@ function _stripOrigin(baseHref) {
 
 // node_modules/@angular/common/fesm2022/_common_module-chunk.mjs
 /**
- * @license Angular v21.2.19
+ * @license Angular v21.2.23
  * (c) 2010-2026 Google LLC. https://angular.dev/
  * License: MIT
  */
@@ -31981,7 +31987,7 @@ var CommonModule = class _CommonModule {
 
 // node_modules/@angular/common/fesm2022/_platform_navigation-chunk.mjs
 /**
- * @license Angular v21.2.19
+ * @license Angular v21.2.23
  * (c) 2010-2026 Google LLC. https://angular.dev/
  * License: MIT
  */
@@ -32012,7 +32018,7 @@ var PlatformNavigation = class _PlatformNavigation {
 
 // node_modules/@angular/common/fesm2022/_xhr-chunk.mjs
 /**
- * @license Angular v21.2.19
+ * @license Angular v21.2.23
  * (c) 2010-2026 Google LLC. https://angular.dev/
  * License: MIT
  */
@@ -32031,7 +32037,7 @@ var XhrFactory = class {};
 
 // node_modules/@angular/common/fesm2022/common.mjs
 /**
- * @license Angular v21.2.19
+ * @license Angular v21.2.23
  * (c) 2010-2026 Google LLC. https://angular.dev/
  * License: MIT
  */
@@ -33322,7 +33328,7 @@ function booleanOrUrlAttribute(value2) {
 
 // node_modules/@angular/platform-browser/fesm2022/_dom_renderer-chunk.mjs
 /**
- * @license Angular v21.2.18
+ * @license Angular v21.2.23
  * (c) 2010-2026 Google LLC. https://angular.dev/
  * License: MIT
  */
@@ -33582,7 +33588,7 @@ var SharedStylesHost = class _SharedStylesHost {
     }]
   }], null);
 })();
-var NAMESPACE_URIS = {
+var NAMESPACE_URIS2 = {
   "svg": "http://www.w3.org/2000/svg",
   "xhtml": "http://www.w3.org/1999/xhtml",
   "xlink": "http://www.w3.org/1999/xlink",
@@ -33768,7 +33774,7 @@ var DefaultDomRenderer2 = class {
   destroyNode = null;
   createElement(name, namespace) {
     if (namespace) {
-      return this.doc.createElementNS(NAMESPACE_URIS[namespace] || namespace, name);
+      return this.doc.createElementNS(NAMESPACE_URIS2[namespace] || namespace, name);
     }
     return this.doc.createElement(name);
   }
@@ -33810,7 +33816,7 @@ var DefaultDomRenderer2 = class {
   setAttribute(el, name, value2, namespace) {
     if (namespace) {
       name = namespace + ":" + name;
-      const namespaceUri = NAMESPACE_URIS[namespace];
+      const namespaceUri = NAMESPACE_URIS2[namespace];
       if (namespaceUri) {
         el.setAttributeNS(namespaceUri, name, value2);
       } else {
@@ -33822,7 +33828,7 @@ var DefaultDomRenderer2 = class {
   }
   removeAttribute(el, name, namespace) {
     if (namespace) {
-      const namespaceUri = NAMESPACE_URIS[namespace];
+      const namespaceUri = NAMESPACE_URIS2[namespace];
       if (namespaceUri) {
         el.removeAttributeNS(namespaceUri, name);
       } else {
@@ -34011,7 +34017,7 @@ var EmulatedEncapsulationDomRenderer2 = class extends NoneEncapsulationDomRender
 
 // node_modules/@angular/platform-browser/fesm2022/_browser-chunk.mjs
 /**
- * @license Angular v21.2.18
+ * @license Angular v21.2.23
  * (c) 2010-2026 Google LLC. https://angular.dev/
  * License: MIT
  */
@@ -34356,7 +34362,7 @@ var BrowserModule = class _BrowserModule {
 
 // node_modules/@angular/common/fesm2022/_module-chunk.mjs
 /**
- * @license Angular v21.2.19
+ * @license Angular v21.2.23
  * (c) 2010-2026 Google LLC. https://angular.dev/
  * License: MIT
  */
@@ -34456,10 +34462,10 @@ var HttpHeaders = class _HttpHeaders {
   }
   copyFrom(other) {
     other.init();
-    Array.from(other.headers.keys()).forEach(key => {
-      this.headers.set(key, other.headers.get(key));
+    for (const [key, values] of other.headers.entries()) {
+      this.headers.set(key, values);
       this.normalizedNames.set(key, other.normalizedNames.get(key));
-    });
+    }
   }
   clone(update) {
     const clone = new _HttpHeaders();
@@ -34480,21 +34486,22 @@ var HttpHeaders = class _HttpHeaders {
           return;
         }
         this.maybeSetNormalizedName(update.name, key);
-        const base = (update.op === "a" ? this.headers.get(key) : void 0) || [];
+        const base = update.op === "a" ? (this.headers.get(key) || []).slice() : [];
         base.push(...value2);
         this.headers.set(key, base);
         break;
       case "d":
         const toDelete = update.value;
-        if (!toDelete) {
+        if (toDelete === void 0) {
           this.headers.delete(key);
           this.normalizedNames.delete(key);
         } else {
+          const valuesToDelete = Array.isArray(toDelete) ? toDelete : [toDelete];
           let existing = this.headers.get(key);
           if (!existing) {
             return;
           }
-          existing = existing.filter(value3 => toDelete.indexOf(value3) === -1);
+          existing = existing.filter(value3 => valuesToDelete.indexOf(value3) === -1);
           if (existing.length === 0) {
             this.headers.delete(key);
             this.normalizedNames.delete(key);
@@ -34704,18 +34711,20 @@ var HttpParams = class _HttpParams {
     }
     if (this.cloneFrom !== null) {
       this.cloneFrom.init();
-      this.cloneFrom.keys().forEach(key => this.map.set(key, this.cloneFrom.map.get(key)));
+      for (const [key, values] of this.cloneFrom.map.entries()) {
+        this.map.set(key, values);
+      }
       this.updates.forEach(update => {
         switch (update.op) {
           case "a":
           case "s":
-            const base = (update.op === "a" ? this.map.get(update.param) : void 0) || [];
+            const base = update.op === "a" ? (this.map.get(update.param) || []).slice() : [];
             base.push(valueToString(update.value));
             this.map.set(update.param, base);
             break;
           case "d":
             if (update.value !== void 0) {
-              let base2 = this.map.get(update.param) || [];
+              const base2 = (this.map.get(update.param) || []).slice();
               const idx = base2.indexOf(valueToString(update.value));
               if (idx !== -1) {
                 base2.splice(idx, 1);
@@ -35792,7 +35801,14 @@ var HttpInterceptorHandler = class _HttpInterceptorHandler {
   }
   handle(initialRequest) {
     if (this.chain === null) {
-      const dedupedInterceptorFns = Array.from(/* @__PURE__ */new Set([...this.injector.get(HTTP_INTERCEPTOR_FNS), ...this.injector.get(HTTP_ROOT_INTERCEPTOR_FNS, [])]));
+      const parentHandler = this.injector.get(HttpHandler, null, {
+        skipSelf: true
+      });
+      const isDelegating = parentHandler !== null && this.backend === parentHandler;
+      const rootInterceptorFns = this.injector.get(HTTP_ROOT_INTERCEPTOR_FNS, [], isDelegating ? {
+        self: true
+      } : void 0);
+      const dedupedInterceptorFns = Array.from(/* @__PURE__ */new Set([...this.injector.get(HTTP_INTERCEPTOR_FNS), ...rootInterceptorFns]));
       this.chain = dedupedInterceptorFns.reduceRight((nextSequencedFn, interceptorFn) => chainedInterceptorFn(nextSequencedFn, interceptorFn, this.injector), interceptorChainEndFn);
     }
     if (this.contributeToStability) {
@@ -36187,7 +36203,10 @@ function provideHttpClient(...features) {
   if (ngDevMode) {
     const featureKinds = new Set(features.map(f => f.ɵkind));
     if (featureKinds.has(HttpFeatureKind.NoXsrfProtection) && featureKinds.has(HttpFeatureKind.CustomXsrfConfiguration)) {
-      throw new Error(ngDevMode ? `Configuration error: found both withXsrfConfiguration() and withNoXsrfProtection() in the same call to provideHttpClient(), which is a contradiction.` : "");
+      throw new Error(`Configuration error: found both withXsrfConfiguration() and withNoXsrfProtection() in the same call to provideHttpClient(), which is a contradiction.`);
+    }
+    if (featureKinds.has(HttpFeatureKind.RequestsMadeViaParent) && featureKinds.has(HttpFeatureKind.Fetch)) {
+      throw new Error(`Configuration error: withRequestsMadeViaParent() cannot be combined with withFetch() in the same call to provideHttpClient().`);
     }
   }
   const providers = [HttpClient, HttpInterceptorHandler, {
@@ -36354,7 +36373,7 @@ var HttpClientJsonpModule = class _HttpClientJsonpModule {
 
 // node_modules/@angular/common/fesm2022/http.mjs
 /**
- * @license Angular v21.2.19
+ * @license Angular v21.2.23
  * (c) 2010-2026 Google LLC. https://angular.dev/
  * License: MIT
  */
@@ -36752,7 +36771,7 @@ var HttpResourceImpl = class extends ResourceImpl {
 
 // node_modules/@angular/platform-browser/fesm2022/platform-browser.mjs
 /**
- * @license Angular v21.2.18
+ * @license Angular v21.2.23
  * (c) 2010-2026 Google LLC. https://angular.dev/
  * License: MIT
  */
@@ -36788,6 +36807,7 @@ var Meta = class _Meta {
   }
   updateTag(tag, selector) {
     if (!tag) return null;
+    this._validateMetaDefinition(tag);
     selector = selector || this._parseSelector(tag);
     const meta = this.getTag(selector);
     if (meta) {
@@ -36804,6 +36824,7 @@ var Meta = class _Meta {
     }
   }
   _getOrCreateElement(meta, forceCreation = false) {
+    this._validateMetaDefinition(meta);
     if (!forceCreation) {
       const selector = this._parseSelector(meta);
       const elem = this.getTags(selector).filter(elem2 => this._containsAttributes(meta, elem2))[0];
@@ -36826,11 +36847,19 @@ var Meta = class _Meta {
   _escapeSelectorValue(value2) {
     return `"${value2.replace(/\\/g, "\\\\").replace(/"/g, '\\"')}"`;
   }
+  _validateMetaDefinition(tag) {
+    for (const prop of Object.keys(tag)) {
+      const attributeName = this._getMetaKeyMap(prop);
+      if (attributeName.toLowerCase().startsWith("on")) {
+        throw new RuntimeError(5203, (typeof ngDevMode === "undefined" || ngDevMode) && `The Meta service does not allow setting event handler attribute '${attributeName}' for security reasons.`);
+      }
+    }
+  }
   _containsAttributes(tag, elem) {
     return Object.keys(tag).every(key => elem.getAttribute(this._getMetaKeyMap(key)) === tag[key]);
   }
   _getMetaKeyMap(prop) {
-    return META_KEYS_MAP[prop] || prop;
+    return Object.hasOwn(META_KEYS_MAP, prop) ? META_KEYS_MAP[prop] : prop;
   }
   static ɵfac = function Meta_Factory(__ngFactoryType__) {
     return new (__ngFactoryType__ || _Meta)(ɵɵinject(DOCUMENT));
@@ -42448,7 +42477,7 @@ var DragDropModule = class _DragDropModule {
 
 // node_modules/@angular/forms/fesm2022/forms.mjs
 /**
- * @license Angular v21.2.18
+ * @license Angular v21.2.23
  * (c) 2010-2026 Google LLC. https://angular.dev/
  * License: MIT
  */
@@ -43141,7 +43170,7 @@ var ngModelWithFormGroupExample = `
       <input [(ngModel)]="showMoreControls" [ngModelOptions]="{standalone: true}">
   </div>
 `;
-var VERSION2 = /* @__PURE__ */new Version("21.2.18");
+var VERSION2 = /* @__PURE__ */new Version("21.2.23");
 function controlParentException(nameOrIndex) {
   return new RuntimeError(1050, `formControlName must be used with a parent formGroup or formArray directive. You'll want to add a formGroup/formArray
       directive and pass it an existing FormGroup/FormArray instance (you can create one in your class).
@@ -90782,7 +90811,7 @@ function jwtDecode(token, options) {
 
 // node_modules/@angular/router/fesm2022/_router-chunk.mjs
 /**
- * @license Angular v21.2.18
+ * @license Angular v21.2.23
  * (c) 2010-2026 Google LLC. https://angular.dev/
  * License: MIT
  */
@@ -95143,7 +95172,7 @@ function validateCommands(commands) {
 
 // node_modules/@angular/router/fesm2022/_router_module-chunk.mjs
 /**
- * @license Angular v21.2.18
+ * @license Angular v21.2.23
  * (c) 2010-2026 Google LLC. https://angular.dev/
  * License: MIT
  */
@@ -96497,7 +96526,7 @@ function provideRouterInitializer() {
 
 // node_modules/@angular/router/fesm2022/router.mjs
 /**
- * @license Angular v21.2.18
+ * @license Angular v21.2.23
  * (c) 2010-2026 Google LLC. https://angular.dev/
  * License: MIT
  */
@@ -100366,7 +100395,7 @@ var AuthenticationService = class _AuthenticationService {
 
 // node_modules/@capgo/capacitor-native-biometric/dist/esm/index.js
 var NativeBiometric = registerPlugin("NativeBiometric", {
-  web: () => import("./web-4BMTTA3H.js").then(m => new m.NativeBiometricWeb())
+  web: () => import("./web-3JQSA6BB.js").then(m => new m.NativeBiometricWeb())
 });
 
 // src/app/services/remote/biometric.service.ts
@@ -100694,7 +100723,13 @@ var MonitoringService = class _MonitoringService {
         return -1;
       }
       return version;
-    }), catchError(() => of(2)));
+    }), catchError(error => {
+      console.error(error);
+      if (error.status === 404) {
+        return of(2);
+      }
+      throw error;
+    }));
   }
   getClock() {
     return this.http.get("/api/clock");
@@ -100752,7 +100787,7 @@ var Weekday;
 
 // node_modules/@capacitor/local-notifications/dist/esm/index.js
 var LocalNotifications = registerPlugin("LocalNotifications", {
-  web: () => import("./web-2FHHHLBA.js").then(m => new m.LocalNotificationsWeb())
+  web: () => import("./web-BJBCLX3U.js").then(m => new m.LocalNotificationsWeb())
 });
 
 // src/app/services/remote/notification.service.ts
@@ -103994,7 +104029,7 @@ var SystemStateComponent = class _SystemStateComponent {
 
 // node_modules/@capacitor/dialog/dist/esm/index.js
 var Dialog2 = registerPlugin("Dialog", {
-  web: () => import("./web-3U7LPQI2.js").then(m => new m.DialogWeb())
+  web: () => import("./web-74NAMQUH.js").then(m => new m.DialogWeb())
 });
 
 // src/app/upgrades.ts
@@ -106451,15 +106486,15 @@ function AppComponent_Conditional_1_Template(rf, ctx) {
 function AppComponent_Conditional_6_Template(rf, ctx) {
   if (rf & 1) {
     const _r3 = ɵɵgetCurrentView();
-    ɵɵelementStart(0, "button", 66);
+    ɵɵelementStart(0, "button", 73);
     ɵɵlistener("click", function AppComponent_Conditional_6_Template_button_click_0_listener() {
       ɵɵrestoreView(_r3);
       ɵɵnextContext();
       const sidenav_r2 = ɵɵreference(24);
       return ɵɵresetView(sidenav_r2.close());
     });
-    ɵɵelement(1, "img", 67);
-    ɵɵelementStart(2, "span", 68);
+    ɵɵelement(1, "img", 74);
+    ɵɵelementStart(2, "span", 75);
     ɵɵtext(3);
     ɵɵelementEnd()();
   }
@@ -106471,9 +106506,9 @@ function AppComponent_Conditional_6_Template(rf, ctx) {
 }
 function AppComponent_Conditional_7_Template(rf, ctx) {
   if (rf & 1) {
-    ɵɵelementStart(0, "button", 28);
-    ɵɵelement(1, "img", 67);
-    ɵɵelementStart(2, "span", 68);
+    ɵɵelementStart(0, "button", 34);
+    ɵɵelement(1, "img", 74);
+    ɵɵelementStart(2, "span", 75);
     ɵɵtext(3);
     ɵɵelementEnd()();
   }
@@ -106486,7 +106521,7 @@ function AppComponent_Conditional_7_Template(rf, ctx) {
 function AppComponent_Conditional_10_Template(rf, ctx) {
   if (rf & 1) {
     const _r5 = ɵɵgetCurrentView();
-    ɵɵelementStart(0, "countdown", 69, 2);
+    ɵɵelementStart(0, "countdown", 76, 2);
     ɵɵlistener("event", function AppComponent_Conditional_10_Template_countdown_event_0_listener($event) {
       ɵɵrestoreView(_r5);
       const ctx_r3 = ɵɵnextContext();
@@ -106501,7 +106536,7 @@ function AppComponent_Conditional_10_Template(rf, ctx) {
 }
 function AppComponent_Conditional_25_Conditional_1_For_5_Template(rf, ctx) {
   if (rf & 1) {
-    ɵɵelementStart(0, "mat-option", 50);
+    ɵɵelementStart(0, "mat-option", 56);
     ɵɵtext(1);
     ɵɵelementEnd();
   }
@@ -106515,16 +106550,16 @@ function AppComponent_Conditional_25_Conditional_1_For_5_Template(rf, ctx) {
 function AppComponent_Conditional_25_Conditional_1_Template(rf, ctx) {
   if (rf & 1) {
     const _r6 = ɵɵgetCurrentView();
-    ɵɵelementStart(0, "mat-list-item")(1, "mat-icon", 48);
-    ɵɵelement(2, "img", 71);
+    ɵɵelementStart(0, "mat-list-item")(1, "mat-icon", 54);
+    ɵɵelement(2, "img", 78);
     ɵɵelementEnd();
-    ɵɵelementStart(3, "mat-select", 72);
+    ɵɵelementStart(3, "mat-select", 79);
     ɵɵlistener("selectionChange", function AppComponent_Conditional_25_Conditional_1_Template_mat_select_selectionChange_3_listener($event) {
       ɵɵrestoreView(_r6);
       const ctx_r3 = ɵɵnextContext(2);
       return ɵɵresetView(ctx_r3.onLocationChange($event));
     });
-    ɵɵrepeaterCreate(4, AppComponent_Conditional_25_Conditional_1_For_5_Template, 2, 2, "mat-option", 50, ɵɵrepeaterTrackByIdentity);
+    ɵɵrepeaterCreate(4, AppComponent_Conditional_25_Conditional_1_For_5_Template, 2, 2, "mat-option", 56, ɵɵrepeaterTrackByIdentity);
     ɵɵelementEnd()();
   }
   if (rf & 2) {
@@ -106537,10 +106572,10 @@ function AppComponent_Conditional_25_Conditional_1_Template(rf, ctx) {
 }
 function AppComponent_Conditional_25_Conditional_2_Template(rf, ctx) {
   if (rf & 1) {
-    ɵɵelementStart(0, "mat-list-item", 70)(1, "mat-icon", 48);
-    ɵɵelement(2, "img", 71);
+    ɵɵelementStart(0, "mat-list-item", 77)(1, "mat-icon", 54);
+    ɵɵelement(2, "img", 78);
     ɵɵelementEnd();
-    ɵɵelementStart(3, "div", 73);
+    ɵɵelementStart(3, "div", 80);
     ɵɵtext(4);
     ɵɵelementEnd()();
   }
@@ -106552,9 +106587,9 @@ function AppComponent_Conditional_25_Conditional_2_Template(rf, ctx) {
 }
 function AppComponent_Conditional_25_Template(rf, ctx) {
   if (rf & 1) {
-    ɵɵelementStart(0, "mat-list", 35);
+    ɵɵelementStart(0, "mat-list", 41);
     ɵɵconditionalCreate(1, AppComponent_Conditional_25_Conditional_1_Template, 6, 1, "mat-list-item");
-    ɵɵconditionalCreate(2, AppComponent_Conditional_25_Conditional_2_Template, 5, 1, "mat-list-item", 70);
+    ɵɵconditionalCreate(2, AppComponent_Conditional_25_Conditional_2_Template, 5, 1, "mat-list-item", 77);
     ɵɵelementEnd();
   }
   if (rf & 2) {
@@ -106568,36 +106603,36 @@ function AppComponent_Conditional_25_Template(rf, ctx) {
 function AppComponent_Conditional_27_Template(rf, ctx) {
   if (rf & 1) {
     const _r8 = ɵɵgetCurrentView();
-    ɵɵelementStart(0, "mat-list-item", 74);
+    ɵɵelementStart(0, "mat-list-item", 81);
     ɵɵlistener("click", function AppComponent_Conditional_27_Template_mat_list_item_click_0_listener() {
       ɵɵrestoreView(_r8);
       const ctx_r3 = ɵɵnextContext();
       const sidenav_r2 = ɵɵreference(24);
       return ɵɵresetView(ctx_r3.smallScreen ? sidenav_r2.close() : null);
     });
-    ɵɵelementStart(1, "mat-icon", 48);
+    ɵɵelementStart(1, "mat-icon", 54);
     ɵɵtext(2, "login");
     ɵɵelementEnd();
-    ɵɵelementStart(3, "div", 73);
-    ɵɵi18n(4, 4);
+    ɵɵelementStart(3, "div", 80);
+    ɵɵi18n(4, 7);
     ɵɵelementEnd()();
   }
 }
 function AppComponent_Conditional_28_Template(rf, ctx) {
   if (rf & 1) {
     const _r9 = ɵɵgetCurrentView();
-    ɵɵelementStart(0, "mat-list-item", 75);
+    ɵɵelementStart(0, "mat-list-item", 82);
     ɵɵlistener("click", function AppComponent_Conditional_28_Template_mat_list_item_click_0_listener() {
       ɵɵrestoreView(_r9);
       const ctx_r3 = ɵɵnextContext();
       const sidenav_r2 = ɵɵreference(24);
       return ɵɵresetView(ctx_r3.smallScreen ? sidenav_r2.close() : null);
     });
-    ɵɵelementStart(1, "mat-icon", 48);
+    ɵɵelementStart(1, "mat-icon", 54);
     ɵɵtext(2, "home");
     ɵɵelementEnd();
-    ɵɵelementStart(3, "div", 73);
-    ɵɵi18n(4, 5);
+    ɵɵelementStart(3, "div", 80);
+    ɵɵi18n(4, 8);
     ɵɵelementEnd()();
   }
   if (rf & 2) {
@@ -106607,209 +106642,209 @@ function AppComponent_Conditional_28_Template(rf, ctx) {
 function AppComponent_Conditional_29_Template(rf, ctx) {
   if (rf & 1) {
     const _r10 = ɵɵgetCurrentView();
-    ɵɵelementStart(0, "mat-list-item", 76);
+    ɵɵelementStart(0, "mat-list-item", 83);
     ɵɵlistener("click", function AppComponent_Conditional_29_Template_mat_list_item_click_0_listener() {
       ɵɵrestoreView(_r10);
       const ctx_r3 = ɵɵnextContext();
       const sidenav_r2 = ɵɵreference(24);
       return ɵɵresetView(ctx_r3.smallScreen ? sidenav_r2.close() : null);
     });
-    ɵɵelementStart(1, "mat-icon", 48);
+    ɵɵelementStart(1, "mat-icon", 54);
     ɵɵtext(2, "history");
     ɵɵelementEnd();
-    ɵɵelementStart(3, "span", 73);
-    ɵɵi18n(4, 6);
+    ɵɵelementStart(3, "span", 80);
+    ɵɵi18n(4, 9);
     ɵɵelementEnd()();
   }
 }
 function AppComponent_Conditional_30_Template(rf, ctx) {
   if (rf & 1) {
-    ɵɵelementStart(0, "h3", 39);
-    ɵɵi18n(1, 7);
+    ɵɵelementStart(0, "h3", 45);
+    ɵɵi18n(1, 10);
     ɵɵelementEnd();
   }
 }
 function AppComponent_Conditional_31_Template(rf, ctx) {
   if (rf & 1) {
     const _r11 = ɵɵgetCurrentView();
-    ɵɵelementStart(0, "mat-list-item", 77);
+    ɵɵelementStart(0, "mat-list-item", 84);
     ɵɵlistener("click", function AppComponent_Conditional_31_Template_mat_list_item_click_0_listener() {
       ɵɵrestoreView(_r11);
       const ctx_r3 = ɵɵnextContext();
       const sidenav_r2 = ɵɵreference(24);
       return ɵɵresetView(ctx_r3.smallScreen ? sidenav_r2.close() : null);
     });
-    ɵɵelementStart(1, "mat-icon", 48);
+    ɵɵelementStart(1, "mat-icon", 54);
     ɵɵtext(2, "other_houses");
-    ɵɵelementEnd();
-    ɵɵelementStart(3, "span");
-    ɵɵi18n(4, 8);
-    ɵɵelementEnd()();
-  }
-}
-function AppComponent_Conditional_32_Template(rf, ctx) {
-  if (rf & 1) {
-    const _r12 = ɵɵgetCurrentView();
-    ɵɵelementStart(0, "mat-list-item", 78);
-    ɵɵlistener("click", function AppComponent_Conditional_32_Template_mat_list_item_click_0_listener() {
-      ɵɵrestoreView(_r12);
-      const ctx_r3 = ɵɵnextContext();
-      const sidenav_r2 = ɵɵreference(24);
-      return ɵɵresetView(ctx_r3.smallScreen ? sidenav_r2.close() : null);
-    });
-    ɵɵelementStart(1, "mat-icon", 48);
-    ɵɵtext(2, "crop");
-    ɵɵelementEnd();
-    ɵɵelementStart(3, "span");
-    ɵɵi18n(4, 9);
-    ɵɵelementEnd()();
-  }
-}
-function AppComponent_Conditional_33_Template(rf, ctx) {
-  if (rf & 1) {
-    const _r13 = ɵɵgetCurrentView();
-    ɵɵelementStart(0, "mat-list-item", 79);
-    ɵɵlistener("click", function AppComponent_Conditional_33_Template_mat_list_item_click_0_listener() {
-      ɵɵrestoreView(_r13);
-      const ctx_r3 = ɵɵnextContext();
-      const sidenav_r2 = ɵɵreference(24);
-      return ɵɵresetView(ctx_r3.smallScreen ? sidenav_r2.close() : null);
-    });
-    ɵɵelementStart(1, "mat-icon", 48);
-    ɵɵtext(2, "tab");
-    ɵɵelementEnd();
-    ɵɵelementStart(3, "span");
-    ɵɵi18n(4, 10);
-    ɵɵelementEnd()();
-  }
-}
-function AppComponent_Conditional_34_Template(rf, ctx) {
-  if (rf & 1) {
-    const _r14 = ɵɵgetCurrentView();
-    ɵɵelementStart(0, "mat-list-item", 80);
-    ɵɵlistener("click", function AppComponent_Conditional_34_Template_mat_list_item_click_0_listener() {
-      ɵɵrestoreView(_r14);
-      const ctx_r3 = ɵɵnextContext();
-      const sidenav_r2 = ɵɵreference(24);
-      return ɵɵresetView(ctx_r3.smallScreen ? sidenav_r2.close() : null);
-    });
-    ɵɵelementStart(1, "mat-icon", 48);
-    ɵɵtext(2, "input");
     ɵɵelementEnd();
     ɵɵelementStart(3, "span");
     ɵɵi18n(4, 11);
     ɵɵelementEnd()();
   }
 }
-function AppComponent_Conditional_35_Template(rf, ctx) {
+function AppComponent_Conditional_32_Template(rf, ctx) {
   if (rf & 1) {
-    const _r15 = ɵɵgetCurrentView();
-    ɵɵelementStart(0, "mat-list-item", 81);
-    ɵɵlistener("click", function AppComponent_Conditional_35_Template_mat_list_item_click_0_listener() {
-      ɵɵrestoreView(_r15);
+    const _r12 = ɵɵgetCurrentView();
+    ɵɵelementStart(0, "mat-list-item", 85);
+    ɵɵlistener("click", function AppComponent_Conditional_32_Template_mat_list_item_click_0_listener() {
+      ɵɵrestoreView(_r12);
       const ctx_r3 = ɵɵnextContext();
       const sidenav_r2 = ɵɵreference(24);
       return ɵɵresetView(ctx_r3.smallScreen ? sidenav_r2.close() : null);
     });
-    ɵɵelementStart(1, "mat-icon", 48);
-    ɵɵtext(2, "output");
+    ɵɵelementStart(1, "mat-icon", 54);
+    ɵɵtext(2, "crop");
     ɵɵelementEnd();
     ɵɵelementStart(3, "span");
     ɵɵi18n(4, 12);
     ɵɵelementEnd()();
   }
 }
-function AppComponent_Conditional_36_Template(rf, ctx) {
+function AppComponent_Conditional_33_Template(rf, ctx) {
   if (rf & 1) {
-    const _r16 = ɵɵgetCurrentView();
-    ɵɵelementStart(0, "mat-list-item", 82);
-    ɵɵlistener("click", function AppComponent_Conditional_36_Template_mat_list_item_click_0_listener() {
-      ɵɵrestoreView(_r16);
+    const _r13 = ɵɵgetCurrentView();
+    ɵɵelementStart(0, "mat-list-item", 86);
+    ɵɵlistener("click", function AppComponent_Conditional_33_Template_mat_list_item_click_0_listener() {
+      ɵɵrestoreView(_r13);
       const ctx_r3 = ɵɵnextContext();
       const sidenav_r2 = ɵɵreference(24);
       return ɵɵresetView(ctx_r3.smallScreen ? sidenav_r2.close() : null);
     });
-    ɵɵelementStart(1, "mat-icon", 48);
-    ɵɵtext(2, "group");
+    ɵɵelementStart(1, "mat-icon", 54);
+    ɵɵtext(2, "tab");
     ɵɵelementEnd();
     ɵɵelementStart(3, "span");
     ɵɵi18n(4, 13);
     ɵɵelementEnd()();
   }
 }
+function AppComponent_Conditional_34_Template(rf, ctx) {
+  if (rf & 1) {
+    const _r14 = ɵɵgetCurrentView();
+    ɵɵelementStart(0, "mat-list-item", 87);
+    ɵɵlistener("click", function AppComponent_Conditional_34_Template_mat_list_item_click_0_listener() {
+      ɵɵrestoreView(_r14);
+      const ctx_r3 = ɵɵnextContext();
+      const sidenav_r2 = ɵɵreference(24);
+      return ɵɵresetView(ctx_r3.smallScreen ? sidenav_r2.close() : null);
+    });
+    ɵɵelementStart(1, "mat-icon", 54);
+    ɵɵtext(2, "input");
+    ɵɵelementEnd();
+    ɵɵelementStart(3, "span");
+    ɵɵi18n(4, 14);
+    ɵɵelementEnd()();
+  }
+}
+function AppComponent_Conditional_35_Template(rf, ctx) {
+  if (rf & 1) {
+    const _r15 = ɵɵgetCurrentView();
+    ɵɵelementStart(0, "mat-list-item", 88);
+    ɵɵlistener("click", function AppComponent_Conditional_35_Template_mat_list_item_click_0_listener() {
+      ɵɵrestoreView(_r15);
+      const ctx_r3 = ɵɵnextContext();
+      const sidenav_r2 = ɵɵreference(24);
+      return ɵɵresetView(ctx_r3.smallScreen ? sidenav_r2.close() : null);
+    });
+    ɵɵelementStart(1, "mat-icon", 54);
+    ɵɵtext(2, "output");
+    ɵɵelementEnd();
+    ɵɵelementStart(3, "span");
+    ɵɵi18n(4, 15);
+    ɵɵelementEnd()();
+  }
+}
+function AppComponent_Conditional_36_Template(rf, ctx) {
+  if (rf & 1) {
+    const _r16 = ɵɵgetCurrentView();
+    ɵɵelementStart(0, "mat-list-item", 89);
+    ɵɵlistener("click", function AppComponent_Conditional_36_Template_mat_list_item_click_0_listener() {
+      ɵɵrestoreView(_r16);
+      const ctx_r3 = ɵɵnextContext();
+      const sidenav_r2 = ɵɵreference(24);
+      return ɵɵresetView(ctx_r3.smallScreen ? sidenav_r2.close() : null);
+    });
+    ɵɵelementStart(1, "mat-icon", 54);
+    ɵɵtext(2, "group");
+    ɵɵelementEnd();
+    ɵɵelementStart(3, "span");
+    ɵɵi18n(4, 16);
+    ɵɵelementEnd()();
+  }
+}
 function AppComponent_Conditional_37_Template(rf, ctx) {
   if (rf & 1) {
     const _r17 = ɵɵgetCurrentView();
-    ɵɵelementStart(0, "mat-accordion", 46)(1, "mat-expansion-panel", 83)(2, "mat-expansion-panel-header")(3, "mat-panel-title")(4, "mat-icon", 48);
+    ɵɵelementStart(0, "mat-accordion", 52)(1, "mat-expansion-panel", 90)(2, "mat-expansion-panel-header")(3, "mat-panel-title")(4, "mat-icon", 54);
     ɵɵtext(5, "settings");
     ɵɵelementEnd();
     ɵɵelementStart(6, "span");
-    ɵɵi18n(7, 14);
+    ɵɵi18n(7, 17);
     ɵɵelementEnd()()();
-    ɵɵelementStart(8, "mat-list-item", 84);
+    ɵɵelementStart(8, "mat-list-item", 91);
     ɵɵlistener("click", function AppComponent_Conditional_37_Template_mat_list_item_click_8_listener() {
       ɵɵrestoreView(_r17);
       const ctx_r3 = ɵɵnextContext();
       const sidenav_r2 = ɵɵreference(24);
       return ɵɵresetView(ctx_r3.smallScreen ? sidenav_r2.close() : null);
     });
-    ɵɵelementStart(9, "mat-icon", 48);
+    ɵɵelementStart(9, "mat-icon", 54);
     ɵɵtext(10, "volume_up");
     ɵɵelementEnd();
     ɵɵelementStart(11, "span");
-    ɵɵi18n(12, 15);
+    ɵɵi18n(12, 18);
     ɵɵelementEnd()();
-    ɵɵelementStart(13, "mat-list-item", 85);
+    ɵɵelementStart(13, "mat-list-item", 92);
     ɵɵlistener("click", function AppComponent_Conditional_37_Template_mat_list_item_click_13_listener() {
       ɵɵrestoreView(_r17);
       const ctx_r3 = ɵɵnextContext();
       const sidenav_r2 = ɵɵreference(24);
       return ɵɵresetView(ctx_r3.smallScreen ? sidenav_r2.close() : null);
     });
-    ɵɵelementStart(14, "mat-icon", 48);
+    ɵɵelementStart(14, "mat-icon", 54);
     ɵɵtext(15, "grid_on");
     ɵɵelementEnd();
     ɵɵelementStart(16, "span");
-    ɵɵi18n(17, 16);
+    ɵɵi18n(17, 19);
     ɵɵelementEnd()();
-    ɵɵelementStart(18, "mat-list-item", 86);
+    ɵɵelementStart(18, "mat-list-item", 93);
     ɵɵlistener("click", function AppComponent_Conditional_37_Template_mat_list_item_click_18_listener() {
       ɵɵrestoreView(_r17);
       const ctx_r3 = ɵɵnextContext();
       const sidenav_r2 = ɵɵreference(24);
       return ɵɵresetView(ctx_r3.smallScreen ? sidenav_r2.close() : null);
     });
-    ɵɵelementStart(19, "mat-icon", 48);
+    ɵɵelementStart(19, "mat-icon", 54);
     ɵɵtext(20, "send");
     ɵɵelementEnd();
     ɵɵelementStart(21, "span");
-    ɵɵi18n(22, 17);
+    ɵɵi18n(22, 20);
     ɵɵelementEnd()();
-    ɵɵelementStart(23, "mat-list-item", 87);
+    ɵɵelementStart(23, "mat-list-item", 94);
     ɵɵlistener("click", function AppComponent_Conditional_37_Template_mat_list_item_click_23_listener() {
       ɵɵrestoreView(_r17);
       const ctx_r3 = ɵɵnextContext();
       const sidenav_r2 = ɵɵreference(24);
       return ɵɵresetView(ctx_r3.smallScreen ? sidenav_r2.close() : null);
     });
-    ɵɵelementStart(24, "mat-icon", 48);
+    ɵɵelementStart(24, "mat-icon", 54);
     ɵɵtext(25, "public");
     ɵɵelementEnd();
     ɵɵelementStart(26, "span");
-    ɵɵi18n(27, 18);
+    ɵɵi18n(27, 21);
     ɵɵelementEnd()();
-    ɵɵelementStart(28, "mat-list-item", 88);
+    ɵɵelementStart(28, "mat-list-item", 95);
     ɵɵlistener("click", function AppComponent_Conditional_37_Template_mat_list_item_click_28_listener() {
       ɵɵrestoreView(_r17);
       const ctx_r3 = ɵɵnextContext();
       const sidenav_r2 = ɵɵreference(24);
       return ɵɵresetView(ctx_r3.smallScreen ? sidenav_r2.close() : null);
     });
-    ɵɵelementStart(29, "mat-icon", 48);
+    ɵɵelementStart(29, "mat-icon", 54);
     ɵɵtext(30, "access_time");
     ɵɵelementEnd();
     ɵɵelementStart(31, "span");
-    ɵɵi18n(32, 19);
+    ɵɵi18n(32, 22);
     ɵɵelementEnd()()()();
   }
   if (rf & 2) {
@@ -106826,24 +106861,24 @@ function AppComponent_Conditional_38_Template(rf, ctx) {
 function AppComponent_Conditional_39_Template(rf, ctx) {
   if (rf & 1) {
     const _r18 = ɵɵgetCurrentView();
-    ɵɵelementStart(0, "mat-list-item", 89);
+    ɵɵelementStart(0, "mat-list-item", 96);
     ɵɵlistener("click", function AppComponent_Conditional_39_Template_mat_list_item_click_0_listener() {
       ɵɵrestoreView(_r18);
       const ctx_r3 = ɵɵnextContext();
       const sidenav_r2 = ɵɵreference(24);
       return ɵɵresetView(ctx_r3.smallScreen ? sidenav_r2.close() : null);
     });
-    ɵɵelementStart(1, "mat-icon", 48);
+    ɵɵelementStart(1, "mat-icon", 54);
     ɵɵtext(2, "person");
     ɵɵelementEnd();
     ɵɵelementStart(3, "span");
-    ɵɵi18n(4, 20);
+    ɵɵi18n(4, 23);
     ɵɵelementEnd()();
   }
 }
 function AppComponent_For_45_Template(rf, ctx) {
   if (rf & 1) {
-    ɵɵelementStart(0, "mat-option", 50);
+    ɵɵelementStart(0, "mat-option", 56);
     ɵɵtext(1);
     ɵɵelementEnd();
   }
@@ -106857,42 +106892,42 @@ function AppComponent_For_45_Template(rf, ctx) {
 function AppComponent_Conditional_51_Template(rf, ctx) {
   if (rf & 1) {
     const _r20 = ɵɵgetCurrentView();
-    ɵɵelementStart(0, "mat-list-item", 90);
+    ɵɵelementStart(0, "mat-list-item", 97);
     ɵɵlistener("click", function AppComponent_Conditional_51_Template_mat_list_item_click_0_listener() {
       ɵɵrestoreView(_r20);
       const ctx_r3 = ɵɵnextContext();
       return ɵɵresetView(ctx_r3.unregister());
     });
-    ɵɵelementStart(1, "mat-icon", 48);
+    ɵɵelementStart(1, "mat-icon", 54);
     ɵɵtext(2, "disabled_by_default");
     ɵɵelementEnd();
-    ɵɵelementStart(3, "div", 91);
-    ɵɵi18n(4, 21);
+    ɵɵelementStart(3, "div", 98);
+    ɵɵi18n(4, 24);
     ɵɵelementEnd()();
   }
 }
 function AppComponent_Conditional_52_Template(rf, ctx) {
   if (rf & 1) {
     const _r21 = ɵɵgetCurrentView();
-    ɵɵelementStart(0, "mat-list-item", 92);
+    ɵɵelementStart(0, "mat-list-item", 99);
     ɵɵlistener("click", function AppComponent_Conditional_52_Template_mat_list_item_click_0_listener() {
       ɵɵrestoreView(_r21);
       const ctx_r3 = ɵɵnextContext();
       const sidenav_r2 = ɵɵreference(24);
       return ɵɵresetView(ctx_r3.smallScreen ? sidenav_r2.close() : null);
     });
-    ɵɵelementStart(1, "mat-icon", 48);
+    ɵɵelementStart(1, "mat-icon", 54);
     ɵɵtext(2, "settings");
     ɵɵelementEnd();
     ɵɵelementStart(3, "span");
-    ɵɵi18n(4, 22);
+    ɵɵi18n(4, 25);
     ɵɵelementEnd()();
   }
 }
 function AppComponent_Conditional_53_Template(rf, ctx) {
   if (rf & 1) {
     const _r22 = ɵɵgetCurrentView();
-    ɵɵelementStart(0, "mat-list-item", 74);
+    ɵɵelementStart(0, "mat-list-item", 81);
     ɵɵlistener("click", function AppComponent_Conditional_53_Template_mat_list_item_click_0_listener() {
       ɵɵrestoreView(_r22);
       const ctx_r3 = ɵɵnextContext();
@@ -106900,13 +106935,13 @@ function AppComponent_Conditional_53_Template(rf, ctx) {
       ctx_r3.logout(true);
       return ɵɵresetView(ctx_r3.smallScreen ? sidenav_r2.close() : null);
     });
-    ɵɵelementStart(1, "mat-icon", 48);
+    ɵɵelementStart(1, "mat-icon", 54);
     ɵɵtext(2, "exit_to_app");
     ɵɵelementEnd();
-    ɵɵelementStart(3, "div", 91);
-    ɵɵi18n(4, 23);
+    ɵɵelementStart(3, "div", 98);
+    ɵɵi18n(4, 26);
     ɵɵelementEnd();
-    ɵɵelementStart(5, "div", 91);
+    ɵɵelementStart(5, "div", 98);
     ɵɵtext(6);
     ɵɵelementEnd()();
   }
@@ -106918,12 +106953,12 @@ function AppComponent_Conditional_53_Template(rf, ctx) {
 }
 function AppComponent_Conditional_55_Template(rf, ctx) {
   if (rf & 1) {
-    ɵɵelement(0, "div", 55);
+    ɵɵelement(0, "div", 61);
   }
 }
 function AppComponent_Conditional_56_Template(rf, ctx) {
   if (rf & 1) {
-    ɵɵelementStart(0, "mat-card", 56)(1, "mat-card-content")(2, "span");
+    ɵɵelementStart(0, "mat-card", 62)(1, "mat-card-content")(2, "span");
     ɵɵtext(3);
     ɵɵelementEnd()()();
   }
@@ -106933,9 +106968,28 @@ function AppComponent_Conditional_56_Template(rf, ctx) {
     ɵɵtextInterpolate(ctx_r3.message);
   }
 }
-function AppComponent_Conditional_58_Template(rf, ctx) {
+function AppComponent_Conditional_57_Template(rf, ctx) {
   if (rf & 1) {
-    ɵɵelement(0, "mat-progress-spinner", 58);
+    ɵɵelementStart(0, "div", 63)(1, "div", 100)(2, "mat-card")(3, "mat-card-header")(4, "mat-icon", 101);
+    ɵɵtext(5, "info");
+    ɵɵelementEnd();
+    ɵɵelementStart(6, "mat-card-title");
+    ɵɵi18n(7, 27);
+    ɵɵelementEnd();
+    ɵɵelementStart(8, "mat-card-subtitle");
+    ɵɵi18n(9, 28);
+    ɵɵelementEnd();
+    ɵɵelementStart(10, "mat-card-subtitle");
+    ɵɵi18n(11, 29);
+    ɵɵelementEnd()();
+    ɵɵelementStart(12, "mat-card-content")(13, "a", 102);
+    ɵɵtext(14, "https://app.arpi-security.info");
+    ɵɵelementEnd()()()()();
+  }
+}
+function AppComponent_Conditional_59_Template(rf, ctx) {
+  if (rf & 1) {
+    ɵɵelement(0, "mat-progress-spinner", 65);
   }
 }
 var AppComponent = class _AppComponent {
@@ -106953,6 +107007,7 @@ var AppComponent = class _AppComponent {
     this.displayLoader = false;
     this.disablePage = false;
     this.message = null;
+    this.redirectToRemote = !environment.isMultiLocation;
     this.locations = [];
     this.selectedLocationId = null;
     this.locales = [{
@@ -107235,8 +107290,8 @@ var AppComponent = class _AppComponent {
         }
       },
       standalone: false,
-      decls: 81,
-      vars: 31,
+      decls: 82,
+      vars: 32,
       consts: () => {
         let i18n_0;
         if (false) {
@@ -107247,152 +107302,194 @@ var AppComponent = class _AppComponent {
         }
         let i18n_1;
         if (false) {
-          const MSG_EXTERNAL_login_menu_link$$SRC_APP_APP_COMPONENT_TS_1 = goog.getMsg("Login");
-          i18n_1 = MSG_EXTERNAL_login_menu_link$$SRC_APP_APP_COMPONENT_TS_1;
+          const MSG_EXTERNAL_webapp_version_label$$SRC_APP_APP_COMPONENT_TS_1 = goog.getMsg("WebApp");
+          i18n_1 = MSG_EXTERNAL_webapp_version_label$$SRC_APP_APP_COMPONENT_TS_1;
         } else {
-          i18n_1 = "Login";
+          i18n_1 = "WebApp";
         }
         let i18n_2;
         if (false) {
-          const MSG_EXTERNAL_home_menu_link$$SRC_APP_APP_COMPONENT_TS_2 = goog.getMsg("Control");
-          i18n_2 = MSG_EXTERNAL_home_menu_link$$SRC_APP_APP_COMPONENT_TS_2;
+          const MSG_EXTERNAL_server_version_label$$SRC_APP_APP_COMPONENT_TS_2 = goog.getMsg("Server");
+          i18n_2 = MSG_EXTERNAL_server_version_label$$SRC_APP_APP_COMPONENT_TS_2;
         } else {
-          i18n_2 = "Control";
+          i18n_2 = "Server";
         }
         let i18n_3;
         if (false) {
-          const MSG_EXTERNAL_events_menu_link$$SRC_APP_APP_COMPONENT_TS_3 = goog.getMsg("Events");
-          i18n_3 = MSG_EXTERNAL_events_menu_link$$SRC_APP_APP_COMPONENT_TS_3;
+          const MSG_EXTERNAL_board_version_label$$SRC_APP_APP_COMPONENT_TS_3 = goog.getMsg("Board");
+          i18n_3 = MSG_EXTERNAL_board_version_label$$SRC_APP_APP_COMPONENT_TS_3;
         } else {
-          i18n_3 = "Events";
+          i18n_3 = "Board";
         }
         let i18n_4;
         if (false) {
-          const MSG_EXTERNAL_4930506384627295710$$SRC_APP_APP_COMPONENT_TS_4 = goog.getMsg("Settings");
-          i18n_4 = MSG_EXTERNAL_4930506384627295710$$SRC_APP_APP_COMPONENT_TS_4;
+          const MSG_EXTERNAL_login_menu_link$$SRC_APP_APP_COMPONENT_TS_4 = goog.getMsg("Login");
+          i18n_4 = MSG_EXTERNAL_login_menu_link$$SRC_APP_APP_COMPONENT_TS_4;
         } else {
-          i18n_4 = "Settings";
+          i18n_4 = "Login";
         }
         let i18n_5;
         if (false) {
-          const MSG_EXTERNAL_locations_menu_link$$SRC_APP_APP_COMPONENT_TS_5 = goog.getMsg("Locations");
-          i18n_5 = MSG_EXTERNAL_locations_menu_link$$SRC_APP_APP_COMPONENT_TS_5;
+          const MSG_EXTERNAL_home_menu_link$$SRC_APP_APP_COMPONENT_TS_5 = goog.getMsg("Control");
+          i18n_5 = MSG_EXTERNAL_home_menu_link$$SRC_APP_APP_COMPONENT_TS_5;
         } else {
-          i18n_5 = "Locations";
+          i18n_5 = "Control";
         }
         let i18n_6;
         if (false) {
-          const MSG_EXTERNAL_areas_menu_link$$SRC_APP_APP_COMPONENT_TS_6 = goog.getMsg("Areas");
-          i18n_6 = MSG_EXTERNAL_areas_menu_link$$SRC_APP_APP_COMPONENT_TS_6;
+          const MSG_EXTERNAL_events_menu_link$$SRC_APP_APP_COMPONENT_TS_6 = goog.getMsg("Events");
+          i18n_6 = MSG_EXTERNAL_events_menu_link$$SRC_APP_APP_COMPONENT_TS_6;
         } else {
-          i18n_6 = "Areas";
+          i18n_6 = "Events";
         }
         let i18n_7;
         if (false) {
-          const MSG_EXTERNAL_zones_menu_link$$SRC_APP_APP_COMPONENT_TS_7 = goog.getMsg("Zones");
-          i18n_7 = MSG_EXTERNAL_zones_menu_link$$SRC_APP_APP_COMPONENT_TS_7;
+          const MSG_EXTERNAL_4930506384627295710$$SRC_APP_APP_COMPONENT_TS_7 = goog.getMsg("Settings");
+          i18n_7 = MSG_EXTERNAL_4930506384627295710$$SRC_APP_APP_COMPONENT_TS_7;
         } else {
-          i18n_7 = "Zones";
+          i18n_7 = "Settings";
         }
         let i18n_8;
         if (false) {
-          const MSG_EXTERNAL_sensors_menu_link$$SRC_APP_APP_COMPONENT_TS_8 = goog.getMsg("Sensors");
-          i18n_8 = MSG_EXTERNAL_sensors_menu_link$$SRC_APP_APP_COMPONENT_TS_8;
+          const MSG_EXTERNAL_locations_menu_link$$SRC_APP_APP_COMPONENT_TS_8 = goog.getMsg("Locations");
+          i18n_8 = MSG_EXTERNAL_locations_menu_link$$SRC_APP_APP_COMPONENT_TS_8;
         } else {
-          i18n_8 = "Sensors";
+          i18n_8 = "Locations";
         }
         let i18n_9;
         if (false) {
-          const MSG_EXTERNAL_outputs_menu_link$$SRC_APP_APP_COMPONENT_TS_9 = goog.getMsg("Outputs");
-          i18n_9 = MSG_EXTERNAL_outputs_menu_link$$SRC_APP_APP_COMPONENT_TS_9;
+          const MSG_EXTERNAL_areas_menu_link$$SRC_APP_APP_COMPONENT_TS_9 = goog.getMsg("Areas");
+          i18n_9 = MSG_EXTERNAL_areas_menu_link$$SRC_APP_APP_COMPONENT_TS_9;
         } else {
-          i18n_9 = "Outputs";
+          i18n_9 = "Areas";
         }
         let i18n_10;
         if (false) {
-          const MSG_EXTERNAL_users_menu_link$$SRC_APP_APP_COMPONENT_TS_10 = goog.getMsg("Users");
-          i18n_10 = MSG_EXTERNAL_users_menu_link$$SRC_APP_APP_COMPONENT_TS_10;
+          const MSG_EXTERNAL_zones_menu_link$$SRC_APP_APP_COMPONENT_TS_10 = goog.getMsg("Zones");
+          i18n_10 = MSG_EXTERNAL_zones_menu_link$$SRC_APP_APP_COMPONENT_TS_10;
         } else {
-          i18n_10 = "Users";
+          i18n_10 = "Zones";
         }
         let i18n_11;
         if (false) {
-          const MSG_EXTERNAL_admin_menu_title$$SRC_APP_APP_COMPONENT_TS_11 = goog.getMsg("Admin");
-          i18n_11 = MSG_EXTERNAL_admin_menu_title$$SRC_APP_APP_COMPONENT_TS_11;
+          const MSG_EXTERNAL_sensors_menu_link$$SRC_APP_APP_COMPONENT_TS_11 = goog.getMsg("Sensors");
+          i18n_11 = MSG_EXTERNAL_sensors_menu_link$$SRC_APP_APP_COMPONENT_TS_11;
         } else {
-          i18n_11 = "Admin";
+          i18n_11 = "Sensors";
         }
         let i18n_12;
         if (false) {
-          const MSG_EXTERNAL_syren_menu_link$$SRC_APP_APP_COMPONENT_TS_12 = goog.getMsg("Syren");
-          i18n_12 = MSG_EXTERNAL_syren_menu_link$$SRC_APP_APP_COMPONENT_TS_12;
+          const MSG_EXTERNAL_outputs_menu_link$$SRC_APP_APP_COMPONENT_TS_12 = goog.getMsg("Outputs");
+          i18n_12 = MSG_EXTERNAL_outputs_menu_link$$SRC_APP_APP_COMPONENT_TS_12;
         } else {
-          i18n_12 = "Syren";
+          i18n_12 = "Outputs";
         }
         let i18n_13;
         if (false) {
-          const MSG_EXTERNAL_keypad_menu_link$$SRC_APP_APP_COMPONENT_TS_13 = goog.getMsg("Keypad");
-          i18n_13 = MSG_EXTERNAL_keypad_menu_link$$SRC_APP_APP_COMPONENT_TS_13;
+          const MSG_EXTERNAL_users_menu_link$$SRC_APP_APP_COMPONENT_TS_13 = goog.getMsg("Users");
+          i18n_13 = MSG_EXTERNAL_users_menu_link$$SRC_APP_APP_COMPONENT_TS_13;
         } else {
-          i18n_13 = "Keypad";
+          i18n_13 = "Users";
         }
         let i18n_14;
         if (false) {
-          const MSG_EXTERNAL_notifications_menu_link$$SRC_APP_APP_COMPONENT_TS_14 = goog.getMsg("Notifications");
-          i18n_14 = MSG_EXTERNAL_notifications_menu_link$$SRC_APP_APP_COMPONENT_TS_14;
+          const MSG_EXTERNAL_admin_menu_title$$SRC_APP_APP_COMPONENT_TS_14 = goog.getMsg("Admin");
+          i18n_14 = MSG_EXTERNAL_admin_menu_title$$SRC_APP_APP_COMPONENT_TS_14;
         } else {
-          i18n_14 = "Notifications";
+          i18n_14 = "Admin";
         }
         let i18n_15;
         if (false) {
-          const MSG_EXTERNAL_network_menu_link$$SRC_APP_APP_COMPONENT_TS_15 = goog.getMsg("Network");
-          i18n_15 = MSG_EXTERNAL_network_menu_link$$SRC_APP_APP_COMPONENT_TS_15;
+          const MSG_EXTERNAL_syren_menu_link$$SRC_APP_APP_COMPONENT_TS_15 = goog.getMsg("Syren");
+          i18n_15 = MSG_EXTERNAL_syren_menu_link$$SRC_APP_APP_COMPONENT_TS_15;
         } else {
-          i18n_15 = "Network";
+          i18n_15 = "Syren";
         }
         let i18n_16;
         if (false) {
-          const MSG_EXTERNAL_clock_menu_link$$SRC_APP_APP_COMPONENT_TS_16 = goog.getMsg("Clock");
-          i18n_16 = MSG_EXTERNAL_clock_menu_link$$SRC_APP_APP_COMPONENT_TS_16;
+          const MSG_EXTERNAL_keypad_menu_link$$SRC_APP_APP_COMPONENT_TS_16 = goog.getMsg("Keypad");
+          i18n_16 = MSG_EXTERNAL_keypad_menu_link$$SRC_APP_APP_COMPONENT_TS_16;
         } else {
-          i18n_16 = "Clock";
+          i18n_16 = "Keypad";
         }
         let i18n_17;
         if (false) {
-          const MSG_EXTERNAL_my_user_menu_link$$SRC_APP_APP_COMPONENT_TS_17 = goog.getMsg("My user");
-          i18n_17 = MSG_EXTERNAL_my_user_menu_link$$SRC_APP_APP_COMPONENT_TS_17;
+          const MSG_EXTERNAL_notifications_menu_link$$SRC_APP_APP_COMPONENT_TS_17 = goog.getMsg("Notifications");
+          i18n_17 = MSG_EXTERNAL_notifications_menu_link$$SRC_APP_APP_COMPONENT_TS_17;
         } else {
-          i18n_17 = "My user";
+          i18n_17 = "Notifications";
         }
         let i18n_18;
         if (false) {
-          const MSG_EXTERNAL_unregister_menu_link$$SRC_APP_APP_COMPONENT_TS_18 = goog.getMsg("Unregister device");
-          i18n_18 = MSG_EXTERNAL_unregister_menu_link$$SRC_APP_APP_COMPONENT_TS_18;
+          const MSG_EXTERNAL_network_menu_link$$SRC_APP_APP_COMPONENT_TS_18 = goog.getMsg("Network");
+          i18n_18 = MSG_EXTERNAL_network_menu_link$$SRC_APP_APP_COMPONENT_TS_18;
         } else {
-          i18n_18 = "Unregister device";
+          i18n_18 = "Network";
         }
         let i18n_19;
         if (false) {
-          const MSG_EXTERNAL_setup_menu_link$$SRC_APP_APP_COMPONENT_TS_19 = goog.getMsg("Setup");
-          i18n_19 = MSG_EXTERNAL_setup_menu_link$$SRC_APP_APP_COMPONENT_TS_19;
+          const MSG_EXTERNAL_clock_menu_link$$SRC_APP_APP_COMPONENT_TS_19 = goog.getMsg("Clock");
+          i18n_19 = MSG_EXTERNAL_clock_menu_link$$SRC_APP_APP_COMPONENT_TS_19;
         } else {
-          i18n_19 = "Setup";
+          i18n_19 = "Clock";
         }
         let i18n_20;
         if (false) {
-          const MSG_EXTERNAL_logout_menu_link$$SRC_APP_APP_COMPONENT_TS_20 = goog.getMsg("Logout");
-          i18n_20 = MSG_EXTERNAL_logout_menu_link$$SRC_APP_APP_COMPONENT_TS_20;
+          const MSG_EXTERNAL_my_user_menu_link$$SRC_APP_APP_COMPONENT_TS_20 = goog.getMsg("My user");
+          i18n_20 = MSG_EXTERNAL_my_user_menu_link$$SRC_APP_APP_COMPONENT_TS_20;
         } else {
-          i18n_20 = "Logout";
+          i18n_20 = "My user";
         }
-        return [["menu", "matMenu"], ["sidenav", ""], ["counter", ""], i18n_0, i18n_1, i18n_2, i18n_3, i18n_4, i18n_5, i18n_6, i18n_7, i18n_8, i18n_9, i18n_10, i18n_11, i18n_12, i18n_13, i18n_14, i18n_15, i18n_16, i18n_17, i18n_18, i18n_19, i18n_20, [1, "app-viewport"], ["color", "primary"], ["mat-icon-button", "", 1, "menu-button", 3, "click"], ["mat-flat-button", "", "routerLink", "/", 1, "logo-button"], ["mat-flat-button", "", 1, "logo-button"], [1, "spacer"], ["matTooltip", "Session expiry countdown"], [3, "config"], ["mat-icon-button", "", "aria-label", "Example icon-button with a menu", 3, "matMenuTriggerFor"], ["mat-menu-item", "", 3, "click"], ["autosize", "", 1, "all-wrap", 3, "backdropClick"], ["role", "list"], ["routerLink", "/login", "routerLinkActive", "active"], ["routerLink", "/", "routerLinkActive", "active", 3, "routerLinkActiveOptions"], ["routerLink", "/events", "routerLinkActive", "active"], ["mat-subheader", ""], ["routerLink", "/locations", "routerLinkActive", "active"], ["routerLink", "/areas", "routerLinkActive", "active"], ["routerLink", "/zones", "routerLinkActive", "active"], ["routerLink", "/sensors", "routerLinkActive", "active"], ["routerLink", "/outputs", "routerLinkActive", "active"], ["routerLink", "/users", "routerLinkActive", "active"], [1, "menu"], ["routerLink", "/my-user", "routerLinkActive", "active"], ["matListItemIcon", ""], [3, "valueChange", "selectionChange", "value"], [3, "value"], [3, "disableRipple"], [3, "change", "checked"], ["routerLink", "/setup", "routerLinkActive", "active"], [1, "page-wrapper"], ["id", "overlay"], [1, "message"], [1, "page"], ["color", "primary", "mode", "indeterminate", "diameter", "100", 1, "ajax-loader"], [1, "footer"], [1, "links"], ["mat-button", "", "href", "https://www.arpi-security.info/", "target", "project"], [1, "separator"], ["mat-button", "", "href", "https://docs.arpi-security.info", "target", "docs"], [1, "versions"], [1, "version"], ["mat-flat-button", "", "routerLink", "/", 1, "logo-button", 3, "click"], ["src", "assets/images/argus-eye-30.png"], [1, "location"], [3, "event", "config"], ["role", "listitem"], ["src", "assets/images/argus-eye-64.png", "width", "24"], [3, "selectionChange", "value"], ["matListItemTitle", ""], ["routerLink", "/login", "routerLinkActive", "active", 3, "click"], ["routerLink", "/", "routerLinkActive", "active", 3, "click", "routerLinkActiveOptions"], ["routerLink", "/events", "routerLinkActive", "active", 3, "click"], ["routerLink", "/locations", "routerLinkActive", "active", 3, "click"], ["routerLink", "/areas", "routerLinkActive", "active", 3, "click"], ["routerLink", "/zones", "routerLinkActive", "active", 3, "click"], ["routerLink", "/sensors", "routerLinkActive", "active", 3, "click"], ["routerLink", "/outputs", "routerLinkActive", "active", 3, "click"], ["routerLink", "/users", "routerLinkActive", "active", 3, "click"], [3, "expanded"], ["routerLink", "/config/syren", "routerLinkActive", "active", 3, "click"], ["routerLink", "/config/keypad", "routerLinkActive", "active", 3, "click"], ["routerLink", "/config/notifications", "routerLinkActive", "active", 3, "click"], ["routerLink", "/config/network", "routerLinkActive", "active", 3, "click"], ["routerLink", "/config/clock", "routerLinkActive", "active", 3, "click"], ["routerLink", "/my-user", "routerLinkActive", "active", 3, "click"], [3, "click"], ["mat-line", ""], ["routerLink", "/setup", "routerLinkActive", "active", 3, "click"]];
+        let i18n_21;
+        if (false) {
+          const MSG_EXTERNAL_unregister_menu_link$$SRC_APP_APP_COMPONENT_TS_21 = goog.getMsg("Unregister device");
+          i18n_21 = MSG_EXTERNAL_unregister_menu_link$$SRC_APP_APP_COMPONENT_TS_21;
+        } else {
+          i18n_21 = "Unregister device";
+        }
+        let i18n_22;
+        if (false) {
+          const MSG_EXTERNAL_setup_menu_link$$SRC_APP_APP_COMPONENT_TS_22 = goog.getMsg("Setup");
+          i18n_22 = MSG_EXTERNAL_setup_menu_link$$SRC_APP_APP_COMPONENT_TS_22;
+        } else {
+          i18n_22 = "Setup";
+        }
+        let i18n_23;
+        if (false) {
+          const MSG_EXTERNAL_logout_menu_link$$SRC_APP_APP_COMPONENT_TS_23 = goog.getMsg("Logout");
+          i18n_23 = MSG_EXTERNAL_logout_menu_link$$SRC_APP_APP_COMPONENT_TS_23;
+        } else {
+          i18n_23 = "Logout";
+        }
+        let i18n_24;
+        if (false) {
+          const MSG_EXTERNAL_redirect_title$$SRC_APP_APP_COMPONENT_TS_24 = goog.getMsg("Remote access required");
+          i18n_24 = MSG_EXTERNAL_redirect_title$$SRC_APP_APP_COMPONENT_TS_24;
+        } else {
+          i18n_24 = "Remote access required";
+        }
+        let i18n_25;
+        if (false) {
+          const MSG_EXTERNAL_redirect_message$$SRC_APP_APP_COMPONENT_TS_25 = goog.getMsg(" Please use the remote web application to access this device. ");
+          i18n_25 = MSG_EXTERNAL_redirect_message$$SRC_APP_APP_COMPONENT_TS_25;
+        } else {
+          i18n_25 = " Please use the remote web application to access this device. ";
+        }
+        let i18n_26;
+        if (false) {
+          const MSG_EXTERNAL_redirect_message_2$$SRC_APP_APP_COMPONENT_TS_26 = goog.getMsg(" The access on this interface will be disabled in the future. ");
+          i18n_26 = MSG_EXTERNAL_redirect_message_2$$SRC_APP_APP_COMPONENT_TS_26;
+        } else {
+          i18n_26 = " The access on this interface will be disabled in the future. ";
+        }
+        return [["menu", "matMenu"], ["sidenav", ""], ["counter", ""], i18n_0, i18n_1, i18n_2, i18n_3, i18n_4, i18n_5, i18n_6, i18n_7, i18n_8, i18n_9, i18n_10, i18n_11, i18n_12, i18n_13, i18n_14, i18n_15, i18n_16, i18n_17, i18n_18, i18n_19, i18n_20, i18n_21, i18n_22, i18n_23, i18n_24, i18n_25, i18n_26, [1, "app-viewport"], ["color", "primary"], ["mat-icon-button", "", 1, "menu-button", 3, "click"], ["mat-flat-button", "", "routerLink", "/", 1, "logo-button"], ["mat-flat-button", "", 1, "logo-button"], [1, "spacer"], ["matTooltip", "Session expiry countdown"], [3, "config"], ["mat-icon-button", "", "aria-label", "Example icon-button with a menu", 3, "matMenuTriggerFor"], ["mat-menu-item", "", 3, "click"], ["autosize", "", 1, "all-wrap", 3, "backdropClick"], ["role", "list"], ["routerLink", "/login", "routerLinkActive", "active"], ["routerLink", "/", "routerLinkActive", "active", 3, "routerLinkActiveOptions"], ["routerLink", "/events", "routerLinkActive", "active"], ["mat-subheader", ""], ["routerLink", "/locations", "routerLinkActive", "active"], ["routerLink", "/areas", "routerLinkActive", "active"], ["routerLink", "/zones", "routerLinkActive", "active"], ["routerLink", "/sensors", "routerLinkActive", "active"], ["routerLink", "/outputs", "routerLinkActive", "active"], ["routerLink", "/users", "routerLinkActive", "active"], [1, "menu"], ["routerLink", "/my-user", "routerLinkActive", "active"], ["matListItemIcon", ""], [3, "valueChange", "selectionChange", "value"], [3, "value"], [3, "disableRipple"], [3, "change", "checked"], ["routerLink", "/setup", "routerLinkActive", "active"], [1, "page-wrapper"], ["id", "overlay"], [1, "message"], [1, "container"], [1, "page"], ["color", "primary", "mode", "indeterminate", "diameter", "100", 1, "ajax-loader"], [1, "footer"], [1, "links"], ["mat-button", "", "href", "https://www.arpi-security.info/", "target", "project"], [1, "separator"], ["mat-button", "", "href", "https://docs.arpi-security.info", "target", "docs"], [1, "versions"], [1, "version"], ["mat-flat-button", "", "routerLink", "/", 1, "logo-button", 3, "click"], ["src", "assets/images/argus-eye-30.png"], [1, "location"], [3, "event", "config"], ["role", "listitem"], ["src", "assets/images/argus-eye-64.png", "width", "24"], [3, "selectionChange", "value"], ["matListItemTitle", ""], ["routerLink", "/login", "routerLinkActive", "active", 3, "click"], ["routerLink", "/", "routerLinkActive", "active", 3, "click", "routerLinkActiveOptions"], ["routerLink", "/events", "routerLinkActive", "active", 3, "click"], ["routerLink", "/locations", "routerLinkActive", "active", 3, "click"], ["routerLink", "/areas", "routerLinkActive", "active", 3, "click"], ["routerLink", "/zones", "routerLinkActive", "active", 3, "click"], ["routerLink", "/sensors", "routerLinkActive", "active", 3, "click"], ["routerLink", "/outputs", "routerLinkActive", "active", 3, "click"], ["routerLink", "/users", "routerLinkActive", "active", 3, "click"], [3, "expanded"], ["routerLink", "/config/syren", "routerLinkActive", "active", 3, "click"], ["routerLink", "/config/keypad", "routerLinkActive", "active", 3, "click"], ["routerLink", "/config/notifications", "routerLinkActive", "active", 3, "click"], ["routerLink", "/config/network", "routerLinkActive", "active", 3, "click"], ["routerLink", "/config/clock", "routerLinkActive", "active", 3, "click"], ["routerLink", "/my-user", "routerLinkActive", "active", 3, "click"], [3, "click"], ["mat-line", ""], ["routerLink", "/setup", "routerLinkActive", "active", 3, "click"], [1, "redirect-message"], ["mat-card-avatar", ""], ["href", "https://app.arpi-security.info"]];
       },
       template: function AppComponent_Template(rf, ctx) {
         if (rf & 1) {
           const _r1 = ɵɵgetCurrentView();
-          ɵɵelementStart(0, "div", 24);
+          ɵɵelementStart(0, "div", 30);
           ɵɵconditionalCreate(1, AppComponent_Conditional_1_Template, 1, 0, "app-demo");
-          ɵɵelementStart(2, "mat-toolbar", 25)(3, "button", 26);
+          ɵɵelementStart(2, "mat-toolbar", 31)(3, "button", 32);
           ɵɵlistener("click", function AppComponent_Template_button_click_3_listener() {
             ɵɵrestoreView(_r1);
             const sidenav_r2 = ɵɵreference(24);
@@ -107401,17 +107498,17 @@ var AppComponent = class _AppComponent {
           ɵɵelementStart(4, "mat-icon");
           ɵɵtext(5, "menu");
           ɵɵelementEnd()();
-          ɵɵconditionalCreate(6, AppComponent_Conditional_6_Template, 4, 1, "button", 27);
-          ɵɵconditionalCreate(7, AppComponent_Conditional_7_Template, 4, 1, "button", 28);
-          ɵɵelement(8, "span", 29);
-          ɵɵelementStart(9, "div", 30);
-          ɵɵconditionalCreate(10, AppComponent_Conditional_10_Template, 2, 1, "countdown", 31);
+          ɵɵconditionalCreate(6, AppComponent_Conditional_6_Template, 4, 1, "button", 33);
+          ɵɵconditionalCreate(7, AppComponent_Conditional_7_Template, 4, 1, "button", 34);
+          ɵɵelement(8, "span", 35);
+          ɵɵelementStart(9, "div", 36);
+          ɵɵconditionalCreate(10, AppComponent_Conditional_10_Template, 2, 1, "countdown", 37);
           ɵɵelementEnd();
           ɵɵelement(11, "app-system-state");
-          ɵɵelementStart(12, "button", 32)(13, "mat-icon");
+          ɵɵelementStart(12, "button", 38)(13, "mat-icon");
           ɵɵtext(14, "more_vert");
           ɵɵelementEnd()()();
-          ɵɵelementStart(15, "mat-menu", null, 0)(17, "button", 33);
+          ɵɵelementStart(15, "mat-menu", null, 0)(17, "button", 39);
           ɵɵlistener("click", function AppComponent_Template_button_click_17_listener() {
             return ctx.openHelp();
           });
@@ -107421,32 +107518,32 @@ var AppComponent = class _AppComponent {
           ɵɵelementStart(20, "span");
           ɵɵtext(21, "Help");
           ɵɵelementEnd()()();
-          ɵɵelementStart(22, "mat-sidenav-container", 34);
+          ɵɵelementStart(22, "mat-sidenav-container", 40);
           ɵɵlistener("backdropClick", function AppComponent_Template_mat_sidenav_container_backdropClick_22_listener() {
             ɵɵrestoreView(_r1);
             const sidenav_r2 = ɵɵreference(24);
             return ɵɵresetView(sidenav_r2.close());
           });
           ɵɵelementStart(23, "mat-sidenav", null, 1);
-          ɵɵconditionalCreate(25, AppComponent_Conditional_25_Template, 3, 2, "mat-list", 35);
+          ɵɵconditionalCreate(25, AppComponent_Conditional_25_Template, 3, 2, "mat-list", 41);
           ɵɵelementStart(26, "mat-nav-list");
-          ɵɵconditionalCreate(27, AppComponent_Conditional_27_Template, 5, 0, "mat-list-item", 36);
-          ɵɵconditionalCreate(28, AppComponent_Conditional_28_Template, 5, 2, "mat-list-item", 37);
-          ɵɵconditionalCreate(29, AppComponent_Conditional_29_Template, 5, 0, "mat-list-item", 38);
-          ɵɵconditionalCreate(30, AppComponent_Conditional_30_Template, 2, 0, "h3", 39);
-          ɵɵconditionalCreate(31, AppComponent_Conditional_31_Template, 5, 0, "mat-list-item", 40);
-          ɵɵconditionalCreate(32, AppComponent_Conditional_32_Template, 5, 0, "mat-list-item", 41);
-          ɵɵconditionalCreate(33, AppComponent_Conditional_33_Template, 5, 0, "mat-list-item", 42);
-          ɵɵconditionalCreate(34, AppComponent_Conditional_34_Template, 5, 0, "mat-list-item", 43);
-          ɵɵconditionalCreate(35, AppComponent_Conditional_35_Template, 5, 0, "mat-list-item", 44);
-          ɵɵconditionalCreate(36, AppComponent_Conditional_36_Template, 5, 0, "mat-list-item", 45);
-          ɵɵconditionalCreate(37, AppComponent_Conditional_37_Template, 33, 1, "mat-accordion", 46);
+          ɵɵconditionalCreate(27, AppComponent_Conditional_27_Template, 5, 0, "mat-list-item", 42);
+          ɵɵconditionalCreate(28, AppComponent_Conditional_28_Template, 5, 2, "mat-list-item", 43);
+          ɵɵconditionalCreate(29, AppComponent_Conditional_29_Template, 5, 0, "mat-list-item", 44);
+          ɵɵconditionalCreate(30, AppComponent_Conditional_30_Template, 2, 0, "h3", 45);
+          ɵɵconditionalCreate(31, AppComponent_Conditional_31_Template, 5, 0, "mat-list-item", 46);
+          ɵɵconditionalCreate(32, AppComponent_Conditional_32_Template, 5, 0, "mat-list-item", 47);
+          ɵɵconditionalCreate(33, AppComponent_Conditional_33_Template, 5, 0, "mat-list-item", 48);
+          ɵɵconditionalCreate(34, AppComponent_Conditional_34_Template, 5, 0, "mat-list-item", 49);
+          ɵɵconditionalCreate(35, AppComponent_Conditional_35_Template, 5, 0, "mat-list-item", 50);
+          ɵɵconditionalCreate(36, AppComponent_Conditional_36_Template, 5, 0, "mat-list-item", 51);
+          ɵɵconditionalCreate(37, AppComponent_Conditional_37_Template, 33, 1, "mat-accordion", 52);
           ɵɵconditionalCreate(38, AppComponent_Conditional_38_Template, 1, 0, "mat-divider");
-          ɵɵconditionalCreate(39, AppComponent_Conditional_39_Template, 5, 0, "mat-list-item", 47);
-          ɵɵelementStart(40, "mat-list-item")(41, "mat-icon", 48);
+          ɵɵconditionalCreate(39, AppComponent_Conditional_39_Template, 5, 0, "mat-list-item", 53);
+          ɵɵelementStart(40, "mat-list-item")(41, "mat-icon", 54);
           ɵɵtext(42, "language");
           ɵɵelementEnd();
-          ɵɵelementStart(43, "mat-select", 49);
+          ɵɵelementStart(43, "mat-select", 55);
           ɵɵtwoWayListener("valueChange", function AppComponent_Template_mat_select_valueChange_43_listener($event) {
             ɵɵrestoreView(_r1);
             ɵɵtwoWayBindingSet(ctx.currentLocale, $event) || (ctx.currentLocale = $event);
@@ -107455,51 +107552,52 @@ var AppComponent = class _AppComponent {
           ɵɵlistener("selectionChange", function AppComponent_Template_mat_select_selectionChange_43_listener($event) {
             return ctx.onLocaleSelected($event);
           });
-          ɵɵrepeaterCreate(44, AppComponent_For_45_Template, 2, 2, "mat-option", 50, ɵɵrepeaterTrackByIdentity);
+          ɵɵrepeaterCreate(44, AppComponent_For_45_Template, 2, 2, "mat-option", 56, ɵɵrepeaterTrackByIdentity);
           ɵɵelementEnd()();
-          ɵɵelementStart(46, "mat-list-item", 51)(47, "mat-icon", 48);
+          ɵɵelementStart(46, "mat-list-item", 57)(47, "mat-icon", 54);
           ɵɵtext(48, "invert_colors");
           ɵɵelementEnd();
-          ɵɵelementStart(49, "mat-slide-toggle", 52);
+          ɵɵelementStart(49, "mat-slide-toggle", 58);
           ɵɵlistener("change", function AppComponent_Template_mat_slide_toggle_change_49_listener($event) {
             return ctx.onThemeSwitched($event);
           });
           ɵɵi18n(50, 3);
           ɵɵelementEnd()();
           ɵɵconditionalCreate(51, AppComponent_Conditional_51_Template, 5, 0, "mat-list-item");
-          ɵɵconditionalCreate(52, AppComponent_Conditional_52_Template, 5, 0, "mat-list-item", 53);
-          ɵɵconditionalCreate(53, AppComponent_Conditional_53_Template, 7, 1, "mat-list-item", 36);
+          ɵɵconditionalCreate(52, AppComponent_Conditional_52_Template, 5, 0, "mat-list-item", 59);
+          ɵɵconditionalCreate(53, AppComponent_Conditional_53_Template, 7, 1, "mat-list-item", 42);
           ɵɵelementEnd()();
-          ɵɵelementStart(54, "mat-sidenav-content", 54);
-          ɵɵconditionalCreate(55, AppComponent_Conditional_55_Template, 1, 0, "div", 55);
-          ɵɵconditionalCreate(56, AppComponent_Conditional_56_Template, 4, 1, "mat-card", 56);
-          ɵɵelementStart(57, "div", 57);
-          ɵɵconditionalCreate(58, AppComponent_Conditional_58_Template, 1, 0, "mat-progress-spinner", 58);
-          ɵɵelement(59, "router-outlet");
+          ɵɵelementStart(54, "mat-sidenav-content", 60);
+          ɵɵconditionalCreate(55, AppComponent_Conditional_55_Template, 1, 0, "div", 61);
+          ɵɵconditionalCreate(56, AppComponent_Conditional_56_Template, 4, 1, "mat-card", 62);
+          ɵɵconditionalCreate(57, AppComponent_Conditional_57_Template, 15, 0, "div", 63);
+          ɵɵelementStart(58, "div", 64);
+          ɵɵconditionalCreate(59, AppComponent_Conditional_59_Template, 1, 0, "mat-progress-spinner", 65);
+          ɵɵelement(60, "router-outlet");
           ɵɵelementEnd();
-          ɵɵelementStart(60, "div", 59)(61, "div", 60)(62, "a", 61);
-          ɵɵtext(63, "ArPI Home Security");
+          ɵɵelementStart(61, "div", 66)(62, "div", 67)(63, "a", 68);
+          ɵɵtext(64, "ArPI Home Security");
           ɵɵelementEnd();
-          ɵɵelementStart(64, "span", 62);
-          ɵɵtext(65, "\xA0|\xA0");
+          ɵɵelementStart(65, "span", 69);
+          ɵɵtext(66, "\xA0|\xA0");
           ɵɵelementEnd();
-          ɵɵelementStart(66, "a", 63);
-          ɵɵtext(67, "DOCS");
+          ɵɵelementStart(67, "a", 70);
+          ɵɵtext(68, "DOCS");
           ɵɵelementEnd()();
-          ɵɵelementStart(68, "div", 64)(69, "div", 65)(70, "b");
-          ɵɵtext(71, "WebApp");
+          ɵɵelementStart(69, "div", 71)(70, "div", 72)(71, "b");
+          ɵɵi18n(72, 4);
           ɵɵelementEnd();
-          ɵɵtext(72);
+          ɵɵtext(73);
           ɵɵelementEnd();
-          ɵɵelementStart(73, "div", 65)(74, "b");
-          ɵɵtext(75, "Server");
+          ɵɵelementStart(74, "div", 72)(75, "b");
+          ɵɵi18n(76, 5);
           ɵɵelementEnd();
-          ɵɵtext(76);
+          ɵɵtext(77);
           ɵɵelementEnd();
-          ɵɵelementStart(77, "div", 65)(78, "b");
-          ɵɵtext(79, "Board");
+          ɵɵelementStart(78, "div", 72)(79, "b");
+          ɵɵi18n(80, 6);
           ɵɵelementEnd();
-          ɵɵtext(80);
+          ɵɵtext(81);
           ɵɵelementEnd()()()()()();
         }
         if (rf & 2) {
@@ -107560,17 +107658,19 @@ var AppComponent = class _AppComponent {
           ɵɵconditional(ctx.disablePage ? 55 : -1);
           ɵɵadvance();
           ɵɵconditional(ctx.message && !ctx.displayLoader ? 56 : -1);
+          ɵɵadvance();
+          ɵɵconditional(ctx.redirectToRemote ? 57 : -1);
           ɵɵadvance(2);
-          ɵɵconditional(ctx.displayLoader ? 58 : -1);
+          ɵɵconditional(ctx.displayLoader ? 59 : -1);
           ɵɵadvance(14);
           ɵɵtextInterpolate1(" \xA0", ctx.versions.webapplicationVersion, " ");
           ɵɵadvance(4);
           ɵɵtextInterpolate1(" \xA0", ctx.versions.serverVersion || "-", " ");
           ɵɵadvance(4);
-          ɵɵtextInterpolate1(" \xA0v", ctx.versions.boardVersion || "-", " ");
+          ɵɵtextInterpolate1(" \xA0", ctx.versions.boardVersion ? "v" + ctx.versions.boardVersion : "-", " ");
         }
       },
-      dependencies: [CountdownComponent, RouterOutlet, RouterLink, RouterLinkActive, MatOption, MatButton, MatIconButton, MatCard, MatCardContent, MatAccordion, MatExpansionPanel, MatExpansionPanelHeader, MatExpansionPanelTitle, MatIcon, MatList, MatNavList, MatListItem, MatListItemIcon, MatListSubheaderCssMatStyler, MatDivider, MatListItemTitle, MatMenu, MatMenuItem, MatMenuTrigger, MatProgressSpinner, MatSelect, MatSidenav, MatSidenavContainer, MatSidenavContent, MatSlideToggle, MatToolbar, MatTooltip, SystemStateComponent, DemoComponent],
+      dependencies: [CountdownComponent, RouterOutlet, RouterLink, RouterLinkActive, MatOption, MatButton, MatIconButton, MatCard, MatCardAvatar, MatCardContent, MatCardHeader, MatCardSubtitle, MatCardTitle, MatAccordion, MatExpansionPanel, MatExpansionPanelHeader, MatExpansionPanelTitle, MatIcon, MatList, MatNavList, MatListItem, MatListItemIcon, MatListSubheaderCssMatStyler, MatDivider, MatListItemTitle, MatMenu, MatMenuItem, MatMenuTrigger, MatProgressSpinner, MatSelect, MatSidenav, MatSidenavContainer, MatSidenavContent, MatSlideToggle, MatToolbar, MatTooltip, SystemStateComponent, DemoComponent],
       styles: ["\n  app-root {\n  display: block;\n  width: 100%;\n  height: 100%;\n}\n.app-viewport[_ngcontent-%COMP%] {\n  --app-top-safe-area: var(--safe-area-inset-top, env(safe-area-inset-top, 0px));\n  --app-bottom-safe-area: var(--safe-area-inset-bottom, env(safe-area-inset-bottom, 0px));\n  position: fixed;\n  top: 0;\n  bottom: 0;\n  left: 0;\n  right: 0;\n  display: flex;\n  flex-direction: column;\n}\n.app-viewport[_ngcontent-%COMP%]   mat-sidenav[_ngcontent-%COMP%] {\n  width: 250px;\n}\n  .small-screen .logo {\n  display: none;\n}\n  .small-screen .footer {\n  flex-direction: column;\n}\n  .small-screen .footer .links {\n  flex-direction: column;\n}\n  .small-screen .footer .links .separator {\n  display: none;\n}\n  .small-screen .footer .versions {\n  flex-direction: row;\n  margin: 10px auto;\n}\n  .large-screen .menu-button, \n  .large-screen .logo-button {\n  display: none;\n}\n  .large-screen .footer {\n  flex-direction: row;\n}\n  .large-screen .footer .links {\n  flex-direction: row;\n  padding: 10px;\n}\n  .large-screen .footer .versions {\n  flex-direction: column;\n  margin: 5px;\n}\n  .large-screen .footer .versions .version {\n  display: flex;\n  font-size: 12px;\n  margin: 0px 10px;\n}\n  .large-screen .footer .versions .version b {\n  display: inline-block;\n  width: 55px;\n  text-align: right;\n}\n/*# sourceMappingURL=app.component.css.map */"]
     });
   }
@@ -107841,6 +107941,28 @@ var AppComponent = class _AppComponent {
         </mat-card>
       }
 
+      @if (redirectToRemote) {
+        <div class="container">
+          <div class="redirect-message">
+            <mat-card>
+              <mat-card-header>
+                <mat-icon mat-card-avatar>info</mat-icon>
+                <mat-card-title i18n="@@redirect title">Remote access required</mat-card-title>
+                <mat-card-subtitle i18n="@@redirect message">
+                  Please use the remote web application to access this device.
+                </mat-card-subtitle>
+                <mat-card-subtitle i18n="@@redirect message 2">
+                  The access on this interface will be disabled in the future.
+                </mat-card-subtitle>
+              </mat-card-header>
+              <mat-card-content>
+                <a href="https://app.arpi-security.info">https://app.arpi-security.info</a>
+              </mat-card-content>
+            </mat-card>
+          </div>
+        </div>
+      }
+
       <!-- main app container -->
       <div class="page">
         <!-- AJAX loading spinner triggered by the loader service -->
@@ -107860,16 +107982,16 @@ var AppComponent = class _AppComponent {
 
         <div class="versions">
           <div class="version">
-            <b>WebApp</b>
+            <b i18n="@@webapp version label">WebApp</b>
             &nbsp;{{ versions.webapplicationVersion }}
           </div>
           <div class="version">
-            <b>Server</b>
+            <b i18n="@@server version label">Server</b>
             &nbsp;{{ versions.serverVersion || "-" }}
           </div>
           <div class="version">
-            <b>Board</b>
-            &nbsp;v{{ versions.boardVersion || "-" }}
+            <b i18n="@@board version label">Board</b>
+            &nbsp;{{ versions.boardVersion ? "v" + versions.boardVersion : "-" }}
           </div>
         </div>
       </div>
@@ -108823,14 +108945,14 @@ var UserSshKeySetupDialogComponent = class _UserSshKeySetupDialogComponent {
 // src/app/components/user/user-card/user-card.component.ts
 function UserCardComponent_Conditional_2_Template(rf, ctx) {
   if (rf & 1) {
-    ɵɵelementStart(0, "mat-icon", 24);
+    ɵɵelementStart(0, "mat-icon", 20);
     ɵɵtext(1, "person");
     ɵɵelementEnd();
   }
 }
 function UserCardComponent_Conditional_3_Template(rf, ctx) {
   if (rf & 1) {
-    ɵɵelementStart(0, "mat-icon", 25);
+    ɵɵelementStart(0, "mat-icon", 21);
     ɵɵtext(1, "person_outline");
     ɵɵelementEnd();
   }
@@ -108851,12 +108973,12 @@ function UserCardComponent_Conditional_7_Template(rf, ctx) {
 }
 function UserCardComponent_Conditional_8_Template(rf, ctx) {
   if (rf & 1) {
-    ɵɵelement(0, "mat-spinner", 26);
+    ɵɵelement(0, "mat-spinner", 22);
   }
 }
 function UserCardComponent_Conditional_9_Conditional_4_Conditional_5_Template(rf, ctx) {
   if (rf & 1) {
-    ɵɵelementStart(0, "span", 35);
+    ɵɵelementStart(0, "span", 31);
     ɵɵtext(1);
     ɵɵelementEnd();
   }
@@ -108868,7 +108990,7 @@ function UserCardComponent_Conditional_9_Conditional_4_Conditional_5_Template(rf
 }
 function UserCardComponent_Conditional_9_Conditional_4_Conditional_6_Template(rf, ctx) {
   if (rf & 1) {
-    ɵɵelementStart(0, "span", 35);
+    ɵɵelementStart(0, "span", 31);
     ɵɵi18n(1, 7);
     ɵɵelementEnd();
   }
@@ -108876,21 +108998,21 @@ function UserCardComponent_Conditional_9_Conditional_4_Conditional_6_Template(rf
 function UserCardComponent_Conditional_9_Conditional_4_Template(rf, ctx) {
   if (rf & 1) {
     const _r1 = ɵɵgetCurrentView();
-    ɵɵelementStart(0, "mat-list-item")(1, "mat-icon", 33);
+    ɵɵelementStart(0, "mat-list-item")(1, "mat-icon", 29);
     ɵɵtext(2, "key");
     ɵɵelementEnd();
-    ɵɵelementStart(3, "span", 34);
+    ɵɵelementStart(3, "span", 30);
     ɵɵi18n(4, 6);
     ɵɵelementEnd();
-    ɵɵconditionalCreate(5, UserCardComponent_Conditional_9_Conditional_4_Conditional_5_Template, 2, 1, "span", 35);
-    ɵɵconditionalCreate(6, UserCardComponent_Conditional_9_Conditional_4_Conditional_6_Template, 2, 0, "span", 35);
-    ɵɵelementStart(7, "button", 36);
+    ɵɵconditionalCreate(5, UserCardComponent_Conditional_9_Conditional_4_Conditional_5_Template, 2, 1, "span", 31);
+    ɵɵconditionalCreate(6, UserCardComponent_Conditional_9_Conditional_4_Conditional_6_Template, 2, 0, "span", 31);
+    ɵɵelementStart(7, "button", 32);
     ɵɵlistener("click", function UserCardComponent_Conditional_9_Conditional_4_Template_button_click_7_listener() {
       ɵɵrestoreView(_r1);
       const ctx_r1 = ɵɵnextContext(2);
       return ɵɵresetView(ctx_r1.openDeleteRegistrationCodeDialog());
     });
-    ɵɵelementStart(8, "mat-icon", 37);
+    ɵɵelementStart(8, "mat-icon", 33);
     ɵɵtext(9, "delete");
     ɵɵelementEnd()()();
   }
@@ -108907,10 +109029,10 @@ function UserCardComponent_Conditional_9_Conditional_4_Template(rf, ctx) {
 function UserCardComponent_Conditional_9_Conditional_5_Template(rf, ctx) {
   if (rf & 1) {
     const _r3 = ɵɵgetCurrentView();
-    ɵɵelementStart(0, "mat-list-item")(1, "span", 34);
+    ɵɵelementStart(0, "mat-list-item")(1, "span", 30);
     ɵɵi18n(2, 8);
     ɵɵelementEnd();
-    ɵɵelementStart(3, "button", 38);
+    ɵɵelementStart(3, "button", 34);
     ɵɵlistener("click", function UserCardComponent_Conditional_9_Conditional_5_Template_button_click_3_listener() {
       ɵɵrestoreView(_r3);
       const ctx_r1 = ɵɵnextContext(2);
@@ -108929,20 +109051,20 @@ function UserCardComponent_Conditional_9_Conditional_5_Template(rf, ctx) {
 function UserCardComponent_Conditional_9_For_10_Template(rf, ctx) {
   if (rf & 1) {
     const _r4 = ɵɵgetCurrentView();
-    ɵɵelementStart(0, "mat-list-item")(1, "mat-icon", 33);
+    ɵɵelementStart(0, "mat-list-item")(1, "mat-icon", 29);
     ɵɵtext(2, "credit_card");
     ɵɵelementEnd();
-    ɵɵelementStart(3, "mat-checkbox", 39);
+    ɵɵelementStart(3, "mat-checkbox", 35);
     ɵɵlistener("change", function UserCardComponent_Conditional_9_For_10_Template_mat_checkbox_change_3_listener() {
       const card_r5 = ɵɵrestoreView(_r4).$implicit;
       const ctx_r1 = ɵɵnextContext(2);
       return ɵɵresetView(ctx_r1.toggleCardEnabled(card_r5.id));
     });
     ɵɵelementEnd();
-    ɵɵelementStart(4, "span", 34);
+    ɵɵelementStart(4, "span", 30);
     ɵɵtext(5);
     ɵɵelementEnd();
-    ɵɵelementStart(6, "div", 40)(7, "button", 28);
+    ɵɵelementStart(6, "div", 36)(7, "button", 24);
     ɵɵlistener("click", function UserCardComponent_Conditional_9_For_10_Template_button_click_7_listener() {
       const card_r5 = ɵɵrestoreView(_r4).$implicit;
       const ctx_r1 = ɵɵnextContext(2);
@@ -108966,10 +109088,10 @@ function UserCardComponent_Conditional_9_For_10_Template(rf, ctx) {
 function UserCardComponent_Conditional_9_Conditional_11_Template(rf, ctx) {
   if (rf & 1) {
     const _r6 = ɵɵgetCurrentView();
-    ɵɵelementStart(0, "mat-list-item")(1, "span", 34);
+    ɵɵelementStart(0, "mat-list-item")(1, "span", 30);
     ɵɵi18n(2, 9);
     ɵɵelementEnd();
-    ɵɵelementStart(3, "button", 38);
+    ɵɵelementStart(3, "button", 34);
     ɵɵlistener("click", function UserCardComponent_Conditional_9_Conditional_11_Template_button_click_3_listener() {
       ɵɵrestoreView(_r6);
       const ctx_r1 = ɵɵnextContext(2);
@@ -108988,8 +109110,8 @@ function UserCardComponent_Conditional_9_Conditional_11_Template(rf, ctx) {
 function UserCardComponent_Conditional_9_Conditional_12_Template(rf, ctx) {
   if (rf & 1) {
     ɵɵelementStart(0, "mat-list-item");
-    ɵɵelement(1, "mat-progress-spinner", 41);
-    ɵɵelementStart(2, "span", 34);
+    ɵɵelement(1, "mat-progress-spinner", 37);
+    ɵɵelementStart(2, "span", 30);
     ɵɵi18n(3, 10);
     ɵɵelementEnd()();
   }
@@ -108997,19 +109119,19 @@ function UserCardComponent_Conditional_9_Conditional_12_Template(rf, ctx) {
 function UserCardComponent_Conditional_9_Conditional_13_Conditional_1_Template(rf, ctx) {
   if (rf & 1) {
     const _r7 = ɵɵgetCurrentView();
-    ɵɵelementStart(0, "mat-list-item")(1, "mat-icon", 33);
+    ɵɵelementStart(0, "mat-list-item")(1, "mat-icon", 29);
     ɵɵtext(2, "terminal");
     ɵɵelementEnd();
-    ɵɵelementStart(3, "span", 34);
+    ɵɵelementStart(3, "span", 30);
     ɵɵi18n(4, 11);
     ɵɵelementEnd();
-    ɵɵelementStart(5, "button", 36);
+    ɵɵelementStart(5, "button", 32);
     ɵɵlistener("click", function UserCardComponent_Conditional_9_Conditional_13_Conditional_1_Template_button_click_5_listener() {
       ɵɵrestoreView(_r7);
       const ctx_r1 = ɵɵnextContext(3);
       return ɵɵresetView(ctx_r1.openDeleteSshKeyDialog());
     });
-    ɵɵelementStart(6, "mat-icon", 37);
+    ɵɵelementStart(6, "mat-icon", 33);
     ɵɵtext(7, "delete");
     ɵɵelementEnd()()();
   }
@@ -109022,10 +109144,10 @@ function UserCardComponent_Conditional_9_Conditional_13_Conditional_1_Template(r
 function UserCardComponent_Conditional_9_Conditional_13_Conditional_2_Template(rf, ctx) {
   if (rf & 1) {
     const _r8 = ɵɵgetCurrentView();
-    ɵɵelementStart(0, "mat-list-item")(1, "span", 34);
+    ɵɵelementStart(0, "mat-list-item")(1, "span", 30);
     ɵɵi18n(2, 12);
     ɵɵelementEnd();
-    ɵɵelementStart(3, "button", 38);
+    ɵɵelementStart(3, "button", 34);
     ɵɵlistener("click", function UserCardComponent_Conditional_9_Conditional_13_Conditional_2_Template_button_click_3_listener() {
       ɵɵrestoreView(_r8);
       const ctx_r1 = ɵɵnextContext(3);
@@ -109058,19 +109180,19 @@ function UserCardComponent_Conditional_9_Conditional_13_Template(rf, ctx) {
 function UserCardComponent_Conditional_9_Conditional_14_Conditional_0_Template(rf, ctx) {
   if (rf & 1) {
     const _r9 = ɵɵgetCurrentView();
-    ɵɵelementStart(0, "mat-list-item")(1, "mat-icon", 33);
+    ɵɵelementStart(0, "mat-list-item")(1, "mat-icon", 29);
     ɵɵtext(2, "vpn_key");
     ɵɵelementEnd();
-    ɵɵelementStart(3, "span", 34);
+    ɵɵelementStart(3, "span", 30);
     ɵɵi18n(4, 13);
     ɵɵelementEnd();
-    ɵɵelementStart(5, "button", 36);
+    ɵɵelementStart(5, "button", 32);
     ɵɵlistener("click", function UserCardComponent_Conditional_9_Conditional_14_Conditional_0_Template_button_click_5_listener() {
       ɵɵrestoreView(_r9);
       const ctx_r1 = ɵɵnextContext(3);
       return ɵɵresetView(ctx_r1.removeMCPToken());
     });
-    ɵɵelementStart(6, "mat-icon", 37);
+    ɵɵelementStart(6, "mat-icon", 33);
     ɵɵtext(7, "delete");
     ɵɵelementEnd()()();
   }
@@ -109083,10 +109205,10 @@ function UserCardComponent_Conditional_9_Conditional_14_Conditional_0_Template(r
 function UserCardComponent_Conditional_9_Conditional_14_Conditional_1_Template(rf, ctx) {
   if (rf & 1) {
     const _r10 = ɵɵgetCurrentView();
-    ɵɵelementStart(0, "mat-list-item")(1, "span", 34);
+    ɵɵelementStart(0, "mat-list-item")(1, "span", 30);
     ɵɵi18n(2, 14);
     ɵɵelementEnd();
-    ɵɵelementStart(3, "button", 38);
+    ɵɵelementStart(3, "button", 34);
     ɵɵlistener("click", function UserCardComponent_Conditional_9_Conditional_14_Conditional_1_Template_button_click_3_listener() {
       ɵɵrestoreView(_r10);
       const ctx_r1 = ɵɵnextContext(3);
@@ -109117,13 +109239,13 @@ function UserCardComponent_Conditional_9_Conditional_14_Template(rf, ctx) {
 function UserCardComponent_Conditional_9_Conditional_15_Template(rf, ctx) {
   if (rf & 1) {
     ɵɵelement(0, "mat-divider");
-    ɵɵelementStart(1, "h3", 32);
+    ɵɵelementStart(1, "h3", 28);
     ɵɵi18n(2, 15);
     ɵɵelementEnd();
-    ɵɵelementStart(3, "mat-list-item")(4, "mat-icon", 33);
+    ɵɵelementStart(3, "mat-list-item")(4, "mat-icon", 29);
     ɵɵtext(5, "notes");
     ɵɵelementEnd();
-    ɵɵelementStart(6, "span", 34);
+    ɵɵelementStart(6, "span", 30);
     ɵɵtext(7);
     ɵɵelementEnd()();
   }
@@ -109133,55 +109255,16 @@ function UserCardComponent_Conditional_9_Conditional_15_Template(rf, ctx) {
     ɵɵtextInterpolate(ctx_r1.user.comment);
   }
 }
-function UserCardComponent_Conditional_9_Conditional_16_Conditional_5_Template(rf, ctx) {
-  if (rf & 1) {
-    ɵɵtext(0, " fingerprint ");
-  }
-}
-function UserCardComponent_Conditional_9_Conditional_16_Conditional_6_Template(rf, ctx) {
-  if (rf & 1) {
-    ɵɵtext(0, " fingerprint_off ");
-  }
-}
-function UserCardComponent_Conditional_9_Conditional_16_Template(rf, ctx) {
-  if (rf & 1) {
-    const _r11 = ɵɵgetCurrentView();
-    ɵɵelement(0, "mat-divider");
-    ɵɵelementStart(1, "h3", 32);
-    ɵɵi18n(2, 16);
-    ɵɵelementEnd();
-    ɵɵelementStart(3, "mat-list-item")(4, "mat-icon", 33);
-    ɵɵconditionalCreate(5, UserCardComponent_Conditional_9_Conditional_16_Conditional_5_Template, 1, 0)(6, UserCardComponent_Conditional_9_Conditional_16_Conditional_6_Template, 1, 0);
-    ɵɵelementEnd();
-    ɵɵelementStart(7, "span", 34);
-    ɵɵi18n(8, 17);
-    ɵɵelementEnd();
-    ɵɵelementStart(9, "mat-slide-toggle", 42);
-    ɵɵlistener("change", function UserCardComponent_Conditional_9_Conditional_16_Template_mat_slide_toggle_change_9_listener($event) {
-      ɵɵrestoreView(_r11);
-      const ctx_r1 = ɵɵnextContext(2);
-      return ɵɵresetView($event.checked ? ctx_r1.enableBiometricLogin() : ctx_r1.disableBiometricLogin());
-    });
-    ɵɵelementEnd()();
-  }
-  if (rf & 2) {
-    const ctx_r1 = ɵɵnextContext(2);
-    ɵɵadvance(5);
-    ɵɵconditional(ctx_r1.isBiometricEnabled() ? 5 : 6);
-    ɵɵadvance(4);
-    ɵɵproperty("checked", ctx_r1.isBiometricEnabled())("disabled", ctx_r1.disabled);
-  }
-}
 function UserCardComponent_Conditional_9_Template(rf, ctx) {
   if (rf & 1) {
     ɵɵelement(0, "mat-divider");
-    ɵɵelementStart(1, "mat-list")(2, "h3", 32);
+    ɵɵelementStart(1, "mat-list")(2, "h3", 28);
     ɵɵi18n(3, 4);
     ɵɵelementEnd();
     ɵɵconditionalCreate(4, UserCardComponent_Conditional_9_Conditional_4_Template, 10, 3, "mat-list-item");
     ɵɵconditionalCreate(5, UserCardComponent_Conditional_9_Conditional_5_Template, 6, 1, "mat-list-item");
     ɵɵelement(6, "mat-divider");
-    ɵɵelementStart(7, "h3", 32);
+    ɵɵelementStart(7, "h3", 28);
     ɵɵi18n(8, 5);
     ɵɵelementEnd();
     ɵɵrepeaterCreate(9, UserCardComponent_Conditional_9_For_10_Template, 10, 4, "mat-list-item", null, ɵɵrepeaterTrackByIdentity);
@@ -109190,7 +109273,6 @@ function UserCardComponent_Conditional_9_Template(rf, ctx) {
     ɵɵconditionalCreate(13, UserCardComponent_Conditional_9_Conditional_13_Template, 3, 2);
     ɵɵconditionalCreate(14, UserCardComponent_Conditional_9_Conditional_14_Template, 2, 2);
     ɵɵconditionalCreate(15, UserCardComponent_Conditional_9_Conditional_15_Template, 8, 1);
-    ɵɵconditionalCreate(16, UserCardComponent_Conditional_9_Conditional_16_Template, 10, 3);
     ɵɵelementEnd();
   }
   if (rf & 2) {
@@ -109211,20 +109293,18 @@ function UserCardComponent_Conditional_9_Template(rf, ctx) {
     ɵɵconditional(ctx_r1.user.role === ctx_r1.roleTypes.ADMIN && ctx_r1.hasMCPToken !== null ? 14 : -1);
     ɵɵadvance();
     ɵɵconditional(ctx_r1.user.comment ? 15 : -1);
-    ɵɵadvance();
-    ɵɵconditional(ctx_r1.biometricAvailable ? 16 : -1);
   }
 }
 function UserCardComponent_Conditional_25_Template(rf, ctx) {
   if (rf & 1) {
-    const _r12 = ɵɵgetCurrentView();
-    ɵɵelementStart(0, "button", 30);
+    const _r11 = ɵɵgetCurrentView();
+    ɵɵelementStart(0, "button", 26);
     ɵɵlistener("click", function UserCardComponent_Conditional_25_Template_button_click_0_listener() {
-      ɵɵrestoreView(_r12);
+      ɵɵrestoreView(_r11);
       const ctx_r1 = ɵɵnextContext();
       return ɵɵresetView(ctx_r1.onClickRegisterCard());
     });
-    ɵɵi18n(1, 18);
+    ɵɵi18n(1, 16);
     ɵɵelementEnd();
   }
   if (rf & 2) {
@@ -109234,14 +109314,14 @@ function UserCardComponent_Conditional_25_Template(rf, ctx) {
 }
 function UserCardComponent_Conditional_26_Template(rf, ctx) {
   if (rf & 1) {
-    const _r13 = ɵɵgetCurrentView();
-    ɵɵelementStart(0, "button", 30);
+    const _r12 = ɵɵgetCurrentView();
+    ɵɵelementStart(0, "button", 26);
     ɵɵlistener("click", function UserCardComponent_Conditional_26_Template_button_click_0_listener() {
-      ɵɵrestoreView(_r13);
+      ɵɵrestoreView(_r12);
       const ctx_r1 = ɵɵnextContext();
       return ɵɵresetView(ctx_r1.openSshKeySetupDialog());
     });
-    ɵɵi18n(1, 19);
+    ɵɵi18n(1, 17);
     ɵɵelementEnd();
   }
   if (rf & 2) {
@@ -109251,14 +109331,14 @@ function UserCardComponent_Conditional_26_Template(rf, ctx) {
 }
 function UserCardComponent_Conditional_27_Template(rf, ctx) {
   if (rf & 1) {
-    const _r14 = ɵɵgetCurrentView();
-    ɵɵelementStart(0, "button", 30);
+    const _r13 = ɵɵgetCurrentView();
+    ɵɵelementStart(0, "button", 26);
     ɵɵlistener("click", function UserCardComponent_Conditional_27_Template_button_click_0_listener() {
-      ɵɵrestoreView(_r14);
+      ɵɵrestoreView(_r13);
       const ctx_r1 = ɵɵnextContext();
       return ɵɵresetView(ctx_r1.getMCPToken());
     });
-    ɵɵi18n(1, 20);
+    ɵɵi18n(1, 18);
     ɵɵelementEnd();
   }
   if (rf & 2) {
@@ -109266,64 +109346,11 @@ function UserCardComponent_Conditional_27_Template(rf, ctx) {
     ɵɵproperty("disabled", !ctx_r1.canManageMCP || ctx_r1.disabled || ctx_r1.hasMCPToken === true);
   }
 }
-function UserCardComponent_Conditional_28_Conditional_1_Template(rf, ctx) {
-  if (rf & 1) {
-    const _r15 = ɵɵgetCurrentView();
-    ɵɵelementStart(0, "button", 30);
-    ɵɵlistener("click", function UserCardComponent_Conditional_28_Conditional_1_Template_button_click_0_listener() {
-      ɵɵrestoreView(_r15);
-      const ctx_r1 = ɵɵnextContext(2);
-      return ɵɵresetView(ctx_r1.enableBiometricLogin());
-    });
-    ɵɵelementStart(1, "span");
-    ɵɵi18n(2, 21);
-    ɵɵelementEnd()();
-  }
-  if (rf & 2) {
-    const ctx_r1 = ɵɵnextContext(2);
-    ɵɵproperty("disabled", ctx_r1.disabled);
-  }
-}
-function UserCardComponent_Conditional_28_Conditional_2_Template(rf, ctx) {
-  if (rf & 1) {
-    const _r16 = ɵɵgetCurrentView();
-    ɵɵelementStart(0, "button", 44);
-    ɵɵlistener("click", function UserCardComponent_Conditional_28_Conditional_2_Template_button_click_0_listener() {
-      ɵɵrestoreView(_r16);
-      const ctx_r1 = ɵɵnextContext(2);
-      return ɵɵresetView(ctx_r1.disableBiometricLogin());
-    });
-    ɵɵelementStart(1, "span");
-    ɵɵi18n(2, 22);
-    ɵɵelementEnd()();
-  }
-  if (rf & 2) {
-    const ctx_r1 = ɵɵnextContext(2);
-    ɵɵproperty("disabled", ctx_r1.disabled);
-  }
-}
-function UserCardComponent_Conditional_28_Template(rf, ctx) {
-  if (rf & 1) {
-    ɵɵelementStart(0, "div");
-    ɵɵconditionalCreate(1, UserCardComponent_Conditional_28_Conditional_1_Template, 3, 1, "button", 31);
-    ɵɵconditionalCreate(2, UserCardComponent_Conditional_28_Conditional_2_Template, 3, 1, "button", 43);
-    ɵɵelementEnd();
-  }
-  if (rf & 2) {
-    const ctx_r1 = ɵɵnextContext();
-    ɵɵadvance();
-    ɵɵconditional(!ctx_r1.isBiometricEnabled() ? 1 : -1);
-    ɵɵadvance();
-    ɵɵconditional(ctx_r1.isBiometricEnabled() ? 2 : -1);
-  }
-}
 var UserCardComponent = class _UserCardComponent {
-  constructor(authenticationService, cardService, eventService, userService, biometricService, snackBar) {
-    this.authenticationService = authenticationService;
+  constructor(cardService, eventService, userService, snackBar) {
     this.cardService = cardService;
     this.eventService = eventService;
     this.userService = userService;
-    this.biometricService = biometricService;
     this.snackBar = snackBar;
     this.disabled = false;
     this.canManageUser = false;
@@ -109339,16 +109366,7 @@ var UserCardComponent = class _UserCardComponent {
     this.registeringCard = false;
     this.hasSshKey = false;
     this.hasMCPToken = null;
-    this.biometricAvailable = false;
-    this.useBiometric = null;
     this.dialog = inject2(MatDialog);
-    this.biometricService.isAvailable().then(result => {
-      if (result) {
-        const locationId = localStorage.getItem("selectedLocationId") || "";
-        this.biometricService.isBiometricEnabled(locationId);
-        this.useBiometric = this.biometricService.isBiometricEnabled(locationId);
-      }
-    });
     this.eventService.listen("card_registered").subscribe(result => {
       this.registeringCard = false;
       this.snackBar.dismiss();
@@ -109369,12 +109387,6 @@ var UserCardComponent = class _UserCardComponent {
     });
   }
   ngOnInit() {
-    const userId = this.authenticationService.getUserId();
-    if (this.user.id === userId) {
-      this.biometricService.isAvailable().then(result => {
-        this.biometricAvailable = result;
-      });
-    }
     let loadHasSshKey;
     if (this.canManageSshKeys) {
       loadHasSshKey = this.userService.hasSshKey(this.user.id);
@@ -109584,19 +109596,6 @@ var UserCardComponent = class _UserCardComponent {
       })
     });
   }
-  isBiometricEnabled() {
-    return this.useBiometric === true || this.useBiometric === null;
-  }
-  enableBiometricLogin() {
-    const locationId = localStorage.getItem("selectedLocationId") || "";
-    this.biometricService.enableBiometricLogin(locationId);
-    this.useBiometric = null;
-  }
-  disableBiometricLogin() {
-    const locationId = localStorage.getItem("selectedLocationId") || "";
-    this.biometricService.disableBiometricLogin(locationId);
-    this.useBiometric = false;
-  }
   getMCPToken() {
     this.loading = true;
     this.userService.getMCPToken(this.user.id).pipe(finalize(() => this.loading = false)).subscribe({
@@ -109630,7 +109629,7 @@ var UserCardComponent = class _UserCardComponent {
   }
   static {
     this.ɵfac = function UserCardComponent_Factory(__ngFactoryType__) {
-      return new (__ngFactoryType__ || _UserCardComponent)(ɵɵdirectiveInject(AUTHENTICATION_SERVICE), ɵɵdirectiveInject("CardService"), ɵɵdirectiveInject("EventService"), ɵɵdirectiveInject("UserService"), ɵɵdirectiveInject("BiometricService"), ɵɵdirectiveInject(MatSnackBar));
+      return new (__ngFactoryType__ || _UserCardComponent)(ɵɵdirectiveInject("CardService"), ɵɵdirectiveInject("EventService"), ɵɵdirectiveInject("UserService"), ɵɵdirectiveInject(MatSnackBar));
     };
   }
   static {
@@ -109651,8 +109650,8 @@ var UserCardComponent = class _UserCardComponent {
         onNavigateToUserEdit: "onNavigateToUserEdit"
       },
       standalone: false,
-      decls: 29,
-      vars: 15,
+      decls: 28,
+      vars: 14,
       consts: () => {
         let i18n_0;
         if (false) {
@@ -109761,100 +109760,71 @@ var UserCardComponent = class _UserCardComponent {
         }
         let i18n_15;
         if (false) {
-          const MSG_EXTERNAL_user_biometric_login$$SRC_APP_COMPONENTS_USER_USER_CARD_USER_CARD_COMPONENT_TS_15 = goog.getMsg("Biometric login");
-          i18n_15 = MSG_EXTERNAL_user_biometric_login$$SRC_APP_COMPONENTS_USER_USER_CARD_USER_CARD_COMPONENT_TS_15;
+          const MSG_EXTERNAL_user_register_card_button$$SRC_APP_COMPONENTS_USER_USER_CARD_USER_CARD_COMPONENT_TS_15 = goog.getMsg(" Register card ");
+          i18n_15 = MSG_EXTERNAL_user_register_card_button$$SRC_APP_COMPONENTS_USER_USER_CARD_USER_CARD_COMPONENT_TS_15;
         } else {
-          i18n_15 = "Biometric login";
+          i18n_15 = " Register card ";
         }
         let i18n_16;
         if (false) {
-          const MSG_EXTERNAL_user_biometric_login$$SRC_APP_COMPONENTS_USER_USER_CARD_USER_CARD_COMPONENT_TS_16 = goog.getMsg("Biometric login");
-          i18n_16 = MSG_EXTERNAL_user_biometric_login$$SRC_APP_COMPONENTS_USER_USER_CARD_USER_CARD_COMPONENT_TS_16;
+          const MSG_EXTERNAL_user_generate_ssk_key$$SRC_APP_COMPONENTS_USER_USER_CARD_USER_CARD_COMPONENT_TS_16 = goog.getMsg(" Setup SSH key ");
+          i18n_16 = MSG_EXTERNAL_user_generate_ssk_key$$SRC_APP_COMPONENTS_USER_USER_CARD_USER_CARD_COMPONENT_TS_16;
         } else {
-          i18n_16 = "Biometric login";
+          i18n_16 = " Setup SSH key ";
         }
         let i18n_17;
         if (false) {
-          const MSG_EXTERNAL_user_register_card_button$$SRC_APP_COMPONENTS_USER_USER_CARD_USER_CARD_COMPONENT_TS_17 = goog.getMsg(" Register card ");
-          i18n_17 = MSG_EXTERNAL_user_register_card_button$$SRC_APP_COMPONENTS_USER_USER_CARD_USER_CARD_COMPONENT_TS_17;
+          const MSG_EXTERNAL_user_get_mcp_token$$SRC_APP_COMPONENTS_USER_USER_CARD_USER_CARD_COMPONENT_TS_17 = goog.getMsg(" Get MCP token ");
+          i18n_17 = MSG_EXTERNAL_user_get_mcp_token$$SRC_APP_COMPONENTS_USER_USER_CARD_USER_CARD_COMPONENT_TS_17;
         } else {
-          i18n_17 = " Register card ";
+          i18n_17 = " Get MCP token ";
         }
-        let i18n_18;
-        if (false) {
-          const MSG_EXTERNAL_user_generate_ssk_key$$SRC_APP_COMPONENTS_USER_USER_CARD_USER_CARD_COMPONENT_TS_18 = goog.getMsg(" Setup SSH key ");
-          i18n_18 = MSG_EXTERNAL_user_generate_ssk_key$$SRC_APP_COMPONENTS_USER_USER_CARD_USER_CARD_COMPONENT_TS_18;
-        } else {
-          i18n_18 = " Setup SSH key ";
-        }
-        let i18n_19;
-        if (false) {
-          const MSG_EXTERNAL_user_get_mcp_token$$SRC_APP_COMPONENTS_USER_USER_CARD_USER_CARD_COMPONENT_TS_19 = goog.getMsg(" Get MCP token ");
-          i18n_19 = MSG_EXTERNAL_user_get_mcp_token$$SRC_APP_COMPONENTS_USER_USER_CARD_USER_CARD_COMPONENT_TS_19;
-        } else {
-          i18n_19 = " Get MCP token ";
-        }
-        let i18n_20;
-        if (false) {
-          const MSG_EXTERNAL_user_enable_biometric$$SRC_APP_COMPONENTS_USER_USER_CARD_USER_CARD_COMPONENT_TS_20 = goog.getMsg("Enable biometric login");
-          i18n_20 = MSG_EXTERNAL_user_enable_biometric$$SRC_APP_COMPONENTS_USER_USER_CARD_USER_CARD_COMPONENT_TS_20;
-        } else {
-          i18n_20 = "Enable biometric login";
-        }
-        let i18n_21;
-        if (false) {
-          const MSG_EXTERNAL_user_disable_biometric$$SRC_APP_COMPONENTS_USER_USER_CARD_USER_CARD_COMPONENT_TS_21 = goog.getMsg("Disable biometric login");
-          i18n_21 = MSG_EXTERNAL_user_disable_biometric$$SRC_APP_COMPONENTS_USER_USER_CARD_USER_CARD_COMPONENT_TS_21;
-        } else {
-          i18n_21 = "Disable biometric login";
-        }
-        return [["menu", "matMenu"], i18n_0, i18n_1, i18n_2, i18n_3, i18n_4, i18n_5, i18n_6, i18n_7, i18n_8, i18n_9, i18n_10, i18n_11, i18n_12, i18n_13, i18n_14, i18n_15, i18n_16, i18n_17, i18n_18, i18n_19, i18n_20, i18n_21, [1, "user-card", "container-item"], ["mat-card-avatar", "", "matListIcon", "", "mat-card-avatar", "", 1, "avatar"], ["matListIcon", "", "mat-card-avatar", "", 1, "avatar"], ["color", "primary", "diameter", "40"], ["mat-icon-button", "", "color", "primary", 3, "click", "disabled"], ["mat-icon-button", "", "color", "warn", 3, "click", "disabled"], ["mat-icon-button", "", 3, "matMenuTriggerFor"], ["mat-menu-item", "", "color", "primary", 3, "click", "disabled"], ["mat-menu-item", "", "color", "primary", 3, "disabled"], ["matSubheader", ""], ["matListItemIcon", ""], ["matListItemTitle", ""], ["matListItemLine", ""], ["mat-icon-button", "", "matListItemMeta", "", "color", "warn", 3, "click", "disabled"], ["color", "warn"], ["mat-icon-button", "", "matListItemMeta", "", "color", "primary", 3, "click", "disabled"], ["color", "primary", 3, "change", "checked", "disabled"], ["matListItemMeta", ""], ["matListItemIcon", "", "color", "primary", "mode", "indeterminate", "diameter", "20"], ["matListItemMeta", "", "color", "primary", 3, "change", "checked", "disabled"], ["mat-menu-item", "", "color", "warn", 3, "disabled"], ["mat-menu-item", "", "color", "warn", 3, "click", "disabled"]];
+        return [["menu", "matMenu"], i18n_0, i18n_1, i18n_2, i18n_3, i18n_4, i18n_5, i18n_6, i18n_7, i18n_8, i18n_9, i18n_10, i18n_11, i18n_12, i18n_13, i18n_14, i18n_15, i18n_16, i18n_17, [1, "user-card", "container-item"], ["mat-card-avatar", "", "matListIcon", "", "mat-card-avatar", "", 1, "avatar"], ["matListIcon", "", "mat-card-avatar", "", 1, "avatar"], ["color", "primary", "diameter", "40"], ["mat-icon-button", "", "color", "primary", 3, "click", "disabled"], ["mat-icon-button", "", "color", "warn", 3, "click", "disabled"], ["mat-icon-button", "", 3, "matMenuTriggerFor"], ["mat-menu-item", "", "color", "primary", 3, "click", "disabled"], ["mat-menu-item", "", "color", "primary", 3, "disabled"], ["matSubheader", ""], ["matListItemIcon", ""], ["matListItemTitle", ""], ["matListItemLine", ""], ["mat-icon-button", "", "matListItemMeta", "", "color", "warn", 3, "click", "disabled"], ["color", "warn"], ["mat-icon-button", "", "matListItemMeta", "", "color", "primary", 3, "click", "disabled"], ["color", "primary", 3, "change", "checked", "disabled"], ["matListItemMeta", ""], ["matListItemIcon", "", "color", "primary", "mode", "indeterminate", "diameter", "20"]];
       },
       template: function UserCardComponent_Template(rf, ctx) {
         if (rf & 1) {
-          ɵɵelementStart(0, "mat-card", 23)(1, "mat-card-header");
-          ɵɵconditionalCreate(2, UserCardComponent_Conditional_2_Template, 2, 0, "mat-icon", 24);
-          ɵɵconditionalCreate(3, UserCardComponent_Conditional_3_Template, 2, 0, "mat-icon", 25);
+          ɵɵelementStart(0, "mat-card", 19)(1, "mat-card-header");
+          ɵɵconditionalCreate(2, UserCardComponent_Conditional_2_Template, 2, 0, "mat-icon", 20);
+          ɵɵconditionalCreate(3, UserCardComponent_Conditional_3_Template, 2, 0, "mat-icon", 21);
           ɵɵelementStart(4, "mat-card-title");
           ɵɵtext(5);
           ɵɵelementEnd();
           ɵɵconditionalCreate(6, UserCardComponent_Conditional_6_Template, 2, 0, "mat-card-subtitle");
           ɵɵconditionalCreate(7, UserCardComponent_Conditional_7_Template, 2, 0, "mat-card-subtitle");
           ɵɵelementEnd();
-          ɵɵconditionalCreate(8, UserCardComponent_Conditional_8_Template, 1, 0, "mat-spinner", 26);
-          ɵɵconditionalCreate(9, UserCardComponent_Conditional_9_Template, 17, 8);
+          ɵɵconditionalCreate(8, UserCardComponent_Conditional_8_Template, 1, 0, "mat-spinner", 22);
+          ɵɵconditionalCreate(9, UserCardComponent_Conditional_9_Template, 16, 7);
           ɵɵelement(10, "mat-divider");
-          ɵɵelementStart(11, "mat-card-actions")(12, "button", 27);
+          ɵɵelementStart(11, "mat-card-actions")(12, "button", 23);
           ɵɵlistener("click", function UserCardComponent_Template_button_click_12_listener() {
             return ctx.navigateToUserEdit();
           });
           ɵɵelementStart(13, "mat-icon");
           ɵɵtext(14, "mode_edit");
           ɵɵelementEnd()();
-          ɵɵelementStart(15, "button", 28);
+          ɵɵelementStart(15, "button", 24);
           ɵɵlistener("click", function UserCardComponent_Template_button_click_15_listener() {
             return ctx.openDeleteUserDialog();
           });
           ɵɵelementStart(16, "mat-icon");
           ɵɵtext(17, "delete");
           ɵɵelementEnd()();
-          ɵɵelementStart(18, "button", 29)(19, "mat-icon");
+          ɵɵelementStart(18, "button", 25)(19, "mat-icon");
           ɵɵtext(20, "more_vert");
           ɵɵelementEnd()();
-          ɵɵelementStart(21, "mat-menu", null, 0)(23, "button", 30);
+          ɵɵelementStart(21, "mat-menu", null, 0)(23, "button", 26);
           ɵɵlistener("click", function UserCardComponent_Template_button_click_23_listener() {
             return ctx.openDeviceRegistrationDialog();
           });
           ɵɵi18n(24, 1);
           ɵɵelementEnd();
-          ɵɵconditionalCreate(25, UserCardComponent_Conditional_25_Template, 2, 1, "button", 31);
-          ɵɵconditionalCreate(26, UserCardComponent_Conditional_26_Template, 2, 1, "button", 31);
-          ɵɵconditionalCreate(27, UserCardComponent_Conditional_27_Template, 2, 1, "button", 31);
-          ɵɵconditionalCreate(28, UserCardComponent_Conditional_28_Template, 3, 2, "div");
+          ɵɵconditionalCreate(25, UserCardComponent_Conditional_25_Template, 2, 1, "button", 27);
+          ɵɵconditionalCreate(26, UserCardComponent_Conditional_26_Template, 2, 1, "button", 27);
+          ɵɵconditionalCreate(27, UserCardComponent_Conditional_27_Template, 2, 1, "button", 27);
           ɵɵelementEnd()()();
         }
         if (rf & 2) {
-          const menu_r17 = ɵɵreference(22);
+          const menu_r14 = ɵɵreference(22);
           ɵɵadvance(2);
           ɵɵconditional(ctx.user.role === ctx.roleTypes.ADMIN ? 2 : -1);
           ɵɵadvance();
@@ -109874,7 +109844,7 @@ var UserCardComponent = class _UserCardComponent {
           ɵɵadvance(3);
           ɵɵproperty("disabled", !ctx.canManageUser || ctx.disabled);
           ɵɵadvance(3);
-          ɵɵproperty("matMenuTriggerFor", menu_r17);
+          ɵɵproperty("matMenuTriggerFor", menu_r14);
           ɵɵadvance(5);
           ɵɵproperty("disabled", !ctx.canManageRegistration || ctx.user.hasRegistrationCode || ctx.disabled);
           ɵɵadvance(2);
@@ -109883,11 +109853,9 @@ var UserCardComponent = class _UserCardComponent {
           ɵɵconditional(ctx.user.role === ctx.roleTypes.ADMIN ? 26 : -1);
           ɵɵadvance();
           ɵɵconditional(ctx.user.role === ctx.roleTypes.ADMIN && ctx.hasMCPToken !== null ? 27 : -1);
-          ɵɵadvance();
-          ɵɵconditional(ctx.biometricAvailable ? 28 : -1);
         }
       },
-      dependencies: [MatIconButton, MatCard, MatCardActions, MatCardAvatar, MatCardHeader, MatCardSubtitle, MatCardTitle, MatCheckbox, MatIcon, MatList, MatListItem, MatListItemIcon, MatListSubheaderCssMatStyler, MatDivider, MatListItemLine, MatListItemTitle, MatListItemMeta, MatMenu, MatMenuItem, MatMenuTrigger, MatProgressSpinner, MatSlideToggle],
+      dependencies: [MatIconButton, MatCard, MatCardActions, MatCardAvatar, MatCardHeader, MatCardSubtitle, MatCardTitle, MatCheckbox, MatIcon, MatList, MatListItem, MatListItemIcon, MatListSubheaderCssMatStyler, MatDivider, MatListItemLine, MatListItemTitle, MatListItemMeta, MatMenu, MatMenuItem, MatMenuTrigger, MatProgressSpinner],
       styles: ["\n.user-card[_ngcontent-%COMP%]   .avatar[_ngcontent-%COMP%] {\n  font-size: 40px;\n}\n.user-card[_ngcontent-%COMP%]   .mat-mdc-progress-spinner[_ngcontent-%COMP%] {\n  margin: 10px;\n}\n/*# sourceMappingURL=user-card.component.css.map */"]
     });
   }
@@ -109898,16 +109866,10 @@ var UserCardComponent = class _UserCardComponent {
     args: [{
       selector: "user-card",
       standalone: false,
-      template: '<mat-card class="user-card container-item">\n  <mat-card-header>\n    @if (user.role === roleTypes.ADMIN) {\n      <mat-icon mat-card-avatar matListIcon mat-card-avatar class="avatar">person</mat-icon>\n    }\n    @if (user.role === roleTypes.USER) {\n      <mat-icon matListIcon mat-card-avatar class="avatar">person_outline</mat-icon>\n    }\n    <mat-card-title>{{ user.name }}</mat-card-title>\n    @if (user.role === roleTypes.ADMIN) {\n      <mat-card-subtitle i18n="@@user type administrator">Administrator</mat-card-subtitle>\n    }\n    @if (user.role === roleTypes.USER) {\n      <mat-card-subtitle i18n="@@user type user">User</mat-card-subtitle>\n    }\n  </mat-card-header>\n\n  @if (loading) {\n    <mat-spinner color="primary" diameter="40"></mat-spinner>\n  }\n\n  @if (!loading) {\n    <mat-divider></mat-divider>\n\n    <mat-list>\n      <!-- Registration code -->\n      <h3 matSubheader i18n="@@user device registration code">Device registration code</h3>\n      @if (user.hasRegistrationCode) {\n        <mat-list-item>\n          <mat-icon matListItemIcon>key</mat-icon>\n          <span matListItemTitle i18n="@@user registration">Expires on:</span>\n          @if (user.registrationExpiry) {\n            <span matListItemLine>{{ user.registrationExpiry }}</span>\n          }\n          @if (!user.registrationExpiry) {\n            <span matListItemLine i18n="@@user expiry never">never</span>\n          }\n          <button\n            mat-icon-button\n            matListItemMeta\n            color="warn"\n            [disabled]="!canManageRegistration || disabled"\n            (click)="openDeleteRegistrationCodeDialog()"\n          >\n            <mat-icon color="warn">delete</mat-icon>\n          </button>\n        </mat-list-item>\n      }\n      @if (!user.hasRegistrationCode) {\n        <mat-list-item>\n          <span matListItemTitle i18n="@@user no registration code">No registration code</span>\n          <button\n            mat-icon-button\n            matListItemMeta\n            color="primary"\n            [disabled]="!canManageRegistration || disabled"\n            (click)="openDeviceRegistrationDialog()"\n          >\n            <mat-icon>add</mat-icon>\n          </button>\n        </mat-list-item>\n      }\n\n      <mat-divider></mat-divider>\n\n      <!-- Cards -->\n      <h3 matSubheader i18n="@@user cards">Cards</h3>\n      @for (card of cards; track card) {\n        <mat-list-item>\n          <mat-icon matListItemIcon>credit_card</mat-icon>\n          <mat-checkbox\n            color="primary"\n            [checked]="card.enabled"\n            [disabled]="!canManageCards || disabled"\n            (change)="toggleCardEnabled(card.id)"\n          ></mat-checkbox>\n          <span matListItemTitle>{{ card.description }}</span>\n          <div matListItemMeta>\n            <button\n              mat-icon-button\n              color="warn"\n              [disabled]="!canManageCards || disabled"\n              (click)="openDeleteCardDialog(card.id)"\n            >\n              <mat-icon>delete</mat-icon>\n            </button>\n          </div>\n        </mat-list-item>\n      }\n      @if (cards.length === 0 && !registeringCard) {\n        <mat-list-item>\n          <span matListItemTitle i18n="@@user no cards">No cards registered</span>\n          <button\n            mat-icon-button\n            matListItemMeta\n            color="primary"\n            [disabled]="!canManageCards || disabled"\n            (click)="onClickRegisterCard()"\n          >\n            <mat-icon>add</mat-icon>\n          </button>\n        </mat-list-item>\n      }\n      @if (registeringCard) {\n        <mat-list-item>\n          <mat-progress-spinner\n            matListItemIcon\n            color="primary"\n            mode="indeterminate"\n            diameter="20"\n          ></mat-progress-spinner>\n          <span matListItemTitle i18n="@@user registering card">Registering card</span>\n        </mat-list-item>\n      }\n\n      <!-- SSH key -->\n      @if (user.role === roleTypes.ADMIN) {\n        <mat-divider></mat-divider>\n        @if (hasSshKey) {\n          <mat-list-item>\n            <mat-icon matListItemIcon>terminal</mat-icon>\n            <span matListItemTitle i18n="@@user ssh key">SSH key</span>\n            <button\n              mat-icon-button\n              matListItemMeta\n              color="warn"\n              [disabled]="!canManageSshKeys || disabled"\n              (click)="openDeleteSshKeyDialog()"\n            >\n              <mat-icon color="warn">delete</mat-icon>\n            </button>\n          </mat-list-item>\n        }\n        @if (!hasSshKey) {\n          <mat-list-item>\n            <span matListItemTitle i18n="@@user no ssh key">No SSH key</span>\n            <button\n              mat-icon-button\n              matListItemMeta\n              color="primary"\n              [disabled]="!canManageSshKeys || disabled"\n              (click)="openSshKeySetupDialog()"\n            >\n              <mat-icon>add</mat-icon>\n            </button>\n          </mat-list-item>\n        }\n      }\n\n      <!-- MCP token -->\n      @if (user.role === roleTypes.ADMIN && hasMCPToken !== null) {\n        @if (hasMCPToken === true) {\n          <mat-list-item>\n            <mat-icon matListItemIcon>vpn_key</mat-icon>\n            <span matListItemTitle i18n="@@mcp token">MCP token</span>\n            <button\n              mat-icon-button\n              matListItemMeta\n              color="warn"\n              [disabled]="!canManageMCP || disabled"\n              (click)="removeMCPToken()"\n            >\n              <mat-icon color="warn">delete</mat-icon>\n            </button>\n          </mat-list-item>\n        }\n        @if (hasMCPToken === false) {\n          <mat-list-item>\n            <span matListItemTitle i18n="@@user no mcp token">No MCP token</span>\n            <button\n              mat-icon-button\n              matListItemMeta\n              color="primary"\n              [disabled]="!canManageMCP || disabled"\n              (click)="getMCPToken()"\n            >\n              <mat-icon>add</mat-icon>\n            </button>\n          </mat-list-item>\n        }\n      }\n\n      <!-- Comment -->\n      @if (user.comment) {\n        <mat-divider></mat-divider>\n        <h3 matSubheader i18n="@@user comment">Comment</h3>\n        <mat-list-item>\n          <mat-icon matListItemIcon>notes</mat-icon>\n          <span matListItemTitle>{{ user.comment }}</span>\n        </mat-list-item>\n      }\n\n      <!-- Biometric login -->\n      @if (biometricAvailable) {\n        <mat-divider></mat-divider>\n        <h3 matSubheader i18n="@@user biometric login">Biometric login</h3>\n        <mat-list-item>\n          <mat-icon matListItemIcon>\n            @if (isBiometricEnabled()) {\n              fingerprint\n            } @else {\n              fingerprint_off\n            }\n          </mat-icon>\n          <span matListItemTitle i18n="@@user biometric login">Biometric login</span>\n          <mat-slide-toggle\n            matListItemMeta\n            color="primary"\n            [checked]="isBiometricEnabled()"\n            [disabled]="disabled"\n            (change)="$event.checked ? enableBiometricLogin() : disableBiometricLogin()"\n          ></mat-slide-toggle>\n        </mat-list-item>\n      }\n    </mat-list>\n  }\n\n  <mat-divider></mat-divider>\n\n  <mat-card-actions>\n    <button mat-icon-button color="primary" [disabled]="disabled" (click)="navigateToUserEdit()">\n      <mat-icon>mode_edit</mat-icon>\n    </button>\n    <button mat-icon-button color="warn" [disabled]="!canManageUser || disabled" (click)="openDeleteUserDialog()">\n      <mat-icon>delete</mat-icon>\n    </button>\n\n    <button mat-icon-button [matMenuTriggerFor]="menu"><mat-icon>more_vert</mat-icon></button>\n    <mat-menu #menu="matMenu">\n      <button\n        mat-menu-item\n        color="primary"\n        [disabled]="!canManageRegistration || user.hasRegistrationCode || disabled"\n        i18n="@@user register device button"\n        (click)="openDeviceRegistrationDialog()"\n      >\n        Device registration\n      </button>\n      @if (canManageCards) {\n        <button\n          mat-menu-item\n          color="primary"\n          [disabled]="disabled"\n          (click)="onClickRegisterCard()"\n          i18n="@@user register card button"\n        >\n          Register card\n        </button>\n      }\n      @if (user.role === roleTypes.ADMIN) {\n        <button\n          mat-menu-item\n          color="primary"\n          [disabled]="!canManageSshKeys || hasSshKey || disabled"\n          (click)="openSshKeySetupDialog()"\n          i18n="@@user generate ssk key"\n        >\n          Setup SSH key\n        </button>\n      }\n      @if (user.role === roleTypes.ADMIN && hasMCPToken !== null) {\n        <button\n          mat-menu-item\n          color="primary"\n          [disabled]="!canManageMCP || disabled || hasMCPToken === true"\n          (click)="getMCPToken()"\n          i18n="@@user get mcp token"\n        >\n          Get MCP token\n        </button>\n      }\n\n      <!-- Biometric login -->\n      @if (biometricAvailable) {\n        <div>\n          @if (!isBiometricEnabled()) {\n            <button mat-menu-item color="primary" [disabled]="disabled" (click)="enableBiometricLogin()">\n              <span i18n="@@user enable biometric">Enable biometric login</span>\n            </button>\n          }\n          @if (isBiometricEnabled()) {\n            <button mat-menu-item color="warn" [disabled]="disabled" (click)="disableBiometricLogin()">\n              <span i18n="@@user disable biometric">Disable biometric login</span>\n            </button>\n          }\n        </div>\n      }\n    </mat-menu>\n  </mat-card-actions>\n</mat-card>\n',
+      template: '<mat-card class="user-card container-item">\n  <mat-card-header>\n    @if (user.role === roleTypes.ADMIN) {\n      <mat-icon mat-card-avatar matListIcon mat-card-avatar class="avatar">person</mat-icon>\n    }\n    @if (user.role === roleTypes.USER) {\n      <mat-icon matListIcon mat-card-avatar class="avatar">person_outline</mat-icon>\n    }\n    <mat-card-title>{{ user.name }}</mat-card-title>\n    @if (user.role === roleTypes.ADMIN) {\n      <mat-card-subtitle i18n="@@user type administrator">Administrator</mat-card-subtitle>\n    }\n    @if (user.role === roleTypes.USER) {\n      <mat-card-subtitle i18n="@@user type user">User</mat-card-subtitle>\n    }\n  </mat-card-header>\n\n  @if (loading) {\n    <mat-spinner color="primary" diameter="40"></mat-spinner>\n  }\n\n  @if (!loading) {\n    <mat-divider></mat-divider>\n\n    <mat-list>\n      <!-- Registration code -->\n      <h3 matSubheader i18n="@@user device registration code">Device registration code</h3>\n      @if (user.hasRegistrationCode) {\n        <mat-list-item>\n          <mat-icon matListItemIcon>key</mat-icon>\n          <span matListItemTitle i18n="@@user registration">Expires on:</span>\n          @if (user.registrationExpiry) {\n            <span matListItemLine>{{ user.registrationExpiry }}</span>\n          }\n          @if (!user.registrationExpiry) {\n            <span matListItemLine i18n="@@user expiry never">never</span>\n          }\n          <button\n            mat-icon-button\n            matListItemMeta\n            color="warn"\n            [disabled]="!canManageRegistration || disabled"\n            (click)="openDeleteRegistrationCodeDialog()"\n          >\n            <mat-icon color="warn">delete</mat-icon>\n          </button>\n        </mat-list-item>\n      }\n      @if (!user.hasRegistrationCode) {\n        <mat-list-item>\n          <span matListItemTitle i18n="@@user no registration code">No registration code</span>\n          <button\n            mat-icon-button\n            matListItemMeta\n            color="primary"\n            [disabled]="!canManageRegistration || disabled"\n            (click)="openDeviceRegistrationDialog()"\n          >\n            <mat-icon>add</mat-icon>\n          </button>\n        </mat-list-item>\n      }\n\n      <mat-divider></mat-divider>\n\n      <!-- Cards -->\n      <h3 matSubheader i18n="@@user cards">Cards</h3>\n      @for (card of cards; track card) {\n        <mat-list-item>\n          <mat-icon matListItemIcon>credit_card</mat-icon>\n          <mat-checkbox\n            color="primary"\n            [checked]="card.enabled"\n            [disabled]="!canManageCards || disabled"\n            (change)="toggleCardEnabled(card.id)"\n          ></mat-checkbox>\n          <span matListItemTitle>{{ card.description }}</span>\n          <div matListItemMeta>\n            <button\n              mat-icon-button\n              color="warn"\n              [disabled]="!canManageCards || disabled"\n              (click)="openDeleteCardDialog(card.id)"\n            >\n              <mat-icon>delete</mat-icon>\n            </button>\n          </div>\n        </mat-list-item>\n      }\n      @if (cards.length === 0 && !registeringCard) {\n        <mat-list-item>\n          <span matListItemTitle i18n="@@user no cards">No cards registered</span>\n          <button\n            mat-icon-button\n            matListItemMeta\n            color="primary"\n            [disabled]="!canManageCards || disabled"\n            (click)="onClickRegisterCard()"\n          >\n            <mat-icon>add</mat-icon>\n          </button>\n        </mat-list-item>\n      }\n      @if (registeringCard) {\n        <mat-list-item>\n          <mat-progress-spinner\n            matListItemIcon\n            color="primary"\n            mode="indeterminate"\n            diameter="20"\n          ></mat-progress-spinner>\n          <span matListItemTitle i18n="@@user registering card">Registering card</span>\n        </mat-list-item>\n      }\n\n      <!-- SSH key -->\n      @if (user.role === roleTypes.ADMIN) {\n        <mat-divider></mat-divider>\n        @if (hasSshKey) {\n          <mat-list-item>\n            <mat-icon matListItemIcon>terminal</mat-icon>\n            <span matListItemTitle i18n="@@user ssh key">SSH key</span>\n            <button\n              mat-icon-button\n              matListItemMeta\n              color="warn"\n              [disabled]="!canManageSshKeys || disabled"\n              (click)="openDeleteSshKeyDialog()"\n            >\n              <mat-icon color="warn">delete</mat-icon>\n            </button>\n          </mat-list-item>\n        }\n        @if (!hasSshKey) {\n          <mat-list-item>\n            <span matListItemTitle i18n="@@user no ssh key">No SSH key</span>\n            <button\n              mat-icon-button\n              matListItemMeta\n              color="primary"\n              [disabled]="!canManageSshKeys || disabled"\n              (click)="openSshKeySetupDialog()"\n            >\n              <mat-icon>add</mat-icon>\n            </button>\n          </mat-list-item>\n        }\n      }\n\n      <!-- MCP token -->\n      @if (user.role === roleTypes.ADMIN && hasMCPToken !== null) {\n        @if (hasMCPToken === true) {\n          <mat-list-item>\n            <mat-icon matListItemIcon>vpn_key</mat-icon>\n            <span matListItemTitle i18n="@@mcp token">MCP token</span>\n            <button\n              mat-icon-button\n              matListItemMeta\n              color="warn"\n              [disabled]="!canManageMCP || disabled"\n              (click)="removeMCPToken()"\n            >\n              <mat-icon color="warn">delete</mat-icon>\n            </button>\n          </mat-list-item>\n        }\n        @if (hasMCPToken === false) {\n          <mat-list-item>\n            <span matListItemTitle i18n="@@user no mcp token">No MCP token</span>\n            <button\n              mat-icon-button\n              matListItemMeta\n              color="primary"\n              [disabled]="!canManageMCP || disabled"\n              (click)="getMCPToken()"\n            >\n              <mat-icon>add</mat-icon>\n            </button>\n          </mat-list-item>\n        }\n      }\n\n      <!-- Comment -->\n      @if (user.comment) {\n        <mat-divider></mat-divider>\n        <h3 matSubheader i18n="@@user comment">Comment</h3>\n        <mat-list-item>\n          <mat-icon matListItemIcon>notes</mat-icon>\n          <span matListItemTitle>{{ user.comment }}</span>\n        </mat-list-item>\n      }\n    </mat-list>\n  }\n\n  <mat-divider></mat-divider>\n\n  <mat-card-actions>\n    <button mat-icon-button color="primary" [disabled]="disabled" (click)="navigateToUserEdit()">\n      <mat-icon>mode_edit</mat-icon>\n    </button>\n    <button mat-icon-button color="warn" [disabled]="!canManageUser || disabled" (click)="openDeleteUserDialog()">\n      <mat-icon>delete</mat-icon>\n    </button>\n\n    <button mat-icon-button [matMenuTriggerFor]="menu"><mat-icon>more_vert</mat-icon></button>\n    <mat-menu #menu="matMenu">\n      <button\n        mat-menu-item\n        color="primary"\n        [disabled]="!canManageRegistration || user.hasRegistrationCode || disabled"\n        i18n="@@user register device button"\n        (click)="openDeviceRegistrationDialog()"\n      >\n        Device registration\n      </button>\n      @if (canManageCards) {\n        <button\n          mat-menu-item\n          color="primary"\n          [disabled]="disabled"\n          (click)="onClickRegisterCard()"\n          i18n="@@user register card button"\n        >\n          Register card\n        </button>\n      }\n      @if (user.role === roleTypes.ADMIN) {\n        <button\n          mat-menu-item\n          color="primary"\n          [disabled]="!canManageSshKeys || hasSshKey || disabled"\n          (click)="openSshKeySetupDialog()"\n          i18n="@@user generate ssk key"\n        >\n          Setup SSH key\n        </button>\n      }\n      @if (user.role === roleTypes.ADMIN && hasMCPToken !== null) {\n        <button\n          mat-menu-item\n          color="primary"\n          [disabled]="!canManageMCP || disabled || hasMCPToken === true"\n          (click)="getMCPToken()"\n          i18n="@@user get mcp token"\n        >\n          Get MCP token\n        </button>\n      }\n    </mat-menu>\n  </mat-card-actions>\n</mat-card>\n',
       styles: ["/* src/app/components/user/user-card/user-card.component.scss */\n.user-card .avatar {\n  font-size: 40px;\n}\n.user-card .mat-mdc-progress-spinner {\n  margin: 10px;\n}\n/*# sourceMappingURL=user-card.component.css.map */\n"]
     }]
   }], () => [{
-    type: void 0,
-    decorators: [{
-      type: Inject,
-      args: [AUTHENTICATION_SERVICE]
-    }]
-  }, {
     type: void 0,
     decorators: [{
       type: Inject,
@@ -109924,12 +109886,6 @@ var UserCardComponent = class _UserCardComponent {
     decorators: [{
       type: Inject,
       args: ["UserService"]
-    }]
-  }, {
-    type: void 0,
-    decorators: [{
-      type: Inject,
-      args: ["BiometricService"]
     }]
   }, {
     type: MatSnackBar
@@ -109967,7 +109923,7 @@ var UserCardComponent = class _UserCardComponent {
   (typeof ngDevMode === "undefined" || ngDevMode) && ɵsetClassDebugInfo(UserCardComponent, {
     className: "UserCardComponent",
     filePath: "src/app/components/user/user-card/user-card.component.ts",
-    lineNumber: 27
+    lineNumber: 20
   });
 })();
 
@@ -116097,7 +116053,7 @@ var SyrenComponent = class _SyrenComponent extends ConfigurationBaseComponent {
 
 // node_modules/@capacitor/app/dist/esm/index.js
 var App = registerPlugin("App", {
-  web: () => import("./web-LDZ3GTTM.js").then(m => new m.AppWeb())
+  web: () => import("./web-QI5OIVER.js").then(m => new m.AppWeb())
 });
 
 // src/app/components/controller/controller.ts
@@ -117755,9 +117711,41 @@ function LocationDetailsComponent_Conditional_1_Conditional_9_Template(rf, ctx) 
     ɵɵelementEnd();
   }
 }
-function LocationDetailsComponent_Conditional_1_Conditional_17_Template(rf, ctx) {
+function LocationDetailsComponent_Conditional_1_Conditional_10_Conditional_2_Template(rf, ctx) {
   if (rf & 1) {
-    ɵɵelementStart(0, "mat-hint")(1, "a", 36)(2, "span", 37);
+    ɵɵtext(0, " fingerprint ");
+  }
+}
+function LocationDetailsComponent_Conditional_1_Conditional_10_Conditional_3_Template(rf, ctx) {
+  if (rf & 1) {
+    ɵɵtext(0, " fingerprint_off ");
+  }
+}
+function LocationDetailsComponent_Conditional_1_Conditional_10_Template(rf, ctx) {
+  if (rf & 1) {
+    const _r3 = ɵɵgetCurrentView();
+    ɵɵelementStart(0, "div", 21)(1, "mat-icon", 34);
+    ɵɵconditionalCreate(2, LocationDetailsComponent_Conditional_1_Conditional_10_Conditional_2_Template, 1, 0)(3, LocationDetailsComponent_Conditional_1_Conditional_10_Conditional_3_Template, 1, 0);
+    ɵɵelementEnd();
+    ɵɵelementStart(4, "mat-slide-toggle", 36);
+    ɵɵlistener("change", function LocationDetailsComponent_Conditional_1_Conditional_10_Template_mat_slide_toggle_change_4_listener($event) {
+      ɵɵrestoreView(_r3);
+      const ctx_r1 = ɵɵnextContext(2);
+      return ɵɵresetView($event.checked ? ctx_r1.enableBiometricLogin() : ctx_r1.disableBiometricLogin());
+    });
+    ɵɵelementEnd()();
+  }
+  if (rf & 2) {
+    const ctx_r1 = ɵɵnextContext(2);
+    ɵɵadvance(2);
+    ɵɵconditional(ctx_r1.isBiometricEnabled() ? 2 : 3);
+    ɵɵadvance(2);
+    ɵɵproperty("checked", ctx_r1.isBiometricEnabled());
+  }
+}
+function LocationDetailsComponent_Conditional_1_Conditional_18_Template(rf, ctx) {
+  if (rf & 1) {
+    ɵɵelementStart(0, "mat-hint")(1, "a", 37)(2, "span", 38);
     ɵɵi18n(3, 5);
     ɵɵelementEnd();
     ɵɵelementStart(4, "mat-icon");
@@ -117770,31 +117758,31 @@ function LocationDetailsComponent_Conditional_1_Conditional_17_Template(rf, ctx)
     ɵɵproperty("href", ɵɵinterpolate2("https://", ctx_r1.location.primaryDomain, ":", ctx_r1.location.primaryPort, "/api/version"), ɵɵsanitizeUrl);
   }
 }
-function LocationDetailsComponent_Conditional_1_Conditional_22_Conditional_1_Template(rf, ctx) {
+function LocationDetailsComponent_Conditional_1_Conditional_23_Conditional_1_Template(rf, ctx) {
   if (rf & 1) {
-    ɵɵelementStart(0, "mat-icon", 38);
+    ɵɵelementStart(0, "mat-icon", 39);
     ɵɵtext(1, "check_circle");
     ɵɵelementEnd();
   }
 }
-function LocationDetailsComponent_Conditional_1_Conditional_22_Conditional_2_Template(rf, ctx) {
+function LocationDetailsComponent_Conditional_1_Conditional_23_Conditional_2_Template(rf, ctx) {
   if (rf & 1) {
-    ɵɵelementStart(0, "mat-icon", 39);
+    ɵɵelementStart(0, "mat-icon", 40);
     ɵɵtext(1, "error");
     ɵɵelementEnd();
   }
 }
-function LocationDetailsComponent_Conditional_1_Conditional_22_Conditional_3_Template(rf, ctx) {
+function LocationDetailsComponent_Conditional_1_Conditional_23_Conditional_3_Template(rf, ctx) {
   if (rf & 1) {
-    ɵɵelement(0, "mat-spinner", 40);
+    ɵɵelement(0, "mat-spinner", 41);
   }
 }
-function LocationDetailsComponent_Conditional_1_Conditional_22_Template(rf, ctx) {
+function LocationDetailsComponent_Conditional_1_Conditional_23_Template(rf, ctx) {
   if (rf & 1) {
     ɵɵelementStart(0, "div", 27);
-    ɵɵconditionalCreate(1, LocationDetailsComponent_Conditional_1_Conditional_22_Conditional_1_Template, 2, 0, "mat-icon", 38);
-    ɵɵconditionalCreate(2, LocationDetailsComponent_Conditional_1_Conditional_22_Conditional_2_Template, 2, 0, "mat-icon", 39);
-    ɵɵconditionalCreate(3, LocationDetailsComponent_Conditional_1_Conditional_22_Conditional_3_Template, 1, 0, "mat-spinner", 40);
+    ɵɵconditionalCreate(1, LocationDetailsComponent_Conditional_1_Conditional_23_Conditional_1_Template, 2, 0, "mat-icon", 39);
+    ɵɵconditionalCreate(2, LocationDetailsComponent_Conditional_1_Conditional_23_Conditional_2_Template, 2, 0, "mat-icon", 40);
+    ɵɵconditionalCreate(3, LocationDetailsComponent_Conditional_1_Conditional_23_Conditional_3_Template, 1, 0, "mat-spinner", 41);
     ɵɵelementEnd();
   }
   if (rf & 2) {
@@ -117807,9 +117795,9 @@ function LocationDetailsComponent_Conditional_1_Conditional_22_Template(rf, ctx)
     ɵɵconditional(ctx_r1.testResult.primary === null ? 3 : -1);
   }
 }
-function LocationDetailsComponent_Conditional_1_Conditional_30_Template(rf, ctx) {
+function LocationDetailsComponent_Conditional_1_Conditional_31_Template(rf, ctx) {
   if (rf & 1) {
-    ɵɵelementStart(0, "mat-hint")(1, "a", 36)(2, "span", 37);
+    ɵɵelementStart(0, "mat-hint")(1, "a", 37)(2, "span", 38);
     ɵɵi18n(3, 6);
     ɵɵelementEnd();
     ɵɵelementStart(4, "mat-icon");
@@ -117822,39 +117810,39 @@ function LocationDetailsComponent_Conditional_1_Conditional_30_Template(rf, ctx)
     ɵɵproperty("href", ɵɵinterpolate2("https://", ctx_r1.location.secondaryDomain, ":", ctx_r1.location.secondaryPort, "/api/version"), ɵɵsanitizeUrl);
   }
 }
-function LocationDetailsComponent_Conditional_1_Conditional_35_Conditional_1_Template(rf, ctx) {
+function LocationDetailsComponent_Conditional_1_Conditional_36_Conditional_1_Template(rf, ctx) {
   if (rf & 1) {
-    ɵɵelementStart(0, "mat-icon", 38);
+    ɵɵelementStart(0, "mat-icon", 39);
     ɵɵtext(1, "check_circle");
     ɵɵelementEnd();
   }
 }
-function LocationDetailsComponent_Conditional_1_Conditional_35_Conditional_2_Template(rf, ctx) {
+function LocationDetailsComponent_Conditional_1_Conditional_36_Conditional_2_Template(rf, ctx) {
   if (rf & 1) {
-    ɵɵelementStart(0, "mat-icon", 39);
+    ɵɵelementStart(0, "mat-icon", 40);
     ɵɵtext(1, "error");
     ɵɵelementEnd();
   }
 }
-function LocationDetailsComponent_Conditional_1_Conditional_35_Conditional_3_Template(rf, ctx) {
+function LocationDetailsComponent_Conditional_1_Conditional_36_Conditional_3_Template(rf, ctx) {
   if (rf & 1) {
-    ɵɵelementStart(0, "mat-icon", 41);
+    ɵɵelementStart(0, "mat-icon", 42);
     ɵɵtext(1, "not_interested");
     ɵɵelementEnd();
   }
 }
-function LocationDetailsComponent_Conditional_1_Conditional_35_Conditional_4_Template(rf, ctx) {
+function LocationDetailsComponent_Conditional_1_Conditional_36_Conditional_4_Template(rf, ctx) {
   if (rf & 1) {
-    ɵɵelement(0, "mat-spinner", 40);
+    ɵɵelement(0, "mat-spinner", 41);
   }
 }
-function LocationDetailsComponent_Conditional_1_Conditional_35_Template(rf, ctx) {
+function LocationDetailsComponent_Conditional_1_Conditional_36_Template(rf, ctx) {
   if (rf & 1) {
     ɵɵelementStart(0, "div", 27);
-    ɵɵconditionalCreate(1, LocationDetailsComponent_Conditional_1_Conditional_35_Conditional_1_Template, 2, 0, "mat-icon", 38);
-    ɵɵconditionalCreate(2, LocationDetailsComponent_Conditional_1_Conditional_35_Conditional_2_Template, 2, 0, "mat-icon", 39);
-    ɵɵconditionalCreate(3, LocationDetailsComponent_Conditional_1_Conditional_35_Conditional_3_Template, 2, 0, "mat-icon", 41);
-    ɵɵconditionalCreate(4, LocationDetailsComponent_Conditional_1_Conditional_35_Conditional_4_Template, 1, 0, "mat-spinner", 40);
+    ɵɵconditionalCreate(1, LocationDetailsComponent_Conditional_1_Conditional_36_Conditional_1_Template, 2, 0, "mat-icon", 39);
+    ɵɵconditionalCreate(2, LocationDetailsComponent_Conditional_1_Conditional_36_Conditional_2_Template, 2, 0, "mat-icon", 40);
+    ɵɵconditionalCreate(3, LocationDetailsComponent_Conditional_1_Conditional_36_Conditional_3_Template, 2, 0, "mat-icon", 42);
+    ɵɵconditionalCreate(4, LocationDetailsComponent_Conditional_1_Conditional_36_Conditional_4_Template, 1, 0, "mat-spinner", 41);
     ɵɵelementEnd();
   }
   if (rf & 2) {
@@ -117869,7 +117857,7 @@ function LocationDetailsComponent_Conditional_1_Conditional_35_Template(rf, ctx)
     ɵɵconditional(ctx_r1.testResult.secondary === null ? 4 : -1);
   }
 }
-function LocationDetailsComponent_Conditional_1_Conditional_36_Conditional_3_Template(rf, ctx) {
+function LocationDetailsComponent_Conditional_1_Conditional_37_Conditional_3_Template(rf, ctx) {
   if (rf & 1) {
     ɵɵelementStart(0, "dt");
     ɵɵtext(1, "ID");
@@ -117884,17 +117872,17 @@ function LocationDetailsComponent_Conditional_1_Conditional_36_Conditional_3_Tem
     ɵɵtextInterpolate(ctx_r1.location.id);
   }
 }
-function LocationDetailsComponent_Conditional_1_Conditional_36_Conditional_4_Template(rf, ctx) {
+function LocationDetailsComponent_Conditional_1_Conditional_37_Conditional_4_Template(rf, ctx) {
   if (rf & 1) {
-    const _r3 = ɵɵgetCurrentView();
+    const _r4 = ɵɵgetCurrentView();
     ɵɵelementStart(0, "dt");
     ɵɵi18n(1, 7);
     ɵɵelementEnd();
     ɵɵelementStart(2, "dd");
     ɵɵtext(3);
-    ɵɵelementStart(4, "button", 45);
-    ɵɵlistener("click", function LocationDetailsComponent_Conditional_1_Conditional_36_Conditional_4_Template_button_click_4_listener() {
-      ɵɵrestoreView(_r3);
+    ɵɵelementStart(4, "button", 46);
+    ɵɵlistener("click", function LocationDetailsComponent_Conditional_1_Conditional_37_Conditional_4_Template_button_click_4_listener() {
+      ɵɵrestoreView(_r4);
       const ctx_r1 = ɵɵnextContext(3);
       return ɵɵresetView(ctx_r1.onSaveRemoteToLocalname());
     });
@@ -117908,7 +117896,7 @@ function LocationDetailsComponent_Conditional_1_Conditional_36_Conditional_4_Tem
     ɵɵtextInterpolate1(" ", ctx_r1.systemLocationName, " ");
   }
 }
-function LocationDetailsComponent_Conditional_1_Conditional_36_Conditional_5_Template(rf, ctx) {
+function LocationDetailsComponent_Conditional_1_Conditional_37_Conditional_5_Template(rf, ctx) {
   if (rf & 1) {
     ɵɵelementStart(0, "dt");
     ɵɵi18n(1, 8);
@@ -117923,7 +117911,7 @@ function LocationDetailsComponent_Conditional_1_Conditional_36_Conditional_5_Tem
     ɵɵtextInterpolate(ctx_r1.version.version_tag);
   }
 }
-function LocationDetailsComponent_Conditional_1_Conditional_36_Conditional_6_Template(rf, ctx) {
+function LocationDetailsComponent_Conditional_1_Conditional_37_Conditional_6_Template(rf, ctx) {
   if (rf & 1) {
     ɵɵelementStart(0, "dt");
     ɵɵi18n(1, 9);
@@ -117938,32 +117926,32 @@ function LocationDetailsComponent_Conditional_1_Conditional_36_Conditional_6_Tem
     ɵɵtextInterpolate(ctx_r1.boardVersion);
   }
 }
-function LocationDetailsComponent_Conditional_1_Conditional_36_Conditional_7_Conditional_2_Template(rf, ctx) {
+function LocationDetailsComponent_Conditional_1_Conditional_37_Conditional_7_Conditional_2_Template(rf, ctx) {
   if (rf & 1) {
-    ɵɵelementStart(0, "div")(1, "mat-icon", 38);
+    ɵɵelementStart(0, "div")(1, "mat-icon", 39);
     ɵɵtext(2, "check_circle");
     ɵɵelementEnd();
-    ɵɵelementStart(3, "div", 46);
+    ɵɵelementStart(3, "div", 47);
     ɵɵi18n(4, 10);
     ɵɵelementEnd()();
   }
 }
-function LocationDetailsComponent_Conditional_1_Conditional_36_Conditional_7_Conditional_3_Template(rf, ctx) {
+function LocationDetailsComponent_Conditional_1_Conditional_37_Conditional_7_Conditional_3_Template(rf, ctx) {
   if (rf & 1) {
-    ɵɵelementStart(0, "div")(1, "mat-icon", 39);
+    ɵɵelementStart(0, "div")(1, "mat-icon", 40);
     ɵɵtext(2, "error");
     ɵɵelementEnd();
-    ɵɵelementStart(3, "div", 46);
+    ɵɵelementStart(3, "div", 47);
     ɵɵi18n(4, 11);
     ɵɵelementEnd()();
   }
 }
-function LocationDetailsComponent_Conditional_1_Conditional_36_Conditional_7_Template(rf, ctx) {
+function LocationDetailsComponent_Conditional_1_Conditional_37_Conditional_7_Template(rf, ctx) {
   if (rf & 1) {
-    ɵɵelementStart(0, "div", 43);
+    ɵɵelementStart(0, "div", 44);
     ɵɵelement(1, "mat-divider");
-    ɵɵconditionalCreate(2, LocationDetailsComponent_Conditional_1_Conditional_36_Conditional_7_Conditional_2_Template, 5, 0, "div");
-    ɵɵconditionalCreate(3, LocationDetailsComponent_Conditional_1_Conditional_36_Conditional_7_Conditional_3_Template, 5, 0, "div");
+    ɵɵconditionalCreate(2, LocationDetailsComponent_Conditional_1_Conditional_37_Conditional_7_Conditional_2_Template, 5, 0, "div");
+    ɵɵconditionalCreate(3, LocationDetailsComponent_Conditional_1_Conditional_37_Conditional_7_Conditional_3_Template, 5, 0, "div");
     ɵɵelementEnd();
   }
   if (rf & 2) {
@@ -117974,26 +117962,26 @@ function LocationDetailsComponent_Conditional_1_Conditional_36_Conditional_7_Tem
     ɵɵconditional(ctx_r1.isRegistered() === false ? 3 : -1);
   }
 }
-function LocationDetailsComponent_Conditional_1_Conditional_36_Conditional_8_Template(rf, ctx) {
+function LocationDetailsComponent_Conditional_1_Conditional_37_Conditional_8_Template(rf, ctx) {
   if (rf & 1) {
-    ɵɵelement(0, "app-message", 44);
+    ɵɵelement(0, "app-message", 45);
   }
   if (rf & 2) {
     const ctx_r1 = ɵɵnextContext(3);
     ɵɵproperty("message", ctx_r1.ALREADY_EXISTS);
   }
 }
-function LocationDetailsComponent_Conditional_1_Conditional_36_Template(rf, ctx) {
+function LocationDetailsComponent_Conditional_1_Conditional_37_Template(rf, ctx) {
   if (rf & 1) {
     ɵɵelement(0, "mat-divider");
-    ɵɵelementStart(1, "mat-card-content", 42)(2, "dl");
-    ɵɵconditionalCreate(3, LocationDetailsComponent_Conditional_1_Conditional_36_Conditional_3_Template, 4, 1);
-    ɵɵconditionalCreate(4, LocationDetailsComponent_Conditional_1_Conditional_36_Conditional_4_Template, 7, 1);
-    ɵɵconditionalCreate(5, LocationDetailsComponent_Conditional_1_Conditional_36_Conditional_5_Template, 4, 1);
-    ɵɵconditionalCreate(6, LocationDetailsComponent_Conditional_1_Conditional_36_Conditional_6_Template, 4, 1);
+    ɵɵelementStart(1, "mat-card-content", 43)(2, "dl");
+    ɵɵconditionalCreate(3, LocationDetailsComponent_Conditional_1_Conditional_37_Conditional_3_Template, 4, 1);
+    ɵɵconditionalCreate(4, LocationDetailsComponent_Conditional_1_Conditional_37_Conditional_4_Template, 7, 1);
+    ɵɵconditionalCreate(5, LocationDetailsComponent_Conditional_1_Conditional_37_Conditional_5_Template, 4, 1);
+    ɵɵconditionalCreate(6, LocationDetailsComponent_Conditional_1_Conditional_37_Conditional_6_Template, 4, 1);
     ɵɵelementEnd();
-    ɵɵconditionalCreate(7, LocationDetailsComponent_Conditional_1_Conditional_36_Conditional_7_Template, 4, 2, "div", 43);
-    ɵɵconditionalCreate(8, LocationDetailsComponent_Conditional_1_Conditional_36_Conditional_8_Template, 1, 1, "app-message", 44);
+    ɵɵconditionalCreate(7, LocationDetailsComponent_Conditional_1_Conditional_37_Conditional_7_Template, 4, 2, "div", 44);
+    ɵɵconditionalCreate(8, LocationDetailsComponent_Conditional_1_Conditional_37_Conditional_8_Template, 1, 1, "app-message", 45);
     ɵɵelementEnd();
   }
   if (rf & 2) {
@@ -118012,12 +118000,12 @@ function LocationDetailsComponent_Conditional_1_Conditional_36_Template(rf, ctx)
     ɵɵconditional(ctx_r1.alreadyExists() && ctx_r1.newLocation ? 8 : -1);
   }
 }
-function LocationDetailsComponent_Conditional_1_Conditional_45_Template(rf, ctx) {
+function LocationDetailsComponent_Conditional_1_Conditional_46_Template(rf, ctx) {
   if (rf & 1) {
-    const _r4 = ɵɵgetCurrentView();
-    ɵɵelementStart(0, "button", 47);
-    ɵɵlistener("click", function LocationDetailsComponent_Conditional_1_Conditional_45_Template_button_click_0_listener() {
-      ɵɵrestoreView(_r4);
+    const _r5 = ɵɵgetCurrentView();
+    ɵɵelementStart(0, "button", 48);
+    ɵɵlistener("click", function LocationDetailsComponent_Conditional_1_Conditional_46_Template_button_click_0_listener() {
+      ɵɵrestoreView(_r5);
       const ctx_r1 = ɵɵnextContext(2);
       return ɵɵresetView(ctx_r1.openDeleteDialog());
     });
@@ -118030,12 +118018,12 @@ function LocationDetailsComponent_Conditional_1_Conditional_45_Template(rf, ctx)
     ɵɵproperty("disabled", ctx_r1.selectedLocationId === ctx_r1.location.id || ctx_r1.location.id == null);
   }
 }
-function LocationDetailsComponent_Conditional_1_Conditional_46_Template(rf, ctx) {
+function LocationDetailsComponent_Conditional_1_Conditional_47_Template(rf, ctx) {
   if (rf & 1) {
-    const _r5 = ɵɵgetCurrentView();
-    ɵɵelementStart(0, "button", 48);
-    ɵɵlistener("click", function LocationDetailsComponent_Conditional_1_Conditional_46_Template_button_click_0_listener() {
-      ɵɵrestoreView(_r5);
+    const _r6 = ɵɵgetCurrentView();
+    ɵɵelementStart(0, "button", 49);
+    ɵɵlistener("click", function LocationDetailsComponent_Conditional_1_Conditional_47_Template_button_click_0_listener() {
+      ɵɵrestoreView(_r6);
       const ctx_r1 = ɵɵnextContext(2);
       return ɵɵresetView(ctx_r1.onCancel());
     });
@@ -118059,83 +118047,84 @@ function LocationDetailsComponent_Conditional_1_Template(rf, ctx) {
     ɵɵelement(8, "input", 20);
     ɵɵelementEnd();
     ɵɵconditionalCreate(9, LocationDetailsComponent_Conditional_1_Conditional_9_Template, 4, 0, "div", 21);
+    ɵɵconditionalCreate(10, LocationDetailsComponent_Conditional_1_Conditional_10_Template, 5, 2, "div", 21);
     ɵɵelementEnd();
-    ɵɵelementStart(10, "div", 18)(11, "mat-form-field", 22)(12, "mat-label");
-    ɵɵi18n(13, 1);
+    ɵɵelementStart(11, "div", 18)(12, "mat-form-field", 22)(13, "mat-label");
+    ɵɵi18n(14, 1);
     ɵɵelementEnd();
-    ɵɵelementStart(14, "span", 23);
-    ɵɵtext(15, "https://");
+    ɵɵelementStart(15, "span", 23);
+    ɵɵtext(16, "https://");
     ɵɵelementEnd();
-    ɵɵelementStart(16, "input", 24);
-    ɵɵlistener("change", function LocationDetailsComponent_Conditional_1_Template_input_change_16_listener($event) {
+    ɵɵelementStart(17, "input", 24);
+    ɵɵlistener("change", function LocationDetailsComponent_Conditional_1_Template_input_change_17_listener($event) {
       ɵɵrestoreView(_r1);
       const ctx_r1 = ɵɵnextContext();
       return ɵɵresetView(ctx_r1.onFieldChange($event));
     });
     ɵɵelementEnd();
-    ɵɵconditionalCreate(17, LocationDetailsComponent_Conditional_1_Conditional_17_Template, 6, 3, "mat-hint");
+    ɵɵconditionalCreate(18, LocationDetailsComponent_Conditional_1_Conditional_18_Template, 6, 3, "mat-hint");
     ɵɵelementEnd();
-    ɵɵelementStart(18, "mat-form-field", 25)(19, "mat-label");
-    ɵɵi18n(20, 2);
+    ɵɵelementStart(19, "mat-form-field", 25)(20, "mat-label");
+    ɵɵi18n(21, 2);
     ɵɵelementEnd();
-    ɵɵelementStart(21, "input", 26);
-    ɵɵlistener("change", function LocationDetailsComponent_Conditional_1_Template_input_change_21_listener($event) {
-      ɵɵrestoreView(_r1);
-      const ctx_r1 = ɵɵnextContext();
-      return ɵɵresetView(ctx_r1.onFieldChange($event));
-    });
-    ɵɵelementEnd()();
-    ɵɵconditionalCreate(22, LocationDetailsComponent_Conditional_1_Conditional_22_Template, 4, 3, "div", 27);
-    ɵɵelementEnd();
-    ɵɵelementStart(23, "div", 18)(24, "mat-form-field", 22)(25, "mat-label");
-    ɵɵi18n(26, 3);
-    ɵɵelementEnd();
-    ɵɵelementStart(27, "span", 23);
-    ɵɵtext(28, "https://");
-    ɵɵelementEnd();
-    ɵɵelementStart(29, "input", 28);
-    ɵɵlistener("change", function LocationDetailsComponent_Conditional_1_Template_input_change_29_listener($event) {
-      ɵɵrestoreView(_r1);
-      const ctx_r1 = ɵɵnextContext();
-      return ɵɵresetView(ctx_r1.onFieldChange($event));
-    });
-    ɵɵelementEnd();
-    ɵɵconditionalCreate(30, LocationDetailsComponent_Conditional_1_Conditional_30_Template, 6, 3, "mat-hint");
-    ɵɵelementEnd();
-    ɵɵelementStart(31, "mat-form-field", 25)(32, "mat-label");
-    ɵɵi18n(33, 4);
-    ɵɵelementEnd();
-    ɵɵelementStart(34, "input", 29);
-    ɵɵlistener("change", function LocationDetailsComponent_Conditional_1_Template_input_change_34_listener($event) {
+    ɵɵelementStart(22, "input", 26);
+    ɵɵlistener("change", function LocationDetailsComponent_Conditional_1_Template_input_change_22_listener($event) {
       ɵɵrestoreView(_r1);
       const ctx_r1 = ɵɵnextContext();
       return ɵɵresetView(ctx_r1.onFieldChange($event));
     });
     ɵɵelementEnd()();
-    ɵɵconditionalCreate(35, LocationDetailsComponent_Conditional_1_Conditional_35_Template, 5, 4, "div", 27);
+    ɵɵconditionalCreate(23, LocationDetailsComponent_Conditional_1_Conditional_23_Template, 4, 3, "div", 27);
+    ɵɵelementEnd();
+    ɵɵelementStart(24, "div", 18)(25, "mat-form-field", 22)(26, "mat-label");
+    ɵɵi18n(27, 3);
+    ɵɵelementEnd();
+    ɵɵelementStart(28, "span", 23);
+    ɵɵtext(29, "https://");
+    ɵɵelementEnd();
+    ɵɵelementStart(30, "input", 28);
+    ɵɵlistener("change", function LocationDetailsComponent_Conditional_1_Template_input_change_30_listener($event) {
+      ɵɵrestoreView(_r1);
+      const ctx_r1 = ɵɵnextContext();
+      return ɵɵresetView(ctx_r1.onFieldChange($event));
+    });
+    ɵɵelementEnd();
+    ɵɵconditionalCreate(31, LocationDetailsComponent_Conditional_1_Conditional_31_Template, 6, 3, "mat-hint");
+    ɵɵelementEnd();
+    ɵɵelementStart(32, "mat-form-field", 25)(33, "mat-label");
+    ɵɵi18n(34, 4);
+    ɵɵelementEnd();
+    ɵɵelementStart(35, "input", 29);
+    ɵɵlistener("change", function LocationDetailsComponent_Conditional_1_Template_input_change_35_listener($event) {
+      ɵɵrestoreView(_r1);
+      const ctx_r1 = ɵɵnextContext();
+      return ɵɵresetView(ctx_r1.onFieldChange($event));
+    });
+    ɵɵelementEnd()();
+    ɵɵconditionalCreate(36, LocationDetailsComponent_Conditional_1_Conditional_36_Template, 5, 4, "div", 27);
     ɵɵelementEnd()()()();
-    ɵɵconditionalCreate(36, LocationDetailsComponent_Conditional_1_Conditional_36_Template, 9, 6);
-    ɵɵelement(37, "mat-divider");
-    ɵɵelementStart(38, "mat-card-actions", 30)(39, "button", 31);
-    ɵɵlistener("click", function LocationDetailsComponent_Conditional_1_Template_button_click_39_listener() {
+    ɵɵconditionalCreate(37, LocationDetailsComponent_Conditional_1_Conditional_37_Template, 9, 6);
+    ɵɵelement(38, "mat-divider");
+    ɵɵelementStart(39, "mat-card-actions", 30)(40, "button", 31);
+    ɵɵlistener("click", function LocationDetailsComponent_Conditional_1_Template_button_click_40_listener() {
       ɵɵrestoreView(_r1);
       const ctx_r1 = ɵɵnextContext();
       return ɵɵresetView(ctx_r1.executeLocationTest());
     });
-    ɵɵelementStart(40, "mat-icon");
-    ɵɵtext(41, "search");
+    ɵɵelementStart(41, "mat-icon");
+    ɵɵtext(42, "search");
     ɵɵelementEnd()();
-    ɵɵelementStart(42, "button", 31);
-    ɵɵlistener("click", function LocationDetailsComponent_Conditional_1_Template_button_click_42_listener() {
+    ɵɵelementStart(43, "button", 31);
+    ɵɵlistener("click", function LocationDetailsComponent_Conditional_1_Template_button_click_43_listener() {
       ɵɵrestoreView(_r1);
       const ctx_r1 = ɵɵnextContext();
       return ɵɵresetView(ctx_r1.onSubmit());
     });
-    ɵɵelementStart(43, "mat-icon");
-    ɵɵtext(44, "save");
+    ɵɵelementStart(44, "mat-icon");
+    ɵɵtext(45, "save");
     ɵɵelementEnd()();
-    ɵɵconditionalCreate(45, LocationDetailsComponent_Conditional_1_Conditional_45_Template, 3, 1, "button", 32);
-    ɵɵconditionalCreate(46, LocationDetailsComponent_Conditional_1_Conditional_46_Template, 3, 0, "button", 33);
+    ɵɵconditionalCreate(46, LocationDetailsComponent_Conditional_1_Conditional_46_Template, 3, 1, "button", 32);
+    ɵɵconditionalCreate(47, LocationDetailsComponent_Conditional_1_Conditional_47_Template, 3, 0, "button", 33);
     ɵɵelementEnd()();
   }
   if (rf & 2) {
@@ -118144,24 +118133,26 @@ function LocationDetailsComponent_Conditional_1_Template(rf, ctx) {
     ɵɵproperty("formGroup", ctx_r1.locationForm);
     ɵɵadvance(7);
     ɵɵconditional(ctx_r1.location.id != null && ctx_r1.notificationsAvailable ? 9 : -1);
-    ɵɵadvance(8);
-    ɵɵconditional(ctx_r1.showApiLink && (ctx_r1.testResult == null ? null : ctx_r1.testResult.primary) === false ? 17 : -1);
-    ɵɵadvance(5);
-    ɵɵconditional(ctx_r1.testResult !== null ? 22 : -1);
-    ɵɵadvance(8);
-    ɵɵconditional(ctx_r1.showApiLink && (ctx_r1.testResult == null ? null : ctx_r1.testResult.secondary) === false ? 30 : -1);
-    ɵɵadvance(5);
-    ɵɵconditional(ctx_r1.testResult !== null ? 35 : -1);
     ɵɵadvance();
-    ɵɵconditional(ctx_r1.location.id ? 36 : -1);
+    ɵɵconditional(ctx_r1.location.id != null && ctx_r1.biometricAvailable ? 10 : -1);
+    ɵɵadvance(8);
+    ɵɵconditional(ctx_r1.showApiLink && (ctx_r1.testResult == null ? null : ctx_r1.testResult.primary) === false ? 18 : -1);
+    ɵɵadvance(5);
+    ɵɵconditional(ctx_r1.testResult !== null ? 23 : -1);
+    ɵɵadvance(8);
+    ɵɵconditional(ctx_r1.showApiLink && (ctx_r1.testResult == null ? null : ctx_r1.testResult.secondary) === false ? 31 : -1);
+    ɵɵadvance(5);
+    ɵɵconditional(ctx_r1.testResult !== null ? 36 : -1);
+    ɵɵadvance();
+    ɵɵconditional(ctx_r1.location.id ? 37 : -1);
     ɵɵadvance(3);
     ɵɵproperty("disabled", ctx_r1.locationForm.invalid);
     ɵɵadvance(3);
     ɵɵproperty("disabled", ctx_r1.cantSave());
     ɵɵadvance(3);
-    ɵɵconditional(!ctx_r1.newLocation && ctx_r1.isMultiLocation ? 45 : -1);
+    ɵɵconditional(!ctx_r1.newLocation && ctx_r1.isMultiLocation ? 46 : -1);
     ɵɵadvance();
-    ɵɵconditional(!ctx_r1.firstLocation ? 46 : -1);
+    ɵɵconditional(!ctx_r1.firstLocation ? 47 : -1);
   }
 }
 function LocationDetailsComponent_Conditional_2_Template(rf, ctx) {
@@ -118172,12 +118163,13 @@ function LocationDetailsComponent_Conditional_2_Template(rf, ctx) {
   }
 }
 var LocationDetailsComponent = class _LocationDetailsComponent {
-  constructor(authenticationService, route, router, dialog, notificationService) {
+  constructor(authenticationService, route, router, dialog, notificationService, biometricService) {
     this.authenticationService = authenticationService;
     this.route = route;
     this.router = router;
     this.dialog = dialog;
     this.notificationService = notificationService;
+    this.biometricService = biometricService;
     this.ALREADY_EXISTS = "Location already exists!";
     this.location = null;
     this.version = null;
@@ -118190,6 +118182,8 @@ var LocationDetailsComponent = class _LocationDetailsComponent {
     this.showApiLink = environment.showApiLink;
     this.isMultiLocation = environment.isMultiLocation;
     this.notificationsAvailable = false;
+    this.biometricAvailable = false;
+    this.useBiometric = null;
     this.systemLocationName = null;
     this.route.params.subscribe(params => {
       const locations = JSON.parse(localStorage.getItem("locations") || "[]");
@@ -118202,9 +118196,14 @@ var LocationDetailsComponent = class _LocationDetailsComponent {
         this.newLocation = true;
       }
       this.updateForm(this.location);
+      this.updateBiometricState();
     });
     this.selectedLocationId = localStorage.getItem("selectedLocationId");
     this.notificationsAvailable = this.notificationService.isAvailable();
+    this.biometricService.isAvailable().then(result => {
+      this.biometricAvailable = result;
+      this.updateBiometricState();
+    });
   }
   notificationsEnabled() {
     if (!this.location?.id) {
@@ -118223,6 +118222,26 @@ var LocationDetailsComponent = class _LocationDetailsComponent {
       return;
     }
     this.notificationService.disableNotifications(this.location.id);
+  }
+  updateBiometricState() {
+    this.useBiometric = this.location?.id ? this.biometricService.isBiometricEnabled(this.location.id) : null;
+  }
+  isBiometricEnabled() {
+    return this.useBiometric === true || this.useBiometric === null;
+  }
+  enableBiometricLogin() {
+    if (!this.location?.id) {
+      return;
+    }
+    this.biometricService.enableBiometricLogin(this.location.id);
+    this.useBiometric = null;
+  }
+  disableBiometricLogin() {
+    if (!this.location?.id) {
+      return;
+    }
+    this.biometricService.disableBiometricLogin(this.location.id);
+    this.useBiometric = false;
   }
   defaultLocation() {
     return {
@@ -118399,7 +118418,7 @@ var LocationDetailsComponent = class _LocationDetailsComponent {
   }
   static {
     this.ɵfac = function LocationDetailsComponent_Factory(__ngFactoryType__) {
-      return new (__ngFactoryType__ || _LocationDetailsComponent)(ɵɵdirectiveInject(AUTHENTICATION_SERVICE), ɵɵdirectiveInject(ActivatedRoute), ɵɵdirectiveInject(Router), ɵɵdirectiveInject(MatDialog), ɵɵdirectiveInject("NotificationService"));
+      return new (__ngFactoryType__ || _LocationDetailsComponent)(ɵɵdirectiveInject(AUTHENTICATION_SERVICE), ɵɵdirectiveInject(ActivatedRoute), ɵɵdirectiveInject(Router), ɵɵdirectiveInject(MatDialog), ɵɵdirectiveInject("NotificationService"), ɵɵdirectiveInject("BiometricService"));
     };
   }
   static {
@@ -118501,12 +118520,12 @@ var LocationDetailsComponent = class _LocationDetailsComponent {
         } else {
           i18n_12 = "The location was not found!";
         }
-        return [i18n_0, i18n_1, i18n_2, i18n_3, i18n_4, i18n_5, i18n_6, i18n_7, i18n_8, i18n_9, i18n_10, i18n_11, i18n_12, [1, "container"], [1, "container-item", "zone-form"], [1, "container-item"], [3, "ngSubmit", "formGroup"], [1, "column"], [1, "row"], ["floatLabel", "always", 1, "name"], ["matInput", "", "type", "text", "maxlength", "16", "formControlName", "name", 1, "form-control"], [1, "notifications"], ["floatLabel", "always", 1, "domain"], ["matTextPrefix", ""], ["matInput", "", "type", "text", "autocapitalize", "off", "name", "primaryDomain", "formControlName", "primaryDomain", 1, "form-control", 3, "change"], [1, "port"], ["matInput", "", "type", "number", "name", "primaryPort", "formControlName", "primaryPort", 1, "form-control", 3, "change"], [1, "status"], ["matInput", "", "type", "text", "autocapitalize", "off", "name", "secondaryDomain", "formControlName", "secondaryDomain", 1, "form-control", 3, "change"], ["matInput", "", "type", "number", "name", "secondaryPort", "formControlName", "secondaryPort", 1, "form-control", 3, "change"], ["align", "end"], ["mat-icon-button", "", "color", "primary", 3, "click", "disabled"], ["mat-icon-button", "", "color", "warn", "type", "button", 3, "disabled"], ["mat-icon-button", "", "color", "accent", "type", "button"], ["matSuffix", ""], ["matSuffix", "", "color", "primary", "formControlName", "notifications"], ["target", "_blank", 3, "href"], [1, "no-wrap"], [1, "icon-accessible"], [1, "icon-inaccessible"], ["diameter", "16"], [1, "icon-na"], [1, "details"], [1, "register"], ["type", "warning", 3, "message"], ["mat-icon-button", "", 1, "small", 3, "click"], [1, "text"], ["mat-icon-button", "", "color", "warn", "type", "button", 3, "click", "disabled"], ["mat-icon-button", "", "color", "accent", "type", "button", 3, "click"]];
+        return [i18n_0, i18n_1, i18n_2, i18n_3, i18n_4, i18n_5, i18n_6, i18n_7, i18n_8, i18n_9, i18n_10, i18n_11, i18n_12, [1, "container"], [1, "container-item", "zone-form"], [1, "container-item"], [3, "ngSubmit", "formGroup"], [1, "column"], [1, "row"], ["floatLabel", "always", 1, "name"], ["matInput", "", "type", "text", "maxlength", "16", "formControlName", "name", 1, "form-control"], [1, "notifications"], ["floatLabel", "always", 1, "domain"], ["matTextPrefix", ""], ["matInput", "", "type", "text", "autocapitalize", "off", "name", "primaryDomain", "formControlName", "primaryDomain", 1, "form-control", 3, "change"], [1, "port"], ["matInput", "", "type", "number", "name", "primaryPort", "formControlName", "primaryPort", 1, "form-control", 3, "change"], [1, "status"], ["matInput", "", "type", "text", "autocapitalize", "off", "name", "secondaryDomain", "formControlName", "secondaryDomain", 1, "form-control", 3, "change"], ["matInput", "", "type", "number", "name", "secondaryPort", "formControlName", "secondaryPort", 1, "form-control", 3, "change"], ["align", "end"], ["mat-icon-button", "", "color", "primary", 3, "click", "disabled"], ["mat-icon-button", "", "color", "warn", "type", "button", 3, "disabled"], ["mat-icon-button", "", "color", "accent", "type", "button"], ["matSuffix", ""], ["matSuffix", "", "color", "primary", "formControlName", "notifications"], ["matSuffix", "", "color", "primary", 3, "change", "checked"], ["target", "_blank", 3, "href"], [1, "no-wrap"], [1, "icon-accessible"], [1, "icon-inaccessible"], ["diameter", "16"], [1, "icon-na"], [1, "details"], [1, "register"], ["type", "warning", 3, "message"], ["mat-icon-button", "", 1, "small", 3, "click"], [1, "text"], ["mat-icon-button", "", "color", "warn", "type", "button", 3, "click", "disabled"], ["mat-icon-button", "", "color", "accent", "type", "button", 3, "click"]];
       },
       template: function LocationDetailsComponent_Template(rf, ctx) {
         if (rf & 1) {
           ɵɵelementStart(0, "div", 13);
-          ɵɵconditionalCreate(1, LocationDetailsComponent_Conditional_1_Template, 47, 11, "mat-card", 14);
+          ɵɵconditionalCreate(1, LocationDetailsComponent_Conditional_1_Template, 48, 12, "mat-card", 14);
           ɵɵconditionalCreate(2, LocationDetailsComponent_Conditional_2_Template, 3, 0, "div", 15);
           ɵɵelementEnd();
         }
@@ -118528,7 +118547,7 @@ var LocationDetailsComponent = class _LocationDetailsComponent {
     args: [{
       selector: "app-location-details",
       standalone: false,
-      template: '<div class="container">\n  @if (location) {\n    <mat-card class="container-item zone-form">\n      <mat-card-content>\n        <form [formGroup]="locationForm" (ngSubmit)="onSubmit()">\n          <div class="column">\n            <div class="row">\n              <mat-form-field class="name" floatLabel="always">\n                <mat-label i18n="@@location name">Name</mat-label>\n                <input matInput type="text" class="form-control" maxlength="16" formControlName="name" />\n              </mat-form-field>\n              @if (location.id != null && notificationsAvailable) {\n                <div class="notifications">\n                  <mat-icon matSuffix>notifications</mat-icon>\n                  <mat-slide-toggle matSuffix color="primary" formControlName="notifications"></mat-slide-toggle>\n                </div>\n              }\n            </div>\n            <div class="row">\n              <mat-form-field class="domain" floatLabel="always">\n                <mat-label i18n="@@location primary domain">Primary Domain</mat-label>\n                <span matTextPrefix>https://</span>\n                <input\n                  matInput\n                  type="text"\n                  autocapitalize="off"\n                  class="form-control"\n                  name="primaryDomain"\n                  formControlName="primaryDomain"\n                  (change)="onFieldChange($event)"\n                />\n                @if (showApiLink && testResult?.primary === false) {\n                  <mat-hint>\n                    <a\n                      href="https://{{ location.primaryDomain }}:{{ location.primaryPort }}/api/version"\n                      target="_blank"\n                    >\n                      <span i18n="@@location check" class="no-wrap">Check API version and certificate</span>\n                      <mat-icon>open_in_new</mat-icon>\n                    </a>\n                  </mat-hint>\n                }\n              </mat-form-field>\n              <mat-form-field class="port">\n                <mat-label i18n="@@location port">Port</mat-label>\n                <input\n                  matInput\n                  type="number"\n                  class="form-control"\n                  name="primaryPort"\n                  formControlName="primaryPort"\n                  (change)="onFieldChange($event)"\n                />\n              </mat-form-field>\n              @if (testResult !== null) {\n                <div class="status">\n                  @if (testResult.primary === true) {\n                    <mat-icon class="icon-accessible">check_circle</mat-icon>\n                  }\n                  @if (testResult.primary === false) {\n                    <mat-icon class="icon-inaccessible">error</mat-icon>\n                  }\n                  @if (testResult.primary === null) {\n                    <mat-spinner diameter="16" />\n                  }\n                </div>\n              }\n            </div>\n            <div class="row">\n              <mat-form-field class="domain" floatLabel="always">\n                <mat-label i18n="@@location secondary domain">Secondary Domain</mat-label>\n                <span matTextPrefix>https://</span>\n                <input\n                  matInput\n                  type="text"\n                  autocapitalize="off"\n                  class="form-control"\n                  name="secondaryDomain"\n                  formControlName="secondaryDomain"\n                  (change)="onFieldChange($event)"\n                />\n                @if (showApiLink && testResult?.secondary === false) {\n                  <mat-hint>\n                    <a\n                      href="https://{{ location.secondaryDomain }}:{{ location.secondaryPort }}/api/version"\n                      target="_blank"\n                    >\n                      <span i18n="@@location check" class="no-wrap">Check API version and certificate</span>\n                      <mat-icon>open_in_new</mat-icon>\n                    </a>\n                  </mat-hint>\n                }\n              </mat-form-field>\n              <mat-form-field class="port">\n                <mat-label i18n="@@location port">Port</mat-label>\n                <input\n                  matInput\n                  type="number"\n                  class="form-control"\n                  name="secondaryPort"\n                  formControlName="secondaryPort"\n                  (change)="onFieldChange($event)"\n                />\n              </mat-form-field>\n              @if (testResult !== null) {\n                <div class="status">\n                  @if (testResult.secondary === true) {\n                    <mat-icon class="icon-accessible">check_circle</mat-icon>\n                  }\n                  @if (testResult.secondary === false) {\n                    <mat-icon class="icon-inaccessible">error</mat-icon>\n                  }\n                  @if (testResult.secondary === undefined) {\n                    <mat-icon class="icon-na">not_interested</mat-icon>\n                  }\n                  @if (testResult.secondary === null) {\n                    <mat-spinner diameter="16" />\n                  }\n                </div>\n              }\n            </div>\n          </div>\n        </form>\n      </mat-card-content>\n      @if (location.id) {\n        <mat-divider></mat-divider>\n        <mat-card-content class="details">\n          <dl>\n            @if (location.id) {\n              <dt>ID</dt>\n              <dd>{{ location.id }}</dd>\n            }\n            @if (systemLocationName) {\n              <dt i18n="@@location system name">Remote name</dt>\n              <dd>\n                {{ systemLocationName }}\n                <button mat-icon-button class="small" (click)="onSaveRemoteToLocalname()">\n                  <mat-icon>content_copy</mat-icon>\n                </button>\n              </dd>\n            }\n            @if (version) {\n              <dt i18n="@@location code">Code</dt>\n              <dd>{{ version.version_tag }}</dd>\n            }\n            @if (boardVersion) {\n              <dt i18n="@@location board">Board</dt>\n              <dd>{{ boardVersion }}</dd>\n            }\n          </dl>\n          @if (location.id != null) {\n            <div class="register">\n              <mat-divider></mat-divider>\n              @if (isRegistered() === true) {\n                <div>\n                  <mat-icon class="icon-accessible">check_circle</mat-icon>\n                  <div class="text" i18n="@@location device registered">Device registered</div>\n                </div>\n              }\n              @if (isRegistered() === false) {\n                <div>\n                  <mat-icon class="icon-inaccessible">error</mat-icon>\n                  <div class="text" i18n="@@location device not registered">Device NOT registered</div>\n                </div>\n              }\n            </div>\n          }\n          @if (alreadyExists() && newLocation) {\n            <app-message type="warning" [message]="ALREADY_EXISTS"></app-message>\n          }\n        </mat-card-content>\n      }\n      <mat-divider></mat-divider>\n      <mat-card-actions align="end">\n        <button mat-icon-button color="primary" (click)="executeLocationTest()" [disabled]="locationForm.invalid">\n          <mat-icon>search</mat-icon>\n        </button>\n        <button mat-icon-button color="primary" (click)="onSubmit()" [disabled]="cantSave()">\n          <mat-icon>save</mat-icon>\n        </button>\n        @if (!newLocation && isMultiLocation) {\n          <button\n            mat-icon-button\n            color="warn"\n            type="button"\n            (click)="openDeleteDialog()"\n            [disabled]="selectedLocationId === location.id || location.id == null"\n          >\n            <mat-icon>delete</mat-icon>\n          </button>\n        }\n        @if (!firstLocation) {\n          <button mat-icon-button color="accent" type="button" (click)="onCancel()">\n            <mat-icon>cancel</mat-icon>\n          </button>\n        }\n      </mat-card-actions>\n    </mat-card>\n  }\n\n  @if (location == null) {\n    <div class="container-item">\n      <h1 i18n="@@location not found">The location was not found!</h1>\n    </div>\n  }\n</div>\n',
+      template: '<div class="container">\n  @if (location) {\n    <mat-card class="container-item zone-form">\n      <mat-card-content>\n        <form [formGroup]="locationForm" (ngSubmit)="onSubmit()">\n          <div class="column">\n            <div class="row">\n              <mat-form-field class="name" floatLabel="always">\n                <mat-label i18n="@@location name">Name</mat-label>\n                <input matInput type="text" class="form-control" maxlength="16" formControlName="name" />\n              </mat-form-field>\n              @if (location.id != null && notificationsAvailable) {\n                <div class="notifications">\n                  <mat-icon matSuffix>notifications</mat-icon>\n                  <mat-slide-toggle matSuffix color="primary" formControlName="notifications"></mat-slide-toggle>\n                </div>\n              }\n              @if (location.id != null && biometricAvailable) {\n                <div class="notifications">\n                  <mat-icon matSuffix>\n                    @if (isBiometricEnabled()) {\n                      fingerprint\n                    } @else {\n                      fingerprint_off\n                    }\n                  </mat-icon>\n                  <mat-slide-toggle\n                    matSuffix\n                    color="primary"\n                    [checked]="isBiometricEnabled()"\n                    (change)="$event.checked ? enableBiometricLogin() : disableBiometricLogin()"\n                  ></mat-slide-toggle>\n                </div>\n              }\n            </div>\n            <div class="row">\n              <mat-form-field class="domain" floatLabel="always">\n                <mat-label i18n="@@location primary domain">Primary Domain</mat-label>\n                <span matTextPrefix>https://</span>\n                <input\n                  matInput\n                  type="text"\n                  autocapitalize="off"\n                  class="form-control"\n                  name="primaryDomain"\n                  formControlName="primaryDomain"\n                  (change)="onFieldChange($event)"\n                />\n                @if (showApiLink && testResult?.primary === false) {\n                  <mat-hint>\n                    <a\n                      href="https://{{ location.primaryDomain }}:{{ location.primaryPort }}/api/version"\n                      target="_blank"\n                    >\n                      <span i18n="@@location check" class="no-wrap">Check API version and certificate</span>\n                      <mat-icon>open_in_new</mat-icon>\n                    </a>\n                  </mat-hint>\n                }\n              </mat-form-field>\n              <mat-form-field class="port">\n                <mat-label i18n="@@location port">Port</mat-label>\n                <input\n                  matInput\n                  type="number"\n                  class="form-control"\n                  name="primaryPort"\n                  formControlName="primaryPort"\n                  (change)="onFieldChange($event)"\n                />\n              </mat-form-field>\n              @if (testResult !== null) {\n                <div class="status">\n                  @if (testResult.primary === true) {\n                    <mat-icon class="icon-accessible">check_circle</mat-icon>\n                  }\n                  @if (testResult.primary === false) {\n                    <mat-icon class="icon-inaccessible">error</mat-icon>\n                  }\n                  @if (testResult.primary === null) {\n                    <mat-spinner diameter="16" />\n                  }\n                </div>\n              }\n            </div>\n            <div class="row">\n              <mat-form-field class="domain" floatLabel="always">\n                <mat-label i18n="@@location secondary domain">Secondary Domain</mat-label>\n                <span matTextPrefix>https://</span>\n                <input\n                  matInput\n                  type="text"\n                  autocapitalize="off"\n                  class="form-control"\n                  name="secondaryDomain"\n                  formControlName="secondaryDomain"\n                  (change)="onFieldChange($event)"\n                />\n                @if (showApiLink && testResult?.secondary === false) {\n                  <mat-hint>\n                    <a\n                      href="https://{{ location.secondaryDomain }}:{{ location.secondaryPort }}/api/version"\n                      target="_blank"\n                    >\n                      <span i18n="@@location check" class="no-wrap">Check API version and certificate</span>\n                      <mat-icon>open_in_new</mat-icon>\n                    </a>\n                  </mat-hint>\n                }\n              </mat-form-field>\n              <mat-form-field class="port">\n                <mat-label i18n="@@location port">Port</mat-label>\n                <input\n                  matInput\n                  type="number"\n                  class="form-control"\n                  name="secondaryPort"\n                  formControlName="secondaryPort"\n                  (change)="onFieldChange($event)"\n                />\n              </mat-form-field>\n              @if (testResult !== null) {\n                <div class="status">\n                  @if (testResult.secondary === true) {\n                    <mat-icon class="icon-accessible">check_circle</mat-icon>\n                  }\n                  @if (testResult.secondary === false) {\n                    <mat-icon class="icon-inaccessible">error</mat-icon>\n                  }\n                  @if (testResult.secondary === undefined) {\n                    <mat-icon class="icon-na">not_interested</mat-icon>\n                  }\n                  @if (testResult.secondary === null) {\n                    <mat-spinner diameter="16" />\n                  }\n                </div>\n              }\n            </div>\n          </div>\n        </form>\n      </mat-card-content>\n      @if (location.id) {\n        <mat-divider></mat-divider>\n        <mat-card-content class="details">\n          <dl>\n            @if (location.id) {\n              <dt>ID</dt>\n              <dd>{{ location.id }}</dd>\n            }\n            @if (systemLocationName) {\n              <dt i18n="@@location system name">Remote name</dt>\n              <dd>\n                {{ systemLocationName }}\n                <button mat-icon-button class="small" (click)="onSaveRemoteToLocalname()">\n                  <mat-icon>content_copy</mat-icon>\n                </button>\n              </dd>\n            }\n            @if (version) {\n              <dt i18n="@@location code">Code</dt>\n              <dd>{{ version.version_tag }}</dd>\n            }\n            @if (boardVersion) {\n              <dt i18n="@@location board">Board</dt>\n              <dd>{{ boardVersion }}</dd>\n            }\n          </dl>\n          @if (location.id != null) {\n            <div class="register">\n              <mat-divider></mat-divider>\n              @if (isRegistered() === true) {\n                <div>\n                  <mat-icon class="icon-accessible">check_circle</mat-icon>\n                  <div class="text" i18n="@@location device registered">Device registered</div>\n                </div>\n              }\n              @if (isRegistered() === false) {\n                <div>\n                  <mat-icon class="icon-inaccessible">error</mat-icon>\n                  <div class="text" i18n="@@location device not registered">Device NOT registered</div>\n                </div>\n              }\n            </div>\n          }\n          @if (alreadyExists() && newLocation) {\n            <app-message type="warning" [message]="ALREADY_EXISTS"></app-message>\n          }\n        </mat-card-content>\n      }\n      <mat-divider></mat-divider>\n      <mat-card-actions align="end">\n        <button mat-icon-button color="primary" (click)="executeLocationTest()" [disabled]="locationForm.invalid">\n          <mat-icon>search</mat-icon>\n        </button>\n        <button mat-icon-button color="primary" (click)="onSubmit()" [disabled]="cantSave()">\n          <mat-icon>save</mat-icon>\n        </button>\n        @if (!newLocation && isMultiLocation) {\n          <button\n            mat-icon-button\n            color="warn"\n            type="button"\n            (click)="openDeleteDialog()"\n            [disabled]="selectedLocationId === location.id || location.id == null"\n          >\n            <mat-icon>delete</mat-icon>\n          </button>\n        }\n        @if (!firstLocation) {\n          <button mat-icon-button color="accent" type="button" (click)="onCancel()">\n            <mat-icon>cancel</mat-icon>\n          </button>\n        }\n      </mat-card-actions>\n    </mat-card>\n  }\n\n  @if (location == null) {\n    <div class="container-item">\n      <h1 i18n="@@location not found">The location was not found!</h1>\n    </div>\n  }\n</div>\n',
       styles: ["/* src/app/pages/location/location-details.component.scss */\n.name {\n  width: 425px;\n}\n.notifications {\n  margin: auto;\n  display: flex;\n  align-items: center;\n}\n.scheme {\n  width: 170px;\n}\n.domain {\n  width: 500px;\n}\n.port {\n  width: 160px;\n}\n.icon-accessible {\n  color: #4caf50;\n}\n.icon-inaccessible {\n  color: #f44336;\n}\n.status .mat-icon {\n  margin: 15px 0px;\n}\n.status .mat-spinner {\n  margin: 15px 0px;\n}\nbutton.small {\n  color: blue;\n  width: 20px !important;\n  height: 20px !important;\n  padding: 0px !important;\n  margin-left: 10px;\n  vertical-align: middle;\n}\nbutton.small mat-icon {\n  width: 20px;\n  height: 20px;\n  font-size: 16px;\n}\n.details {\n  margin-top: 20px;\n  margin-bottom: 20px;\n  font-size: small;\n}\n.details dt {\n  float: left;\n  clear: left;\n  margin-right: 5px;\n  width: 100px;\n  font-weight: bold;\n  text-align: right;\n}\n.details dd {\n  margin-left: 10px;\n}\n.details .register .mat-icon {\n  vertical-align: middle;\n  margin-top: -3px;\n}\n.details .register .text {\n  display: inline-block;\n  margin-top: 20px;\n  margin-left: 10px;\n}\n/*# sourceMappingURL=location-details.component.css.map */\n"]
     }]
   }], () => [{
@@ -118549,6 +118568,12 @@ var LocationDetailsComponent = class _LocationDetailsComponent {
       type: Inject,
       args: ["NotificationService"]
     }]
+  }, {
+    type: void 0,
+    decorators: [{
+      type: Inject,
+      args: ["BiometricService"]
+    }]
   }], null);
 })();
 (() => {
@@ -118565,7 +118590,30 @@ var _c128 = (a0, a1) => ({
   enabled: a0,
   disabled: a1
 });
-function LocationListComponent_Conditional_1_For_3_Conditional_1_Conditional_8_Template(rf, ctx) {
+function LocationListComponent_Conditional_1_For_3_Conditional_1_Conditional_6_Conditional_1_Template(rf, ctx) {
+  if (rf & 1) {
+    ɵɵtext(0, " fingerprint ");
+  }
+}
+function LocationListComponent_Conditional_1_For_3_Conditional_1_Conditional_6_Conditional_2_Template(rf, ctx) {
+  if (rf & 1) {
+    ɵɵtext(0, " fingerprint_off ");
+  }
+}
+function LocationListComponent_Conditional_1_For_3_Conditional_1_Conditional_6_Template(rf, ctx) {
+  if (rf & 1) {
+    ɵɵelementStart(0, "mat-icon");
+    ɵɵconditionalCreate(1, LocationListComponent_Conditional_1_For_3_Conditional_1_Conditional_6_Conditional_1_Template, 1, 0)(2, LocationListComponent_Conditional_1_For_3_Conditional_1_Conditional_6_Conditional_2_Template, 1, 0);
+    ɵɵelementEnd();
+  }
+  if (rf & 2) {
+    const location_r4 = ɵɵnextContext(2).$implicit;
+    const ctx_r1 = ɵɵnextContext(2);
+    ɵɵadvance();
+    ɵɵconditional(ctx_r1.isBiometricEnabled(location_r4.id) === true ? 1 : 2);
+  }
+}
+function LocationListComponent_Conditional_1_For_3_Conditional_1_Conditional_9_Template(rf, ctx) {
   if (rf & 1) {
     ɵɵelementStart(0, "mat-card-subtitle")(1, "span");
     ɵɵi18n(2, 3);
@@ -118579,7 +118627,7 @@ function LocationListComponent_Conditional_1_For_3_Conditional_1_Conditional_8_T
     ɵɵtextInterpolate1(" : ", location_r4.version.version_tag, " ");
   }
 }
-function LocationListComponent_Conditional_1_For_3_Conditional_1_Conditional_9_Template(rf, ctx) {
+function LocationListComponent_Conditional_1_For_3_Conditional_1_Conditional_10_Template(rf, ctx) {
   if (rf & 1) {
     ɵɵelementStart(0, "mat-card-subtitle")(1, "span");
     ɵɵi18n(2, 4);
@@ -118593,14 +118641,14 @@ function LocationListComponent_Conditional_1_For_3_Conditional_1_Conditional_9_T
     ɵɵtextInterpolate1(" : ", location_r4.boardVersion, " ");
   }
 }
-function LocationListComponent_Conditional_1_For_3_Conditional_1_Conditional_11_Template(rf, ctx) {
+function LocationListComponent_Conditional_1_For_3_Conditional_1_Conditional_12_Template(rf, ctx) {
   if (rf & 1) {
     ɵɵelementStart(0, "span")(1, "span");
     ɵɵi18n(2, 5);
     ɵɵelementEnd()();
   }
 }
-function LocationListComponent_Conditional_1_For_3_Conditional_1_Conditional_12_Template(rf, ctx) {
+function LocationListComponent_Conditional_1_For_3_Conditional_1_Conditional_13_Template(rf, ctx) {
   if (rf & 1) {
     ɵɵelementStart(0, "span")(1, "span");
     ɵɵi18n(2, 6);
@@ -118614,35 +118662,62 @@ function LocationListComponent_Conditional_1_For_3_Conditional_1_Template(rf, ct
     ɵɵelementEnd();
     ɵɵelementStart(4, "mat-icon", 51);
     ɵɵtext(5, " notifications ");
-    ɵɵelementEnd()();
-    ɵɵelementStart(6, "mat-card-title");
-    ɵɵi18n(7, 2);
     ɵɵelementEnd();
-    ɵɵconditionalCreate(8, LocationListComponent_Conditional_1_For_3_Conditional_1_Conditional_8_Template, 4, 1, "mat-card-subtitle");
+    ɵɵconditionalCreate(6, LocationListComponent_Conditional_1_For_3_Conditional_1_Conditional_6_Template, 3, 1, "mat-icon");
+    ɵɵelementEnd();
+    ɵɵelementStart(7, "mat-card-title");
+    ɵɵi18n(8, 2);
+    ɵɵelementEnd();
     ɵɵconditionalCreate(9, LocationListComponent_Conditional_1_For_3_Conditional_1_Conditional_9_Template, 4, 1, "mat-card-subtitle");
-    ɵɵelementStart(10, "mat-card-subtitle");
-    ɵɵconditionalCreate(11, LocationListComponent_Conditional_1_For_3_Conditional_1_Conditional_11_Template, 3, 0, "span");
+    ɵɵconditionalCreate(10, LocationListComponent_Conditional_1_For_3_Conditional_1_Conditional_10_Template, 4, 1, "mat-card-subtitle");
+    ɵɵelementStart(11, "mat-card-subtitle");
     ɵɵconditionalCreate(12, LocationListComponent_Conditional_1_For_3_Conditional_1_Conditional_12_Template, 3, 0, "span");
+    ɵɵconditionalCreate(13, LocationListComponent_Conditional_1_For_3_Conditional_1_Conditional_13_Template, 3, 0, "span");
     ɵɵelementEnd()();
   }
   if (rf & 2) {
     const location_r4 = ɵɵnextContext().$implicit;
     const ctx_r1 = ɵɵnextContext(2);
     ɵɵadvance(2);
-    ɵɵproperty("ngClass", ɵɵpureFunction2(6, _c128, ctx_r1.isRegistered(location_r4.id), !ctx_r1.isRegistered(location_r4.id)));
+    ɵɵproperty("ngClass", ɵɵpureFunction2(7, _c128, ctx_r1.isRegistered(location_r4.id), !ctx_r1.isRegistered(location_r4.id)));
     ɵɵadvance(2);
-    ɵɵproperty("ngClass", ɵɵpureFunction2(9, _c128, ctx_r1.isNotificationEnabled(location_r4.id), !ctx_r1.isNotificationEnabled(location_r4.id)));
-    ɵɵadvance(4);
-    ɵɵconditional(location_r4.version != null ? 8 : -1);
-    ɵɵadvance();
-    ɵɵconditional(location_r4.boardVersion != null ? 9 : -1);
+    ɵɵproperty("ngClass", ɵɵpureFunction2(10, _c128, ctx_r1.isNotificationEnabled(location_r4.id), !ctx_r1.isNotificationEnabled(location_r4.id)));
     ɵɵadvance(2);
-    ɵɵconditional(ctx_r1.isRegistered(location_r4.id) === true ? 11 : -1);
+    ɵɵconditional(ctx_r1.biometricAvailable ? 6 : -1);
+    ɵɵadvance(3);
+    ɵɵconditional(location_r4.version != null ? 9 : -1);
     ɵɵadvance();
-    ɵɵconditional(ctx_r1.isRegistered(location_r4.id) === false ? 12 : -1);
+    ɵɵconditional(location_r4.boardVersion != null ? 10 : -1);
+    ɵɵadvance(2);
+    ɵɵconditional(ctx_r1.isRegistered(location_r4.id) === true ? 12 : -1);
+    ɵɵadvance();
+    ɵɵconditional(ctx_r1.isRegistered(location_r4.id) === false ? 13 : -1);
   }
 }
-function LocationListComponent_Conditional_1_For_3_Conditional_2_Conditional_8_Template(rf, ctx) {
+function LocationListComponent_Conditional_1_For_3_Conditional_2_Conditional_6_Conditional_1_Template(rf, ctx) {
+  if (rf & 1) {
+    ɵɵtext(0, " fingerprint ");
+  }
+}
+function LocationListComponent_Conditional_1_For_3_Conditional_2_Conditional_6_Conditional_2_Template(rf, ctx) {
+  if (rf & 1) {
+    ɵɵtext(0, " fingerprint_off ");
+  }
+}
+function LocationListComponent_Conditional_1_For_3_Conditional_2_Conditional_6_Template(rf, ctx) {
+  if (rf & 1) {
+    ɵɵelementStart(0, "mat-icon");
+    ɵɵconditionalCreate(1, LocationListComponent_Conditional_1_For_3_Conditional_2_Conditional_6_Conditional_1_Template, 1, 0)(2, LocationListComponent_Conditional_1_For_3_Conditional_2_Conditional_6_Conditional_2_Template, 1, 0);
+    ɵɵelementEnd();
+  }
+  if (rf & 2) {
+    const location_r4 = ɵɵnextContext(2).$implicit;
+    const ctx_r1 = ɵɵnextContext(2);
+    ɵɵadvance();
+    ɵɵconditional(ctx_r1.isBiometricEnabled(location_r4.id) === true ? 1 : 2);
+  }
+}
+function LocationListComponent_Conditional_1_For_3_Conditional_2_Conditional_9_Template(rf, ctx) {
   if (rf & 1) {
     ɵɵelementStart(0, "mat-card-subtitle");
     ɵɵtext(1);
@@ -118654,7 +118729,7 @@ function LocationListComponent_Conditional_1_For_3_Conditional_2_Conditional_8_T
     ɵɵtextInterpolate1("ID: ", location_r4.id);
   }
 }
-function LocationListComponent_Conditional_1_For_3_Conditional_2_Conditional_9_Template(rf, ctx) {
+function LocationListComponent_Conditional_1_For_3_Conditional_2_Conditional_10_Template(rf, ctx) {
   if (rf & 1) {
     ɵɵelementStart(0, "mat-card-subtitle")(1, "span");
     ɵɵi18n(2, 8);
@@ -118668,7 +118743,7 @@ function LocationListComponent_Conditional_1_For_3_Conditional_2_Conditional_9_T
     ɵɵtextInterpolate1(" : ", location_r4.version.version_tag, " ");
   }
 }
-function LocationListComponent_Conditional_1_For_3_Conditional_2_Conditional_10_Template(rf, ctx) {
+function LocationListComponent_Conditional_1_For_3_Conditional_2_Conditional_11_Template(rf, ctx) {
   if (rf & 1) {
     ɵɵelementStart(0, "mat-card-subtitle")(1, "span");
     ɵɵi18n(2, 9);
@@ -118682,14 +118757,14 @@ function LocationListComponent_Conditional_1_For_3_Conditional_2_Conditional_10_
     ɵɵtextInterpolate1(" : ", location_r4.boardVersion, " ");
   }
 }
-function LocationListComponent_Conditional_1_For_3_Conditional_2_Conditional_12_Template(rf, ctx) {
+function LocationListComponent_Conditional_1_For_3_Conditional_2_Conditional_13_Template(rf, ctx) {
   if (rf & 1) {
     ɵɵelementStart(0, "span")(1, "span");
     ɵɵi18n(2, 10);
     ɵɵelementEnd()();
   }
 }
-function LocationListComponent_Conditional_1_For_3_Conditional_2_Conditional_13_Template(rf, ctx) {
+function LocationListComponent_Conditional_1_For_3_Conditional_2_Conditional_14_Template(rf, ctx) {
   if (rf & 1) {
     ɵɵelementStart(0, "span")(1, "span");
     ɵɵi18n(2, 11);
@@ -118703,38 +118778,42 @@ function LocationListComponent_Conditional_1_For_3_Conditional_2_Template(rf, ct
     ɵɵelementEnd();
     ɵɵelementStart(4, "mat-icon", 52);
     ɵɵtext(5, " notifications ");
-    ɵɵelementEnd()();
-    ɵɵelementStart(6, "mat-card-title");
-    ɵɵi18n(7, 7);
     ɵɵelementEnd();
-    ɵɵconditionalCreate(8, LocationListComponent_Conditional_1_For_3_Conditional_2_Conditional_8_Template, 2, 1, "mat-card-subtitle");
-    ɵɵconditionalCreate(9, LocationListComponent_Conditional_1_For_3_Conditional_2_Conditional_9_Template, 4, 1, "mat-card-subtitle");
+    ɵɵconditionalCreate(6, LocationListComponent_Conditional_1_For_3_Conditional_2_Conditional_6_Template, 3, 1, "mat-icon");
+    ɵɵelementEnd();
+    ɵɵelementStart(7, "mat-card-title");
+    ɵɵi18n(8, 7);
+    ɵɵelementEnd();
+    ɵɵconditionalCreate(9, LocationListComponent_Conditional_1_For_3_Conditional_2_Conditional_9_Template, 2, 1, "mat-card-subtitle");
     ɵɵconditionalCreate(10, LocationListComponent_Conditional_1_For_3_Conditional_2_Conditional_10_Template, 4, 1, "mat-card-subtitle");
-    ɵɵelementStart(11, "mat-card-subtitle");
-    ɵɵconditionalCreate(12, LocationListComponent_Conditional_1_For_3_Conditional_2_Conditional_12_Template, 3, 0, "span");
+    ɵɵconditionalCreate(11, LocationListComponent_Conditional_1_For_3_Conditional_2_Conditional_11_Template, 4, 1, "mat-card-subtitle");
+    ɵɵelementStart(12, "mat-card-subtitle");
     ɵɵconditionalCreate(13, LocationListComponent_Conditional_1_For_3_Conditional_2_Conditional_13_Template, 3, 0, "span");
+    ɵɵconditionalCreate(14, LocationListComponent_Conditional_1_For_3_Conditional_2_Conditional_14_Template, 3, 0, "span");
     ɵɵelementEnd()();
   }
   if (rf & 2) {
     const location_r4 = ɵɵnextContext().$implicit;
     const ctx_r1 = ɵɵnextContext(2);
     ɵɵadvance(2);
-    ɵɵproperty("ngClass", ɵɵpureFunction2(8, _c128, ctx_r1.isRegistered(location_r4.id), !ctx_r1.isRegistered(location_r4.id)));
+    ɵɵproperty("ngClass", ɵɵpureFunction2(9, _c128, ctx_r1.isRegistered(location_r4.id), !ctx_r1.isRegistered(location_r4.id)));
     ɵɵadvance(2);
-    ɵɵproperty("ngClass", ɵɵpureFunction2(11, _c128, ctx_r1.isNotificationEnabled(location_r4.id), !ctx_r1.isNotificationEnabled(location_r4.id)));
-    ɵɵadvance(3);
+    ɵɵproperty("ngClass", ɵɵpureFunction2(12, _c128, ctx_r1.isNotificationEnabled(location_r4.id), !ctx_r1.isNotificationEnabled(location_r4.id)));
+    ɵɵadvance(2);
+    ɵɵconditional(ctx_r1.biometricAvailable ? 6 : -1);
+    ɵɵadvance(2);
     ɵɵi18nExp(location_r4.name);
-    ɵɵi18nApply(7);
+    ɵɵi18nApply(8);
     ɵɵadvance();
-    ɵɵconditional(location_r4.id != null ? 8 : -1);
+    ɵɵconditional(location_r4.id != null ? 9 : -1);
     ɵɵadvance();
-    ɵɵconditional(location_r4.version != null ? 9 : -1);
+    ɵɵconditional(location_r4.version != null ? 10 : -1);
     ɵɵadvance();
-    ɵɵconditional(location_r4.boardVersion != null ? 10 : -1);
+    ɵɵconditional(location_r4.boardVersion != null ? 11 : -1);
     ɵɵadvance(2);
-    ɵɵconditional(ctx_r1.isRegistered(location_r4.id) === true ? 12 : -1);
+    ɵɵconditional(ctx_r1.isRegistered(location_r4.id) === true ? 13 : -1);
     ɵɵadvance();
-    ɵɵconditional(ctx_r1.isRegistered(location_r4.id) === false ? 13 : -1);
+    ɵɵconditional(ctx_r1.isRegistered(location_r4.id) === false ? 14 : -1);
   }
 }
 function LocationListComponent_Conditional_1_For_3_Conditional_7_Template(rf, ctx) {
@@ -118915,8 +118994,8 @@ function LocationListComponent_Conditional_1_For_3_Template(rf, ctx) {
       const ctx_r1 = ɵɵnextContext(2);
       return ɵɵresetView(ctx_r1.onDragStarted($event));
     });
-    ɵɵconditionalCreate(1, LocationListComponent_Conditional_1_For_3_Conditional_1_Template, 13, 12, "mat-card-header");
-    ɵɵconditionalCreate(2, LocationListComponent_Conditional_1_For_3_Conditional_2_Template, 14, 14, "mat-card-header");
+    ɵɵconditionalCreate(1, LocationListComponent_Conditional_1_For_3_Conditional_1_Template, 14, 13, "mat-card-header");
+    ɵɵconditionalCreate(2, LocationListComponent_Conditional_1_For_3_Conditional_2_Template, 15, 15, "mat-card-header");
     ɵɵelement(3, "mat-divider");
     ɵɵelementStart(4, "mat-card-content")(5, "mat-list")(6, "mat-list-item", 36);
     ɵɵconditionalCreate(7, LocationListComponent_Conditional_1_For_3_Conditional_7_Template, 2, 0, "mat-icon", 37);
@@ -119116,22 +119195,25 @@ function LocationListComponent_Conditional_5_Template(rf, ctx) {
   }
 }
 var LocationListComponent = class _LocationListComponent extends ConfigurationBaseComponent {
-  constructor(authenticationService, eventService, loader, monitoringService, notificationService, dialog) {
+  constructor(authenticationService, eventService, loader, monitoringService, notificationService, biometricService, dialog) {
     super(eventService, loader, monitoringService);
     this.authenticationService = authenticationService;
     this.eventService = eventService;
     this.loader = loader;
     this.monitoringService = monitoringService;
     this.notificationService = notificationService;
+    this.biometricService = biometricService;
     this.dialog = dialog;
     this.isMultiLocation = environment.isMultiLocation;
     this.serverLatestVersion = null;
     this.testResults = /* @__PURE__ */new Map();
     this.showApiLink = environment.showApiLink;
+    this.biometricAvailable = false;
     this.isDragging = false;
     this.locations = JSON.parse(localStorage.getItem("locations")) || [];
     this.selectedLocationId = localStorage.getItem("selectedLocationId");
     this.serverLatestVersion = this.getServerLatestVersion(false);
+    this.biometricService.isAvailable().then(result => this.biometricAvailable = result);
   }
   getLocationKey(index) {
     if (this.locations) {
@@ -119149,6 +119231,12 @@ var LocationListComponent = class _LocationListComponent extends ConfigurationBa
       return null;
     }
     return this.notificationService.isEnabled(locationId);
+  }
+  isBiometricEnabled(locationId) {
+    if (!locationId || !this.biometricAvailable) {
+      return null;
+    }
+    return this.biometricService.isBiometricEnabled(locationId);
   }
   getServerLatestVersion(prerelease) {
     const apiUrl = "https://api.github.com/repos/ArPIHomeSecurity/arpi_server/releases";
@@ -119256,7 +119344,7 @@ var LocationListComponent = class _LocationListComponent extends ConfigurationBa
   }
   static {
     this.ɵfac = function LocationListComponent_Factory(__ngFactoryType__) {
-      return new (__ngFactoryType__ || _LocationListComponent)(ɵɵdirectiveInject(AUTHENTICATION_SERVICE), ɵɵdirectiveInject("EventService"), ɵɵdirectiveInject("LoaderService"), ɵɵdirectiveInject("MonitoringService"), ɵɵdirectiveInject("NotificationService"), ɵɵdirectiveInject(MatDialog));
+      return new (__ngFactoryType__ || _LocationListComponent)(ɵɵdirectiveInject(AUTHENTICATION_SERVICE), ɵɵdirectiveInject("EventService"), ɵɵdirectiveInject("LoaderService"), ɵɵdirectiveInject("MonitoringService"), ɵɵdirectiveInject("NotificationService"), ɵɵdirectiveInject("BiometricService"), ɵɵdirectiveInject(MatDialog));
     };
   }
   static {
@@ -119511,7 +119599,7 @@ var LocationListComponent = class _LocationListComponent extends ConfigurationBa
         }
       },
       dependencies: [NgClass, RouterLink, MatButton, MatMiniFabButton, MatIconButton, MatFabButton, MatCard, MatCardActions, MatCardAvatar, MatCardContent, MatCardHeader, MatCardSubtitle, MatCardTitle, MatIcon, MatList, MatListItem, MatListItemIcon, MatDivider, MatListItemLine, MatListItemTitle, MatProgressSpinner, CdkDropList, CdkDrag, CdkDragHandle],
-      styles: ["\n.getting-started-card[_ngcontent-%COMP%] {\n  border-left: 4px solid #43a047 !important;\n  border: 1px solid var(--mat-divider-color, #e0e0e0);\n}\n.support-card[_ngcontent-%COMP%] {\n  border-left: 4px solid #1976d2 !important;\n  border: 1px solid var(--mat-divider-color, #e0e0e0);\n}\n.welcome-content[_ngcontent-%COMP%] {\n  display: flex;\n  flex-direction: column;\n  gap: 15px;\n}\n.welcome-steps[_ngcontent-%COMP%] {\n  display: flex;\n  flex-direction: column;\n  gap: 25px;\n  padding-bottom: 20px;\n}\n.support-content[_ngcontent-%COMP%] {\n  text-align: center;\n}\n  .mdc-list {\n  padding: 0;\n}\n  .mat-mdc-card-header .mat-mdc-card-avatar {\n  width: 25px;\n  height: 70px;\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n  justify-content: center;\n  gap: 0;\n}\n  .mat-mdc-card-header .mat-icon {\n  margin-top: 5px;\n  margin-bottom: 5px;\n}\n  .mat-mdc-card-header .mat-mdc-card-header-text {\n  margin-bottom: 20px;\n}\n  .mat-mdc-card-header-text {\n  width: 100%;\n}\n  .mat-mdc-card-header-text .mat-mdc-card-subtitle {\n  white-space: nowrap;\n  overflow: hidden;\n  text-overflow: ellipsis;\n}\n.mat-mdc-card-content[_ngcontent-%COMP%] {\n  padding-top: 10px;\n}\n.mat-mdc-form-field[_ngcontent-%COMP%] {\n  width: 100%;\n}\n.enabled[_ngcontent-%COMP%] {\n  color: #4caf50;\n}\n.disabled[_ngcontent-%COMP%] {\n  color: #f44336;\n}\n.primary[_ngcontent-%COMP%]   .icon-accessible[_ngcontent-%COMP%], \n.secondary[_ngcontent-%COMP%]   .icon-accessible[_ngcontent-%COMP%] {\n  color: #4caf50;\n}\n.primary[_ngcontent-%COMP%]   .icon-inaccessible[_ngcontent-%COMP%], \n.secondary[_ngcontent-%COMP%]   .icon-inaccessible[_ngcontent-%COMP%] {\n  color: #f44336;\n}\n.test-link[_ngcontent-%COMP%] {\n  white-space: nowrap;\n  overflow: hidden;\n  text-overflow: ellipsis;\n}\n.test-link[_ngcontent-%COMP%]   .mat-icon[_ngcontent-%COMP%] {\n  font-size: 18px;\n  vertical-align: middle;\n}\n/*# sourceMappingURL=location-list.component.css.map */"]
+      styles: ["\n.getting-started-card[_ngcontent-%COMP%] {\n  border-left: 4px solid #43a047 !important;\n  border: 1px solid var(--mat-divider-color, #e0e0e0);\n}\n.support-card[_ngcontent-%COMP%] {\n  border-left: 4px solid #1976d2 !important;\n  border: 1px solid var(--mat-divider-color, #e0e0e0);\n}\n.welcome-content[_ngcontent-%COMP%] {\n  display: flex;\n  flex-direction: column;\n  gap: 15px;\n}\n.welcome-steps[_ngcontent-%COMP%] {\n  display: flex;\n  flex-direction: column;\n  gap: 25px;\n  padding-bottom: 20px;\n}\n.support-content[_ngcontent-%COMP%] {\n  text-align: center;\n}\n  .mdc-list {\n  padding: 0;\n}\n  .mat-mdc-card-header .mat-mdc-card-avatar {\n  width: 25px;\n  height: 100px;\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n  justify-content: center;\n  gap: 0;\n}\n  .mat-mdc-card-header .mat-icon {\n  margin-top: 5px;\n  margin-bottom: 5px;\n}\n  .mat-mdc-card-header .mat-mdc-card-header-text {\n  margin-bottom: 20px;\n}\n  .mat-mdc-card-header-text {\n  width: 100%;\n}\n  .mat-mdc-card-header-text .mat-mdc-card-subtitle {\n  white-space: nowrap;\n  overflow: hidden;\n  text-overflow: ellipsis;\n}\n.mat-mdc-card-content[_ngcontent-%COMP%] {\n  padding-top: 10px;\n}\n.mat-mdc-form-field[_ngcontent-%COMP%] {\n  width: 100%;\n}\n.enabled[_ngcontent-%COMP%] {\n  color: #4caf50;\n}\n.disabled[_ngcontent-%COMP%] {\n  color: #f44336;\n}\n.primary[_ngcontent-%COMP%]   .icon-accessible[_ngcontent-%COMP%], \n.secondary[_ngcontent-%COMP%]   .icon-accessible[_ngcontent-%COMP%] {\n  color: #4caf50;\n}\n.primary[_ngcontent-%COMP%]   .icon-inaccessible[_ngcontent-%COMP%], \n.secondary[_ngcontent-%COMP%]   .icon-inaccessible[_ngcontent-%COMP%] {\n  color: #f44336;\n}\n.test-link[_ngcontent-%COMP%] {\n  white-space: nowrap;\n  overflow: hidden;\n  text-overflow: ellipsis;\n}\n.test-link[_ngcontent-%COMP%]   .mat-icon[_ngcontent-%COMP%] {\n  font-size: 18px;\n  vertical-align: middle;\n}\n/*# sourceMappingURL=location-list.component.css.map */"]
     });
   }
 };
@@ -119553,6 +119641,15 @@ var LocationListComponent = class _LocationListComponent extends ConfigurationBa
                   >
                     notifications
                   </mat-icon>
+                  @if (biometricAvailable) {
+                    <mat-icon>
+                      @if (isBiometricEnabled(location.id) === true) {
+                        fingerprint
+                      } @else {
+                        fingerprint_off
+                      }
+                    </mat-icon>
+                  }
                 </div>
                 <mat-card-title i18n="@@location backend">Location backend</mat-card-title>
                 @if (location.version != null) {
@@ -119602,6 +119699,15 @@ var LocationListComponent = class _LocationListComponent extends ConfigurationBa
                   >
                     notifications
                   </mat-icon>
+                  @if (biometricAvailable) {
+                    <mat-icon>
+                      @if (isBiometricEnabled(location.id) === true) {
+                        fingerprint
+                      } @else {
+                        fingerprint_off
+                      }
+                    </mat-icon>
+                  }
                 </div>
                 <mat-card-title i18n="@@location location">Location: {{ location.name }}</mat-card-title>
                 @if (location.id != null) {
@@ -119883,7 +119989,7 @@ var LocationListComponent = class _LocationListComponent extends ConfigurationBa
   }
 </div>
 `,
-      styles: ["/* src/app/pages/location/location-list.component.scss */\n.getting-started-card {\n  border-left: 4px solid #43a047 !important;\n  border: 1px solid var(--mat-divider-color, #e0e0e0);\n}\n.support-card {\n  border-left: 4px solid #1976d2 !important;\n  border: 1px solid var(--mat-divider-color, #e0e0e0);\n}\n.welcome-content {\n  display: flex;\n  flex-direction: column;\n  gap: 15px;\n}\n.welcome-steps {\n  display: flex;\n  flex-direction: column;\n  gap: 25px;\n  padding-bottom: 20px;\n}\n.support-content {\n  text-align: center;\n}\n::ng-deep .mdc-list {\n  padding: 0;\n}\n::ng-deep .mat-mdc-card-header .mat-mdc-card-avatar {\n  width: 25px;\n  height: 70px;\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n  justify-content: center;\n  gap: 0;\n}\n::ng-deep .mat-mdc-card-header .mat-icon {\n  margin-top: 5px;\n  margin-bottom: 5px;\n}\n::ng-deep .mat-mdc-card-header .mat-mdc-card-header-text {\n  margin-bottom: 20px;\n}\n::ng-deep .mat-mdc-card-header-text {\n  width: 100%;\n}\n::ng-deep .mat-mdc-card-header-text .mat-mdc-card-subtitle {\n  white-space: nowrap;\n  overflow: hidden;\n  text-overflow: ellipsis;\n}\n.mat-mdc-card-content {\n  padding-top: 10px;\n}\n.mat-mdc-form-field {\n  width: 100%;\n}\n.enabled {\n  color: #4caf50;\n}\n.disabled {\n  color: #f44336;\n}\n.primary .icon-accessible,\n.secondary .icon-accessible {\n  color: #4caf50;\n}\n.primary .icon-inaccessible,\n.secondary .icon-inaccessible {\n  color: #f44336;\n}\n.test-link {\n  white-space: nowrap;\n  overflow: hidden;\n  text-overflow: ellipsis;\n}\n.test-link .mat-icon {\n  font-size: 18px;\n  vertical-align: middle;\n}\n/*# sourceMappingURL=location-list.component.css.map */\n"]
+      styles: ["/* src/app/pages/location/location-list.component.scss */\n.getting-started-card {\n  border-left: 4px solid #43a047 !important;\n  border: 1px solid var(--mat-divider-color, #e0e0e0);\n}\n.support-card {\n  border-left: 4px solid #1976d2 !important;\n  border: 1px solid var(--mat-divider-color, #e0e0e0);\n}\n.welcome-content {\n  display: flex;\n  flex-direction: column;\n  gap: 15px;\n}\n.welcome-steps {\n  display: flex;\n  flex-direction: column;\n  gap: 25px;\n  padding-bottom: 20px;\n}\n.support-content {\n  text-align: center;\n}\n::ng-deep .mdc-list {\n  padding: 0;\n}\n::ng-deep .mat-mdc-card-header .mat-mdc-card-avatar {\n  width: 25px;\n  height: 100px;\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n  justify-content: center;\n  gap: 0;\n}\n::ng-deep .mat-mdc-card-header .mat-icon {\n  margin-top: 5px;\n  margin-bottom: 5px;\n}\n::ng-deep .mat-mdc-card-header .mat-mdc-card-header-text {\n  margin-bottom: 20px;\n}\n::ng-deep .mat-mdc-card-header-text {\n  width: 100%;\n}\n::ng-deep .mat-mdc-card-header-text .mat-mdc-card-subtitle {\n  white-space: nowrap;\n  overflow: hidden;\n  text-overflow: ellipsis;\n}\n.mat-mdc-card-content {\n  padding-top: 10px;\n}\n.mat-mdc-form-field {\n  width: 100%;\n}\n.enabled {\n  color: #4caf50;\n}\n.disabled {\n  color: #f44336;\n}\n.primary .icon-accessible,\n.secondary .icon-accessible {\n  color: #4caf50;\n}\n.primary .icon-inaccessible,\n.secondary .icon-inaccessible {\n  color: #f44336;\n}\n.test-link {\n  white-space: nowrap;\n  overflow: hidden;\n  text-overflow: ellipsis;\n}\n.test-link .mat-icon {\n  font-size: 18px;\n  vertical-align: middle;\n}\n/*# sourceMappingURL=location-list.component.css.map */\n"]
     }]
   }], () => [{
     type: void 0,
@@ -119916,6 +120022,12 @@ var LocationListComponent = class _LocationListComponent extends ConfigurationBa
       args: ["NotificationService"]
     }]
   }, {
+    type: void 0,
+    decorators: [{
+      type: Inject,
+      args: ["BiometricService"]
+    }]
+  }, {
     type: MatDialog
   }], null);
 })();
@@ -119923,7 +120035,7 @@ var LocationListComponent = class _LocationListComponent extends ConfigurationBa
   (typeof ngDevMode === "undefined" || ngDevMode) && ɵsetClassDebugInfo(LocationListComponent, {
     className: "LocationListComponent",
     filePath: "src/app/pages/location/location-list.component.ts",
-    lineNumber: 34
+    lineNumber: 35
   });
 })();
 
@@ -130032,5 +130144,5 @@ if (environment.production) {
 platformBrowser().bootstrapModule(AppModule, {
   applicationProviders: [provideZoneChangeDetection()]
 });
-/**i18n:41aecc9b292697ea52388b8d499da44cb3443ead676b9cf530100189b8c18991*/
+/**i18n:26bf5e443b4e3faa1af003cbcf86633a45b644ea19b6ce64ecacbea3af76a15e*/
 //# sourceMappingURL=main.js.map
