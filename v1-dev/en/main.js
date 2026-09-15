@@ -1,5 +1,5 @@
-import "./chunk-J2WCR7QR.js";
-import { Capacitor, __async, __commonJS, __export, __objRest, __require, __spreadProps, __spreadValues, __toESM, registerPlugin } from "./chunk-AGZZKJUZ.js";
+import "./chunk-B3OXTWDT.js";
+import { Capacitor, __async, __commonJS, __export, __objRest, __require, __spreadProps, __spreadValues, __toESM, registerPlugin } from "./chunk-44OZZPBE.js";
 
 // node_modules/moment/moment.js
 var require_moment = __commonJS({
@@ -100334,8 +100334,8 @@ var AuthenticationService = class _AuthenticationService {
       return false;
     }));
   }
-  unRegisterDevice() {
-    const locationId = this.getLocationId();
+  unRegisterDevice(locationId = this.getLocationId()) {
+    const selectedLocationId = this.getLocationId();
     const deviceTokens = JSON.parse(localStorage.getItem("deviceTokens") || "{}");
     if (locationId in deviceTokens) {
       delete deviceTokens[locationId];
@@ -100346,9 +100346,11 @@ var AuthenticationService = class _AuthenticationService {
       delete userTokens[locationId];
     }
     localStorage.setItem("userTokens", JSON.stringify(userTokens));
-    this.isSessionValidSubject.next(false);
-    this.isDeviceRegisteredSubject.next(false);
-    localStorage.removeItem("returnUrl");
+    if (locationId === selectedLocationId) {
+      this.isSessionValidSubject.next(false);
+      this.isDeviceRegisteredSubject.next(false);
+      localStorage.removeItem("returnUrl");
+    }
   }
   isDeviceRegistered() {
     return this.isDeviceRegisteredSubject.pipe(startWith(!!this.getDeviceToken()));
@@ -100395,7 +100397,7 @@ var AuthenticationService = class _AuthenticationService {
 
 // node_modules/@capgo/capacitor-native-biometric/dist/esm/index.js
 var NativeBiometric = registerPlugin("NativeBiometric", {
-  web: () => import("./web-3JQSA6BB.js").then(m => new m.NativeBiometricWeb())
+  web: () => import("./web-RG3ZJDZB.js").then(m => new m.NativeBiometricWeb())
 });
 
 // src/app/services/remote/biometric.service.ts
@@ -100787,7 +100789,7 @@ var Weekday;
 
 // node_modules/@capacitor/local-notifications/dist/esm/index.js
 var LocalNotifications = registerPlugin("LocalNotifications", {
-  web: () => import("./web-BJBCLX3U.js").then(m => new m.LocalNotificationsWeb())
+  web: () => import("./web-4AEN7QPU.js").then(m => new m.LocalNotificationsWeb())
 });
 
 // src/app/services/remote/notification.service.ts
@@ -103449,96 +103451,6 @@ function () {
   return HumanizeDuration2;
 }();
 
-// src/app/components/question-dialog/question-dialog.component.ts
-function QuestionDialogComponent_For_7_Template(rf, ctx) {
-  if (rf & 1) {
-    const _r1 = ɵɵgetCurrentView();
-    ɵɵelementStart(0, "button", 4);
-    ɵɵlistener("click", function QuestionDialogComponent_For_7_Template_button_click_0_listener() {
-      const option_r2 = ɵɵrestoreView(_r1).$implicit;
-      const ctx_r2 = ɵɵnextContext();
-      return ɵɵresetView(ctx_r2.onOptionClick(option_r2.id));
-    });
-    ɵɵtext(1);
-    ɵɵelementEnd();
-  }
-  if (rf & 2) {
-    const option_r2 = ctx.$implicit;
-    ɵɵproperty("color", ɵɵinterpolate(option_r2.color))("tabindex", ɵɵinterpolate(option_r2.tabIndex));
-    ɵɵadvance();
-    ɵɵtextInterpolate1(" ", option_r2.text, " ");
-  }
-}
-var QuestionDialogComponent = class _QuestionDialogComponent {
-  constructor() {
-    this.dialogRef = inject2(MatDialogRef);
-    this.title = inject2(MAT_DIALOG_DATA).title;
-    this.message = inject2(MAT_DIALOG_DATA).message;
-    this.options = inject2(MAT_DIALOG_DATA).options;
-  }
-  onOptionClick(option) {
-    this.dialogRef.close(option);
-  }
-  onNoClick() {
-    this.dialogRef.close();
-  }
-  static {
-    this.ɵfac = function QuestionDialogComponent_Factory(__ngFactoryType__) {
-      return new (__ngFactoryType__ || _QuestionDialogComponent)();
-    };
-  }
-  static {
-    this.ɵcmp = /* @__PURE__ */ɵɵdefineComponent({
-      type: _QuestionDialogComponent,
-      selectors: [["app-question-dialog"]],
-      standalone: false,
-      decls: 8,
-      vars: 2,
-      consts: [["mat-dialog-title", ""], ["mat-dialog-content", ""], ["mat-dialog-actions", ""], ["mat-raised-button", "", 3, "color", "tabindex"], ["mat-raised-button", "", 3, "click", "color", "tabindex"]],
-      template: function QuestionDialogComponent_Template(rf, ctx) {
-        if (rf & 1) {
-          ɵɵelementStart(0, "h1", 0);
-          ɵɵtext(1);
-          ɵɵelementEnd();
-          ɵɵelementStart(2, "div", 1)(3, "p");
-          ɵɵtext(4);
-          ɵɵelementEnd()();
-          ɵɵelementStart(5, "div", 2);
-          ɵɵrepeaterCreate(6, QuestionDialogComponent_For_7_Template, 2, 5, "button", 3, ɵɵrepeaterTrackByIdentity);
-          ɵɵelementEnd();
-        }
-        if (rf & 2) {
-          ɵɵadvance();
-          ɵɵtextInterpolate(ctx.title);
-          ɵɵadvance(3);
-          ɵɵtextInterpolate(ctx.message);
-          ɵɵadvance(2);
-          ɵɵrepeater(ctx.options);
-        }
-      },
-      dependencies: [MatButton, MatDialogTitle, MatDialogActions, MatDialogContent],
-      encapsulation: 2
-    });
-  }
-};
-(() => {
-  (typeof ngDevMode === "undefined" || ngDevMode) && setClassMetadata(QuestionDialogComponent, [{
-    type: Component,
-    args: [{
-      selector: "app-question-dialog",
-      standalone: false,
-      template: '<h1 mat-dialog-title>{{ title }}</h1>\n<div mat-dialog-content>\n  <p>{{ message }}</p>\n</div>\n\n<div mat-dialog-actions>\n  @for (option of options; track option) {\n    <button\n      mat-raised-button\n      (click)="onOptionClick(option.id)"\n      color="{{ option.color }}"\n      tabindex="{{ option.tabIndex }}"\n    >\n      {{ option.text }}\n    </button>\n  }\n</div>\n'
-    }]
-  }], null, null);
-})();
-(() => {
-  (typeof ngDevMode === "undefined" || ngDevMode) && ɵsetClassDebugInfo(QuestionDialogComponent, {
-    className: "QuestionDialogComponent",
-    filePath: "src/app/components/question-dialog/question-dialog.component.ts",
-    lineNumber: 22
-  });
-})();
-
 // src/app/tokens.ts
 var AUTHENTICATION_SERVICE = new InjectionToken("AuthenticationService");
 
@@ -104029,7 +103941,7 @@ var SystemStateComponent = class _SystemStateComponent {
 
 // node_modules/@capacitor/dialog/dist/esm/index.js
 var Dialog2 = registerPlugin("Dialog", {
-  web: () => import("./web-74NAMQUH.js").then(m => new m.DialogWeb())
+  web: () => import("./web-VP5FWXTN.js").then(m => new m.DialogWeb())
 });
 
 // src/app/upgrades.ts
@@ -104830,7 +104742,7 @@ var AuthenticationService2 = class _AuthenticationService {
     }
     return of(!!tmpUser).pipe(delay(environment.delay));
   }
-  unRegisterDevice() {
+  unRegisterDevice(locationId) {
     this.registeredUserId = -1;
     setLocalValue("AuthenticationService.registeredForUser", this.registeredUserId);
     this.isDeviceRegisteredSubject.next(false);
@@ -106486,15 +106398,15 @@ function AppComponent_Conditional_1_Template(rf, ctx) {
 function AppComponent_Conditional_6_Template(rf, ctx) {
   if (rf & 1) {
     const _r3 = ɵɵgetCurrentView();
-    ɵɵelementStart(0, "button", 73);
+    ɵɵelementStart(0, "button", 69);
     ɵɵlistener("click", function AppComponent_Conditional_6_Template_button_click_0_listener() {
       ɵɵrestoreView(_r3);
       ɵɵnextContext();
       const sidenav_r2 = ɵɵreference(24);
       return ɵɵresetView(sidenav_r2.close());
     });
-    ɵɵelement(1, "img", 74);
-    ɵɵelementStart(2, "span", 75);
+    ɵɵelement(1, "img", 70);
+    ɵɵelementStart(2, "span", 71);
     ɵɵtext(3);
     ɵɵelementEnd()();
   }
@@ -106506,9 +106418,9 @@ function AppComponent_Conditional_6_Template(rf, ctx) {
 }
 function AppComponent_Conditional_7_Template(rf, ctx) {
   if (rf & 1) {
-    ɵɵelementStart(0, "button", 34);
-    ɵɵelement(1, "img", 74);
-    ɵɵelementStart(2, "span", 75);
+    ɵɵelementStart(0, "button", 33);
+    ɵɵelement(1, "img", 70);
+    ɵɵelementStart(2, "span", 71);
     ɵɵtext(3);
     ɵɵelementEnd()();
   }
@@ -106521,7 +106433,7 @@ function AppComponent_Conditional_7_Template(rf, ctx) {
 function AppComponent_Conditional_10_Template(rf, ctx) {
   if (rf & 1) {
     const _r5 = ɵɵgetCurrentView();
-    ɵɵelementStart(0, "countdown", 76, 2);
+    ɵɵelementStart(0, "countdown", 72, 2);
     ɵɵlistener("event", function AppComponent_Conditional_10_Template_countdown_event_0_listener($event) {
       ɵɵrestoreView(_r5);
       const ctx_r3 = ɵɵnextContext();
@@ -106536,7 +106448,7 @@ function AppComponent_Conditional_10_Template(rf, ctx) {
 }
 function AppComponent_Conditional_25_Conditional_1_For_5_Template(rf, ctx) {
   if (rf & 1) {
-    ɵɵelementStart(0, "mat-option", 56);
+    ɵɵelementStart(0, "mat-option", 76);
     ɵɵtext(1);
     ɵɵelementEnd();
   }
@@ -106550,16 +106462,16 @@ function AppComponent_Conditional_25_Conditional_1_For_5_Template(rf, ctx) {
 function AppComponent_Conditional_25_Conditional_1_Template(rf, ctx) {
   if (rf & 1) {
     const _r6 = ɵɵgetCurrentView();
-    ɵɵelementStart(0, "mat-list-item")(1, "mat-icon", 54);
-    ɵɵelement(2, "img", 78);
+    ɵɵelementStart(0, "mat-list-item")(1, "mat-icon", 47);
+    ɵɵelement(2, "img", 74);
     ɵɵelementEnd();
-    ɵɵelementStart(3, "mat-select", 79);
+    ɵɵelementStart(3, "mat-select", 75);
     ɵɵlistener("selectionChange", function AppComponent_Conditional_25_Conditional_1_Template_mat_select_selectionChange_3_listener($event) {
       ɵɵrestoreView(_r6);
       const ctx_r3 = ɵɵnextContext(2);
       return ɵɵresetView(ctx_r3.onLocationChange($event));
     });
-    ɵɵrepeaterCreate(4, AppComponent_Conditional_25_Conditional_1_For_5_Template, 2, 2, "mat-option", 56, ɵɵrepeaterTrackByIdentity);
+    ɵɵrepeaterCreate(4, AppComponent_Conditional_25_Conditional_1_For_5_Template, 2, 2, "mat-option", 76, ɵɵrepeaterTrackByIdentity);
     ɵɵelementEnd()();
   }
   if (rf & 2) {
@@ -106572,10 +106484,10 @@ function AppComponent_Conditional_25_Conditional_1_Template(rf, ctx) {
 }
 function AppComponent_Conditional_25_Conditional_2_Template(rf, ctx) {
   if (rf & 1) {
-    ɵɵelementStart(0, "mat-list-item", 77)(1, "mat-icon", 54);
-    ɵɵelement(2, "img", 78);
+    ɵɵelementStart(0, "mat-list-item", 73)(1, "mat-icon", 47);
+    ɵɵelement(2, "img", 74);
     ɵɵelementEnd();
-    ɵɵelementStart(3, "div", 80);
+    ɵɵelementStart(3, "div", 77);
     ɵɵtext(4);
     ɵɵelementEnd()();
   }
@@ -106587,9 +106499,9 @@ function AppComponent_Conditional_25_Conditional_2_Template(rf, ctx) {
 }
 function AppComponent_Conditional_25_Template(rf, ctx) {
   if (rf & 1) {
-    ɵɵelementStart(0, "mat-list", 41);
+    ɵɵelementStart(0, "mat-list", 40);
     ɵɵconditionalCreate(1, AppComponent_Conditional_25_Conditional_1_Template, 6, 1, "mat-list-item");
-    ɵɵconditionalCreate(2, AppComponent_Conditional_25_Conditional_2_Template, 5, 1, "mat-list-item", 77);
+    ɵɵconditionalCreate(2, AppComponent_Conditional_25_Conditional_2_Template, 5, 1, "mat-list-item", 73);
     ɵɵelementEnd();
   }
   if (rf & 2) {
@@ -106603,17 +106515,17 @@ function AppComponent_Conditional_25_Template(rf, ctx) {
 function AppComponent_Conditional_27_Template(rf, ctx) {
   if (rf & 1) {
     const _r8 = ɵɵgetCurrentView();
-    ɵɵelementStart(0, "mat-list-item", 81);
+    ɵɵelementStart(0, "mat-list-item", 78);
     ɵɵlistener("click", function AppComponent_Conditional_27_Template_mat_list_item_click_0_listener() {
       ɵɵrestoreView(_r8);
       const ctx_r3 = ɵɵnextContext();
       const sidenav_r2 = ɵɵreference(24);
       return ɵɵresetView(ctx_r3.smallScreen ? sidenav_r2.close() : null);
     });
-    ɵɵelementStart(1, "mat-icon", 54);
+    ɵɵelementStart(1, "mat-icon", 47);
     ɵɵtext(2, "login");
     ɵɵelementEnd();
-    ɵɵelementStart(3, "div", 80);
+    ɵɵelementStart(3, "div", 77);
     ɵɵi18n(4, 7);
     ɵɵelementEnd()();
   }
@@ -106621,17 +106533,17 @@ function AppComponent_Conditional_27_Template(rf, ctx) {
 function AppComponent_Conditional_28_Template(rf, ctx) {
   if (rf & 1) {
     const _r9 = ɵɵgetCurrentView();
-    ɵɵelementStart(0, "mat-list-item", 82);
+    ɵɵelementStart(0, "mat-list-item", 79);
     ɵɵlistener("click", function AppComponent_Conditional_28_Template_mat_list_item_click_0_listener() {
       ɵɵrestoreView(_r9);
       const ctx_r3 = ɵɵnextContext();
       const sidenav_r2 = ɵɵreference(24);
       return ɵɵresetView(ctx_r3.smallScreen ? sidenav_r2.close() : null);
     });
-    ɵɵelementStart(1, "mat-icon", 54);
+    ɵɵelementStart(1, "mat-icon", 47);
     ɵɵtext(2, "home");
     ɵɵelementEnd();
-    ɵɵelementStart(3, "div", 80);
+    ɵɵelementStart(3, "div", 77);
     ɵɵi18n(4, 8);
     ɵɵelementEnd()();
   }
@@ -106642,24 +106554,24 @@ function AppComponent_Conditional_28_Template(rf, ctx) {
 function AppComponent_Conditional_29_Template(rf, ctx) {
   if (rf & 1) {
     const _r10 = ɵɵgetCurrentView();
-    ɵɵelementStart(0, "mat-list-item", 83);
+    ɵɵelementStart(0, "mat-list-item", 80);
     ɵɵlistener("click", function AppComponent_Conditional_29_Template_mat_list_item_click_0_listener() {
       ɵɵrestoreView(_r10);
       const ctx_r3 = ɵɵnextContext();
       const sidenav_r2 = ɵɵreference(24);
       return ɵɵresetView(ctx_r3.smallScreen ? sidenav_r2.close() : null);
     });
-    ɵɵelementStart(1, "mat-icon", 54);
+    ɵɵelementStart(1, "mat-icon", 47);
     ɵɵtext(2, "history");
     ɵɵelementEnd();
-    ɵɵelementStart(3, "span", 80);
+    ɵɵelementStart(3, "span", 77);
     ɵɵi18n(4, 9);
     ɵɵelementEnd()();
   }
 }
 function AppComponent_Conditional_30_Template(rf, ctx) {
   if (rf & 1) {
-    ɵɵelementStart(0, "h3", 45);
+    ɵɵelementStart(0, "h3", 44);
     ɵɵi18n(1, 10);
     ɵɵelementEnd();
   }
@@ -106667,14 +106579,14 @@ function AppComponent_Conditional_30_Template(rf, ctx) {
 function AppComponent_Conditional_31_Template(rf, ctx) {
   if (rf & 1) {
     const _r11 = ɵɵgetCurrentView();
-    ɵɵelementStart(0, "mat-list-item", 84);
+    ɵɵelementStart(0, "mat-list-item", 81);
     ɵɵlistener("click", function AppComponent_Conditional_31_Template_mat_list_item_click_0_listener() {
       ɵɵrestoreView(_r11);
       const ctx_r3 = ɵɵnextContext();
       const sidenav_r2 = ɵɵreference(24);
       return ɵɵresetView(ctx_r3.smallScreen ? sidenav_r2.close() : null);
     });
-    ɵɵelementStart(1, "mat-icon", 54);
+    ɵɵelementStart(1, "mat-icon", 47);
     ɵɵtext(2, "other_houses");
     ɵɵelementEnd();
     ɵɵelementStart(3, "span");
@@ -106682,17 +106594,17 @@ function AppComponent_Conditional_31_Template(rf, ctx) {
     ɵɵelementEnd()();
   }
 }
-function AppComponent_Conditional_32_Template(rf, ctx) {
+function AppComponent_Conditional_37_Template(rf, ctx) {
   if (rf & 1) {
     const _r12 = ɵɵgetCurrentView();
-    ɵɵelementStart(0, "mat-list-item", 85);
-    ɵɵlistener("click", function AppComponent_Conditional_32_Template_mat_list_item_click_0_listener() {
+    ɵɵelementStart(0, "mat-list-item", 82);
+    ɵɵlistener("click", function AppComponent_Conditional_37_Template_mat_list_item_click_0_listener() {
       ɵɵrestoreView(_r12);
       const ctx_r3 = ɵɵnextContext();
       const sidenav_r2 = ɵɵreference(24);
       return ɵɵresetView(ctx_r3.smallScreen ? sidenav_r2.close() : null);
     });
-    ɵɵelementStart(1, "mat-icon", 54);
+    ɵɵelementStart(1, "mat-icon", 47);
     ɵɵtext(2, "crop");
     ɵɵelementEnd();
     ɵɵelementStart(3, "span");
@@ -106700,17 +106612,17 @@ function AppComponent_Conditional_32_Template(rf, ctx) {
     ɵɵelementEnd()();
   }
 }
-function AppComponent_Conditional_33_Template(rf, ctx) {
+function AppComponent_Conditional_38_Template(rf, ctx) {
   if (rf & 1) {
     const _r13 = ɵɵgetCurrentView();
-    ɵɵelementStart(0, "mat-list-item", 86);
-    ɵɵlistener("click", function AppComponent_Conditional_33_Template_mat_list_item_click_0_listener() {
+    ɵɵelementStart(0, "mat-list-item", 83);
+    ɵɵlistener("click", function AppComponent_Conditional_38_Template_mat_list_item_click_0_listener() {
       ɵɵrestoreView(_r13);
       const ctx_r3 = ɵɵnextContext();
       const sidenav_r2 = ɵɵreference(24);
       return ɵɵresetView(ctx_r3.smallScreen ? sidenav_r2.close() : null);
     });
-    ɵɵelementStart(1, "mat-icon", 54);
+    ɵɵelementStart(1, "mat-icon", 47);
     ɵɵtext(2, "tab");
     ɵɵelementEnd();
     ɵɵelementStart(3, "span");
@@ -106718,17 +106630,17 @@ function AppComponent_Conditional_33_Template(rf, ctx) {
     ɵɵelementEnd()();
   }
 }
-function AppComponent_Conditional_34_Template(rf, ctx) {
+function AppComponent_Conditional_39_Template(rf, ctx) {
   if (rf & 1) {
     const _r14 = ɵɵgetCurrentView();
-    ɵɵelementStart(0, "mat-list-item", 87);
-    ɵɵlistener("click", function AppComponent_Conditional_34_Template_mat_list_item_click_0_listener() {
+    ɵɵelementStart(0, "mat-list-item", 84);
+    ɵɵlistener("click", function AppComponent_Conditional_39_Template_mat_list_item_click_0_listener() {
       ɵɵrestoreView(_r14);
       const ctx_r3 = ɵɵnextContext();
       const sidenav_r2 = ɵɵreference(24);
       return ɵɵresetView(ctx_r3.smallScreen ? sidenav_r2.close() : null);
     });
-    ɵɵelementStart(1, "mat-icon", 54);
+    ɵɵelementStart(1, "mat-icon", 47);
     ɵɵtext(2, "input");
     ɵɵelementEnd();
     ɵɵelementStart(3, "span");
@@ -106736,17 +106648,17 @@ function AppComponent_Conditional_34_Template(rf, ctx) {
     ɵɵelementEnd()();
   }
 }
-function AppComponent_Conditional_35_Template(rf, ctx) {
+function AppComponent_Conditional_40_Template(rf, ctx) {
   if (rf & 1) {
     const _r15 = ɵɵgetCurrentView();
-    ɵɵelementStart(0, "mat-list-item", 88);
-    ɵɵlistener("click", function AppComponent_Conditional_35_Template_mat_list_item_click_0_listener() {
+    ɵɵelementStart(0, "mat-list-item", 85);
+    ɵɵlistener("click", function AppComponent_Conditional_40_Template_mat_list_item_click_0_listener() {
       ɵɵrestoreView(_r15);
       const ctx_r3 = ɵɵnextContext();
       const sidenav_r2 = ɵɵreference(24);
       return ɵɵresetView(ctx_r3.smallScreen ? sidenav_r2.close() : null);
     });
-    ɵɵelementStart(1, "mat-icon", 54);
+    ɵɵelementStart(1, "mat-icon", 47);
     ɵɵtext(2, "output");
     ɵɵelementEnd();
     ɵɵelementStart(3, "span");
@@ -106754,17 +106666,17 @@ function AppComponent_Conditional_35_Template(rf, ctx) {
     ɵɵelementEnd()();
   }
 }
-function AppComponent_Conditional_36_Template(rf, ctx) {
+function AppComponent_Conditional_41_Template(rf, ctx) {
   if (rf & 1) {
     const _r16 = ɵɵgetCurrentView();
-    ɵɵelementStart(0, "mat-list-item", 89);
-    ɵɵlistener("click", function AppComponent_Conditional_36_Template_mat_list_item_click_0_listener() {
+    ɵɵelementStart(0, "mat-list-item", 86);
+    ɵɵlistener("click", function AppComponent_Conditional_41_Template_mat_list_item_click_0_listener() {
       ɵɵrestoreView(_r16);
       const ctx_r3 = ɵɵnextContext();
       const sidenav_r2 = ɵɵreference(24);
       return ɵɵresetView(ctx_r3.smallScreen ? sidenav_r2.close() : null);
     });
-    ɵɵelementStart(1, "mat-icon", 54);
+    ɵɵelementStart(1, "mat-icon", 47);
     ɵɵtext(2, "group");
     ɵɵelementEnd();
     ɵɵelementStart(3, "span");
@@ -106772,75 +106684,75 @@ function AppComponent_Conditional_36_Template(rf, ctx) {
     ɵɵelementEnd()();
   }
 }
-function AppComponent_Conditional_37_Template(rf, ctx) {
+function AppComponent_Conditional_42_Template(rf, ctx) {
   if (rf & 1) {
     const _r17 = ɵɵgetCurrentView();
-    ɵɵelementStart(0, "mat-accordion", 52)(1, "mat-expansion-panel", 90)(2, "mat-expansion-panel-header")(3, "mat-panel-title")(4, "mat-icon", 54);
+    ɵɵelementStart(0, "mat-accordion", 53)(1, "mat-expansion-panel", 87)(2, "mat-expansion-panel-header")(3, "mat-panel-title")(4, "mat-icon", 47);
     ɵɵtext(5, "settings");
     ɵɵelementEnd();
     ɵɵelementStart(6, "span");
     ɵɵi18n(7, 17);
     ɵɵelementEnd()()();
-    ɵɵelementStart(8, "mat-list-item", 91);
-    ɵɵlistener("click", function AppComponent_Conditional_37_Template_mat_list_item_click_8_listener() {
+    ɵɵelementStart(8, "mat-list-item", 88);
+    ɵɵlistener("click", function AppComponent_Conditional_42_Template_mat_list_item_click_8_listener() {
       ɵɵrestoreView(_r17);
       const ctx_r3 = ɵɵnextContext();
       const sidenav_r2 = ɵɵreference(24);
       return ɵɵresetView(ctx_r3.smallScreen ? sidenav_r2.close() : null);
     });
-    ɵɵelementStart(9, "mat-icon", 54);
+    ɵɵelementStart(9, "mat-icon", 47);
     ɵɵtext(10, "volume_up");
     ɵɵelementEnd();
     ɵɵelementStart(11, "span");
     ɵɵi18n(12, 18);
     ɵɵelementEnd()();
-    ɵɵelementStart(13, "mat-list-item", 92);
-    ɵɵlistener("click", function AppComponent_Conditional_37_Template_mat_list_item_click_13_listener() {
+    ɵɵelementStart(13, "mat-list-item", 89);
+    ɵɵlistener("click", function AppComponent_Conditional_42_Template_mat_list_item_click_13_listener() {
       ɵɵrestoreView(_r17);
       const ctx_r3 = ɵɵnextContext();
       const sidenav_r2 = ɵɵreference(24);
       return ɵɵresetView(ctx_r3.smallScreen ? sidenav_r2.close() : null);
     });
-    ɵɵelementStart(14, "mat-icon", 54);
+    ɵɵelementStart(14, "mat-icon", 47);
     ɵɵtext(15, "grid_on");
     ɵɵelementEnd();
     ɵɵelementStart(16, "span");
     ɵɵi18n(17, 19);
     ɵɵelementEnd()();
-    ɵɵelementStart(18, "mat-list-item", 93);
-    ɵɵlistener("click", function AppComponent_Conditional_37_Template_mat_list_item_click_18_listener() {
+    ɵɵelementStart(18, "mat-list-item", 90);
+    ɵɵlistener("click", function AppComponent_Conditional_42_Template_mat_list_item_click_18_listener() {
       ɵɵrestoreView(_r17);
       const ctx_r3 = ɵɵnextContext();
       const sidenav_r2 = ɵɵreference(24);
       return ɵɵresetView(ctx_r3.smallScreen ? sidenav_r2.close() : null);
     });
-    ɵɵelementStart(19, "mat-icon", 54);
+    ɵɵelementStart(19, "mat-icon", 47);
     ɵɵtext(20, "send");
     ɵɵelementEnd();
     ɵɵelementStart(21, "span");
     ɵɵi18n(22, 20);
     ɵɵelementEnd()();
-    ɵɵelementStart(23, "mat-list-item", 94);
-    ɵɵlistener("click", function AppComponent_Conditional_37_Template_mat_list_item_click_23_listener() {
+    ɵɵelementStart(23, "mat-list-item", 91);
+    ɵɵlistener("click", function AppComponent_Conditional_42_Template_mat_list_item_click_23_listener() {
       ɵɵrestoreView(_r17);
       const ctx_r3 = ɵɵnextContext();
       const sidenav_r2 = ɵɵreference(24);
       return ɵɵresetView(ctx_r3.smallScreen ? sidenav_r2.close() : null);
     });
-    ɵɵelementStart(24, "mat-icon", 54);
+    ɵɵelementStart(24, "mat-icon", 47);
     ɵɵtext(25, "public");
     ɵɵelementEnd();
     ɵɵelementStart(26, "span");
     ɵɵi18n(27, 21);
     ɵɵelementEnd()();
-    ɵɵelementStart(28, "mat-list-item", 95);
-    ɵɵlistener("click", function AppComponent_Conditional_37_Template_mat_list_item_click_28_listener() {
+    ɵɵelementStart(28, "mat-list-item", 92);
+    ɵɵlistener("click", function AppComponent_Conditional_42_Template_mat_list_item_click_28_listener() {
       ɵɵrestoreView(_r17);
       const ctx_r3 = ɵɵnextContext();
       const sidenav_r2 = ɵɵreference(24);
       return ɵɵresetView(ctx_r3.smallScreen ? sidenav_r2.close() : null);
     });
-    ɵɵelementStart(29, "mat-icon", 54);
+    ɵɵelementStart(29, "mat-icon", 47);
     ɵɵtext(30, "access_time");
     ɵɵelementEnd();
     ɵɵelementStart(31, "span");
@@ -106853,22 +106765,22 @@ function AppComponent_Conditional_37_Template(rf, ctx) {
     ɵɵproperty("expanded", ctx_r3.router.url.includes("/config/"));
   }
 }
-function AppComponent_Conditional_38_Template(rf, ctx) {
+function AppComponent_Conditional_43_Template(rf, ctx) {
   if (rf & 1) {
     ɵɵelement(0, "mat-divider");
   }
 }
-function AppComponent_Conditional_39_Template(rf, ctx) {
+function AppComponent_Conditional_44_Template(rf, ctx) {
   if (rf & 1) {
     const _r18 = ɵɵgetCurrentView();
-    ɵɵelementStart(0, "mat-list-item", 96);
-    ɵɵlistener("click", function AppComponent_Conditional_39_Template_mat_list_item_click_0_listener() {
+    ɵɵelementStart(0, "mat-list-item", 93);
+    ɵɵlistener("click", function AppComponent_Conditional_44_Template_mat_list_item_click_0_listener() {
       ɵɵrestoreView(_r18);
       const ctx_r3 = ɵɵnextContext();
       const sidenav_r2 = ɵɵreference(24);
       return ɵɵresetView(ctx_r3.smallScreen ? sidenav_r2.close() : null);
     });
-    ɵɵelementStart(1, "mat-icon", 54);
+    ɵɵelementStart(1, "mat-icon", 47);
     ɵɵtext(2, "person");
     ɵɵelementEnd();
     ɵɵelementStart(3, "span");
@@ -106876,72 +106788,42 @@ function AppComponent_Conditional_39_Template(rf, ctx) {
     ɵɵelementEnd()();
   }
 }
-function AppComponent_For_45_Template(rf, ctx) {
+function AppComponent_Conditional_45_Template(rf, ctx) {
   if (rf & 1) {
-    ɵɵelementStart(0, "mat-option", 56);
-    ɵɵtext(1);
-    ɵɵelementEnd();
-  }
-  if (rf & 2) {
-    const locale_r19 = ctx.$implicit;
-    ɵɵproperty("value", locale_r19.id);
-    ɵɵadvance();
-    ɵɵtextInterpolate1(" ", locale_r19.name, " ");
-  }
-}
-function AppComponent_Conditional_51_Template(rf, ctx) {
-  if (rf & 1) {
-    const _r20 = ɵɵgetCurrentView();
-    ɵɵelementStart(0, "mat-list-item", 97);
-    ɵɵlistener("click", function AppComponent_Conditional_51_Template_mat_list_item_click_0_listener() {
-      ɵɵrestoreView(_r20);
-      const ctx_r3 = ɵɵnextContext();
-      return ɵɵresetView(ctx_r3.unregister());
-    });
-    ɵɵelementStart(1, "mat-icon", 54);
-    ɵɵtext(2, "disabled_by_default");
-    ɵɵelementEnd();
-    ɵɵelementStart(3, "div", 98);
-    ɵɵi18n(4, 24);
-    ɵɵelementEnd()();
-  }
-}
-function AppComponent_Conditional_52_Template(rf, ctx) {
-  if (rf & 1) {
-    const _r21 = ɵɵgetCurrentView();
-    ɵɵelementStart(0, "mat-list-item", 99);
-    ɵɵlistener("click", function AppComponent_Conditional_52_Template_mat_list_item_click_0_listener() {
-      ɵɵrestoreView(_r21);
+    const _r19 = ɵɵgetCurrentView();
+    ɵɵelementStart(0, "mat-list-item", 94);
+    ɵɵlistener("click", function AppComponent_Conditional_45_Template_mat_list_item_click_0_listener() {
+      ɵɵrestoreView(_r19);
       const ctx_r3 = ɵɵnextContext();
       const sidenav_r2 = ɵɵreference(24);
       return ɵɵresetView(ctx_r3.smallScreen ? sidenav_r2.close() : null);
     });
-    ɵɵelementStart(1, "mat-icon", 54);
+    ɵɵelementStart(1, "mat-icon", 47);
     ɵɵtext(2, "settings");
     ɵɵelementEnd();
     ɵɵelementStart(3, "span");
-    ɵɵi18n(4, 25);
+    ɵɵi18n(4, 24);
     ɵɵelementEnd()();
   }
 }
-function AppComponent_Conditional_53_Template(rf, ctx) {
+function AppComponent_Conditional_46_Template(rf, ctx) {
   if (rf & 1) {
-    const _r22 = ɵɵgetCurrentView();
-    ɵɵelementStart(0, "mat-list-item", 81);
-    ɵɵlistener("click", function AppComponent_Conditional_53_Template_mat_list_item_click_0_listener() {
-      ɵɵrestoreView(_r22);
+    const _r20 = ɵɵgetCurrentView();
+    ɵɵelementStart(0, "mat-list-item", 78);
+    ɵɵlistener("click", function AppComponent_Conditional_46_Template_mat_list_item_click_0_listener() {
+      ɵɵrestoreView(_r20);
       const ctx_r3 = ɵɵnextContext();
       const sidenav_r2 = ɵɵreference(24);
       ctx_r3.logout(true);
       return ɵɵresetView(ctx_r3.smallScreen ? sidenav_r2.close() : null);
     });
-    ɵɵelementStart(1, "mat-icon", 54);
+    ɵɵelementStart(1, "mat-icon", 47);
     ɵɵtext(2, "exit_to_app");
     ɵɵelementEnd();
-    ɵɵelementStart(3, "div", 98);
-    ɵɵi18n(4, 26);
+    ɵɵelementStart(3, "div", 95);
+    ɵɵi18n(4, 25);
     ɵɵelementEnd();
-    ɵɵelementStart(5, "div", 98);
+    ɵɵelementStart(5, "div", 95);
     ɵɵtext(6);
     ɵɵelementEnd()();
   }
@@ -106951,14 +106833,14 @@ function AppComponent_Conditional_53_Template(rf, ctx) {
     ɵɵtextInterpolate1("(", ctx_r3.getUserName(), ")");
   }
 }
-function AppComponent_Conditional_55_Template(rf, ctx) {
+function AppComponent_Conditional_48_Template(rf, ctx) {
   if (rf & 1) {
-    ɵɵelement(0, "div", 61);
+    ɵɵelement(0, "div", 57);
   }
 }
-function AppComponent_Conditional_56_Template(rf, ctx) {
+function AppComponent_Conditional_49_Template(rf, ctx) {
   if (rf & 1) {
-    ɵɵelementStart(0, "mat-card", 62)(1, "mat-card-content")(2, "span");
+    ɵɵelementStart(0, "mat-card", 58)(1, "mat-card-content")(2, "span");
     ɵɵtext(3);
     ɵɵelementEnd()()();
   }
@@ -106968,38 +106850,37 @@ function AppComponent_Conditional_56_Template(rf, ctx) {
     ɵɵtextInterpolate(ctx_r3.message);
   }
 }
-function AppComponent_Conditional_57_Template(rf, ctx) {
+function AppComponent_Conditional_50_Template(rf, ctx) {
   if (rf & 1) {
-    ɵɵelementStart(0, "div", 63)(1, "div", 100)(2, "mat-card")(3, "mat-card-header")(4, "mat-icon", 101);
+    ɵɵelementStart(0, "div", 59)(1, "div", 96)(2, "mat-card")(3, "mat-card-header")(4, "mat-icon", 97);
     ɵɵtext(5, "info");
     ɵɵelementEnd();
     ɵɵelementStart(6, "mat-card-title");
-    ɵɵi18n(7, 27);
+    ɵɵi18n(7, 26);
     ɵɵelementEnd();
     ɵɵelementStart(8, "mat-card-subtitle");
-    ɵɵi18n(9, 28);
+    ɵɵi18n(9, 27);
     ɵɵelementEnd();
     ɵɵelementStart(10, "mat-card-subtitle");
-    ɵɵi18n(11, 29);
+    ɵɵi18n(11, 28);
     ɵɵelementEnd()();
-    ɵɵelementStart(12, "mat-card-content")(13, "a", 102);
+    ɵɵelementStart(12, "mat-card-content")(13, "a", 98);
     ɵɵtext(14, "https://app.arpi-security.info");
     ɵɵelementEnd()()()()();
   }
 }
-function AppComponent_Conditional_59_Template(rf, ctx) {
+function AppComponent_Conditional_52_Template(rf, ctx) {
   if (rf & 1) {
-    ɵɵelement(0, "mat-progress-spinner", 65);
+    ɵɵelement(0, "mat-progress-spinner", 61);
   }
 }
 var AppComponent = class _AppComponent {
-  constructor(authenticationService, loader, monitoring, themeService, router, dialog, snackBar, host, zone, http) {
+  constructor(authenticationService, loader, monitoring, themeService, router, snackBar, host, zone, http) {
     this.authenticationService = authenticationService;
     this.loader = loader;
     this.monitoring = monitoring;
     this.themeService = themeService;
     this.router = router;
-    this.dialog = dialog;
     this.snackBar = snackBar;
     this.host = host;
     this.zone = zone;
@@ -107010,16 +106891,6 @@ var AppComponent = class _AppComponent {
     this.redirectToRemote = !environment.isMultiLocation;
     this.locations = [];
     this.selectedLocationId = null;
-    this.locales = [{
-      name: "Magyar",
-      id: "hu"
-    }, {
-      name: "English",
-      id: "en"
-    }, {
-      name: "Italiano",
-      id: "it"
-    }];
     this.isMultiLocation = environment.isMultiLocation;
     this.demoMode = environment.demo;
     this.countdownConfig = {
@@ -107027,16 +106898,11 @@ var AppComponent = class _AppComponent {
       format: "mm:ss",
       notify: [environment.userTokenExpiry / 3]
     };
-    this.isDeviceRegistered = false;
     this.langService = new HumanizeDurationLanguage();
     this.humanizer = new HumanizeDuration(this.langService);
     this.width$ = new BehaviorSubject(1e3);
     this.smallScreen = false;
     this.darkTheme = false;
-    this.currentLocale = localStorage.getItem("localeId") || "en";
-    if (!this.currentLocale) {
-      this.currentLocale = "en";
-    }
     this.versions = {
       serverVersion: "",
       webapplicationVersion: "",
@@ -107087,9 +106953,6 @@ var AppComponent = class _AppComponent {
         if (this.isSessionValid && this.countdown) {
           this.countdown.restart();
         }
-      });
-      this.authenticationService.isDeviceRegistered().subscribe(isRegistered => {
-        this.isDeviceRegistered = isRegistered;
       });
       const locations = JSON.parse(localStorage.getItem("locations") || "[]");
       this.locations = locations.sort((a, b) => a.order - b.order);
@@ -107150,26 +107013,6 @@ var AppComponent = class _AppComponent {
     localStorage.removeItem("returnUrl");
     window.location.href = "/";
   }
-  onLocaleSelected(event2) {
-    const currentLocale = localStorage.getItem("localeId");
-    console.log("Change locale: ", currentLocale, "=>", event2.value);
-    localStorage.setItem("localeId", event2.value);
-    const newLocale = event2.value;
-    const pathParser2 = new RegExp("^(?<version>/v\\d*-?[a-zA-Z]*)?/(?<language>[a-z]{2})/(?<path>.*)$");
-    const path = window.location.pathname;
-    const matches2 = pathParser2.exec(path);
-    if (matches2 !== null) {
-      const newPath = [matches2.groups.version, newLocale, matches2.groups.path].join("/");
-      console.log("Redirect to " + newPath);
-      window.location.pathname = newPath;
-    } else {
-      console.error("No match found for path: ", path);
-    }
-  }
-  onThemeSwitched($event) {
-    console.log("Theme switched: ", $event.checked);
-    this.themeService.updateTheme($event.checked ? "argus-dark-theme" : "argus-light-theme");
-  }
   handleCountdown($event) {
     if ($event.action === "notify") {
       this.snackBar.open("Your session will expire in " + this.getSessionDuration() + "!", null, {
@@ -107189,28 +107032,6 @@ var AppComponent = class _AppComponent {
     }
     return this.humanizer.humanize(environment.userTokenExpiry / 3 * 1e3, {
       language: currentLocale
-    });
-  }
-  unregister() {
-    const dialogRef = this.dialog.open(QuestionDialogComponent, {
-      width: "250px",
-      data: {
-        title: "Unregister device",
-        message: "Are you sure you want to unregister this device?",
-        options: [{
-          id: "ok",
-          text: "Unregister",
-          color: "warn"
-        }, {
-          id: "cancel",
-          text: "Cancel"
-        }]
-      }
-    });
-    dialogRef.afterClosed().subscribe(result => {
-      if (result === "ok") {
-        this.authenticationService.unRegisterDevice();
-      }
     });
   }
   openHelp() {
@@ -107272,7 +107093,7 @@ var AppComponent = class _AppComponent {
   }
   static {
     this.ɵfac = function AppComponent_Factory(__ngFactoryType__) {
-      return new (__ngFactoryType__ || _AppComponent)(ɵɵdirectiveInject(AUTHENTICATION_SERVICE), ɵɵdirectiveInject("LoaderService"), ɵɵdirectiveInject("MonitoringService"), ɵɵdirectiveInject("ThemeService"), ɵɵdirectiveInject(Router), ɵɵdirectiveInject(MatDialog), ɵɵdirectiveInject(MatSnackBar), ɵɵdirectiveInject(ElementRef), ɵɵdirectiveInject(NgZone), ɵɵdirectiveInject(HttpClient));
+      return new (__ngFactoryType__ || _AppComponent)(ɵɵdirectiveInject(AUTHENTICATION_SERVICE), ɵɵdirectiveInject("LoaderService"), ɵɵdirectiveInject("MonitoringService"), ɵɵdirectiveInject("ThemeService"), ɵɵdirectiveInject(Router), ɵɵdirectiveInject(MatSnackBar), ɵɵdirectiveInject(ElementRef), ɵɵdirectiveInject(NgZone), ɵɵdirectiveInject(HttpClient));
     };
   }
   static {
@@ -107290,15 +107111,15 @@ var AppComponent = class _AppComponent {
         }
       },
       standalone: false,
-      decls: 82,
-      vars: 32,
+      decls: 75,
+      vars: 28,
       consts: () => {
         let i18n_0;
         if (false) {
-          const MSG_EXTERNAL_dark_theme$$SRC_APP_APP_COMPONENT_TS_0 = goog.getMsg(" Dark theme ");
-          i18n_0 = MSG_EXTERNAL_dark_theme$$SRC_APP_APP_COMPONENT_TS_0;
+          const MSG_EXTERNAL_preferences_menu_link$$SRC_APP_APP_COMPONENT_TS_0 = goog.getMsg("Preferences");
+          i18n_0 = MSG_EXTERNAL_preferences_menu_link$$SRC_APP_APP_COMPONENT_TS_0;
         } else {
-          i18n_0 = " Dark theme ";
+          i18n_0 = "Preferences";
         }
         let i18n_1;
         if (false) {
@@ -107442,54 +107263,47 @@ var AppComponent = class _AppComponent {
         }
         let i18n_21;
         if (false) {
-          const MSG_EXTERNAL_unregister_menu_link$$SRC_APP_APP_COMPONENT_TS_21 = goog.getMsg("Unregister device");
-          i18n_21 = MSG_EXTERNAL_unregister_menu_link$$SRC_APP_APP_COMPONENT_TS_21;
+          const MSG_EXTERNAL_setup_menu_link$$SRC_APP_APP_COMPONENT_TS_21 = goog.getMsg("Setup");
+          i18n_21 = MSG_EXTERNAL_setup_menu_link$$SRC_APP_APP_COMPONENT_TS_21;
         } else {
-          i18n_21 = "Unregister device";
+          i18n_21 = "Setup";
         }
         let i18n_22;
         if (false) {
-          const MSG_EXTERNAL_setup_menu_link$$SRC_APP_APP_COMPONENT_TS_22 = goog.getMsg("Setup");
-          i18n_22 = MSG_EXTERNAL_setup_menu_link$$SRC_APP_APP_COMPONENT_TS_22;
+          const MSG_EXTERNAL_logout_menu_link$$SRC_APP_APP_COMPONENT_TS_22 = goog.getMsg("Logout");
+          i18n_22 = MSG_EXTERNAL_logout_menu_link$$SRC_APP_APP_COMPONENT_TS_22;
         } else {
-          i18n_22 = "Setup";
+          i18n_22 = "Logout";
         }
         let i18n_23;
         if (false) {
-          const MSG_EXTERNAL_logout_menu_link$$SRC_APP_APP_COMPONENT_TS_23 = goog.getMsg("Logout");
-          i18n_23 = MSG_EXTERNAL_logout_menu_link$$SRC_APP_APP_COMPONENT_TS_23;
+          const MSG_EXTERNAL_redirect_title$$SRC_APP_APP_COMPONENT_TS_23 = goog.getMsg("Remote access required");
+          i18n_23 = MSG_EXTERNAL_redirect_title$$SRC_APP_APP_COMPONENT_TS_23;
         } else {
-          i18n_23 = "Logout";
+          i18n_23 = "Remote access required";
         }
         let i18n_24;
         if (false) {
-          const MSG_EXTERNAL_redirect_title$$SRC_APP_APP_COMPONENT_TS_24 = goog.getMsg("Remote access required");
-          i18n_24 = MSG_EXTERNAL_redirect_title$$SRC_APP_APP_COMPONENT_TS_24;
+          const MSG_EXTERNAL_redirect_message$$SRC_APP_APP_COMPONENT_TS_24 = goog.getMsg(" Please use the remote web application to access this device. ");
+          i18n_24 = MSG_EXTERNAL_redirect_message$$SRC_APP_APP_COMPONENT_TS_24;
         } else {
-          i18n_24 = "Remote access required";
+          i18n_24 = " Please use the remote web application to access this device. ";
         }
         let i18n_25;
         if (false) {
-          const MSG_EXTERNAL_redirect_message$$SRC_APP_APP_COMPONENT_TS_25 = goog.getMsg(" Please use the remote web application to access this device. ");
-          i18n_25 = MSG_EXTERNAL_redirect_message$$SRC_APP_APP_COMPONENT_TS_25;
+          const MSG_EXTERNAL_redirect_message_2$$SRC_APP_APP_COMPONENT_TS_25 = goog.getMsg(" The access on this interface will be disabled in the future. ");
+          i18n_25 = MSG_EXTERNAL_redirect_message_2$$SRC_APP_APP_COMPONENT_TS_25;
         } else {
-          i18n_25 = " Please use the remote web application to access this device. ";
+          i18n_25 = " The access on this interface will be disabled in the future. ";
         }
-        let i18n_26;
-        if (false) {
-          const MSG_EXTERNAL_redirect_message_2$$SRC_APP_APP_COMPONENT_TS_26 = goog.getMsg(" The access on this interface will be disabled in the future. ");
-          i18n_26 = MSG_EXTERNAL_redirect_message_2$$SRC_APP_APP_COMPONENT_TS_26;
-        } else {
-          i18n_26 = " The access on this interface will be disabled in the future. ";
-        }
-        return [["menu", "matMenu"], ["sidenav", ""], ["counter", ""], i18n_0, i18n_1, i18n_2, i18n_3, i18n_4, i18n_5, i18n_6, i18n_7, i18n_8, i18n_9, i18n_10, i18n_11, i18n_12, i18n_13, i18n_14, i18n_15, i18n_16, i18n_17, i18n_18, i18n_19, i18n_20, i18n_21, i18n_22, i18n_23, i18n_24, i18n_25, i18n_26, [1, "app-viewport"], ["color", "primary"], ["mat-icon-button", "", 1, "menu-button", 3, "click"], ["mat-flat-button", "", "routerLink", "/", 1, "logo-button"], ["mat-flat-button", "", 1, "logo-button"], [1, "spacer"], ["matTooltip", "Session expiry countdown"], [3, "config"], ["mat-icon-button", "", "aria-label", "Example icon-button with a menu", 3, "matMenuTriggerFor"], ["mat-menu-item", "", 3, "click"], ["autosize", "", 1, "all-wrap", 3, "backdropClick"], ["role", "list"], ["routerLink", "/login", "routerLinkActive", "active"], ["routerLink", "/", "routerLinkActive", "active", 3, "routerLinkActiveOptions"], ["routerLink", "/events", "routerLinkActive", "active"], ["mat-subheader", ""], ["routerLink", "/locations", "routerLinkActive", "active"], ["routerLink", "/areas", "routerLinkActive", "active"], ["routerLink", "/zones", "routerLinkActive", "active"], ["routerLink", "/sensors", "routerLinkActive", "active"], ["routerLink", "/outputs", "routerLinkActive", "active"], ["routerLink", "/users", "routerLinkActive", "active"], [1, "menu"], ["routerLink", "/my-user", "routerLinkActive", "active"], ["matListItemIcon", ""], [3, "valueChange", "selectionChange", "value"], [3, "value"], [3, "disableRipple"], [3, "change", "checked"], ["routerLink", "/setup", "routerLinkActive", "active"], [1, "page-wrapper"], ["id", "overlay"], [1, "message"], [1, "container"], [1, "page"], ["color", "primary", "mode", "indeterminate", "diameter", "100", 1, "ajax-loader"], [1, "footer"], [1, "links"], ["mat-button", "", "href", "https://www.arpi-security.info/", "target", "project"], [1, "separator"], ["mat-button", "", "href", "https://docs.arpi-security.info", "target", "docs"], [1, "versions"], [1, "version"], ["mat-flat-button", "", "routerLink", "/", 1, "logo-button", 3, "click"], ["src", "assets/images/argus-eye-30.png"], [1, "location"], [3, "event", "config"], ["role", "listitem"], ["src", "assets/images/argus-eye-64.png", "width", "24"], [3, "selectionChange", "value"], ["matListItemTitle", ""], ["routerLink", "/login", "routerLinkActive", "active", 3, "click"], ["routerLink", "/", "routerLinkActive", "active", 3, "click", "routerLinkActiveOptions"], ["routerLink", "/events", "routerLinkActive", "active", 3, "click"], ["routerLink", "/locations", "routerLinkActive", "active", 3, "click"], ["routerLink", "/areas", "routerLinkActive", "active", 3, "click"], ["routerLink", "/zones", "routerLinkActive", "active", 3, "click"], ["routerLink", "/sensors", "routerLinkActive", "active", 3, "click"], ["routerLink", "/outputs", "routerLinkActive", "active", 3, "click"], ["routerLink", "/users", "routerLinkActive", "active", 3, "click"], [3, "expanded"], ["routerLink", "/config/syren", "routerLinkActive", "active", 3, "click"], ["routerLink", "/config/keypad", "routerLinkActive", "active", 3, "click"], ["routerLink", "/config/notifications", "routerLinkActive", "active", 3, "click"], ["routerLink", "/config/network", "routerLinkActive", "active", 3, "click"], ["routerLink", "/config/clock", "routerLinkActive", "active", 3, "click"], ["routerLink", "/my-user", "routerLinkActive", "active", 3, "click"], [3, "click"], ["mat-line", ""], ["routerLink", "/setup", "routerLinkActive", "active", 3, "click"], [1, "redirect-message"], ["mat-card-avatar", ""], ["href", "https://app.arpi-security.info"]];
+        return [["menu", "matMenu"], ["sidenav", ""], ["counter", ""], i18n_0, i18n_1, i18n_2, i18n_3, i18n_4, i18n_5, i18n_6, i18n_7, i18n_8, i18n_9, i18n_10, i18n_11, i18n_12, i18n_13, i18n_14, i18n_15, i18n_16, i18n_17, i18n_18, i18n_19, i18n_20, i18n_21, i18n_22, i18n_23, i18n_24, i18n_25, [1, "app-viewport"], ["color", "primary"], ["mat-icon-button", "", 1, "menu-button", 3, "click"], ["mat-flat-button", "", "routerLink", "/", 1, "logo-button"], ["mat-flat-button", "", 1, "logo-button"], [1, "spacer"], ["matTooltip", "Session expiry countdown"], [3, "config"], ["mat-icon-button", "", "aria-label", "Example icon-button with a menu", 3, "matMenuTriggerFor"], ["mat-menu-item", "", 3, "click"], ["autosize", "", 1, "all-wrap", 3, "backdropClick"], ["role", "list"], ["routerLink", "/login", "routerLinkActive", "active"], ["routerLink", "/", "routerLinkActive", "active", 3, "routerLinkActiveOptions"], ["routerLink", "/events", "routerLinkActive", "active"], ["mat-subheader", ""], ["routerLink", "/locations", "routerLinkActive", "active"], ["routerLink", "/preferences", "routerLinkActive", "active", 3, "click"], ["matListItemIcon", ""], ["routerLink", "/areas", "routerLinkActive", "active"], ["routerLink", "/zones", "routerLinkActive", "active"], ["routerLink", "/sensors", "routerLinkActive", "active"], ["routerLink", "/outputs", "routerLinkActive", "active"], ["routerLink", "/users", "routerLinkActive", "active"], [1, "menu"], ["routerLink", "/my-user", "routerLinkActive", "active"], ["routerLink", "/setup", "routerLinkActive", "active"], [1, "page-wrapper"], ["id", "overlay"], [1, "message"], [1, "container"], [1, "page"], ["color", "primary", "mode", "indeterminate", "diameter", "100", 1, "ajax-loader"], [1, "footer"], [1, "links"], ["mat-button", "", "href", "https://www.arpi-security.info/", "target", "project"], [1, "separator"], ["mat-button", "", "href", "https://docs.arpi-security.info", "target", "docs"], [1, "versions"], [1, "version"], ["mat-flat-button", "", "routerLink", "/", 1, "logo-button", 3, "click"], ["src", "assets/images/argus-eye-30.png"], [1, "location"], [3, "event", "config"], ["role", "listitem"], ["src", "assets/images/argus-eye-64.png", "width", "24"], [3, "selectionChange", "value"], [3, "value"], ["matListItemTitle", ""], ["routerLink", "/login", "routerLinkActive", "active", 3, "click"], ["routerLink", "/", "routerLinkActive", "active", 3, "click", "routerLinkActiveOptions"], ["routerLink", "/events", "routerLinkActive", "active", 3, "click"], ["routerLink", "/locations", "routerLinkActive", "active", 3, "click"], ["routerLink", "/areas", "routerLinkActive", "active", 3, "click"], ["routerLink", "/zones", "routerLinkActive", "active", 3, "click"], ["routerLink", "/sensors", "routerLinkActive", "active", 3, "click"], ["routerLink", "/outputs", "routerLinkActive", "active", 3, "click"], ["routerLink", "/users", "routerLinkActive", "active", 3, "click"], [3, "expanded"], ["routerLink", "/config/syren", "routerLinkActive", "active", 3, "click"], ["routerLink", "/config/keypad", "routerLinkActive", "active", 3, "click"], ["routerLink", "/config/notifications", "routerLinkActive", "active", 3, "click"], ["routerLink", "/config/network", "routerLinkActive", "active", 3, "click"], ["routerLink", "/config/clock", "routerLinkActive", "active", 3, "click"], ["routerLink", "/my-user", "routerLinkActive", "active", 3, "click"], ["routerLink", "/setup", "routerLinkActive", "active", 3, "click"], ["mat-line", ""], [1, "redirect-message"], ["mat-card-avatar", ""], ["href", "https://app.arpi-security.info"]];
       },
       template: function AppComponent_Template(rf, ctx) {
         if (rf & 1) {
           const _r1 = ɵɵgetCurrentView();
-          ɵɵelementStart(0, "div", 30);
+          ɵɵelementStart(0, "div", 29);
           ɵɵconditionalCreate(1, AppComponent_Conditional_1_Template, 1, 0, "app-demo");
-          ɵɵelementStart(2, "mat-toolbar", 31)(3, "button", 32);
+          ɵɵelementStart(2, "mat-toolbar", 30)(3, "button", 31);
           ɵɵlistener("click", function AppComponent_Template_button_click_3_listener() {
             ɵɵrestoreView(_r1);
             const sidenav_r2 = ɵɵreference(24);
@@ -107498,17 +107312,17 @@ var AppComponent = class _AppComponent {
           ɵɵelementStart(4, "mat-icon");
           ɵɵtext(5, "menu");
           ɵɵelementEnd()();
-          ɵɵconditionalCreate(6, AppComponent_Conditional_6_Template, 4, 1, "button", 33);
-          ɵɵconditionalCreate(7, AppComponent_Conditional_7_Template, 4, 1, "button", 34);
-          ɵɵelement(8, "span", 35);
-          ɵɵelementStart(9, "div", 36);
-          ɵɵconditionalCreate(10, AppComponent_Conditional_10_Template, 2, 1, "countdown", 37);
+          ɵɵconditionalCreate(6, AppComponent_Conditional_6_Template, 4, 1, "button", 32);
+          ɵɵconditionalCreate(7, AppComponent_Conditional_7_Template, 4, 1, "button", 33);
+          ɵɵelement(8, "span", 34);
+          ɵɵelementStart(9, "div", 35);
+          ɵɵconditionalCreate(10, AppComponent_Conditional_10_Template, 2, 1, "countdown", 36);
           ɵɵelementEnd();
           ɵɵelement(11, "app-system-state");
-          ɵɵelementStart(12, "button", 38)(13, "mat-icon");
+          ɵɵelementStart(12, "button", 37)(13, "mat-icon");
           ɵɵtext(14, "more_vert");
           ɵɵelementEnd()()();
-          ɵɵelementStart(15, "mat-menu", null, 0)(17, "button", 39);
+          ɵɵelementStart(15, "mat-menu", null, 0)(17, "button", 38);
           ɵɵlistener("click", function AppComponent_Template_button_click_17_listener() {
             return ctx.openHelp();
           });
@@ -107518,90 +107332,78 @@ var AppComponent = class _AppComponent {
           ɵɵelementStart(20, "span");
           ɵɵtext(21, "Help");
           ɵɵelementEnd()()();
-          ɵɵelementStart(22, "mat-sidenav-container", 40);
+          ɵɵelementStart(22, "mat-sidenav-container", 39);
           ɵɵlistener("backdropClick", function AppComponent_Template_mat_sidenav_container_backdropClick_22_listener() {
             ɵɵrestoreView(_r1);
             const sidenav_r2 = ɵɵreference(24);
             return ɵɵresetView(sidenav_r2.close());
           });
           ɵɵelementStart(23, "mat-sidenav", null, 1);
-          ɵɵconditionalCreate(25, AppComponent_Conditional_25_Template, 3, 2, "mat-list", 41);
+          ɵɵconditionalCreate(25, AppComponent_Conditional_25_Template, 3, 2, "mat-list", 40);
           ɵɵelementStart(26, "mat-nav-list");
-          ɵɵconditionalCreate(27, AppComponent_Conditional_27_Template, 5, 0, "mat-list-item", 42);
-          ɵɵconditionalCreate(28, AppComponent_Conditional_28_Template, 5, 2, "mat-list-item", 43);
-          ɵɵconditionalCreate(29, AppComponent_Conditional_29_Template, 5, 0, "mat-list-item", 44);
-          ɵɵconditionalCreate(30, AppComponent_Conditional_30_Template, 2, 0, "h3", 45);
-          ɵɵconditionalCreate(31, AppComponent_Conditional_31_Template, 5, 0, "mat-list-item", 46);
-          ɵɵconditionalCreate(32, AppComponent_Conditional_32_Template, 5, 0, "mat-list-item", 47);
-          ɵɵconditionalCreate(33, AppComponent_Conditional_33_Template, 5, 0, "mat-list-item", 48);
-          ɵɵconditionalCreate(34, AppComponent_Conditional_34_Template, 5, 0, "mat-list-item", 49);
-          ɵɵconditionalCreate(35, AppComponent_Conditional_35_Template, 5, 0, "mat-list-item", 50);
-          ɵɵconditionalCreate(36, AppComponent_Conditional_36_Template, 5, 0, "mat-list-item", 51);
-          ɵɵconditionalCreate(37, AppComponent_Conditional_37_Template, 33, 1, "mat-accordion", 52);
-          ɵɵconditionalCreate(38, AppComponent_Conditional_38_Template, 1, 0, "mat-divider");
-          ɵɵconditionalCreate(39, AppComponent_Conditional_39_Template, 5, 0, "mat-list-item", 53);
-          ɵɵelementStart(40, "mat-list-item")(41, "mat-icon", 54);
-          ɵɵtext(42, "language");
-          ɵɵelementEnd();
-          ɵɵelementStart(43, "mat-select", 55);
-          ɵɵtwoWayListener("valueChange", function AppComponent_Template_mat_select_valueChange_43_listener($event) {
+          ɵɵconditionalCreate(27, AppComponent_Conditional_27_Template, 5, 0, "mat-list-item", 41);
+          ɵɵconditionalCreate(28, AppComponent_Conditional_28_Template, 5, 2, "mat-list-item", 42);
+          ɵɵconditionalCreate(29, AppComponent_Conditional_29_Template, 5, 0, "mat-list-item", 43);
+          ɵɵconditionalCreate(30, AppComponent_Conditional_30_Template, 2, 0, "h3", 44);
+          ɵɵconditionalCreate(31, AppComponent_Conditional_31_Template, 5, 0, "mat-list-item", 45);
+          ɵɵelementStart(32, "mat-list-item", 46);
+          ɵɵlistener("click", function AppComponent_Template_mat_list_item_click_32_listener() {
             ɵɵrestoreView(_r1);
-            ɵɵtwoWayBindingSet(ctx.currentLocale, $event) || (ctx.currentLocale = $event);
-            return ɵɵresetView($event);
+            const sidenav_r2 = ɵɵreference(24);
+            return ɵɵresetView(ctx.smallScreen ? sidenav_r2.close() : null);
           });
-          ɵɵlistener("selectionChange", function AppComponent_Template_mat_select_selectionChange_43_listener($event) {
-            return ctx.onLocaleSelected($event);
-          });
-          ɵɵrepeaterCreate(44, AppComponent_For_45_Template, 2, 2, "mat-option", 56, ɵɵrepeaterTrackByIdentity);
+          ɵɵelementStart(33, "mat-icon", 47);
+          ɵɵtext(34, "tune");
+          ɵɵelementEnd();
+          ɵɵelementStart(35, "span");
+          ɵɵi18n(36, 3);
           ɵɵelementEnd()();
-          ɵɵelementStart(46, "mat-list-item", 57)(47, "mat-icon", 54);
-          ɵɵtext(48, "invert_colors");
-          ɵɵelementEnd();
-          ɵɵelementStart(49, "mat-slide-toggle", 58);
-          ɵɵlistener("change", function AppComponent_Template_mat_slide_toggle_change_49_listener($event) {
-            return ctx.onThemeSwitched($event);
-          });
-          ɵɵi18n(50, 3);
+          ɵɵconditionalCreate(37, AppComponent_Conditional_37_Template, 5, 0, "mat-list-item", 48);
+          ɵɵconditionalCreate(38, AppComponent_Conditional_38_Template, 5, 0, "mat-list-item", 49);
+          ɵɵconditionalCreate(39, AppComponent_Conditional_39_Template, 5, 0, "mat-list-item", 50);
+          ɵɵconditionalCreate(40, AppComponent_Conditional_40_Template, 5, 0, "mat-list-item", 51);
+          ɵɵconditionalCreate(41, AppComponent_Conditional_41_Template, 5, 0, "mat-list-item", 52);
+          ɵɵconditionalCreate(42, AppComponent_Conditional_42_Template, 33, 1, "mat-accordion", 53);
+          ɵɵconditionalCreate(43, AppComponent_Conditional_43_Template, 1, 0, "mat-divider");
+          ɵɵconditionalCreate(44, AppComponent_Conditional_44_Template, 5, 0, "mat-list-item", 54);
+          ɵɵconditionalCreate(45, AppComponent_Conditional_45_Template, 5, 0, "mat-list-item", 55);
+          ɵɵconditionalCreate(46, AppComponent_Conditional_46_Template, 7, 1, "mat-list-item", 41);
           ɵɵelementEnd()();
-          ɵɵconditionalCreate(51, AppComponent_Conditional_51_Template, 5, 0, "mat-list-item");
-          ɵɵconditionalCreate(52, AppComponent_Conditional_52_Template, 5, 0, "mat-list-item", 59);
-          ɵɵconditionalCreate(53, AppComponent_Conditional_53_Template, 7, 1, "mat-list-item", 42);
+          ɵɵelementStart(47, "mat-sidenav-content", 56);
+          ɵɵconditionalCreate(48, AppComponent_Conditional_48_Template, 1, 0, "div", 57);
+          ɵɵconditionalCreate(49, AppComponent_Conditional_49_Template, 4, 1, "mat-card", 58);
+          ɵɵconditionalCreate(50, AppComponent_Conditional_50_Template, 15, 0, "div", 59);
+          ɵɵelementStart(51, "div", 60);
+          ɵɵconditionalCreate(52, AppComponent_Conditional_52_Template, 1, 0, "mat-progress-spinner", 61);
+          ɵɵelement(53, "router-outlet");
+          ɵɵelementEnd();
+          ɵɵelementStart(54, "div", 62)(55, "div", 63)(56, "a", 64);
+          ɵɵtext(57, "ArPI Home Security");
+          ɵɵelementEnd();
+          ɵɵelementStart(58, "span", 65);
+          ɵɵtext(59, "\xA0|\xA0");
+          ɵɵelementEnd();
+          ɵɵelementStart(60, "a", 66);
+          ɵɵtext(61, "DOCS");
           ɵɵelementEnd()();
-          ɵɵelementStart(54, "mat-sidenav-content", 60);
-          ɵɵconditionalCreate(55, AppComponent_Conditional_55_Template, 1, 0, "div", 61);
-          ɵɵconditionalCreate(56, AppComponent_Conditional_56_Template, 4, 1, "mat-card", 62);
-          ɵɵconditionalCreate(57, AppComponent_Conditional_57_Template, 15, 0, "div", 63);
-          ɵɵelementStart(58, "div", 64);
-          ɵɵconditionalCreate(59, AppComponent_Conditional_59_Template, 1, 0, "mat-progress-spinner", 65);
-          ɵɵelement(60, "router-outlet");
+          ɵɵelementStart(62, "div", 67)(63, "div", 68)(64, "b");
+          ɵɵi18n(65, 4);
           ɵɵelementEnd();
-          ɵɵelementStart(61, "div", 66)(62, "div", 67)(63, "a", 68);
-          ɵɵtext(64, "ArPI Home Security");
+          ɵɵtext(66);
           ɵɵelementEnd();
-          ɵɵelementStart(65, "span", 69);
-          ɵɵtext(66, "\xA0|\xA0");
+          ɵɵelementStart(67, "div", 68)(68, "b");
+          ɵɵi18n(69, 5);
           ɵɵelementEnd();
-          ɵɵelementStart(67, "a", 70);
-          ɵɵtext(68, "DOCS");
-          ɵɵelementEnd()();
-          ɵɵelementStart(69, "div", 71)(70, "div", 72)(71, "b");
-          ɵɵi18n(72, 4);
+          ɵɵtext(70);
           ɵɵelementEnd();
-          ɵɵtext(73);
+          ɵɵelementStart(71, "div", 68)(72, "b");
+          ɵɵi18n(73, 6);
           ɵɵelementEnd();
-          ɵɵelementStart(74, "div", 72)(75, "b");
-          ɵɵi18n(76, 5);
-          ɵɵelementEnd();
-          ɵɵtext(77);
-          ɵɵelementEnd();
-          ɵɵelementStart(78, "div", 72)(79, "b");
-          ɵɵi18n(80, 6);
-          ɵɵelementEnd();
-          ɵɵtext(81);
+          ɵɵtext(74);
           ɵɵelementEnd()()()()()();
         }
         if (rf & 2) {
-          const menu_r23 = ɵɵreference(16);
+          const menu_r21 = ɵɵreference(16);
           ɵɵadvance();
           ɵɵconditional(ctx.demoMode ? 1 : -1);
           ɵɵadvance(5);
@@ -107611,7 +107413,7 @@ var AppComponent = class _AppComponent {
           ɵɵadvance(3);
           ɵɵconditional(ctx.isSessionValid ? 10 : -1);
           ɵɵadvance(2);
-          ɵɵproperty("matMenuTriggerFor", menu_r23);
+          ɵɵproperty("matMenuTriggerFor", menu_r21);
           ɵɵadvance(13);
           ɵɵconditional(ctx.locations.length > 0 ? 25 : -1);
           ɵɵadvance(2);
@@ -107624,44 +107426,34 @@ var AppComponent = class _AppComponent {
           ɵɵconditional(ctx.isLoggedIn() ? 30 : -1);
           ɵɵadvance();
           ɵɵconditional(ctx.isMultiLocation ? 31 : -1);
-          ɵɵadvance();
-          ɵɵconditional(ctx.isLoggedIn() ? 32 : -1);
-          ɵɵadvance();
-          ɵɵconditional(ctx.isLoggedIn() ? 33 : -1);
-          ɵɵadvance();
-          ɵɵconditional(ctx.isLoggedIn() ? 34 : -1);
-          ɵɵadvance();
-          ɵɵconditional(ctx.isLoggedIn() ? 35 : -1);
-          ɵɵadvance();
-          ɵɵconditional(ctx.isAdminUser() ? 36 : -1);
-          ɵɵadvance();
-          ɵɵconditional(ctx.isAdminUser() && ctx.isLoggedIn() ? 37 : -1);
+          ɵɵadvance(6);
+          ɵɵconditional(ctx.isLoggedIn() ? 37 : -1);
           ɵɵadvance();
           ɵɵconditional(ctx.isLoggedIn() ? 38 : -1);
           ɵɵadvance();
-          ɵɵconditional(ctx.isLoggedIn() && !ctx.isAdminUser() ? 39 : -1);
-          ɵɵadvance(4);
-          ɵɵtwoWayProperty("value", ctx.currentLocale);
+          ɵɵconditional(ctx.isLoggedIn() ? 39 : -1);
           ɵɵadvance();
-          ɵɵrepeater(ctx.locales);
+          ɵɵconditional(ctx.isLoggedIn() ? 40 : -1);
+          ɵɵadvance();
+          ɵɵconditional(ctx.isAdminUser() ? 41 : -1);
+          ɵɵadvance();
+          ɵɵconditional(ctx.isAdminUser() && ctx.isLoggedIn() ? 42 : -1);
+          ɵɵadvance();
+          ɵɵconditional(ctx.isLoggedIn() ? 43 : -1);
+          ɵɵadvance();
+          ɵɵconditional(ctx.isLoggedIn() && !ctx.isAdminUser() ? 44 : -1);
+          ɵɵadvance();
+          ɵɵconditional(!ctx.isMultiLocation ? 45 : -1);
+          ɵɵadvance();
+          ɵɵconditional(ctx.isLoggedIn() ? 46 : -1);
           ɵɵadvance(2);
-          ɵɵproperty("disableRipple", true);
-          ɵɵadvance(3);
-          ɵɵproperty("checked", ctx.darkTheme);
+          ɵɵconditional(ctx.disablePage ? 48 : -1);
+          ɵɵadvance();
+          ɵɵconditional(ctx.message && !ctx.displayLoader ? 49 : -1);
+          ɵɵadvance();
+          ɵɵconditional(ctx.redirectToRemote ? 50 : -1);
           ɵɵadvance(2);
-          ɵɵconditional(!ctx.isLoggedIn() && ctx.isDeviceRegistered ? 51 : -1);
-          ɵɵadvance();
-          ɵɵconditional(!ctx.isMultiLocation ? 52 : -1);
-          ɵɵadvance();
-          ɵɵconditional(ctx.isLoggedIn() ? 53 : -1);
-          ɵɵadvance(2);
-          ɵɵconditional(ctx.disablePage ? 55 : -1);
-          ɵɵadvance();
-          ɵɵconditional(ctx.message && !ctx.displayLoader ? 56 : -1);
-          ɵɵadvance();
-          ɵɵconditional(ctx.redirectToRemote ? 57 : -1);
-          ɵɵadvance(2);
-          ɵɵconditional(ctx.displayLoader ? 59 : -1);
+          ɵɵconditional(ctx.displayLoader ? 52 : -1);
           ɵɵadvance(14);
           ɵɵtextInterpolate1(" \xA0", ctx.versions.webapplicationVersion, " ");
           ɵɵadvance(4);
@@ -107670,7 +107462,7 @@ var AppComponent = class _AppComponent {
           ɵɵtextInterpolate1(" \xA0", ctx.versions.boardVersion ? "v" + ctx.versions.boardVersion : "-", " ");
         }
       },
-      dependencies: [CountdownComponent, RouterOutlet, RouterLink, RouterLinkActive, MatOption, MatButton, MatIconButton, MatCard, MatCardAvatar, MatCardContent, MatCardHeader, MatCardSubtitle, MatCardTitle, MatAccordion, MatExpansionPanel, MatExpansionPanelHeader, MatExpansionPanelTitle, MatIcon, MatList, MatNavList, MatListItem, MatListItemIcon, MatListSubheaderCssMatStyler, MatDivider, MatListItemTitle, MatMenu, MatMenuItem, MatMenuTrigger, MatProgressSpinner, MatSelect, MatSidenav, MatSidenavContainer, MatSidenavContent, MatSlideToggle, MatToolbar, MatTooltip, SystemStateComponent, DemoComponent],
+      dependencies: [CountdownComponent, RouterOutlet, RouterLink, RouterLinkActive, MatOption, MatButton, MatIconButton, MatCard, MatCardAvatar, MatCardContent, MatCardHeader, MatCardSubtitle, MatCardTitle, MatAccordion, MatExpansionPanel, MatExpansionPanelHeader, MatExpansionPanelTitle, MatIcon, MatList, MatNavList, MatListItem, MatListItemIcon, MatListSubheaderCssMatStyler, MatDivider, MatListItemTitle, MatMenu, MatMenuItem, MatMenuTrigger, MatProgressSpinner, MatSelect, MatSidenav, MatSidenavContainer, MatSidenavContent, MatToolbar, MatTooltip, SystemStateComponent, DemoComponent],
       styles: ["\n  app-root {\n  display: block;\n  width: 100%;\n  height: 100%;\n}\n.app-viewport[_ngcontent-%COMP%] {\n  --app-top-safe-area: var(--safe-area-inset-top, env(safe-area-inset-top, 0px));\n  --app-bottom-safe-area: var(--safe-area-inset-bottom, env(safe-area-inset-bottom, 0px));\n  position: fixed;\n  top: 0;\n  bottom: 0;\n  left: 0;\n  right: 0;\n  display: flex;\n  flex-direction: column;\n}\n.app-viewport[_ngcontent-%COMP%]   mat-sidenav[_ngcontent-%COMP%] {\n  width: 250px;\n}\n  .small-screen .logo {\n  display: none;\n}\n  .small-screen .footer {\n  flex-direction: column;\n}\n  .small-screen .footer .links {\n  flex-direction: column;\n}\n  .small-screen .footer .links .separator {\n  display: none;\n}\n  .small-screen .footer .versions {\n  flex-direction: row;\n  margin: 10px auto;\n}\n  .large-screen .menu-button, \n  .large-screen .logo-button {\n  display: none;\n}\n  .large-screen .footer {\n  flex-direction: row;\n}\n  .large-screen .footer .links {\n  flex-direction: row;\n  padding: 10px;\n}\n  .large-screen .footer .versions {\n  flex-direction: column;\n  margin: 5px;\n}\n  .large-screen .footer .versions .version {\n  display: flex;\n  font-size: 12px;\n  margin: 0px 10px;\n}\n  .large-screen .footer .versions .version b {\n  display: inline-block;\n  width: 55px;\n  text-align: right;\n}\n/*# sourceMappingURL=app.component.css.map */"]
     });
   }
@@ -107791,6 +107583,14 @@ var AppComponent = class _AppComponent {
             <span i18n="@@locations menu link">Locations</span>
           </mat-list-item>
         }
+        <mat-list-item
+          routerLink="/preferences"
+          routerLinkActive="active"
+          (click)="smallScreen ? sidenav.close() : null"
+        >
+          <mat-icon matListItemIcon>tune</mat-icon>
+          <span i18n="@@preferences menu link">Preferences</span>
+        </mat-list-item>
         @if (isLoggedIn()) {
           <mat-list-item routerLink="/areas" routerLinkActive="active" (click)="smallScreen ? sidenav.close() : null">
             <mat-icon matListItemIcon>crop</mat-icon>
@@ -107882,29 +107682,6 @@ var AppComponent = class _AppComponent {
           <mat-list-item routerLink="/my-user" routerLinkActive="active" (click)="smallScreen ? sidenav.close() : null">
             <mat-icon matListItemIcon>person</mat-icon>
             <span i18n="@@my-user menu link">My user</span>
-          </mat-list-item>
-        }
-        <mat-list-item>
-          <mat-icon matListItemIcon>language</mat-icon>
-          <mat-select [(value)]="currentLocale" (selectionChange)="onLocaleSelected($event)">
-            @for (locale of locales; track locale) {
-              <mat-option [value]="locale.id">
-                {{ locale.name }}
-              </mat-option>
-            }
-          </mat-select>
-        </mat-list-item>
-        <mat-list-item [disableRipple]="true">
-          <mat-icon matListItemIcon>invert_colors</mat-icon>
-          <mat-slide-toggle (change)="onThemeSwitched($event)" [checked]="darkTheme" i18n="@@dark theme">
-            Dark theme
-          </mat-slide-toggle>
-        </mat-list-item>
-
-        @if (!isLoggedIn() && isDeviceRegistered) {
-          <mat-list-item (click)="unregister()">
-            <mat-icon matListItemIcon>disabled_by_default</mat-icon>
-            <div mat-line i18n="@@unregister menu link">Unregister device</div>
           </mat-list-item>
         }
         @if (!isMultiLocation) {
@@ -108028,8 +107805,6 @@ var AppComponent = class _AppComponent {
   }, {
     type: Router
   }, {
-    type: MatDialog
-  }, {
     type: MatSnackBar
   }, {
     type: ElementRef
@@ -108052,7 +107827,7 @@ var AppComponent = class _AppComponent {
   (typeof ngDevMode === "undefined" || ngDevMode) && ɵsetClassDebugInfo(AppComponent, {
     className: "AppComponent",
     filePath: "src/app/app.component.ts",
-    lineNumber: 28
+    lineNumber: 26
   });
 })();
 
@@ -108157,6 +107932,96 @@ var MessageComponent = class _MessageComponent {
     className: "MessageComponent",
     filePath: "src/app/components/message/message.component.ts",
     lineNumber: 9
+  });
+})();
+
+// src/app/components/question-dialog/question-dialog.component.ts
+function QuestionDialogComponent_For_7_Template(rf, ctx) {
+  if (rf & 1) {
+    const _r1 = ɵɵgetCurrentView();
+    ɵɵelementStart(0, "button", 4);
+    ɵɵlistener("click", function QuestionDialogComponent_For_7_Template_button_click_0_listener() {
+      const option_r2 = ɵɵrestoreView(_r1).$implicit;
+      const ctx_r2 = ɵɵnextContext();
+      return ɵɵresetView(ctx_r2.onOptionClick(option_r2.id));
+    });
+    ɵɵtext(1);
+    ɵɵelementEnd();
+  }
+  if (rf & 2) {
+    const option_r2 = ctx.$implicit;
+    ɵɵproperty("color", ɵɵinterpolate(option_r2.color))("tabindex", ɵɵinterpolate(option_r2.tabIndex));
+    ɵɵadvance();
+    ɵɵtextInterpolate1(" ", option_r2.text, " ");
+  }
+}
+var QuestionDialogComponent = class _QuestionDialogComponent {
+  constructor() {
+    this.dialogRef = inject2(MatDialogRef);
+    this.title = inject2(MAT_DIALOG_DATA).title;
+    this.message = inject2(MAT_DIALOG_DATA).message;
+    this.options = inject2(MAT_DIALOG_DATA).options;
+  }
+  onOptionClick(option) {
+    this.dialogRef.close(option);
+  }
+  onNoClick() {
+    this.dialogRef.close();
+  }
+  static {
+    this.ɵfac = function QuestionDialogComponent_Factory(__ngFactoryType__) {
+      return new (__ngFactoryType__ || _QuestionDialogComponent)();
+    };
+  }
+  static {
+    this.ɵcmp = /* @__PURE__ */ɵɵdefineComponent({
+      type: _QuestionDialogComponent,
+      selectors: [["app-question-dialog"]],
+      standalone: false,
+      decls: 8,
+      vars: 2,
+      consts: [["mat-dialog-title", ""], ["mat-dialog-content", ""], ["mat-dialog-actions", ""], ["mat-raised-button", "", 3, "color", "tabindex"], ["mat-raised-button", "", 3, "click", "color", "tabindex"]],
+      template: function QuestionDialogComponent_Template(rf, ctx) {
+        if (rf & 1) {
+          ɵɵelementStart(0, "h1", 0);
+          ɵɵtext(1);
+          ɵɵelementEnd();
+          ɵɵelementStart(2, "div", 1)(3, "p");
+          ɵɵtext(4);
+          ɵɵelementEnd()();
+          ɵɵelementStart(5, "div", 2);
+          ɵɵrepeaterCreate(6, QuestionDialogComponent_For_7_Template, 2, 5, "button", 3, ɵɵrepeaterTrackByIdentity);
+          ɵɵelementEnd();
+        }
+        if (rf & 2) {
+          ɵɵadvance();
+          ɵɵtextInterpolate(ctx.title);
+          ɵɵadvance(3);
+          ɵɵtextInterpolate(ctx.message);
+          ɵɵadvance(2);
+          ɵɵrepeater(ctx.options);
+        }
+      },
+      dependencies: [MatButton, MatDialogTitle, MatDialogActions, MatDialogContent],
+      encapsulation: 2
+    });
+  }
+};
+(() => {
+  (typeof ngDevMode === "undefined" || ngDevMode) && setClassMetadata(QuestionDialogComponent, [{
+    type: Component,
+    args: [{
+      selector: "app-question-dialog",
+      standalone: false,
+      template: '<h1 mat-dialog-title>{{ title }}</h1>\n<div mat-dialog-content>\n  <p>{{ message }}</p>\n</div>\n\n<div mat-dialog-actions>\n  @for (option of options; track option) {\n    <button\n      mat-raised-button\n      (click)="onOptionClick(option.id)"\n      color="{{ option.color }}"\n      tabindex="{{ option.tabIndex }}"\n    >\n      {{ option.text }}\n    </button>\n  }\n</div>\n'
+    }]
+  }], null, null);
+})();
+(() => {
+  (typeof ngDevMode === "undefined" || ngDevMode) && ɵsetClassDebugInfo(QuestionDialogComponent, {
+    className: "QuestionDialogComponent",
+    filePath: "src/app/components/question-dialog/question-dialog.component.ts",
+    lineNumber: 22
   });
 })();
 
@@ -116053,7 +115918,7 @@ var SyrenComponent = class _SyrenComponent extends ConfigurationBaseComponent {
 
 // node_modules/@capacitor/app/dist/esm/index.js
 var App = registerPlugin("App", {
-  web: () => import("./web-QI5OIVER.js").then(m => new m.AppWeb())
+  web: () => import("./web-WIDHD4L5.js").then(m => new m.AppWeb())
 });
 
 // src/app/components/controller/controller.ts
@@ -116641,12 +116506,68 @@ var AreaComponent = class _AreaComponent {
   });
 })();
 
+// src/app/services/app-preferences.service.ts
+var APP_PREFERENCES_STORAGE_KEY = "appPreferences";
+var DEFAULT_LONG_PRESS_ENABLED = true;
+var AppPreferencesService = class _AppPreferencesService {
+  constructor() {
+    this.preferencesSubject = new BehaviorSubject(this.load());
+    this.preferences$ = this.preferencesSubject.asObservable();
+  }
+  get longPressEnabled() {
+    return this.preferencesSubject.value.longPressEnabled;
+  }
+  setLongPressEnabled(enabled) {
+    const preferences = __spreadProps(__spreadValues({}, this.preferencesSubject.value), {
+      longPressEnabled: enabled
+    });
+    localStorage.setItem(APP_PREFERENCES_STORAGE_KEY, JSON.stringify(preferences));
+    this.preferencesSubject.next(preferences);
+  }
+  load() {
+    try {
+      const stored = JSON.parse(localStorage.getItem(APP_PREFERENCES_STORAGE_KEY) || "null");
+      return {
+        longPressEnabled: stored?.longPressEnabled ?? DEFAULT_LONG_PRESS_ENABLED
+      };
+    } catch (e) {
+      return {
+        longPressEnabled: DEFAULT_LONG_PRESS_ENABLED
+      };
+    }
+  }
+  static {
+    this.ɵfac = function AppPreferencesService_Factory(__ngFactoryType__) {
+      return new (__ngFactoryType__ || _AppPreferencesService)();
+    };
+  }
+  static {
+    this.ɵprov = /* @__PURE__ */ɵɵdefineInjectable({
+      token: _AppPreferencesService,
+      factory: _AppPreferencesService.ɵfac,
+      providedIn: "root"
+    });
+  }
+};
+(() => {
+  (typeof ngDevMode === "undefined" || ngDevMode) && setClassMetadata(AppPreferencesService, [{
+    type: Injectable,
+    args: [{
+      providedIn: "root"
+    }]
+  }], null, null);
+})();
+
 // src/app/directives/long-press.directive.ts
-var PRESS_THRESHOLD = 1;
+var PRESS_THRESHOLD = 600;
 var LongPressToggleDirective = class _LongPressToggleDirective {
   constructor() {
+    this.longPressEnabled = true;
     this.longPressAvailable = new EventEmitter();
     this.longPressed = new EventEmitter();
+    this.pressed = new EventEmitter();
+    this.longPressTimer = null;
+    this.longPressTriggered = false;
   }
   onMouseDown(event2) {
     if (event2.button !== 0) {
@@ -116660,36 +116581,55 @@ var LongPressToggleDirective = class _LongPressToggleDirective {
     }
     this.emitPress();
   }
-  onMouseLeave(event2) {
-    if (event2.button !== 0) {
-      return;
-    }
-    this.startTimestamp = null;
-    this.longPressAvailable.emit(false);
+  onMouseLeave() {
+    this.resetPress();
   }
   onTouchStart(event2) {
+    event2.preventDefault();
     this.startPress();
   }
-  onTouchEnd(event2) {
+  onTouchEnd(_event) {
     this.emitPress();
   }
-  onTouchCancel(event2) {
-    this.emitPress();
+  onTouchCancel(_event) {
+    this.resetPress();
+  }
+  ngOnDestroy() {
+    this.clearPressTimer();
   }
   startPress() {
-    this.startTimestamp = Date.now();
-    setTimeout(() => {
-      if (this.startTimestamp && Date.now() - this.startTimestamp > PRESS_THRESHOLD) {
-        this.longPressAvailable.emit(true);
+    this.clearPressTimer();
+    this.longPressTriggered = false;
+    this.longPressAvailable.emit(false);
+    if (!this.longPressEnabled) {
+      return;
+    }
+    this.longPressTimer = setTimeout(() => {
+      if (!this.longPressEnabled) {
+        return;
       }
+      this.longPressTriggered = true;
+      this.longPressAvailable.emit(true);
     }, PRESS_THRESHOLD);
   }
   emitPress() {
-    if (this.startTimestamp && Date.now() - this.startTimestamp > PRESS_THRESHOLD) {
+    if (!this.longPressEnabled) {
+      this.pressed.emit();
+    } else if (this.longPressTriggered) {
       this.longPressed.emit();
     }
-    this.startTimestamp = null;
+    this.resetPress();
+  }
+  resetPress() {
+    this.clearPressTimer();
+    this.longPressTriggered = false;
     this.longPressAvailable.emit(false);
+  }
+  clearPressTimer() {
+    if (this.longPressTimer) {
+      clearTimeout(this.longPressTimer);
+      this.longPressTimer = null;
+    }
   }
   static {
     this.ɵfac = function LongPressToggleDirective_Factory(__ngFactoryType__) {
@@ -116706,8 +116646,8 @@ var LongPressToggleDirective = class _LongPressToggleDirective {
             return ctx.onMouseDown($event);
           })("mouseup", function LongPressToggleDirective_mouseup_HostBindingHandler($event) {
             return ctx.onMouseUp($event);
-          })("mouseleave", function LongPressToggleDirective_mouseleave_HostBindingHandler($event) {
-            return ctx.onMouseLeave($event);
+          })("mouseleave", function LongPressToggleDirective_mouseleave_HostBindingHandler() {
+            return ctx.onMouseLeave();
           })("touchstart", function LongPressToggleDirective_touchstart_HostBindingHandler($event) {
             return ctx.onTouchStart($event);
           })("touchend", function LongPressToggleDirective_touchend_HostBindingHandler($event) {
@@ -116717,9 +116657,13 @@ var LongPressToggleDirective = class _LongPressToggleDirective {
           });
         }
       },
+      inputs: {
+        longPressEnabled: "longPressEnabled"
+      },
       outputs: {
         longPressAvailable: "longPressAvailable",
-        longPressed: "longPressed"
+        longPressed: "longPressed",
+        pressed: "pressed"
       }
     });
   }
@@ -116732,10 +116676,16 @@ var LongPressToggleDirective = class _LongPressToggleDirective {
       standalone: true
     }]
   }], null, {
+    longPressEnabled: [{
+      type: Input
+    }],
     longPressAvailable: [{
       type: Output
     }],
     longPressed: [{
+      type: Output
+    }],
+    pressed: [{
       type: Output
     }],
     onMouseDown: [{
@@ -116748,7 +116698,7 @@ var LongPressToggleDirective = class _LongPressToggleDirective {
     }],
     onMouseLeave: [{
       type: HostListener,
-      args: ["mouseleave", ["$event"]]
+      args: ["mouseleave"]
     }],
     onTouchStart: [{
       type: HostListener,
@@ -116776,12 +116726,23 @@ function OutputComponent_Conditional_2_Template(rf, ctx) {
   }
 }
 var OutputComponent = class _OutputComponent {
-  constructor(outputService) {
+  get longPressEnabled() {
+    return this.appPreferencesService.longPressEnabled;
+  }
+  constructor(outputService, appPreferencesService) {
     this.outputService = outputService;
+    this.appPreferencesService = appPreferencesService;
+    this.disabled = false;
     this.ENDLESS_DURATION = 0;
     this.longPressActive = false;
   }
+  onPressed() {
+    this.toggleOutput();
+  }
   onLongPressed() {
+    this.toggleOutput();
+  }
+  toggleOutput() {
     if (this.output.state) {
       this.outputService.deactivateOutput(this.output.id);
     } else {
@@ -116793,7 +116754,7 @@ var OutputComponent = class _OutputComponent {
   }
   static {
     this.ɵfac = function OutputComponent_Factory(__ngFactoryType__) {
-      return new (__ngFactoryType__ || _OutputComponent)(ɵɵdirectiveInject("OutputService"));
+      return new (__ngFactoryType__ || _OutputComponent)(ɵɵdirectiveInject("OutputService"), ɵɵdirectiveInject(AppPreferencesService));
     };
   }
   static {
@@ -116807,12 +116768,14 @@ var OutputComponent = class _OutputComponent {
       standalone: false,
       features: [ɵɵProvidersFeature([])],
       decls: 3,
-      vars: 8,
-      consts: [["long-press-toggle", "", 1, "output-button", 3, "longPressed", "longPressAvailable", "ngClass", "checked", "disabled"], ["diameter", "25", "color", "primary", "mode", "indeterminate"]],
+      vars: 9,
+      consts: [["long-press-toggle", "", 1, "output-button", 3, "pressed", "longPressed", "longPressAvailable", "ngClass", "checked", "disabled", "longPressEnabled"], ["diameter", "25", "color", "primary", "mode", "indeterminate"]],
       template: function OutputComponent_Template(rf, ctx) {
         if (rf & 1) {
           ɵɵelementStart(0, "mat-button-toggle", 0);
-          ɵɵlistener("longPressed", function OutputComponent_Template_mat_button_toggle_longPressed_0_listener() {
+          ɵɵlistener("pressed", function OutputComponent_Template_mat_button_toggle_pressed_0_listener() {
+            return ctx.onPressed();
+          })("longPressed", function OutputComponent_Template_mat_button_toggle_longPressed_0_listener() {
             return ctx.onLongPressed();
           })("longPressAvailable", function OutputComponent_Template_mat_button_toggle_longPressAvailable_0_listener($event) {
             return ctx.onLongPressAvailable($event);
@@ -116822,7 +116785,7 @@ var OutputComponent = class _OutputComponent {
           ɵɵelementEnd();
         }
         if (rf & 2) {
-          ɵɵproperty("ngClass", ɵɵpureFunction2(5, _c038, ctx.output.state, ctx.longPressActive && !ctx.disabled))("checked", ctx.output.state)("disabled", ctx.disabled);
+          ɵɵproperty("ngClass", ɵɵpureFunction2(6, _c038, ctx.output.state, (ctx.output.state || ctx.longPressActive) && !ctx.disabled))("checked", ctx.output.state)("disabled", ctx.disabled)("longPressEnabled", ctx.longPressEnabled);
           ɵɵadvance();
           ɵɵtextInterpolate1(" ", ctx.output.name, " ");
           ɵɵadvance();
@@ -116843,9 +116806,11 @@ var OutputComponent = class _OutputComponent {
       standalone: false,
       template: `<mat-button-toggle
   class="output-button"
-  [ngClass]="{active: output.state, 'long-press-active': longPressActive && !disabled}"
+  [ngClass]="{active: output.state, 'long-press-active': (output.state || longPressActive) && !disabled}"
   [checked]="output.state"
   [disabled]="disabled"
+  [longPressEnabled]="longPressEnabled"
+  (pressed)="onPressed()"
   (longPressed)="onLongPressed()"
   (longPressAvailable)="onLongPressAvailable($event)"
   long-press-toggle
@@ -116863,6 +116828,8 @@ var OutputComponent = class _OutputComponent {
       type: Inject,
       args: ["OutputService"]
     }]
+  }, {
+    type: AppPreferencesService
   }], {
     output: [{
       type: Input
@@ -118657,10 +118624,10 @@ function LocationListComponent_Conditional_1_For_3_Conditional_1_Conditional_13_
 }
 function LocationListComponent_Conditional_1_For_3_Conditional_1_Template(rf, ctx) {
   if (rf & 1) {
-    ɵɵelementStart(0, "mat-card-header")(1, "div", 49)(2, "mat-icon", 50);
+    ɵɵelementStart(0, "mat-card-header")(1, "div", 50)(2, "mat-icon", 51);
     ɵɵtext(3, " location_on ");
     ɵɵelementEnd();
-    ɵɵelementStart(4, "mat-icon", 51);
+    ɵɵelementStart(4, "mat-icon", 52);
     ɵɵtext(5, " notifications ");
     ɵɵelementEnd();
     ɵɵconditionalCreate(6, LocationListComponent_Conditional_1_For_3_Conditional_1_Conditional_6_Template, 3, 1, "mat-icon");
@@ -118773,10 +118740,10 @@ function LocationListComponent_Conditional_1_For_3_Conditional_2_Conditional_14_
 }
 function LocationListComponent_Conditional_1_For_3_Conditional_2_Template(rf, ctx) {
   if (rf & 1) {
-    ɵɵelementStart(0, "mat-card-header")(1, "div", 49)(2, "mat-icon", 52);
+    ɵɵelementStart(0, "mat-card-header")(1, "div", 50)(2, "mat-icon", 53);
     ɵɵtext(3, " location_on ");
     ɵɵelementEnd();
-    ɵɵelementStart(4, "mat-icon", 52);
+    ɵɵelementStart(4, "mat-icon", 53);
     ɵɵtext(5, " notifications ");
     ɵɵelementEnd();
     ɵɵconditionalCreate(6, LocationListComponent_Conditional_1_For_3_Conditional_2_Conditional_6_Template, 3, 1, "mat-icon");
@@ -118863,7 +118830,7 @@ function LocationListComponent_Conditional_1_For_3_Conditional_14_Template(rf, c
 }
 function LocationListComponent_Conditional_1_For_3_Conditional_15_Template(rf, ctx) {
   if (rf & 1) {
-    ɵɵelementStart(0, "div", 42)(1, "a", 53)(2, "span");
+    ɵɵelementStart(0, "div", 42)(1, "a", 54)(2, "span");
     ɵɵi18n(3, 12);
     ɵɵelementEnd();
     ɵɵelementStart(4, "mat-icon");
@@ -118923,7 +118890,7 @@ function LocationListComponent_Conditional_1_For_3_Conditional_24_Template(rf, c
 }
 function LocationListComponent_Conditional_1_For_3_Conditional_25_Template(rf, ctx) {
   if (rf & 1) {
-    ɵɵelementStart(0, "div", 42)(1, "a", 53)(2, "span");
+    ɵɵelementStart(0, "div", 42)(1, "a", 54)(2, "span");
     ɵɵi18n(3, 13);
     ɵɵelementEnd();
     ɵɵelementStart(4, "mat-icon");
@@ -118946,7 +118913,7 @@ function LocationListComponent_Conditional_1_For_3_Conditional_26_Template(rf, c
     ɵɵelementEnd();
     ɵɵelementStart(5, "div", 42);
     ɵɵtext(6);
-    ɵɵelementStart(7, "a", 53)(8, "mat-icon");
+    ɵɵelementStart(7, "a", 54)(8, "mat-icon");
     ɵɵtext(9, "open_in_new");
     ɵɵelementEnd()()()();
   }
@@ -118968,9 +118935,29 @@ function LocationListComponent_Conditional_1_For_3_Conditional_29_Template(rf, c
 function LocationListComponent_Conditional_1_For_3_Conditional_39_Template(rf, ctx) {
   if (rf & 1) {
     const _r5 = ɵɵgetCurrentView();
-    ɵɵelementStart(0, "button", 54);
+    ɵɵelementStart(0, "button", 55);
     ɵɵlistener("click", function LocationListComponent_Conditional_1_For_3_Conditional_39_Template_button_click_0_listener() {
       ɵɵrestoreView(_r5);
+      const location_r4 = ɵɵnextContext().$implicit;
+      const ctx_r1 = ɵɵnextContext(2);
+      return ɵɵresetView(ctx_r1.openUnregisterDialog(location_r4.id));
+    });
+    ɵɵelementStart(1, "mat-icon");
+    ɵɵtext(2, "disabled_by_default");
+    ɵɵelementEnd()();
+  }
+  if (rf & 2) {
+    const location_r4 = ɵɵnextContext().$implicit;
+    const ctx_r1 = ɵɵnextContext(2);
+    ɵɵproperty("disabled", ctx_r1.isUnregisterDisabled(location_r4.id));
+  }
+}
+function LocationListComponent_Conditional_1_For_3_Conditional_40_Template(rf, ctx) {
+  if (rf & 1) {
+    const _r6 = ɵɵgetCurrentView();
+    ɵɵelementStart(0, "button", 56);
+    ɵɵlistener("click", function LocationListComponent_Conditional_1_For_3_Conditional_40_Template_button_click_0_listener() {
+      ɵɵrestoreView(_r6);
       const location_r4 = ɵɵnextContext().$implicit;
       const ctx_r1 = ɵɵnextContext(2);
       return ɵɵresetView(ctx_r1.openDeleteDialog(location_r4.id));
@@ -119048,6 +119035,7 @@ function LocationListComponent_Conditional_1_For_3_Template(rf, ctx) {
     ɵɵtext(38, "login");
     ɵɵelementEnd()();
     ɵɵconditionalCreate(39, LocationListComponent_Conditional_1_For_3_Conditional_39_Template, 3, 1, "button", 48);
+    ɵɵconditionalCreate(40, LocationListComponent_Conditional_1_For_3_Conditional_40_Template, 3, 1, "button", 49);
     ɵɵelementEnd()();
   }
   if (rf & 2) {
@@ -119096,9 +119084,11 @@ function LocationListComponent_Conditional_1_For_3_Template(rf, ctx) {
     ɵɵadvance(3);
     ɵɵconditional(ctx_r1.isMultiLocation ? 29 : -1);
     ɵɵadvance();
-    ɵɵproperty("routerLink", ɵɵpureFunction1(22, _c039, location_r4.id));
+    ɵɵproperty("routerLink", ɵɵpureFunction1(23, _c039, location_r4.id));
     ɵɵadvance(9);
-    ɵɵconditional(ctx_r1.locations.length > 1 ? 39 : -1);
+    ɵɵconditional(ctx_r1.isRegistered(location_r4.id) ? 39 : -1);
+    ɵɵadvance();
+    ɵɵconditional(ctx_r1.locations.length > 1 ? 40 : -1);
   }
 }
 function LocationListComponent_Conditional_1_Template(rf, ctx) {
@@ -119110,7 +119100,7 @@ function LocationListComponent_Conditional_1_Template(rf, ctx) {
       const ctx_r1 = ɵɵnextContext();
       return ɵɵresetView(ctx_r1.onDrop($event));
     });
-    ɵɵrepeaterCreate(2, LocationListComponent_Conditional_1_For_3_Template, 40, 24, "mat-card", 34, ɵɵcomponentInstance().getLocationKey, true);
+    ɵɵrepeaterCreate(2, LocationListComponent_Conditional_1_For_3_Template, 41, 25, "mat-card", 34, ɵɵcomponentInstance().getLocationKey, true);
     ɵɵelementEnd()();
   }
   if (rf & 2) {
@@ -119123,7 +119113,7 @@ function LocationListComponent_Conditional_1_Template(rf, ctx) {
 }
 function LocationListComponent_Conditional_2_Template(rf, ctx) {
   if (rf & 1) {
-    ɵɵelementStart(0, "div", 29)(1, "mat-card", 55)(2, "mat-card-header")(3, "div", 49)(4, "mat-icon", 56);
+    ɵɵelementStart(0, "div", 29)(1, "mat-card", 57)(2, "mat-card-header")(3, "div", 50)(4, "mat-icon", 58);
     ɵɵtext(5, "home");
     ɵɵelementEnd()();
     ɵɵelementStart(6, "mat-card-title");
@@ -119132,7 +119122,7 @@ function LocationListComponent_Conditional_2_Template(rf, ctx) {
     ɵɵelementStart(8, "mat-card-subtitle");
     ɵɵi18n(9, 16);
     ɵɵelementEnd()();
-    ɵɵelementStart(10, "mat-card-content", 57)(11, "mat-card", 58)(12, "mat-card-header")(13, "div", 49)(14, "mat-icon", 56);
+    ɵɵelementStart(10, "mat-card-content", 59)(11, "mat-card", 60)(12, "mat-card-header")(13, "div", 50)(14, "mat-icon", 58);
     ɵɵtext(15, "play_circle");
     ɵɵelementEnd()();
     ɵɵelementStart(16, "mat-card-title");
@@ -119141,10 +119131,10 @@ function LocationListComponent_Conditional_2_Template(rf, ctx) {
     ɵɵelementStart(18, "mat-card-subtitle");
     ɵɵi18n(19, 18);
     ɵɵelementEnd()();
-    ɵɵelementStart(20, "mat-card-content")(21, "ol", 59)(22, "li")(23, "span");
+    ɵɵelementStart(20, "mat-card-content")(21, "ol", 61)(22, "li")(23, "span");
     ɵɵi18n(24, 19);
     ɵɵelementEnd();
-    ɵɵelementStart(25, "a", 60)(26, "span");
+    ɵɵelementStart(25, "a", 62)(26, "span");
     ɵɵi18n(27, 20);
     ɵɵelementEnd();
     ɵɵelementStart(28, "mat-icon");
@@ -119155,7 +119145,7 @@ function LocationListComponent_Conditional_2_Template(rf, ctx) {
     ɵɵelement(32, "b");
     ɵɵi18nEnd();
     ɵɵelementEnd()()()();
-    ɵɵelementStart(33, "mat-card", 61)(34, "mat-card-header")(35, "div", 49)(36, "mat-icon", 56);
+    ɵɵelementStart(33, "mat-card", 63)(34, "mat-card-header")(35, "div", 50)(36, "mat-icon", 58);
     ɵɵtext(37, "support_agent");
     ɵɵelementEnd()();
     ɵɵelementStart(38, "mat-card-title");
@@ -119164,18 +119154,18 @@ function LocationListComponent_Conditional_2_Template(rf, ctx) {
     ɵɵelementStart(40, "mat-card-subtitle");
     ɵɵi18n(41, 23);
     ɵɵelementEnd()();
-    ɵɵelementStart(42, "mat-card-content", 62)(43, "a", 63);
+    ɵɵelementStart(42, "mat-card-content", 64)(43, "a", 65);
     ɵɵi18nStart(44, 24);
     ɵɵelement(45, "mat-icon");
     ɵɵi18nEnd();
     ɵɵelementEnd()()()();
-    ɵɵelementStart(46, "mat-card-actions", 64)(47, "button", 65);
+    ɵɵelementStart(46, "mat-card-actions", 66)(47, "button", 67);
     ɵɵi18n(48, 25);
     ɵɵelementEnd();
-    ɵɵelementStart(49, "a", 66);
+    ɵɵelementStart(49, "a", 68);
     ɵɵi18n(50, 26);
     ɵɵelementEnd();
-    ɵɵelementStart(51, "a", 67);
+    ɵɵelementStart(51, "a", 69);
     ɵɵi18n(52, 27);
     ɵɵelementEnd()()()();
   }
@@ -119224,7 +119214,10 @@ var LocationListComponent = class _LocationListComponent extends ConfigurationBa
     if (!locationId) {
       return null;
     }
-    return this.authenticationService.getDeviceToken(locationId) != null;
+    return !!this.authenticationService.getDeviceToken(locationId);
+  }
+  isUnregisterDisabled(locationId) {
+    return this.selectedLocationId === locationId && this.authenticationService.isLoggedIn();
   }
   isNotificationEnabled(locationId) {
     if (!locationId) {
@@ -119342,6 +119335,28 @@ var LocationListComponent = class _LocationListComponent extends ConfigurationBa
       }
     });
   }
+  openUnregisterDialog(locationId) {
+    const dialogRef = this.dialog.open(QuestionDialogComponent, {
+      width: "250px",
+      data: {
+        title: "Unregister device",
+        message: "Are you sure you want to unregister this device?",
+        options: [{
+          id: "ok",
+          text: "Unregister",
+          color: "warn"
+        }, {
+          id: "cancel",
+          text: "Cancel"
+        }]
+      }
+    });
+    dialogRef.afterClosed().subscribe(result => {
+      if (result === "ok") {
+        this.authenticationService.unRegisterDevice(locationId);
+      }
+    });
+  }
   static {
     this.ɵfac = function LocationListComponent_Factory(__ngFactoryType__) {
       return new (__ngFactoryType__ || _LocationListComponent)(ɵɵdirectiveInject(AUTHENTICATION_SERVICE), ɵɵdirectiveInject("EventService"), ɵɵdirectiveInject("LoaderService"), ɵɵdirectiveInject("MonitoringService"), ɵɵdirectiveInject("NotificationService"), ɵɵdirectiveInject("BiometricService"), ɵɵdirectiveInject(MatDialog));
@@ -119358,100 +119373,100 @@ var LocationListComponent = class _LocationListComponent extends ConfigurationBa
       consts: () => {
         let i18n_0;
         if (false) {
-          const MSG_EXTERNAL_location_primary_url$$SRC_APP_PAGES_LOCATION_LOCATION_LIST_COMPONENT_TS_0 = goog.getMsg("Primary URL");
-          i18n_0 = MSG_EXTERNAL_location_primary_url$$SRC_APP_PAGES_LOCATION_LOCATION_LIST_COMPONENT_TS_0;
+          const MSG_EXTERNAL_unregister_device_action$$SRC_APP_PAGES_LOCATION_LOCATION_LIST_COMPONENT_TS_0 = goog.getMsg("Unregister device");
+          i18n_0 = MSG_EXTERNAL_unregister_device_action$$SRC_APP_PAGES_LOCATION_LOCATION_LIST_COMPONENT_TS_0;
         } else {
-          i18n_0 = "Primary URL";
+          i18n_0 = "Unregister device";
         }
         let i18n_1;
         if (false) {
-          const MSG_EXTERNAL_location_secondary_url$$SRC_APP_PAGES_LOCATION_LOCATION_LIST_COMPONENT_TS_1 = goog.getMsg("Secondary URL");
-          i18n_1 = MSG_EXTERNAL_location_secondary_url$$SRC_APP_PAGES_LOCATION_LOCATION_LIST_COMPONENT_TS_1;
+          const MSG_EXTERNAL_location_primary_url$$SRC_APP_PAGES_LOCATION_LOCATION_LIST_COMPONENT_TS_1 = goog.getMsg("Primary URL");
+          i18n_1 = MSG_EXTERNAL_location_primary_url$$SRC_APP_PAGES_LOCATION_LOCATION_LIST_COMPONENT_TS_1;
         } else {
-          i18n_1 = "Secondary URL";
+          i18n_1 = "Primary URL";
         }
         let i18n_2;
         if (false) {
-          const MSG_EXTERNAL_location_backend$$SRC_APP_PAGES_LOCATION_LOCATION_LIST_COMPONENT_TS_2 = goog.getMsg("Location backend");
-          i18n_2 = MSG_EXTERNAL_location_backend$$SRC_APP_PAGES_LOCATION_LOCATION_LIST_COMPONENT_TS_2;
+          const MSG_EXTERNAL_location_secondary_url$$SRC_APP_PAGES_LOCATION_LOCATION_LIST_COMPONENT_TS_2 = goog.getMsg("Secondary URL");
+          i18n_2 = MSG_EXTERNAL_location_secondary_url$$SRC_APP_PAGES_LOCATION_LOCATION_LIST_COMPONENT_TS_2;
         } else {
-          i18n_2 = "Location backend";
+          i18n_2 = "Secondary URL";
         }
         let i18n_3;
         if (false) {
-          const MSG_EXTERNAL_location_version$$SRC_APP_PAGES_LOCATION_LOCATION_LIST_COMPONENT_TS_3 = goog.getMsg("Version");
-          i18n_3 = MSG_EXTERNAL_location_version$$SRC_APP_PAGES_LOCATION_LOCATION_LIST_COMPONENT_TS_3;
+          const MSG_EXTERNAL_location_backend$$SRC_APP_PAGES_LOCATION_LOCATION_LIST_COMPONENT_TS_3 = goog.getMsg("Location backend");
+          i18n_3 = MSG_EXTERNAL_location_backend$$SRC_APP_PAGES_LOCATION_LOCATION_LIST_COMPONENT_TS_3;
         } else {
-          i18n_3 = "Version";
+          i18n_3 = "Location backend";
         }
         let i18n_4;
         if (false) {
-          const MSG_EXTERNAL_location_board_version$$SRC_APP_PAGES_LOCATION_LOCATION_LIST_COMPONENT_TS_4 = goog.getMsg("Board version");
-          i18n_4 = MSG_EXTERNAL_location_board_version$$SRC_APP_PAGES_LOCATION_LOCATION_LIST_COMPONENT_TS_4;
+          const MSG_EXTERNAL_location_version$$SRC_APP_PAGES_LOCATION_LOCATION_LIST_COMPONENT_TS_4 = goog.getMsg("Version");
+          i18n_4 = MSG_EXTERNAL_location_version$$SRC_APP_PAGES_LOCATION_LOCATION_LIST_COMPONENT_TS_4;
         } else {
-          i18n_4 = "Board version";
+          i18n_4 = "Version";
         }
         let i18n_5;
         if (false) {
-          const MSG_EXTERNAL_location_device_registered$$SRC_APP_PAGES_LOCATION_LOCATION_LIST_COMPONENT_TS_5 = goog.getMsg("Device registered");
-          i18n_5 = MSG_EXTERNAL_location_device_registered$$SRC_APP_PAGES_LOCATION_LOCATION_LIST_COMPONENT_TS_5;
+          const MSG_EXTERNAL_location_board_version$$SRC_APP_PAGES_LOCATION_LOCATION_LIST_COMPONENT_TS_5 = goog.getMsg("Board version");
+          i18n_5 = MSG_EXTERNAL_location_board_version$$SRC_APP_PAGES_LOCATION_LOCATION_LIST_COMPONENT_TS_5;
         } else {
-          i18n_5 = "Device registered";
+          i18n_5 = "Board version";
         }
         let i18n_6;
         if (false) {
-          const MSG_EXTERNAL_location_device_not_registered$$SRC_APP_PAGES_LOCATION_LOCATION_LIST_COMPONENT_TS_6 = goog.getMsg("Device NOT registered");
-          i18n_6 = MSG_EXTERNAL_location_device_not_registered$$SRC_APP_PAGES_LOCATION_LOCATION_LIST_COMPONENT_TS_6;
+          const MSG_EXTERNAL_location_device_registered$$SRC_APP_PAGES_LOCATION_LOCATION_LIST_COMPONENT_TS_6 = goog.getMsg("Device registered");
+          i18n_6 = MSG_EXTERNAL_location_device_registered$$SRC_APP_PAGES_LOCATION_LOCATION_LIST_COMPONENT_TS_6;
         } else {
-          i18n_6 = "Device NOT registered";
+          i18n_6 = "Device registered";
         }
         let i18n_7;
         if (false) {
-          const MSG_EXTERNAL_location_location$$SRC_APP_PAGES_LOCATION_LOCATION_LIST_COMPONENT_TS_7 = goog.getMsg("Location: {$interpolation}", {
+          const MSG_EXTERNAL_location_device_not_registered$$SRC_APP_PAGES_LOCATION_LOCATION_LIST_COMPONENT_TS_7 = goog.getMsg("Device NOT registered");
+          i18n_7 = MSG_EXTERNAL_location_device_not_registered$$SRC_APP_PAGES_LOCATION_LOCATION_LIST_COMPONENT_TS_7;
+        } else {
+          i18n_7 = "Device NOT registered";
+        }
+        let i18n_8;
+        if (false) {
+          const MSG_EXTERNAL_location_location$$SRC_APP_PAGES_LOCATION_LOCATION_LIST_COMPONENT_TS_8 = goog.getMsg("Location: {$interpolation}", {
             "interpolation": "\uFFFD0\uFFFD"
           }, {
             original_code: {
               "interpolation": "{{ location.name }}"
             }
           });
-          i18n_7 = MSG_EXTERNAL_location_location$$SRC_APP_PAGES_LOCATION_LOCATION_LIST_COMPONENT_TS_7;
+          i18n_8 = MSG_EXTERNAL_location_location$$SRC_APP_PAGES_LOCATION_LOCATION_LIST_COMPONENT_TS_8;
         } else {
-          i18n_7 = "Location: " + "\uFFFD0\uFFFD" + "";
-        }
-        let i18n_8;
-        if (false) {
-          const MSG_EXTERNAL_location_version$$SRC_APP_PAGES_LOCATION_LOCATION_LIST_COMPONENT_TS_8 = goog.getMsg("Version");
-          i18n_8 = MSG_EXTERNAL_location_version$$SRC_APP_PAGES_LOCATION_LOCATION_LIST_COMPONENT_TS_8;
-        } else {
-          i18n_8 = "Version";
+          i18n_8 = "Location: " + "\uFFFD0\uFFFD" + "";
         }
         let i18n_9;
         if (false) {
-          const MSG_EXTERNAL_location_board_version$$SRC_APP_PAGES_LOCATION_LOCATION_LIST_COMPONENT_TS_9 = goog.getMsg("Board version");
-          i18n_9 = MSG_EXTERNAL_location_board_version$$SRC_APP_PAGES_LOCATION_LOCATION_LIST_COMPONENT_TS_9;
+          const MSG_EXTERNAL_location_version$$SRC_APP_PAGES_LOCATION_LOCATION_LIST_COMPONENT_TS_9 = goog.getMsg("Version");
+          i18n_9 = MSG_EXTERNAL_location_version$$SRC_APP_PAGES_LOCATION_LOCATION_LIST_COMPONENT_TS_9;
         } else {
-          i18n_9 = "Board version";
+          i18n_9 = "Version";
         }
         let i18n_10;
         if (false) {
-          const MSG_EXTERNAL_location_device_registered$$SRC_APP_PAGES_LOCATION_LOCATION_LIST_COMPONENT_TS_10 = goog.getMsg("Device registered");
-          i18n_10 = MSG_EXTERNAL_location_device_registered$$SRC_APP_PAGES_LOCATION_LOCATION_LIST_COMPONENT_TS_10;
+          const MSG_EXTERNAL_location_board_version$$SRC_APP_PAGES_LOCATION_LOCATION_LIST_COMPONENT_TS_10 = goog.getMsg("Board version");
+          i18n_10 = MSG_EXTERNAL_location_board_version$$SRC_APP_PAGES_LOCATION_LOCATION_LIST_COMPONENT_TS_10;
         } else {
-          i18n_10 = "Device registered";
+          i18n_10 = "Board version";
         }
         let i18n_11;
         if (false) {
-          const MSG_EXTERNAL_location_device_not_registered$$SRC_APP_PAGES_LOCATION_LOCATION_LIST_COMPONENT_TS_11 = goog.getMsg("Device NOT registered");
-          i18n_11 = MSG_EXTERNAL_location_device_not_registered$$SRC_APP_PAGES_LOCATION_LOCATION_LIST_COMPONENT_TS_11;
+          const MSG_EXTERNAL_location_device_registered$$SRC_APP_PAGES_LOCATION_LOCATION_LIST_COMPONENT_TS_11 = goog.getMsg("Device registered");
+          i18n_11 = MSG_EXTERNAL_location_device_registered$$SRC_APP_PAGES_LOCATION_LOCATION_LIST_COMPONENT_TS_11;
         } else {
-          i18n_11 = "Device NOT registered";
+          i18n_11 = "Device registered";
         }
         let i18n_12;
         if (false) {
-          const MSG_EXTERNAL_location_check$$SRC_APP_PAGES_LOCATION_LOCATION_LIST_COMPONENT_TS_12 = goog.getMsg("Check API version and certificate");
-          i18n_12 = MSG_EXTERNAL_location_check$$SRC_APP_PAGES_LOCATION_LOCATION_LIST_COMPONENT_TS_12;
+          const MSG_EXTERNAL_location_device_not_registered$$SRC_APP_PAGES_LOCATION_LOCATION_LIST_COMPONENT_TS_12 = goog.getMsg("Device NOT registered");
+          i18n_12 = MSG_EXTERNAL_location_device_not_registered$$SRC_APP_PAGES_LOCATION_LOCATION_LIST_COMPONENT_TS_12;
         } else {
-          i18n_12 = "Check API version and certificate";
+          i18n_12 = "Device NOT registered";
         }
         let i18n_13;
         if (false) {
@@ -119462,56 +119477,63 @@ var LocationListComponent = class _LocationListComponent extends ConfigurationBa
         }
         let i18n_14;
         if (false) {
-          const MSG_EXTERNAL_location_next_version$$SRC_APP_PAGES_LOCATION_LOCATION_LIST_COMPONENT_TS_14 = goog.getMsg("Next Version");
-          i18n_14 = MSG_EXTERNAL_location_next_version$$SRC_APP_PAGES_LOCATION_LOCATION_LIST_COMPONENT_TS_14;
+          const MSG_EXTERNAL_location_check$$SRC_APP_PAGES_LOCATION_LOCATION_LIST_COMPONENT_TS_14 = goog.getMsg("Check API version and certificate");
+          i18n_14 = MSG_EXTERNAL_location_check$$SRC_APP_PAGES_LOCATION_LOCATION_LIST_COMPONENT_TS_14;
         } else {
-          i18n_14 = "Next Version";
+          i18n_14 = "Check API version and certificate";
         }
         let i18n_15;
         if (false) {
-          const MSG_EXTERNAL_location_welcome_title$$SRC_APP_PAGES_LOCATION_LOCATION_LIST_COMPONENT_TS_15 = goog.getMsg("Welcome to ArPI Home Security");
-          i18n_15 = MSG_EXTERNAL_location_welcome_title$$SRC_APP_PAGES_LOCATION_LOCATION_LIST_COMPONENT_TS_15;
+          const MSG_EXTERNAL_location_next_version$$SRC_APP_PAGES_LOCATION_LOCATION_LIST_COMPONENT_TS_15 = goog.getMsg("Next Version");
+          i18n_15 = MSG_EXTERNAL_location_next_version$$SRC_APP_PAGES_LOCATION_LOCATION_LIST_COMPONENT_TS_15;
         } else {
-          i18n_15 = "Welcome to ArPI Home Security";
+          i18n_15 = "Next Version";
         }
         let i18n_16;
         if (false) {
-          const MSG_EXTERNAL_location_welcome_subtitle$$SRC_APP_PAGES_LOCATION_LOCATION_LIST_COMPONENT_TS_16 = goog.getMsg(" Your smart security system starts here ");
-          i18n_16 = MSG_EXTERNAL_location_welcome_subtitle$$SRC_APP_PAGES_LOCATION_LOCATION_LIST_COMPONENT_TS_16;
+          const MSG_EXTERNAL_location_welcome_title$$SRC_APP_PAGES_LOCATION_LOCATION_LIST_COMPONENT_TS_16 = goog.getMsg("Welcome to ArPI Home Security");
+          i18n_16 = MSG_EXTERNAL_location_welcome_title$$SRC_APP_PAGES_LOCATION_LOCATION_LIST_COMPONENT_TS_16;
         } else {
-          i18n_16 = " Your smart security system starts here ";
+          i18n_16 = "Welcome to ArPI Home Security";
         }
         let i18n_17;
         if (false) {
-          const MSG_EXTERNAL_location_getting_started$$SRC_APP_PAGES_LOCATION_LOCATION_LIST_COMPONENT_TS_17 = goog.getMsg("Getting Started");
-          i18n_17 = MSG_EXTERNAL_location_getting_started$$SRC_APP_PAGES_LOCATION_LOCATION_LIST_COMPONENT_TS_17;
+          const MSG_EXTERNAL_location_welcome_subtitle$$SRC_APP_PAGES_LOCATION_LOCATION_LIST_COMPONENT_TS_17 = goog.getMsg(" Your smart security system starts here ");
+          i18n_17 = MSG_EXTERNAL_location_welcome_subtitle$$SRC_APP_PAGES_LOCATION_LOCATION_LIST_COMPONENT_TS_17;
         } else {
-          i18n_17 = "Getting Started";
+          i18n_17 = " Your smart security system starts here ";
         }
         let i18n_18;
         if (false) {
-          const MSG_EXTERNAL_location_getting_started_subtitle$$SRC_APP_PAGES_LOCATION_LOCATION_LIST_COMPONENT_TS_18 = goog.getMsg(" Follow these steps to set up your system ");
-          i18n_18 = MSG_EXTERNAL_location_getting_started_subtitle$$SRC_APP_PAGES_LOCATION_LOCATION_LIST_COMPONENT_TS_18;
+          const MSG_EXTERNAL_location_getting_started$$SRC_APP_PAGES_LOCATION_LOCATION_LIST_COMPONENT_TS_18 = goog.getMsg("Getting Started");
+          i18n_18 = MSG_EXTERNAL_location_getting_started$$SRC_APP_PAGES_LOCATION_LOCATION_LIST_COMPONENT_TS_18;
         } else {
-          i18n_18 = " Follow these steps to set up your system ";
+          i18n_18 = "Getting Started";
         }
         let i18n_19;
         if (false) {
-          const MSG_EXTERNAL_location_step_install$$SRC_APP_PAGES_LOCATION_LOCATION_LIST_COMPONENT_TS_19 = goog.getMsg(" Install your ArPI Home Security device and connect it to your network. ");
-          i18n_19 = MSG_EXTERNAL_location_step_install$$SRC_APP_PAGES_LOCATION_LOCATION_LIST_COMPONENT_TS_19;
+          const MSG_EXTERNAL_location_getting_started_subtitle$$SRC_APP_PAGES_LOCATION_LOCATION_LIST_COMPONENT_TS_19 = goog.getMsg(" Follow these steps to set up your system ");
+          i18n_19 = MSG_EXTERNAL_location_getting_started_subtitle$$SRC_APP_PAGES_LOCATION_LOCATION_LIST_COMPONENT_TS_19;
         } else {
-          i18n_19 = " Install your ArPI Home Security device and connect it to your network. ";
+          i18n_19 = " Follow these steps to set up your system ";
         }
         let i18n_20;
         if (false) {
-          const MSG_EXTERNAL_location_software_installation_guide$$SRC_APP_PAGES_LOCATION_LOCATION_LIST_COMPONENT_TS_20 = goog.getMsg("Software installation guide");
-          i18n_20 = MSG_EXTERNAL_location_software_installation_guide$$SRC_APP_PAGES_LOCATION_LOCATION_LIST_COMPONENT_TS_20;
+          const MSG_EXTERNAL_location_step_install$$SRC_APP_PAGES_LOCATION_LOCATION_LIST_COMPONENT_TS_20 = goog.getMsg(" Install your ArPI Home Security device and connect it to your network. ");
+          i18n_20 = MSG_EXTERNAL_location_step_install$$SRC_APP_PAGES_LOCATION_LOCATION_LIST_COMPONENT_TS_20;
         } else {
-          i18n_20 = "Software installation guide";
+          i18n_20 = " Install your ArPI Home Security device and connect it to your network. ";
         }
         let i18n_21;
         if (false) {
-          const MSG_EXTERNAL_location_step_add_location$$SRC_APP_PAGES_LOCATION_LOCATION_LIST_COMPONENT_TS_21 = goog.getMsg(" Return here and click {$startBoldText}Add Location{$closeBoldText} to register your device. ", {
+          const MSG_EXTERNAL_location_software_installation_guide$$SRC_APP_PAGES_LOCATION_LOCATION_LIST_COMPONENT_TS_21 = goog.getMsg("Software installation guide");
+          i18n_21 = MSG_EXTERNAL_location_software_installation_guide$$SRC_APP_PAGES_LOCATION_LOCATION_LIST_COMPONENT_TS_21;
+        } else {
+          i18n_21 = "Software installation guide";
+        }
+        let i18n_22;
+        if (false) {
+          const MSG_EXTERNAL_location_step_add_location$$SRC_APP_PAGES_LOCATION_LOCATION_LIST_COMPONENT_TS_22 = goog.getMsg(" Return here and click {$startBoldText}Add Location{$closeBoldText} to register your device. ", {
             "closeBoldText": "\uFFFD/#32\uFFFD",
             "startBoldText": "\uFFFD#32\uFFFD"
           }, {
@@ -119520,27 +119542,27 @@ var LocationListComponent = class _LocationListComponent extends ConfigurationBa
               "startBoldText": "<b>"
             }
           });
-          i18n_21 = MSG_EXTERNAL_location_step_add_location$$SRC_APP_PAGES_LOCATION_LOCATION_LIST_COMPONENT_TS_21;
+          i18n_22 = MSG_EXTERNAL_location_step_add_location$$SRC_APP_PAGES_LOCATION_LOCATION_LIST_COMPONENT_TS_22;
         } else {
-          i18n_21 = " Return here and click " + "\uFFFD#32\uFFFD" + "Add Location" + "\uFFFD/#32\uFFFD" + " to register your device. ";
-        }
-        let i18n_22;
-        if (false) {
-          const MSG_EXTERNAL_location_support$$SRC_APP_PAGES_LOCATION_LOCATION_LIST_COMPONENT_TS_22 = goog.getMsg("Community Support");
-          i18n_22 = MSG_EXTERNAL_location_support$$SRC_APP_PAGES_LOCATION_LOCATION_LIST_COMPONENT_TS_22;
-        } else {
-          i18n_22 = "Community Support";
+          i18n_22 = " Return here and click " + "\uFFFD#32\uFFFD" + "Add Location" + "\uFFFD/#32\uFFFD" + " to register your device. ";
         }
         let i18n_23;
         if (false) {
-          const MSG_EXTERNAL_location_support_subtitle$$SRC_APP_PAGES_LOCATION_LOCATION_LIST_COMPONENT_TS_23 = goog.getMsg(" Join our Slack workspace for help and discussion ");
-          i18n_23 = MSG_EXTERNAL_location_support_subtitle$$SRC_APP_PAGES_LOCATION_LOCATION_LIST_COMPONENT_TS_23;
+          const MSG_EXTERNAL_location_support$$SRC_APP_PAGES_LOCATION_LOCATION_LIST_COMPONENT_TS_23 = goog.getMsg("Community Support");
+          i18n_23 = MSG_EXTERNAL_location_support$$SRC_APP_PAGES_LOCATION_LOCATION_LIST_COMPONENT_TS_23;
         } else {
-          i18n_23 = " Join our Slack workspace for help and discussion ";
+          i18n_23 = "Community Support";
         }
         let i18n_24;
         if (false) {
-          const MSG_EXTERNAL_location_support_link$$SRC_APP_PAGES_LOCATION_LOCATION_LIST_COMPONENT_TS_24 = goog.getMsg(" ArPI Home Security Slack {$startTagMatIcon}open_in_new{$closeTagMatIcon}", {
+          const MSG_EXTERNAL_location_support_subtitle$$SRC_APP_PAGES_LOCATION_LOCATION_LIST_COMPONENT_TS_24 = goog.getMsg(" Join our Slack workspace for help and discussion ");
+          i18n_24 = MSG_EXTERNAL_location_support_subtitle$$SRC_APP_PAGES_LOCATION_LOCATION_LIST_COMPONENT_TS_24;
+        } else {
+          i18n_24 = " Join our Slack workspace for help and discussion ";
+        }
+        let i18n_25;
+        if (false) {
+          const MSG_EXTERNAL_location_support_link$$SRC_APP_PAGES_LOCATION_LOCATION_LIST_COMPONENT_TS_25 = goog.getMsg(" ArPI Home Security Slack {$startTagMatIcon}open_in_new{$closeTagMatIcon}", {
             "closeTagMatIcon": "\uFFFD/#45\uFFFD",
             "startTagMatIcon": "\uFFFD#45\uFFFD"
           }, {
@@ -119549,32 +119571,32 @@ var LocationListComponent = class _LocationListComponent extends ConfigurationBa
               "startTagMatIcon": "<mat-icon>"
             }
           });
-          i18n_24 = MSG_EXTERNAL_location_support_link$$SRC_APP_PAGES_LOCATION_LOCATION_LIST_COMPONENT_TS_24;
+          i18n_25 = MSG_EXTERNAL_location_support_link$$SRC_APP_PAGES_LOCATION_LOCATION_LIST_COMPONENT_TS_25;
         } else {
-          i18n_24 = " ArPI Home Security Slack " + "\uFFFD#45\uFFFD" + "open_in_new" + "\uFFFD/#45\uFFFD" + "";
-        }
-        let i18n_25;
-        if (false) {
-          const MSG_EXTERNAL_location_get_started$$SRC_APP_PAGES_LOCATION_LOCATION_LIST_COMPONENT_TS_25 = goog.getMsg(" Get Started: Add Location ");
-          i18n_25 = MSG_EXTERNAL_location_get_started$$SRC_APP_PAGES_LOCATION_LOCATION_LIST_COMPONENT_TS_25;
-        } else {
-          i18n_25 = " Get Started: Add Location ";
+          i18n_25 = " ArPI Home Security Slack " + "\uFFFD#45\uFFFD" + "open_in_new" + "\uFFFD/#45\uFFFD" + "";
         }
         let i18n_26;
         if (false) {
-          const MSG_EXTERNAL_location_docs_button$$SRC_APP_PAGES_LOCATION_LOCATION_LIST_COMPONENT_TS_26 = goog.getMsg(" View Documentation ");
-          i18n_26 = MSG_EXTERNAL_location_docs_button$$SRC_APP_PAGES_LOCATION_LOCATION_LIST_COMPONENT_TS_26;
+          const MSG_EXTERNAL_location_get_started$$SRC_APP_PAGES_LOCATION_LOCATION_LIST_COMPONENT_TS_26 = goog.getMsg(" Get Started: Add Location ");
+          i18n_26 = MSG_EXTERNAL_location_get_started$$SRC_APP_PAGES_LOCATION_LOCATION_LIST_COMPONENT_TS_26;
         } else {
-          i18n_26 = " View Documentation ";
+          i18n_26 = " Get Started: Add Location ";
         }
         let i18n_27;
         if (false) {
-          const MSG_EXTERNAL_location_demo_button$$SRC_APP_PAGES_LOCATION_LOCATION_LIST_COMPONENT_TS_27 = goog.getMsg(" Try Demo ");
-          i18n_27 = MSG_EXTERNAL_location_demo_button$$SRC_APP_PAGES_LOCATION_LOCATION_LIST_COMPONENT_TS_27;
+          const MSG_EXTERNAL_location_docs_button$$SRC_APP_PAGES_LOCATION_LOCATION_LIST_COMPONENT_TS_27 = goog.getMsg(" View Documentation ");
+          i18n_27 = MSG_EXTERNAL_location_docs_button$$SRC_APP_PAGES_LOCATION_LOCATION_LIST_COMPONENT_TS_27;
         } else {
-          i18n_27 = " Try Demo ";
+          i18n_27 = " View Documentation ";
         }
-        return [i18n_0, i18n_1, i18n_2, i18n_3, i18n_4, i18n_5, i18n_6, i18n_7, i18n_8, i18n_9, i18n_10, i18n_11, i18n_12, i18n_13, i18n_14, i18n_15, i18n_16, i18n_17, i18n_18, i18n_19, i18n_20, i18n_21, i18n_22, i18n_23, i18n_24, i18n_25, i18n_26, i18n_27, [1, "container"], [1, "container-item"], [1, "list-actions"], ["mat-fab", "", "color", "accent", "routerLink", "/location/add", 1, "list-action"], ["mat-mini-fab", "", "color", "accent", "routerLink", "/location/add", 1, "list-action"], ["cdkDropList", "", 3, "cdkDropListDropped", "cdkDropListDisabled"], ["cdkDrag", "", 1, "container-item", "location-form", 3, "id"], ["cdkDrag", "", 1, "container-item", "location-form", 3, "cdkDragStarted", "id"], [1, "primary"], ["matListItemIcon", ""], ["matListItemIcon", "", "diameter", "16"], ["matListItemIcon", "", 1, "icon-accessible"], ["matListItemIcon", "", 1, "icon-inaccessible"], ["matListItemTitle", ""], ["matListItemLine", ""], [1, "secondary"], [1, "next-version"], ["mat-icon-button", "", "cdkDragHandle", "", 1, "drag-handle"], ["mat-icon-button", "", "color", "primary", 3, "routerLink"], ["mat-icon-button", "", "color", "primary", 3, "click"], ["mat-icon-button", "", "color", "warn", 3, "disabled"], ["mat-card-avatar", ""], [1, "registered-icon", 3, "ngClass"], [1, "notification-icon", 3, "ngClass"], [3, "ngClass"], ["target", "_blank", 1, "test-link", 3, "href"], ["mat-icon-button", "", "color", "warn", 3, "click", "disabled"], [1, "welcome-card"], ["color", "primary", 1, "avatar-icon"], [1, "welcome-content"], [1, "getting-started-card"], [1, "welcome-steps"], ["mat-button", "", "color", "primary", "href", "https://docs.arpi-security.info/en/latest/security_engineers/installation-sw/", "target", "_blank", "rel", "noopener"], [1, "support-card"], [1, "support-content"], ["mat-button", "", "color", "primary", "href", "https://arpi-security.slack.com/", "target", "_blank", "rel", "noopener"], [2, "gap", "10px"], ["mat-raised-button", "", "color", "accent", "routerLink", "/location/add"], ["mat-stroked-button", "", "color", "primary", "href", "https://docs.arpi-security.info", "target", "_blank", "rel", "noopener", "tabindex", "0"], ["mat-stroked-button", "", "color", "primary", "href", "https://demo.arpi-security.info", "target", "_blank", "rel", "noopener", "tabindex", "0"]];
+        let i18n_28;
+        if (false) {
+          const MSG_EXTERNAL_location_demo_button$$SRC_APP_PAGES_LOCATION_LOCATION_LIST_COMPONENT_TS_28 = goog.getMsg(" Try Demo ");
+          i18n_28 = MSG_EXTERNAL_location_demo_button$$SRC_APP_PAGES_LOCATION_LOCATION_LIST_COMPONENT_TS_28;
+        } else {
+          i18n_28 = " Try Demo ";
+        }
+        return [i18n_1, i18n_2, i18n_3, i18n_4, i18n_5, i18n_6, i18n_7, i18n_8, i18n_9, i18n_10, i18n_11, i18n_12, i18n_13, i18n_14, i18n_15, i18n_16, i18n_17, i18n_18, i18n_19, i18n_20, i18n_21, i18n_22, i18n_23, i18n_24, i18n_25, i18n_26, i18n_27, i18n_28, [1, "container"], [1, "container-item"], [1, "list-actions"], ["mat-fab", "", "color", "accent", "routerLink", "/location/add", 1, "list-action"], ["mat-mini-fab", "", "color", "accent", "routerLink", "/location/add", 1, "list-action"], ["cdkDropList", "", 3, "cdkDropListDropped", "cdkDropListDisabled"], ["cdkDrag", "", 1, "container-item", "location-form", 3, "id"], ["cdkDrag", "", 1, "container-item", "location-form", 3, "cdkDragStarted", "id"], [1, "primary"], ["matListItemIcon", ""], ["matListItemIcon", "", "diameter", "16"], ["matListItemIcon", "", 1, "icon-accessible"], ["matListItemIcon", "", 1, "icon-inaccessible"], ["matListItemTitle", ""], ["matListItemLine", ""], [1, "secondary"], [1, "next-version"], ["mat-icon-button", "", "cdkDragHandle", "", 1, "drag-handle"], ["mat-icon-button", "", "color", "primary", 3, "routerLink"], ["mat-icon-button", "", "color", "primary", 3, "click"], ["mat-icon-button", "", "color", "warn", "aria-label", i18n_0, 3, "disabled"], ["mat-icon-button", "", "color", "warn", 3, "disabled"], ["mat-card-avatar", ""], [1, "registered-icon", 3, "ngClass"], [1, "notification-icon", 3, "ngClass"], [3, "ngClass"], ["target", "_blank", 1, "test-link", 3, "href"], ["mat-icon-button", "", "color", "warn", "aria-label", i18n_0, 3, "click", "disabled"], ["mat-icon-button", "", "color", "warn", 3, "click", "disabled"], [1, "welcome-card"], ["color", "primary", 1, "avatar-icon"], [1, "welcome-content"], [1, "getting-started-card"], [1, "welcome-steps"], ["mat-button", "", "color", "primary", "href", "https://docs.arpi-security.info/en/latest/security_engineers/installation-sw/", "target", "_blank", "rel", "noopener"], [1, "support-card"], [1, "support-content"], ["mat-button", "", "color", "primary", "href", "https://arpi-security.slack.com/", "target", "_blank", "rel", "noopener"], [2, "gap", "10px"], ["mat-raised-button", "", "color", "accent", "routerLink", "/location/add"], ["mat-stroked-button", "", "color", "primary", "href", "https://docs.arpi-security.info", "target", "_blank", "rel", "noopener", "tabindex", "0"], ["mat-stroked-button", "", "color", "primary", "href", "https://demo.arpi-security.info", "target", "_blank", "rel", "noopener", "tabindex", "0"]];
       },
       template: function LocationListComponent_Template(rf, ctx) {
         if (rf & 1) {
@@ -119599,7 +119621,7 @@ var LocationListComponent = class _LocationListComponent extends ConfigurationBa
         }
       },
       dependencies: [NgClass, RouterLink, MatButton, MatMiniFabButton, MatIconButton, MatFabButton, MatCard, MatCardActions, MatCardAvatar, MatCardContent, MatCardHeader, MatCardSubtitle, MatCardTitle, MatIcon, MatList, MatListItem, MatListItemIcon, MatDivider, MatListItemLine, MatListItemTitle, MatProgressSpinner, CdkDropList, CdkDrag, CdkDragHandle],
-      styles: ["\n.getting-started-card[_ngcontent-%COMP%] {\n  border-left: 4px solid #43a047 !important;\n  border: 1px solid var(--mat-divider-color, #e0e0e0);\n}\n.support-card[_ngcontent-%COMP%] {\n  border-left: 4px solid #1976d2 !important;\n  border: 1px solid var(--mat-divider-color, #e0e0e0);\n}\n.welcome-content[_ngcontent-%COMP%] {\n  display: flex;\n  flex-direction: column;\n  gap: 15px;\n}\n.welcome-steps[_ngcontent-%COMP%] {\n  display: flex;\n  flex-direction: column;\n  gap: 25px;\n  padding-bottom: 20px;\n}\n.support-content[_ngcontent-%COMP%] {\n  text-align: center;\n}\n  .mdc-list {\n  padding: 0;\n}\n  .mat-mdc-card-header .mat-mdc-card-avatar {\n  width: 25px;\n  height: 100px;\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n  justify-content: center;\n  gap: 0;\n}\n  .mat-mdc-card-header .mat-icon {\n  margin-top: 5px;\n  margin-bottom: 5px;\n}\n  .mat-mdc-card-header .mat-mdc-card-header-text {\n  margin-bottom: 20px;\n}\n  .mat-mdc-card-header-text {\n  width: 100%;\n}\n  .mat-mdc-card-header-text .mat-mdc-card-subtitle {\n  white-space: nowrap;\n  overflow: hidden;\n  text-overflow: ellipsis;\n}\n.mat-mdc-card-content[_ngcontent-%COMP%] {\n  padding-top: 10px;\n}\n.mat-mdc-form-field[_ngcontent-%COMP%] {\n  width: 100%;\n}\n.enabled[_ngcontent-%COMP%] {\n  color: #4caf50;\n}\n.disabled[_ngcontent-%COMP%] {\n  color: #f44336;\n}\n.primary[_ngcontent-%COMP%]   .icon-accessible[_ngcontent-%COMP%], \n.secondary[_ngcontent-%COMP%]   .icon-accessible[_ngcontent-%COMP%] {\n  color: #4caf50;\n}\n.primary[_ngcontent-%COMP%]   .icon-inaccessible[_ngcontent-%COMP%], \n.secondary[_ngcontent-%COMP%]   .icon-inaccessible[_ngcontent-%COMP%] {\n  color: #f44336;\n}\n.test-link[_ngcontent-%COMP%] {\n  white-space: nowrap;\n  overflow: hidden;\n  text-overflow: ellipsis;\n}\n.test-link[_ngcontent-%COMP%]   .mat-icon[_ngcontent-%COMP%] {\n  font-size: 18px;\n  vertical-align: middle;\n}\n/*# sourceMappingURL=location-list.component.css.map */"]
+      styles: ["\n.getting-started-card[_ngcontent-%COMP%] {\n  border-left: 4px solid #43a047 !important;\n  border: 1px solid var(--mat-divider-color, #e0e0e0);\n}\n.support-card[_ngcontent-%COMP%] {\n  border-left: 4px solid #1976d2 !important;\n  border: 1px solid var(--mat-divider-color, #e0e0e0);\n}\n.welcome-content[_ngcontent-%COMP%] {\n  display: flex;\n  flex-direction: column;\n  gap: 15px;\n}\n.welcome-steps[_ngcontent-%COMP%] {\n  display: flex;\n  flex-direction: column;\n  gap: 25px;\n  padding-bottom: 20px;\n}\n.support-content[_ngcontent-%COMP%] {\n  text-align: center;\n}\n  .mdc-list {\n  padding: 0;\n}\n.location-form[_ngcontent-%COMP%]     .mat-mdc-card-header .mat-mdc-card-avatar {\n  width: 25px;\n  height: 100px;\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n  justify-content: center;\n  gap: 0;\n}\n.location-form[_ngcontent-%COMP%]     .mat-mdc-card-header .mat-icon {\n  margin-top: 5px;\n  margin-bottom: 5px;\n}\n.location-form[_ngcontent-%COMP%]     .mat-mdc-card-header .mat-mdc-card-header-text {\n  margin-bottom: 20px;\n}\n.location-form[_ngcontent-%COMP%]     .mat-mdc-card-header-text {\n  width: 100%;\n}\n.location-form[_ngcontent-%COMP%]     .mat-mdc-card-header-text .mat-mdc-card-subtitle {\n  white-space: nowrap;\n  overflow: hidden;\n  text-overflow: ellipsis;\n}\n.location-form[_ngcontent-%COMP%]   .mat-mdc-card-content[_ngcontent-%COMP%] {\n  padding-top: 10px;\n}\n.location-form[_ngcontent-%COMP%]   .mat-mdc-form-field[_ngcontent-%COMP%] {\n  width: 100%;\n}\n.location-form[_ngcontent-%COMP%]   .enabled[_ngcontent-%COMP%] {\n  color: #4caf50;\n}\n.location-form[_ngcontent-%COMP%]   .disabled[_ngcontent-%COMP%] {\n  color: #f44336;\n}\n.location-form[_ngcontent-%COMP%]   .primary[_ngcontent-%COMP%]   .icon-accessible[_ngcontent-%COMP%], \n.location-form[_ngcontent-%COMP%]   .secondary[_ngcontent-%COMP%]   .icon-accessible[_ngcontent-%COMP%] {\n  color: #4caf50;\n}\n.location-form[_ngcontent-%COMP%]   .primary[_ngcontent-%COMP%]   .icon-inaccessible[_ngcontent-%COMP%], \n.location-form[_ngcontent-%COMP%]   .secondary[_ngcontent-%COMP%]   .icon-inaccessible[_ngcontent-%COMP%] {\n  color: #f44336;\n}\n.location-form[_ngcontent-%COMP%]   .test-link[_ngcontent-%COMP%] {\n  white-space: nowrap;\n  overflow: hidden;\n  text-overflow: ellipsis;\n}\n.location-form[_ngcontent-%COMP%]   .test-link[_ngcontent-%COMP%]   .mat-icon[_ngcontent-%COMP%] {\n  font-size: 18px;\n  vertical-align: middle;\n}\n/*# sourceMappingURL=location-list.component.css.map */"]
     });
   }
 };
@@ -119854,6 +119876,18 @@ var LocationListComponent = class _LocationListComponent extends ConfigurationBa
               <button mat-icon-button color="primary" (click)="onLogin(location.id)">
                 <mat-icon>login</mat-icon>
               </button>
+              @if (isRegistered(location.id)) {
+                <button
+                  mat-icon-button
+                  color="warn"
+                  (click)="openUnregisterDialog(location.id)"
+                  [disabled]="isUnregisterDisabled(location.id)"
+                  aria-label="Unregister device"
+                  i18n-aria-label="@@unregister device action"
+                >
+                  <mat-icon>disabled_by_default</mat-icon>
+                </button>
+              }
               @if (locations.length > 1) {
                 <button
                   mat-icon-button
@@ -119989,7 +120023,7 @@ var LocationListComponent = class _LocationListComponent extends ConfigurationBa
   }
 </div>
 `,
-      styles: ["/* src/app/pages/location/location-list.component.scss */\n.getting-started-card {\n  border-left: 4px solid #43a047 !important;\n  border: 1px solid var(--mat-divider-color, #e0e0e0);\n}\n.support-card {\n  border-left: 4px solid #1976d2 !important;\n  border: 1px solid var(--mat-divider-color, #e0e0e0);\n}\n.welcome-content {\n  display: flex;\n  flex-direction: column;\n  gap: 15px;\n}\n.welcome-steps {\n  display: flex;\n  flex-direction: column;\n  gap: 25px;\n  padding-bottom: 20px;\n}\n.support-content {\n  text-align: center;\n}\n::ng-deep .mdc-list {\n  padding: 0;\n}\n::ng-deep .mat-mdc-card-header .mat-mdc-card-avatar {\n  width: 25px;\n  height: 100px;\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n  justify-content: center;\n  gap: 0;\n}\n::ng-deep .mat-mdc-card-header .mat-icon {\n  margin-top: 5px;\n  margin-bottom: 5px;\n}\n::ng-deep .mat-mdc-card-header .mat-mdc-card-header-text {\n  margin-bottom: 20px;\n}\n::ng-deep .mat-mdc-card-header-text {\n  width: 100%;\n}\n::ng-deep .mat-mdc-card-header-text .mat-mdc-card-subtitle {\n  white-space: nowrap;\n  overflow: hidden;\n  text-overflow: ellipsis;\n}\n.mat-mdc-card-content {\n  padding-top: 10px;\n}\n.mat-mdc-form-field {\n  width: 100%;\n}\n.enabled {\n  color: #4caf50;\n}\n.disabled {\n  color: #f44336;\n}\n.primary .icon-accessible,\n.secondary .icon-accessible {\n  color: #4caf50;\n}\n.primary .icon-inaccessible,\n.secondary .icon-inaccessible {\n  color: #f44336;\n}\n.test-link {\n  white-space: nowrap;\n  overflow: hidden;\n  text-overflow: ellipsis;\n}\n.test-link .mat-icon {\n  font-size: 18px;\n  vertical-align: middle;\n}\n/*# sourceMappingURL=location-list.component.css.map */\n"]
+      styles: ["/* src/app/pages/location/location-list.component.scss */\n.getting-started-card {\n  border-left: 4px solid #43a047 !important;\n  border: 1px solid var(--mat-divider-color, #e0e0e0);\n}\n.support-card {\n  border-left: 4px solid #1976d2 !important;\n  border: 1px solid var(--mat-divider-color, #e0e0e0);\n}\n.welcome-content {\n  display: flex;\n  flex-direction: column;\n  gap: 15px;\n}\n.welcome-steps {\n  display: flex;\n  flex-direction: column;\n  gap: 25px;\n  padding-bottom: 20px;\n}\n.support-content {\n  text-align: center;\n}\n::ng-deep .mdc-list {\n  padding: 0;\n}\n.location-form ::ng-deep .mat-mdc-card-header .mat-mdc-card-avatar {\n  width: 25px;\n  height: 100px;\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n  justify-content: center;\n  gap: 0;\n}\n.location-form ::ng-deep .mat-mdc-card-header .mat-icon {\n  margin-top: 5px;\n  margin-bottom: 5px;\n}\n.location-form ::ng-deep .mat-mdc-card-header .mat-mdc-card-header-text {\n  margin-bottom: 20px;\n}\n.location-form ::ng-deep .mat-mdc-card-header-text {\n  width: 100%;\n}\n.location-form ::ng-deep .mat-mdc-card-header-text .mat-mdc-card-subtitle {\n  white-space: nowrap;\n  overflow: hidden;\n  text-overflow: ellipsis;\n}\n.location-form .mat-mdc-card-content {\n  padding-top: 10px;\n}\n.location-form .mat-mdc-form-field {\n  width: 100%;\n}\n.location-form .enabled {\n  color: #4caf50;\n}\n.location-form .disabled {\n  color: #f44336;\n}\n.location-form .primary .icon-accessible,\n.location-form .secondary .icon-accessible {\n  color: #4caf50;\n}\n.location-form .primary .icon-inaccessible,\n.location-form .secondary .icon-inaccessible {\n  color: #f44336;\n}\n.location-form .test-link {\n  white-space: nowrap;\n  overflow: hidden;\n  text-overflow: ellipsis;\n}\n.location-form .test-link .mat-icon {\n  font-size: 18px;\n  vertical-align: middle;\n}\n/*# sourceMappingURL=location-list.component.css.map */\n"]
     }]
   }], () => [{
     type: void 0,
@@ -129803,6 +129837,205 @@ var OutputListComponent = class _OutputListComponent extends ConfigurationBaseCo
   });
 })();
 
+// src/app/pages/preferences/preferences.component.ts
+function PreferencesComponent_For_15_Template(rf, ctx) {
+  if (rf & 1) {
+    ɵɵelementStart(0, "mat-option", 10);
+    ɵɵtext(1);
+    ɵɵelementEnd();
+  }
+  if (rf & 2) {
+    const locale_r1 = ctx.$implicit;
+    ɵɵproperty("value", locale_r1.id);
+    ɵɵadvance();
+    ɵɵtextInterpolate1(" ", locale_r1.name, " ");
+  }
+}
+var PreferencesComponent = class _PreferencesComponent {
+  constructor(appPreferencesService, themeService) {
+    this.appPreferencesService = appPreferencesService;
+    this.themeService = themeService;
+    this.locales = [{
+      name: "Magyar",
+      id: "hu"
+    }, {
+      name: "English",
+      id: "en"
+    }, {
+      name: "Italiano",
+      id: "it"
+    }];
+    this.longPressEnabled = this.appPreferencesService.longPressEnabled;
+    this.darkTheme = this.themeService.load();
+    this.currentLocale = localStorage.getItem("localeId") || "en";
+  }
+  onLongPressChanged(enabled) {
+    this.longPressEnabled = enabled;
+    this.appPreferencesService.setLongPressEnabled(enabled);
+  }
+  onLocaleSelected(event2) {
+    localStorage.setItem("localeId", event2.value);
+    const pathParser2 = new RegExp("^(?<version>/v\\d*-?[a-zA-Z]*)?/(?<language>[a-z]{2})/(?<path>.*)$");
+    const matches2 = pathParser2.exec(window.location.pathname);
+    if (matches2 !== null) {
+      const newPath = [matches2.groups.version, event2.value, matches2.groups.path].join("/");
+      window.location.pathname = newPath;
+    }
+  }
+  onThemeSwitched(event2) {
+    this.darkTheme = event2.checked;
+    this.themeService.updateTheme(event2.checked ? "argus-dark-theme" : "argus-light-theme");
+  }
+  static {
+    this.ɵfac = function PreferencesComponent_Factory(__ngFactoryType__) {
+      return new (__ngFactoryType__ || _PreferencesComponent)(ɵɵdirectiveInject(AppPreferencesService), ɵɵdirectiveInject(ThemeService));
+    };
+  }
+  static {
+    this.ɵcmp = /* @__PURE__ */ɵɵdefineComponent({
+      type: _PreferencesComponent,
+      selectors: [["app-preferences"]],
+      standalone: false,
+      decls: 32,
+      vars: 3,
+      consts: () => {
+        let i18n_0;
+        if (false) {
+          const MSG_EXTERNAL_dark_theme_aria_label$$SRC_APP_PAGES_PREFERENCES_PREFERENCES_COMPONENT_TS_0 = goog.getMsg("Enable dark theme");
+          i18n_0 = MSG_EXTERNAL_dark_theme_aria_label$$SRC_APP_PAGES_PREFERENCES_PREFERENCES_COMPONENT_TS_0;
+        } else {
+          i18n_0 = "Enable dark theme";
+        }
+        let i18n_1;
+        if (false) {
+          const MSG_EXTERNAL_long_press_setting_aria_label$$SRC_APP_PAGES_PREFERENCES_PREFERENCES_COMPONENT_TS_1 = goog.getMsg("Enable long press");
+          i18n_1 = MSG_EXTERNAL_long_press_setting_aria_label$$SRC_APP_PAGES_PREFERENCES_PREFERENCES_COMPONENT_TS_1;
+        } else {
+          i18n_1 = "Enable long press";
+        }
+        let i18n_2;
+        if (false) {
+          const MSG_EXTERNAL_app_preferences_title$$SRC_APP_PAGES_PREFERENCES_PREFERENCES_COMPONENT_TS_2 = goog.getMsg("App preferences");
+          i18n_2 = MSG_EXTERNAL_app_preferences_title$$SRC_APP_PAGES_PREFERENCES_PREFERENCES_COMPONENT_TS_2;
+        } else {
+          i18n_2 = "App preferences";
+        }
+        let i18n_3;
+        if (false) {
+          const MSG_EXTERNAL_language_setting$$SRC_APP_PAGES_PREFERENCES_PREFERENCES_COMPONENT_TS_3 = goog.getMsg("Language");
+          i18n_3 = MSG_EXTERNAL_language_setting$$SRC_APP_PAGES_PREFERENCES_PREFERENCES_COMPONENT_TS_3;
+        } else {
+          i18n_3 = "Language";
+        }
+        let i18n_4;
+        if (false) {
+          const MSG_EXTERNAL_dark_theme$$SRC_APP_PAGES_PREFERENCES_PREFERENCES_COMPONENT_TS_4 = goog.getMsg("Dark theme");
+          i18n_4 = MSG_EXTERNAL_dark_theme$$SRC_APP_PAGES_PREFERENCES_PREFERENCES_COMPONENT_TS_4;
+        } else {
+          i18n_4 = "Dark theme";
+        }
+        let i18n_5;
+        if (false) {
+          const MSG_EXTERNAL_long_press_setting$$SRC_APP_PAGES_PREFERENCES_PREFERENCES_COMPONENT_TS_5 = goog.getMsg("Long press");
+          i18n_5 = MSG_EXTERNAL_long_press_setting$$SRC_APP_PAGES_PREFERENCES_PREFERENCES_COMPONENT_TS_5;
+        } else {
+          i18n_5 = "Long press";
+        }
+        let i18n_6;
+        if (false) {
+          const MSG_EXTERNAL_long_press_setting_description$$SRC_APP_PAGES_PREFERENCES_PREFERENCES_COMPONENT_TS_6 = goog.getMsg(" Hold output buttons to activate or deactivate them. ");
+          i18n_6 = MSG_EXTERNAL_long_press_setting_description$$SRC_APP_PAGES_PREFERENCES_PREFERENCES_COMPONENT_TS_6;
+        } else {
+          i18n_6 = " Hold output buttons to activate or deactivate them. ";
+        }
+        return [i18n_2, i18n_3, i18n_4, i18n_5, i18n_6, [1, "container"], ["matListItemIcon", ""], ["matListItemTitle", ""], ["matListItemMeta", ""], [1, "language-select", 3, "valueChange", "selectionChange", "value"], [3, "value"], ["aria-label", i18n_0, 3, "change", "checked"], ["matListItemLine", ""], ["aria-label", i18n_1, 3, "change", "checked"]];
+      },
+      template: function PreferencesComponent_Template(rf, ctx) {
+        if (rf & 1) {
+          ɵɵelementStart(0, "div", 5)(1, "mat-card")(2, "mat-card-header")(3, "mat-card-title");
+          ɵɵi18n(4, 0);
+          ɵɵelementEnd()();
+          ɵɵelementStart(5, "mat-card-content")(6, "mat-list")(7, "mat-list-item")(8, "mat-icon", 6);
+          ɵɵtext(9, "language");
+          ɵɵelementEnd();
+          ɵɵelementStart(10, "span", 7);
+          ɵɵi18n(11, 1);
+          ɵɵelementEnd();
+          ɵɵelementStart(12, "div", 8)(13, "mat-select", 9);
+          ɵɵtwoWayListener("valueChange", function PreferencesComponent_Template_mat_select_valueChange_13_listener($event) {
+            ɵɵtwoWayBindingSet(ctx.currentLocale, $event) || (ctx.currentLocale = $event);
+            return $event;
+          });
+          ɵɵlistener("selectionChange", function PreferencesComponent_Template_mat_select_selectionChange_13_listener($event) {
+            return ctx.onLocaleSelected($event);
+          });
+          ɵɵrepeaterCreate(14, PreferencesComponent_For_15_Template, 2, 2, "mat-option", 10, ɵɵrepeaterTrackByIdentity);
+          ɵɵelementEnd()()();
+          ɵɵelementStart(16, "mat-list-item")(17, "mat-icon", 6);
+          ɵɵtext(18, "invert_colors");
+          ɵɵelementEnd();
+          ɵɵelementStart(19, "span", 7);
+          ɵɵi18n(20, 2);
+          ɵɵelementEnd();
+          ɵɵelementStart(21, "div", 8)(22, "mat-slide-toggle", 11);
+          ɵɵlistener("change", function PreferencesComponent_Template_mat_slide_toggle_change_22_listener($event) {
+            return ctx.onThemeSwitched($event);
+          });
+          ɵɵelementEnd()()();
+          ɵɵelementStart(23, "mat-list-item")(24, "mat-icon", 6);
+          ɵɵtext(25, "touch_app");
+          ɵɵelementEnd();
+          ɵɵelementStart(26, "span", 7);
+          ɵɵi18n(27, 3);
+          ɵɵelementEnd();
+          ɵɵelementStart(28, "span", 12);
+          ɵɵi18n(29, 4);
+          ɵɵelementEnd();
+          ɵɵelementStart(30, "div", 8)(31, "mat-slide-toggle", 13);
+          ɵɵlistener("change", function PreferencesComponent_Template_mat_slide_toggle_change_31_listener($event) {
+            return ctx.onLongPressChanged($event.checked);
+          });
+          ɵɵelementEnd()()()()()()();
+        }
+        if (rf & 2) {
+          ɵɵadvance(13);
+          ɵɵtwoWayProperty("value", ctx.currentLocale);
+          ɵɵadvance();
+          ɵɵrepeater(ctx.locales);
+          ɵɵadvance(8);
+          ɵɵproperty("checked", ctx.darkTheme);
+          ɵɵadvance(9);
+          ɵɵproperty("checked", ctx.longPressEnabled);
+        }
+      },
+      dependencies: [MatOption, MatCard, MatCardContent, MatCardHeader, MatCardTitle, MatIcon, MatList, MatListItem, MatListItemIcon, MatListItemLine, MatListItemTitle, MatListItemMeta, MatSelect, MatSlideToggle],
+      styles: ["\nmat-card[_ngcontent-%COMP%] {\n  max-width: 720px;\n  margin: 20px auto;\n}\nmat-list-item[_ngcontent-%COMP%] {\n  min-height: 72px;\n}\nmat-slide-toggle[_ngcontent-%COMP%] {\n  margin-left: auto;\n}\n.language-select[_ngcontent-%COMP%] {\n  min-width: 140px;\n}\n/*# sourceMappingURL=preferences.component.css.map */"]
+    });
+  }
+};
+(() => {
+  (typeof ngDevMode === "undefined" || ngDevMode) && setClassMetadata(PreferencesComponent, [{
+    type: Component,
+    args: [{
+      selector: "app-preferences",
+      standalone: false,
+      template: '<div class="container">\n  <mat-card>\n    <mat-card-header>\n      <mat-card-title i18n="@@app preferences title">App preferences</mat-card-title>\n    </mat-card-header>\n    <mat-card-content>\n      <mat-list>\n        <mat-list-item>\n          <mat-icon matListItemIcon>language</mat-icon>\n          <span matListItemTitle i18n="@@language setting">Language</span>\n          <div matListItemMeta>\n            <mat-select class="language-select" [(value)]="currentLocale" (selectionChange)="onLocaleSelected($event)">\n              @for (locale of locales; track locale) {\n                <mat-option [value]="locale.id">\n                  {{ locale.name }}\n                </mat-option>\n              }\n            </mat-select>\n          </div>\n        </mat-list-item>\n        <mat-list-item>\n          <mat-icon matListItemIcon>invert_colors</mat-icon>\n          <span matListItemTitle i18n="@@dark theme">Dark theme</span>\n          <div matListItemMeta>\n            <mat-slide-toggle\n              [checked]="darkTheme"\n              (change)="onThemeSwitched($event)"\n              i18n-aria-label="@@dark theme aria label"\n              aria-label="Enable dark theme"\n            />\n          </div>\n        </mat-list-item>\n        <mat-list-item>\n          <mat-icon matListItemIcon>touch_app</mat-icon>\n          <span matListItemTitle i18n="@@long press setting">Long press</span>\n          <span matListItemLine i18n="@@long press setting description">\n            Hold output buttons to activate or deactivate them.\n          </span>\n          <div matListItemMeta>\n            <mat-slide-toggle\n              [checked]="longPressEnabled"\n              (change)="onLongPressChanged($event.checked)"\n              i18n-aria-label="@@long press setting aria label"\n              aria-label="Enable long press"\n            />\n          </div>\n        </mat-list-item>\n      </mat-list>\n    </mat-card-content>\n  </mat-card>\n</div>\n',
+      styles: ["/* src/app/pages/preferences/preferences.component.scss */\nmat-card {\n  max-width: 720px;\n  margin: 20px auto;\n}\nmat-list-item {\n  min-height: 72px;\n}\nmat-slide-toggle {\n  margin-left: auto;\n}\n.language-select {\n  min-width: 140px;\n}\n/*# sourceMappingURL=preferences.component.css.map */\n"]
+    }]
+  }], () => [{
+    type: AppPreferencesService
+  }, {
+    type: ThemeService
+  }], null);
+})();
+(() => {
+  (typeof ngDevMode === "undefined" || ngDevMode) && ɵsetClassDebugInfo(PreferencesComponent, {
+    className: "PreferencesComponent",
+    filePath: "src/app/pages/preferences/preferences.component.ts",
+    lineNumber: 12
+  });
+})();
+
 // src/app/app.routing.ts
 var appRoutes = [{
   pathMatch: "full",
@@ -129822,6 +130055,9 @@ var appRoutes = [{
 }, {
   path: "location/:id",
   component: LocationDetailsComponent
+}, {
+  path: "preferences",
+  component: PreferencesComponent
 }, {
   path: "login",
   component: LoginComponent,
@@ -130048,7 +130284,7 @@ var AppModule = class _AppModule {
   (typeof ngDevMode === "undefined" || ngDevMode) && setClassMetadata(AppModule, [{
     type: NgModule,
     args: [{
-      declarations: [AppComponent, BackendErrorComponent, LoginComponent, HomeComponent, ControllerComponent, QuestionDialogComponent, MessageComponent, KeypadComponent, ClockComponent, NotificationsComponent, SmsMessagesDialogComponent, NetworkComponent, SyrenComponent, UserCardComponent, UserListComponent, UserDetailComponent, UserDeviceRegistrationDialogComponent, UserSshKeySetupDialogComponent, MCPTokenDialogComponent, MyUserComponent, AreaComponent, AreaListComponent, AreaDetailComponent, LocationDetailsComponent, LocationListComponent, OutputComponent, OutputListComponent, OutputDetailComponent, SensorComponent, SensorListComponent, SensorDetailComponent, ZoneListComponent, ZoneDetailComponent, SystemStateComponent, PageNotFoundComponent, DemoComponent, DemoHelpDialogComponent, EventsComponent],
+      declarations: [AppComponent, BackendErrorComponent, LoginComponent, HomeComponent, ControllerComponent, QuestionDialogComponent, MessageComponent, KeypadComponent, ClockComponent, NotificationsComponent, SmsMessagesDialogComponent, NetworkComponent, SyrenComponent, UserCardComponent, UserListComponent, UserDetailComponent, UserDeviceRegistrationDialogComponent, UserSshKeySetupDialogComponent, MCPTokenDialogComponent, MyUserComponent, AreaComponent, AreaListComponent, AreaDetailComponent, LocationDetailsComponent, LocationListComponent, OutputComponent, OutputListComponent, OutputDetailComponent, PreferencesComponent, SensorComponent, SensorListComponent, SensorDetailComponent, ZoneListComponent, ZoneDetailComponent, SystemStateComponent, PageNotFoundComponent, DemoComponent, DemoHelpDialogComponent, EventsComponent],
       bootstrap: [AppComponent],
       imports: [BrowserModule, ClipboardModule, CountdownModule, DigitOnlyDirective, FormsModule, ReactiveFormsModule, OwlDateTimeModule, OwlNativeDateTimeModule, routing,
       // Standalone components
@@ -130144,5 +130380,5 @@ if (environment.production) {
 platformBrowser().bootstrapModule(AppModule, {
   applicationProviders: [provideZoneChangeDetection()]
 });
-/**i18n:26bf5e443b4e3faa1af003cbcf86633a45b644ea19b6ce64ecacbea3af76a15e*/
+/**i18n:1ccbc765124d633963bc149d2ba93ff8eef0930da8305167c0f55657e126862c*/
 //# sourceMappingURL=main.js.map

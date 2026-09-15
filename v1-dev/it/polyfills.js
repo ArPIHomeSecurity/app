@@ -2544,5 +2544,5 @@ patchBrowser(Zone$1);
 
 // angular:polyfills:angular:polyfills
 (globalThis.$localize ??= {}).locale = "it";
-/**i18n:26bf5e443b4e3faa1af003cbcf86633a45b644ea19b6ce64ecacbea3af76a15e*/
+/**i18n:1ccbc765124d633963bc149d2ba93ff8eef0930da8305167c0f55657e126862c*/
 //# sourceMappingURL=polyfills.js.map

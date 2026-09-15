@@ -1,0 +1,2 @@
+import{g as a,j as l}from"./chunk-JJJXCN3D.js";var r=class extends l{alert(e){return a(this,null,function*(){window.alert(e.message)})}prompt(e){return a(this,null,function*(){let n=window.prompt(e.message,e.inputText||"");return{value:n!==null?n:"",cancelled:n===null}})}confirm(e){return a(this,null,function*(){return{value:window.confirm(e.message)}})}};export{r as DialogWeb};
+/**i18n:1ccbc765124d633963bc149d2ba93ff8eef0930da8305167c0f55657e126862c*/
